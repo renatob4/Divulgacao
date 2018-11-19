@@ -16,7 +16,7 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item"><a class="texto-menu mr-3"><a href="?a=home">HOME</a></li>
                     <li class="nav-item"><a class="texto-menu mr-3"><a href="?a=galeria">GALERIA</a></li>
-                    <li class="nav-item"><a class="texto-menu mr-3"><a href="?a=services">SERVIÇOS</a></li>
+                    <li class="nav-item"><a class="texto-menu mr-3"><a href="?a=servicos">SERVIÇOS</a></li>
                     <li class="nav-item"><a class="texto-menu mr-3"><a href="?a=contatos">CONTATOS</a></li>
                 </ul>
             </div>

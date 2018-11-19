@@ -1,4 +1,5 @@
 <?php
+
     // ==========================================================
     // ROUTES
     // ==========================================================
@@ -22,7 +23,9 @@
             'setup_criar_bd',
             'setup_inserir_utilizadores',
             'login',
-            'contatos'
+            'contatos',
+            'servicos',
+            'galeria'
         ];
         //bypass do sistema normal
         if(!in_array($a, $routes_especiais)){
@@ -39,6 +42,12 @@
 
         //Pagina de contatos
         case 'contatos':                        include_once('public/contatos.php'); break;
+
+        //Pagina de contatos
+        case 'servicos':                        include_once('public/servicos.php'); break;
+
+        //Pagina de contatos
+        case 'galeria':                        include_once('public/galeria.php'); break;
 
         // ========================= LOGIN/LOGOUT =============================
 
