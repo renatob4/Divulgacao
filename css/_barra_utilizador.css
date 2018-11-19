@@ -1,0 +1,29 @@
+/*Barra dos utilizadores*/
+.barra_utilizador {
+    margin: 0px;
+    padding: 20px;
+    text-align: right;
+    background-color: #293d50;
+    color: #4fbaeb;
+    border-bottom: 2px solid lightseagreen;
+   }
+  
+  .barra_utilizador a {
+    text-decoration: none;
+    color: lightseagreen;
+    
+  }
+  
+  .barra_utilizador a:hover {
+    color: white;
+  }
+  
+  .barra_utilizador_inativo {
+    color: #757474;
+    text-decoration: none; 
+  }
+
+  .barra_utilizador_ativo {
+    color: white; 
+  }
+  

@@ -1,0 +1,29 @@
+body{
+    background-color: black;
+}
+.contentor-global{
+    margin-top: 30px;
+    padding: 50px;
+    padding-top: 30px;
+    background-color: rgb(180, 175, 175);
+}
+.barra-branca{
+    background-color: white;
+    padding: 15px;
+}
+.borda{
+    border: 1px solid red;
+}
+.margem-top-10{
+    margin-top: 10px;
+}
+.margem-top-20{
+    margin-top: 20px;
+}
+.btn-config {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 72px;
+}

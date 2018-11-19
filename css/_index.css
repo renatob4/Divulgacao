@@ -1,0 +1,20 @@
+.imagem-painel{
+    background-image: url("../images/imagem_painel.jpg");
+    height: 600px;
+    display: table;
+    width: 100%;
+    border: 1px solid rgb(62, 194, 247); 
+}
+.espaco-services{
+    padding: 20px 0px;
+}
+.espaco-paineis{
+    padding: 15px;
+    border: 2px solid rgb(62, 194, 247);
+    margin-top: 15px;
+    background-color: white;
+}
+.titulo-painel{
+    font-size: 1.2em;
+    font-weight: bold;
+}

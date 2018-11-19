@@ -1,0 +1,21 @@
+.contentor-menu{
+    background-color: rgb(63, 65, 61);
+    color: white;
+    padding: 10px;
+}
+.contentor-menu a{
+    text-decoration: none;
+    color: white;
+}
+.contentor-menu a:hover{
+    text-decoration: none;
+    color: rgb(62, 194, 247);
+}
+.texto-menu{
+    font-size: 1.1em;
+    padding: 5px;
+    text-align: left;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}

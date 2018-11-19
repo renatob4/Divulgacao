@@ -1,0 +1,17 @@
+#imgheader{
+    width: 50%;
+    height: 50%;
+    margin-left: -15px;
+    margin-bottom: -15px;
+}
+.posicao-botao{
+    float: none;
+    display: table-cell;
+    vertical-align: bottom; 
+}
+.botao{
+    font-size: 1.5em;
+    padding: 10px 50px;
+    margin: 10px;
+    white-space: normal;
+}

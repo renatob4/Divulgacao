@@ -1,0 +1,16 @@
+.rodape{
+    background-color: rgb(44, 43, 43);
+    color:rgb(150, 150, 150);
+    font-size: .8em;
+    padding: 30px;
+    margin-bottom: 30px
+}
+.rodape-social{
+    font-size: 2.5em;
+}
+.img-rodape{
+    margin: 5px;
+}
+.fundo{
+    margin-bottom: 20px;
+}
