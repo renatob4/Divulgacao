@@ -25,11 +25,11 @@
 
         // verifica se a password atual está correta
         $parametros = [
-            ':cd_login'       => $_SESSION['cd_login_partner'],
+            ':cd_login'       => $_SESSION['cd_login'],
             ':cd_password'    => md5($password_atual)
         ];
         $dados = $gestor->EXE_QUERY(
-            'SELECT cd_login, cd_password FROM tab_partner
+            'SELECT cd_login, cd_password FROM tab_user
              WHERE cd_login = :cd_login
              AND cd_password = :cd_password',$parametros);
 
@@ -50,12 +50,12 @@
             
             $data_atualizacao = new DateTime();
             $parametros = [
-                ':cd_login'    => $_SESSION['cd_login_partner'],
+                ':cd_login'    => $_SESSION['cd_login'],
                 ':cd_password' => md5($password_nova_1),
                 ':dt_updated'  => $data_atualizacao->format('Y-m-d H:i:s')
             ];
             $gestor->EXE_NON_QUERY(
-                'UPDATE tab_partner SET
+                'UPDATE tab_user SET
                  cd_password = :cd_password,
                  dt_updated = :dt_updated 
                  WHERE cd_login = :cd_login          
@@ -64,7 +64,7 @@
             $sucesso = true;
             $mensagem = 'Password atualizada com sucesso.';
             //LOG
-            funcoes::CriarLOG('Utilizador '.$_SESSION['cd_login_partner'].': alterou a sua password. ',$_SESSION['nm_partner']);
+            funcoes::CriarLOG('Utilizador '.$_SESSION['cd_login'].': alterou a sua password. ',$_SESSION['nm_user']);
         }
     }
 ?>
@@ -92,24 +92,24 @@
             <form action="?a=perfil_alterar_senha" method="post">
                     <div class="col-sm-4 offset-sm-4 justify-content-center">
                         <div class="form-group">
-                            <label>Password atual:</label>
+                            <label>Senha atual:</label>
                             <input type="text" class="form-control" name="text_password_atual" title="No mínimo 3 e no máximo 20 caracteres." pattern=".{3,20}" required>
                         </div>
                     </div>
                     <div class="col-sm-4 offset-sm-4 justify-content-center">
                         <div class="form-group">
-                            <label>Nova password:</label>
+                            <label>Nova senha:</label>
                             <input type="text" class="form-control" name="text_password_nova_1" title="No mínimo 3 e no máximo 20 caracteres." pattern=".{3,20}" required>
                         </div>
                     </div>
                     <div class="col-sm-4 offset-sm-4 justify-content-center">
                         <div class="form-group">
-                            <label>Repetir a nova password:</label>
+                            <label>Repetir a nova senha:</label>
                             <input type="text" class="form-control" name="text_password_nova_2" title="No mínimo 3 e no máximo 20 caracteres." pattern=".{3,20}" required>
                         </div>
                     </div>
                     <div class="text-center">
-                        <a href="?a=perfil" class="btn btn-primary btn-size-150">Voltar</a>
+                        <a href="?a=home" class="btn btn-primary btn-size-150">Voltar</a>
                         <button role="submit" class="btn btn-primary btn-size-150">Alterar</button>                    
                     </div>
             </form>

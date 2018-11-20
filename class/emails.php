@@ -13,9 +13,9 @@ use PHPMailer\PHPMailer\Exception;
             // dados[0] = endereço de email do destinatário
             // dados[1] = assunto
             // dados[2] = mensagem
-            require '../phpmailer/src/Exception.php';
-            require '../phpmailer/src/PHPMailer.php';
-            require '../phpmailer/src/SMTP.php';
+            require './phpmailer/src/Exception.php';
+            require './phpmailer/src/PHPMailer.php';
+            require './phpmailer/src/SMTP.php';
 
             //configurações
             $configs = include('config.php');
@@ -38,7 +38,7 @@ use PHPMailer\PHPMailer\Exception;
             $mail->Username = $configs['MAIL_USERNAME'];                        
             //$mail->Username = 'fsdfdsf';                        
             $mail->Password = $configs['MAIL_PASSWORD'];
-            $mail->setFrom ($configs['MAIL_FROM'], 'SPACET');
+            $mail->setFrom ($configs['MAIL_FROM'], 'Site');
             $mail->addAddress($dados[0], $dados[0]);
             $mail->CharSet = "UTF-8";
             //assunto
@@ -80,7 +80,7 @@ use PHPMailer\PHPMailer\Exception;
             $mail->Username = $configs['MAIL_USERNAME'];                        
             //$mail->Username = 'fsdfdsf';                        
             $mail->Password = $configs['MAIL_PASSWORD'];
-            $mail->setFrom ($configs['MAIL_FROM'], 'SPACET');
+            $mail->setFrom ($configs['MAIL_FROM'], 'Site');
             $mail->addAddress($dados[0], $dados[0]);
             $mail->CharSet = "UTF-8";
             //assunto

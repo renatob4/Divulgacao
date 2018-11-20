@@ -25,7 +25,7 @@
        ];
        //pesquisar na base de dados para ver se existe o email
        $dados = $gestor->EXE_QUERY(
-           'SELECT * FROM tab_partner WHERE ds_email = :ds_email', $parametros);
+           'SELECT * FROM tab_user WHERE ds_email = :ds_email', $parametros);
 
        //verifica se foi encontrado um endereço de email relacionado
        if(count($dados) == 0){
@@ -37,19 +37,21 @@
             //login válido. Gerar nova senha e enviar.
             $nova_senha =  funcoes::CriarCodigoAlfanumerico(12);
 
-        //======================================================================================           
+        //======================================================================================  
+
             $email = new emails();
             //preparação dos dados do email.
             $temp = [
                 $dados[0]['ds_email'],
-                'GestãoFlex - Recuperação da password',
-                '<h3>SPACET</H3><h4>RECUPERAÇÃO DA PASSWORD</h4><p>'.$nova_senha.'</p>'
+                'Site Pessoal - Recuperação de password',
+                '<h4><strong>Nova senha temporária:</strong></h4><h3>'.$nova_senha.'</h3>'
             ];
             //enviar o email
             $mensagem_enviada = $email->EnviarEmail($temp);
 
 
         //====================================================================================== 
+
             //alterar a senha na base de dados
             if($mensagem_enviada){
                 $id_utilizador = $dados[0]['cd_login'];
@@ -58,12 +60,12 @@
                     ':cd_password'    => md5($nova_senha)
                 ];
                 $gestor->EXE_NON_QUERY(
-                    'UPDATE tab_partner
-                    SET cd_password = :cd_password
-                    WHERE cd_login = :cd_login', $parametros);
+                    'UPDATE tab_user
+                     SET cd_password = :cd_password
+                     WHERE cd_login = :cd_login', $parametros);
 
             //log
-            funcoes::CriarLOG('utilizador '.$dados[0]['nm_partner'].': Solicitou a recuperação da password.', $dados[0]['nm_partner']);
+            funcoes::CriarLOG('utilizador '.$dados[0]['nm_user'].': Solicitou a recuperação da password.', $dados[0]['nm_user']);
             }
             else{
                 //mensagem de erro
@@ -90,7 +92,7 @@
                             <form action="?a=recuperar_senha" method="post">
                                 <div class="text-center">
                                     <h3>Recuperar Password</h3>
-                                        <p>Indique o e-mail vinculado a sua conta abaixo para onde a sua nova senha sera enviada.</p>
+                                        <p>Indique abaixo o e-mail vinculado a sua conta, para onde enviaremos a sua nova senha.</p>
                                     </div>
                                 <div class="form-group">
                                     <input type="email" name="text_email" class="form-control" placeholder="E-mail" required>

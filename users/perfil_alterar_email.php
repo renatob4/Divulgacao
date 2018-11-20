@@ -23,11 +23,11 @@
 
         // verifica se o novo email esta a ser utilizado por outro usuário
         $parametros = [
-            ':cd_login'    => $_SESSION['cd_login_partner'],
+            ':cd_login'    => $_SESSION['cd_login'],
             ':ds_email'    =>  $novo_email
         ];
         $dados = $gestor->EXE_QUERY(
-            'SELECT cd_login, ds_email FROM tab_partner
+            'SELECT cd_login, ds_email FROM tab_user
              WHERE cd_login <> :cd_login
              AND ds_email = :ds_email', $parametros);
 
@@ -42,12 +42,12 @@
             
             $data_atualizacao = new DateTime();
             $parametros = [
-                ':cd_login'    => $_SESSION['cd_login_partner'],
+                ':cd_login'    => $_SESSION['cd_login'],
                 ':ds_email'    => $novo_email,
                 ':dt_updated'  => $data_atualizacao->format('Y-m-d H:i:s')
             ];
             $gestor->EXE_NON_QUERY(
-                'UPDATE tab_partner SET
+                'UPDATE tab_user SET
                  ds_email = :ds_email,
                  dt_updated = :dt_updated 
                  WHERE cd_login = :cd_login          
@@ -60,7 +60,7 @@
             $_SESSION['ds_email'] = $novo_email;
 
             //LOG
-            funcoes::CriarLOG('Utilizador '.$_SESSION['cd_login_partner'].': alterou o seu Email.',$_SESSION['nm_partner']);
+            funcoes::CriarLOG('Utilizador '.$_SESSION['cd_login'].': alterou o seu Email.',$_SESSION['nm_user']);
         }
     }
 ?>
@@ -98,7 +98,7 @@
                     </div>
                    
                     <div class="text-center">
-                        <a href="?a=perfil" class="btn btn-primary btn-size-150">Voltar</a>
+                        <a href="?a=home" class="btn btn-primary btn-size-150">Voltar</a>
                         <button role="submit" class="btn btn-primary btn-size-150">Alterar</button>                    
                     </div>
             </form>

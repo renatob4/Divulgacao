@@ -23,7 +23,7 @@
         public static function IniciarSessao($dados){
             //iniciar a sessão
             $_SESSION['cd_login'] = $dados[0]['cd_login'];
-            $_SESSION['nm_partner'] = $dados[0]['nm_partner'];
+            $_SESSION['nm_user'] = $dados[0]['nm_user'];
             $_SESSION['cd_permition'] = $dados[0]['cd_permition'];
             $_SESSION['ds_email'] = $dados[0]['ds_email'];
         }
@@ -31,7 +31,7 @@
         public static function DestroiSessao(){
             //Abandona uma Sessão ativa
             unset($_SESSION['cd_login']);
-            unset($_SESSION['nm_partner']);
+            unset($_SESSION['nm_user']);
             unset($_SESSION['cd_permition']);
             unset($_SESSION['ds_email']);
         }

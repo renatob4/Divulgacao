@@ -22,16 +22,15 @@
     // CRIAÇãO DAS TABELAS
     // ===========================================================
 
-    //tabela tab_partner
+    //tabela tab_user
     $gestor->EXE_NON_QUERY(
         'CREATE TABLE tab_user('.
-        'cd_partner                     INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
+        'cd_user                     INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
         'cd_login                       NVARCHAR(50), '.
         'cd_password                    NVARCHAR(32), '.
-        'nm_partner                     NVARCHAR(50), '.
+        'nm_user                     NVARCHAR(50), '.
         'ds_email                       NVARCHAR(50), '.
         'cd_permition                   NVARCHAR(32), '.
-        'ic_status                      INT, '.
         'dt_register                    DATETIME, '.
         'dt_updated                     DATETIME)'
     );

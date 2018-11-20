@@ -8,7 +8,7 @@
 <div class="row">
     <div class="col m-0 mt-2 p-0">
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark contentor-menu">
-            <a class="navbar-brand mb-0 mr-3 h1" style="color: lightseagreen;" href="#">Trust</a>
+            <a class="navbar-brand mb-0 mr-3 h1" style="color: lightseagreen;" href="?a=home">Trust</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>

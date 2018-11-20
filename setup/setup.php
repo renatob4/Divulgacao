@@ -33,7 +33,7 @@
 <div class="container-fluid pad-20">
 
     <!--titulo-->
-    <h3 class="text-center">Setup</h3><hr>
+    <h3 class="text-center mt-4">Setup</h3><hr>
 
     <div class="row text-center m-0 p-0">
         <div class="col">
@@ -51,7 +51,7 @@
     <hr>
 
     <div class="text-center">
-        <a href="?a=home" class="btn btn-secondary btn-size-150">Voltar</a>
+        <a href="?a=home" class="btn btn-primary btn-size-150">Voltar</a>
     </div>
    
       

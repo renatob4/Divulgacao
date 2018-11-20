@@ -11,18 +11,23 @@
   .barra_utilizador a {
     text-decoration: none;
     color: lightseagreen;
-    
   }
-  
   .barra_utilizador a:hover {
     color: white;
   }
-  
+  .barra_utilizador .dropdown a {
+    text-decoration: none;
+    color: black;
+  }
+  .barra_utilizador .dropdown a:hover {
+    text-decoration: none;
+    color: lightseagreen;
+    background-color: #293d50;
+  }
   .barra_utilizador_inativo {
     color: #757474;
     text-decoration: none; 
   }
-
   .barra_utilizador_ativo {
     color: white; 
   }

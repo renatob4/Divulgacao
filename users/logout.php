@@ -8,7 +8,7 @@ if(!isset($_SESSION['a'])){
     exit();
 }
 
-$nome = $_SESSION['nm_partner'];
+$nome = $_SESSION['nm_user'];
 //executa o logout (destruição) da sessão
 funcoes::DestroiSessao();
 

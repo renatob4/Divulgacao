@@ -16,7 +16,7 @@
 
     //verificar o login ativo
     if(!funcoes::VerificarLogin()){
-        //casos especiais (PODEM SER ACESSADOS MESMO O ADM NAO ESTANDO LOGADO) ************************
+        //Casos especiais (PODEM SER ACESSADOS MESMO O ADM NÃO ESTANDO LOGADO) ***
         $routes_especiais = [
             'recuperar_senha',
             'setup',
@@ -25,7 +25,8 @@
             'login',
             'contatos',
             'servicos',
-            'galeria'
+            'galeria',
+            'recuperar_senha'
         ];
         //bypass do sistema normal
         if(!in_array($a, $routes_especiais)){
@@ -56,6 +57,20 @@
 
         //Script logout
         case 'logout':                          include_once('users/logout.php'); break;
+
+        // ========================== MANAGEMENT ==============================
+
+        //Pagina de recuperação de senha
+        case 'perfil_configuracoes':            include_once('users/perfil_configuracoes.php'); break;
+
+        //Pagina de recuperação de senha
+        case 'recuperar_senha':                 include_once('users/recuperar_senha.php'); break;
+
+        //Alterar senha
+        case 'perfil_alterar_senha':            include_once('users/perfil_alterar_senha.php'); break;
+
+        //Alterar email vinculado
+        case 'perfil_alterar_email':            include_once('users/perfil_alterar_email.php'); break;
 
         // ============================ SETUP =================================
 

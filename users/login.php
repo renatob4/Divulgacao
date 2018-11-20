@@ -42,7 +42,7 @@
             $mensagem = 'Login efetuado com sucesso!.';
 
             //Log
-            funcoes::CriarLOG('utilizador '.$_SESSION['cd_login'].': '.$mensagem, $_SESSION['nm_partner']);
+            funcoes::CriarLOG('utilizador '.$_SESSION['cd_login'].': '.$mensagem, $_SESSION['nm_user']);
         }     
     }
 
@@ -104,7 +104,7 @@
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-4 card m-3 p-3 text-center">          
-                <p>Bem-vindo, <strong><?php echo $dados[0]['nm_partner'] ?></strong> </p>
+                <p>Bem-vindo, <strong><?php echo $dados[0]['nm_user'] ?></strong> </p>
                 <a href="?a=home" class="btn btn-primary">Avançar</a>
             </div>        
         </div>

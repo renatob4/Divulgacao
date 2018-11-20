@@ -22,11 +22,11 @@
     //Vai buscar todas as informações do utilizador
     $gestor = new cl_gestorBD();
     $parametros = [
-        ':cd_login'    =>  $_SESSION['cd_login_partner']
+        ':cd_login'    =>  $_SESSION['cd_login']
     ];
 
     $dados = $gestor->EXE_QUERY(
-        'SELECT * FROM tab_partner 
+        'SELECT * FROM tab_user 
          WHERE cd_login = :cd_login', $parametros);
 
 ?>
@@ -43,16 +43,15 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col card m-3 p-3">
-            <h4 class="text-center">PERFIL DE UTILIZADOR</h4>
+                <h4 class="text-center">PERFIL DE UTILIZADOR</h4>
                 <!--DADOS DO UTILIZADOR-->
-                <h5><i class="fa fa-user" aria-hidden="true"></i> <?php echo $dados[0]['nm_partner'] ?></h5>
+                <h5><i class="fa fa-user" aria-hidden="true"></i> <?php echo $dados[0]['nm_user'] ?></h5>
                 <p><i class="fa fa-envelope" aria-hidden="true"></i> <?php echo $dados[0]['ds_email'] ?></p>
-                
-            </div>  
-        </div>
-        <div class="text-center">
+                <div class="text-center">
                 <!--Voltar-->      
-                <a href="?a=home" class="btn btn-primary btn-size-150 m-3">Voltar</a>
+                    <hr><a href="?a=home" class="btn btn-primary btn-size-150 m-2">Voltar</a>
+                </div>
+            </div>  
         </div>
     </div>
 
