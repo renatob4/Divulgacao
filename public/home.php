@@ -24,17 +24,34 @@
         </div>
 
         <!-- Sessão especial texto -->
-         <div class="row">
+         <!-- <div class="row">
             <div class="col-xs-6 col-xs-offset-3 text-center espaco-services mt-2 pb-0">
                 <h1>SPECIAL SERVICES</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sunt accusamus modi, neque nobis nemo sed illum magnam distinctio fuga saepe assumenda.</p>
             </div>
-         </div>
+         </div> -->
 
-         
         <!-- Apresentação -->
         <hr>
-            <div class="row p-5 borda">
+            <div class="row m-1">
+                <div class="col-md-8 p-0">
+                    <div class="text-center p-4">
+                        <h4 class="mb-3">Apresentação</h4>
+                        Do occaecat officia irure aliquip sint esse. In nulla eu ullamco cupidatat aliqua laboris aliquip quis 
+                        excepteur amet laboris eiusmod aute quis. Aute tempor et et laboris reprehenderit Lorem enim reprehenderit.
+                        Aute ut excepteur minim in. Et quis proident ad mollit eiusmod id dolore sint non. 
+                        Officia magna tempor quis cillum reprehenderit do. Laborum Lorem excepteur quis adipisicing laboris deserunt laboris esse laborum ex reprehenderit sit anim commodo.
+                    </div>
+                </div>
+
+                <div class="col-md-4 p-0">
+                    <div class="card painel-direito text-center p-4 ml-3">
+                        <h4 id="black"><i class="fas fa-phone-square mr-2 "></i>Fale conosco:</h4><hr>
+                        <h5>Telefone: (13)3594-5439</h5>
+                        <h5>WhatsApp: (13)98195-7691</h5><hr>
+                        <p id="black">Ou envie um e-mail direto <a href="?a=contatos">Aqui</a></p>
+                    </div>
+                </div>
             </div>
         <hr>
 

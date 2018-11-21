@@ -6,6 +6,7 @@
 .contentor-menu a{
     text-decoration: none;
     color: white;
+    font-weight: bold;
 }
 .contentor-menu a:hover{
     text-decoration: none;

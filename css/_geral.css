@@ -27,3 +27,10 @@ body{
     padding-right: 30px;
     font-size: 72px;
 }
+.painel-direito{
+    background-color:rgb(150, 150, 150);
+    color: green;
+}
+#black {
+    color: black;
+}
