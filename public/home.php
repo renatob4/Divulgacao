@@ -1,15 +1,14 @@
 <?php
-
-    //Código
-
     //verificar a sessão.
     if(!isset($_SESSION['a'])){
         exit();
     }
 
-    
+    //Instancia do banco de dados.
+    $acesso = new cl_gestorBD();
+    //busca o conteúdo da pagina no banco de dados.
+    $conteudo = $acesso->EXE_QUERY('SELECT * FROM tab_content');
 ?>
-
 <!-- ________________________________________________________CONTEÚDO DA PAGINA INICIAL__________________________________________________________ -->
 
         <!-- Barra divisoria branca -->
@@ -23,24 +22,22 @@
             </div>
         </div>
 
-        <!-- Sessão especial texto -->
+        <!-- Nome da empresa e slogan -->
          <!-- <div class="row">
             <div class="col-xs-6 col-xs-offset-3 text-center espaco-services mt-2 pb-0">
-                <h1>SPECIAL SERVICES</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quas sunt accusamus modi, neque nobis nemo sed illum magnam distinctio fuga saepe assumenda.</p>
+                <h1><?php //echo $conteudo[0]['nm_company']?></h1>
+                <p><?php //echo $conteudo[0]['ds_slogan']?></p>
             </div>
          </div> -->
 
-        <!-- Apresentação -->
+        <!-- Apresentação da empresa, texto. -->
         <hr>
             <div class="row m-1">
                 <div class="col-md-8 p-0">
                     <div class="text-center p-4">
                         <h4 class="mb-3">Apresentação</h4>
-                        Do occaecat officia irure aliquip sint esse. In nulla eu ullamco cupidatat aliqua laboris aliquip quis 
-                        excepteur amet laboris eiusmod aute quis. Aute tempor et et laboris reprehenderit Lorem enim reprehenderit.
-                        Aute ut excepteur minim in. Et quis proident ad mollit eiusmod id dolore sint non. 
-                        Officia magna tempor quis cillum reprehenderit do. Laborum Lorem excepteur quis adipisicing laboris deserunt laboris esse laborum ex reprehenderit sit anim commodo.
+                        <!-- Dados contidos no campo 'ds_presentation' do banco de dados -->
+                        <?php echo $conteudo[0]['ds_presentation']?>
                     </div>
                 </div>
 

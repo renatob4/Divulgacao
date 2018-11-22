@@ -22,6 +22,7 @@
             'setup',
             'setup_criar_bd',
             'setup_inserir_utilizadores',
+            'setup_inserir_conteudo',
             'login',
             'contatos',
             'servicos',
@@ -82,6 +83,9 @@
 
         //Inserir utilizadores
         case 'setup_inserir_utilizadores':      include_once('setup/setup.php'); break;
+
+        //Inserir Conteúdo
+        case 'setup_inserir_conteudo':          include_once('setup/setup.php'); break;
 
     }    
         

@@ -27,6 +27,11 @@
             include('setup_inserir_utilizadores.php');
             break;
 
+        case 'setup_inserir_conteudo':
+            // Executa os procedimentos para Inserção do conteúdo padrão do site na base
+            include('setup_inserir_conteudo.php');
+            break;
+
     }
 ?>    
 
@@ -37,14 +42,19 @@
 
     <div class="row text-center m-0 p-0">
         <div class="col">
-            <a class="btn btn-danger btn-config" href="?a=setup_criar_bd" title="Estatisticas de Vendas">
+            <a class="btn btn-danger btn-config" href="?a=setup_criar_bd" title="">
             <span class="fas fa-database"></span></a>
             <p class="m-0 m-0 mb-1">Criar/Recriar Database</p>
         </div>
         <div class="col">
-            <a class="btn btn-danger btn-config" href="?a=setup_inserir_utilizadores" title="Pedidos">
+            <a class="btn btn-danger btn-config" href="?a=setup_inserir_utilizadores" title="">
             <span class="fas fa-sign-in-alt"></span></a>
             <p class="m-0 m-0 mb-1">Inserir User</p>
+        </div>
+        <div class="col">
+            <a class="btn btn-danger btn-config" href="?a=setup_inserir_conteudo" title="">
+            <span class="fas fa-align-left"></span></a>
+            <p class="m-0 m-0 mb-1">Inserir Conteúdo</p>
         </div>
     </div>
 
@@ -54,7 +64,6 @@
         <a href="?a=home" class="btn btn-primary btn-size-150">Voltar</a>
     </div>
    
-      
 </div>
 
 
