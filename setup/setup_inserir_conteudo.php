@@ -13,8 +13,10 @@ $gestor = new cl_gestorBD();
 //limpar os dados dos utilizadores
 $gestor->EXE_NON_QUERY('DELETE FROM tab_content');
 $gestor->EXE_NON_QUERY('DELETE FROM tab_link');
+$gestor->EXE_NON_QUERY('DELETE FROM tab_card');
 $gestor->EXE_NON_QUERY('ALTER TABLE tab_content AUTO_INCREMENT = 1');
 $gestor->EXE_NON_QUERY('ALTER TABLE tab_link AUTO_INCREMENT = 1');
+$gestor->EXE_NON_QUERY('ALTER TABLE tab_card AUTO_INCREMENT = 1');
 
 $data = new DateTime();
 
@@ -32,7 +34,7 @@ $parametros = [
     ':ds_document'          => '00.000.000/0001-12',
     ':cd_phone_1'           => '0000000000',
     ':cd_phone_2'           => '0000000000',
-    ':ds_text_footer'       => 'Texto que fica exposto no rodapé, também pode repetir o slogan da empresa, um convite ou agradecimento.',
+    ':ds_text_footer'       => 'Texto que fica contido no rodapé, também pode repetir o slogan da empresa, um convite ou agradecimento.',
     ':dt_register'          => $data->format('Y-m-d H:i:s'),
     ':dt_updated'           => $data->format('Y-m-d H:i:s')
 ];
@@ -60,6 +62,23 @@ $parametros = [
 $gestor->EXE_NON_QUERY(
     'INSERT INTO tab_link(ds_link_face, ds_link_twit, ds_link_linked, ds_link_insta, ds_link_olx, ds_link_market, dt_register, dt_updated)
      VALUES(:ds_link_face, :ds_link_twit, :ds_link_linked, :ds_link_insta, :ds_link_olx, :ds_link_market, :dt_register, :dt_updated)', $parametros);
+
+//--------------------------------------------------------------------------------- TABELA TAB_CARD
+
+//inserir os cards (Especificamente 3 como conteudo padrão.)
+for($i = 0; $i < 3; $i++){
+    //definição de parametros/dados
+    $parametros = [
+        ':ds_title'             =>  'Título do Card '.($i+1),
+        ':ds_content'           =>  'Aqui ficam expostas noticias, atualizações, promoções ou avisos importantes que precisem ficar destacados.',
+        ':dt_register'          =>  $data->format('Y-m-d H:i:s'),
+        ':dt_updated'           =>  $data->format('Y-m-d H:i:s')
+    ];
+    //Inserçao do card na tabela tab_card
+    $gestor->EXE_NON_QUERY(
+        'INSERT INTO tab_card(ds_title, ds_content, dt_register, dt_updated)
+        VALUES(:ds_title, :ds_content, :dt_register, :dt_updated)', $parametros);
+}
 
 ?>
 

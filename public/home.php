@@ -6,8 +6,10 @@
 
     //Instancia do banco de dados.
     $acesso = new cl_gestorBD();
+
     //busca o conteúdo da pagina no banco de dados.
     $conteudo = $acesso->EXE_QUERY('SELECT * FROM tab_content');
+    $card = $acesso->EXE_QUERY('SELECT * FROM tab_card');
 ?>
 <!-- ________________________________________________________CONTEÚDO DA PAGINA INICIAL__________________________________________________________ -->
 
@@ -40,12 +42,12 @@
                         <?php echo $conteudo[0]['ds_presentation']?>
                     </div>
                 </div>
-
+                <!-- Painel rapido de contatos telefonicos -->
                 <div class="col-md-4 p-0">
                     <div class="card painel-direito text-center p-4 ml-3">
                         <h4 id="black"><i class="fas fa-phone-square mr-2 "></i>Fale conosco:</h4><hr>
-                        <h5>Telefone: (13)3594-5439</h5>
-                        <h5>WhatsApp: (13)98195-7691</h5><hr>
+                        <h5>Telefone 1: <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_1'])?></h5>
+                        <h5>Telefone 2: <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_2'])?></h5><hr>
                         <p id="black">Ou envie um e-mail direto <a href="?a=contatos">Aqui</a></p>
                     </div>
                 </div>
@@ -56,26 +58,34 @@
         <div class="row">
                 <!-- Coluna 1-->
                 <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="panel panel-default text-center espaco-paineis">
-                    <p class="titulo-painel">APP DESIGN</p>
-                    <p>Irure enim ipsum ullamco ut sint exercitation consectetur et do nostrud. Amet minim cupidatat nostrud Lorem laboris eu in sit ad dolore. Incididunt mollit anim aliqua nisi pariatur proident ad qui nulla.</p>
-                    <button class="btn btn-primary">Mais informações</button>
+                    <div class="panel panel-default text-center espaco-paineis">
+                        <p class="titulo-painel"><?php echo $card[0]['ds_title']?></p>
+                        <p><?php echo $card[0]['ds_content']?></p>
+                        <div class="text-center p-0 ml-0">
+                            <?php if(funcoes::VerificarLogin()) :?>
+                                <a href="?a=gerenciar_estoque&clear=true" class="btn btn-outline-success m-0 mr-2"><i class="fas fa-edit"></i></a>
+                                <a href="" class="btn btn-primary">Saiba mais...</a>
+                                <a href="?a=gerenciar_estoque&clear=true" class="btn btn-outline-danger m-0 ml-2"><i class="fas fa-trash-alt"></i></a>
+                            <?php else : ?>
+                                <button class="btn btn-primary">Saiba mais...</button>
+                            <?php endif; ?>
+                        </div>
                     </div>              
                 </div>
                 <!-- Coluna 2-->
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="panel panel-default text-center espaco-paineis">
-                        <p class="titulo-painel">WEB DESIGN</p>
-                        <p>Irure enim ipsum ullamco ut sint exercitation consectetur et do nostrud. Amet minim cupidatat nostrud Lorem laboris eu in sit ad dolore. Incididunt mollit anim aliqua nisi pariatur proident ad qui nulla.</p>
-                        <button class="btn btn-primary">Mais informações</button>
+                        <p class="titulo-painel"><?php echo $card[1]['ds_title']?></p>
+                        <p><?php echo $card[1]['ds_content']?></p>
+                        <a href="" class="btn btn-primary">Saiba mais...</a>
                     </div>              
                 </div>
                 <!-- Coluna 3-->
                 <div class="col-md-4 col-sm-6 col-xs-12">
                     <div class="panel panel-default text-center espaco-paineis">
-                        <p class="titulo-painel">GRAPHICS DESIGN</p>
-                        <p>Irure enim ipsum ullamco ut sint exercitation consectetur et do nostrud. Amet minim cupidatat nostrud Lorem laboris eu in sit ad dolore. Incididunt mollit anim aliqua nisi pariatur proident ad qui nulla.</p>
-                        <button class="btn btn-primary">Mais informações</button>
+                        <p class="titulo-painel"><?php echo $card[2]['ds_title']?></p>
+                        <p><?php echo $card[2]['ds_content']?></p>
+                        <a href="" class="btn btn-primary">Saiba mais...</a>
                     </div>              
                 </div>   
         </div>

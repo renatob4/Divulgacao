@@ -73,6 +73,9 @@
         //Alterar email vinculado
         case 'perfil_alterar_email':            include_once('users/perfil_alterar_email.php'); break;
 
+        //Alterar Login
+        case 'perfil_alterar_login':            include_once('users/perfil_alterar_login.php'); break;
+
         // ============================ SETUP =================================
 
         //Criar a base de dados

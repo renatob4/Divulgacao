@@ -1,6 +1,6 @@
 body{
     background-color: black;
-    margin: 0px;
+    margin: 0px !important;
 }
 .contentor-global{
     margin-top: 30px;
@@ -35,4 +35,7 @@ body{
 }
 #black {
     color: black;
+}
+#grey{
+    color:rgb(133, 131, 131);
 }

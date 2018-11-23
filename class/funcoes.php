@@ -22,6 +22,7 @@
 
         public static function IniciarSessao($dados){
             //iniciar a sessão
+            $_SESSION['cd_user'] = $dados[0]['cd_user'];
             $_SESSION['cd_login'] = $dados[0]['cd_login'];
             $_SESSION['nm_user'] = $dados[0]['nm_user'];
             $_SESSION['cd_permition'] = $dados[0]['cd_permition'];
@@ -30,6 +31,7 @@
 
         public static function DestroiSessao(){
             //Abandona uma Sessão ativa
+            unset($_SESSION['cd_user']);
             unset($_SESSION['cd_login']);
             unset($_SESSION['nm_user']);
             unset($_SESSION['cd_permition']);
@@ -44,6 +46,12 @@
                 $codigo .= substr($caracteres, rand(0, strlen($caracteres)) ,1);
             }
             return $codigo;
+        }
+
+        public static function FormataTelefone($number){
+            $number="(".substr($number,0,2).") ".substr($number,2,-4)."-".substr($number,-4);
+            // primeiro substr pega apenas o DDD e coloca dentro do (), segundo subtr pega os números do 3º até faltar 4, insere o hifem, e o ultimo pega apenas o 4 ultimos digitos
+            return $number;
         }
         
         public static function CriarLOG($mensagem, $utilizador){

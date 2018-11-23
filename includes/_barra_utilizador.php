@@ -28,7 +28,8 @@
             <i class="fa fa-cog"></i> 
         </button>
         <div class="dropdown-menu" aria-labelledby="d1">
-            <a class="dropdown-item" href="?a=perfil_configuracoes">Configurações</a>
+            <a class="dropdown-item" href="?a=perfil_configuracoes"><strong>Configurações</strong></a>
+            <a class="dropdown-item" href="?a=perfil_alterar_login">Alterar Login</a>
             <a class="dropdown-item" href="?a=perfil_alterar_senha">Alterar Password</a>
             <a class="dropdown-item" href="?a=perfil_alterar_email">Alterar Email</a>
 
