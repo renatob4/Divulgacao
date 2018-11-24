@@ -76,6 +76,14 @@
         //Alterar Login
         case 'perfil_alterar_login':            include_once('users/perfil_alterar_login.php'); break;
 
+        // ========================== CONTROLE DE DADOS =======================
+
+        //Alterar Login
+        case 'card_deletar':                    include_once('controls/card_deletar.php'); break;
+
+        //Alterar Login
+        case 'card_editar':                     include_once('controls/card_editar.php'); break;
+
         // ============================ SETUP =================================
 
         //Criar a base de dados

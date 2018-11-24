@@ -48,7 +48,7 @@
                         <h4 id="black"><i class="fas fa-phone-square mr-2 "></i>Fale conosco:</h4><hr>
                         <h5>Telefone 1: <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_1'])?></h5>
                         <h5>Telefone 2: <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_2'])?></h5><hr>
-                        <p id="black">Ou envie um e-mail direto <a href="?a=contatos">Aqui</a></p>
+                        <p id="black"><i class="fas fa-envelope ml-2 mr-1"></i>Ou envie um e-mail direto <a href="?a=contatos">Aqui</a></p>
                     </div>
                 </div>
             </div>
@@ -62,11 +62,25 @@
                         <p class="titulo-painel"><?php echo $card[0]['ds_title']?></p>
                         <p><?php echo $card[0]['ds_content']?></p>
                         <div class="text-center p-0 ml-0">
-                            <?php if(funcoes::VerificarLogin()) :?>                           
-                                <a href="" class="btn btn-primary">Saiba mais...</a>
-                                <a href="" class="btn btn-outline-success mr-3"><i class="fas fa-edit"></i></a>
+                            <?php if(funcoes::VerificarLogin()) :?>
+                                <a href="#edit" class="btn btn-outline-success p-2 mr-1" data-toggle="collapse" role="button" aria-expanded="false"><i class="fas fa-edit"></i>Edit</a>                    
+                                <a href="?a=conteudo&card=<?php echo $card[0]['cd_card']?>" class="btn btn-primary p-2">Saiba mais</a>
+                                <a href="?a=card_deletar&card=<?php echo $card[0]['cd_card']?>" class="btn btn-outline-danger p-2 ml-1"><i class="fas fa-trash"></i>Del</a>   
+                                <div class="collapse" id="edit"><hr>
+                                    <div class="text-left"> 
+                                        <div class="form-goup mt-2">
+                                            <label><b>Título:</b></label>
+                                            <input type="text" name="card_text_titulo" class="form-control">
+                                        </div>
+                                        <div class="form-goup mt-2">
+                                            <label><b>Conteúdo:</b></label>
+                                            <textarea type="text" name="card_text_content" class="form-control"></textarea>
+                                        </div>  
+                                    </div>
+                                    <div class="text-right p-0 mr-0 mt-2"><a href="?a=card_editar&card=<?php echo $card[0]['cd_card']?>" class="btn btn-success">Aplicar</a></div>
+                                </div>
                             <?php else : ?>
-                                <button class="btn btn-primary">Saiba mais...</button>
+                                <a href="?a=conteudo&card=<?php echo $card[0]['cd_card']?>" class="btn btn-primary p-2">Saiba mais...</a>
                             <?php endif; ?>
                         </div>
                     </div>              
