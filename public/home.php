@@ -39,7 +39,7 @@
                     <div class="text-center p-4">
                         <h4 class="mb-3">Apresentação</h4>
                         <!-- Dados contidos no campo 'ds_presentation' do banco de dados -->
-                        <?php echo $conteudo[0]['ds_presentation']?>
+                        <p class="mb-4"><?php echo $conteudo[0]['ds_presentation']?></p>        
                     </div>
                 </div>
                 <!-- Painel rapido de contatos telefonicos -->
@@ -62,10 +62,9 @@
                         <p class="titulo-painel"><?php echo $card[0]['ds_title']?></p>
                         <p><?php echo $card[0]['ds_content']?></p>
                         <div class="text-center p-0 ml-0">
-                            <?php if(funcoes::VerificarLogin()) :?>
-                                <a href="?a=gerenciar_estoque&clear=true" class="btn btn-outline-success m-0 mr-2"><i class="fas fa-edit"></i></a>
+                            <?php if(funcoes::VerificarLogin()) :?>                           
                                 <a href="" class="btn btn-primary">Saiba mais...</a>
-                                <a href="?a=gerenciar_estoque&clear=true" class="btn btn-outline-danger m-0 ml-2"><i class="fas fa-trash-alt"></i></a>
+                                <a href="" class="btn btn-outline-success mr-3"><i class="fas fa-edit"></i></a>
                             <?php else : ?>
                                 <button class="btn btn-primary">Saiba mais...</button>
                             <?php endif; ?>
@@ -87,7 +86,7 @@
                         <p><?php echo $card[2]['ds_content']?></p>
                         <a href="" class="btn btn-primary">Saiba mais...</a>
                     </div>              
-                </div>   
+                </div>                
         </div>
 
 <!-- ______________________________________________________________________________________________________________________________________ -->
