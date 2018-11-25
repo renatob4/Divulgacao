@@ -69,7 +69,7 @@ $gestor->EXE_NON_QUERY(
 for($i = 0; $i < 3; $i++){
     //definição de parametros/dados
     $parametros = [
-        ':ds_title'             =>  'Título do Card '.($i+1),
+        ':ds_title'             =>  'Título do Card ',
         ':ds_content'           =>  'Aqui ficam expostas noticias, atualizações, promoções ou avisos importantes que precisem ficar destacados.',
         ':dt_register'          =>  $data->format('Y-m-d H:i:s'),
         ':dt_updated'           =>  $data->format('Y-m-d H:i:s')
@@ -82,4 +82,4 @@ for($i = 0; $i < 3; $i++){
 
 ?>
 
-<div class="alert alert-success text-center m-0">Conteúdo inserido com sucesso.</div>
+<div class="alert alert-success text-center mt-2 mb-2">Conteúdo inserido com sucesso.</div>

@@ -13,8 +13,15 @@
     border: 2px solid rgb(62, 194, 247);
     margin-top: 15px;
     background-color: white;
+
 }
 .titulo-painel{
     font-size: 1.2em;
     font-weight: bold;
+}
+.borda-painel{
+    border: 2px solid rgb(62, 194, 247);
+}
+.conteudo-baixo{
+    min-height: 100px;
 }

@@ -51,6 +51,9 @@
         //Pagina de contatos
         case 'galeria':                        include_once('public/galeria.php'); break;
 
+        //Pagina de contatos
+        case 'conteudo':                        include_once('public/conteudo.php'); break;
+
         // ========================= LOGIN/LOGOUT =============================
 
         //Pagina de Login
@@ -83,6 +86,9 @@
 
         //Alterar Login
         case 'card_editar':                     include_once('controls/card_editar.php'); break;
+
+        //Alterar Login
+        case 'card_inserir':                     include_once('controls/card_inserir.php'); break;
 
         // ============================ SETUP =================================
 

@@ -53,4 +53,4 @@ $gestor->EXE_NON_QUERY(
 
 ?>
 
-<div class="alert alert-success text-center m-0">Utilizadores inseridos com sucesso.</div>
+<div class="alert alert-success text-center mt-2 mb-2">Utilizadores inseridos com sucesso.</div>

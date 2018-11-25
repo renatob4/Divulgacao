@@ -70,7 +70,7 @@
         'CREATE TABLE tab_card('.
         'cd_card                        INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
         'ds_title                       VARCHAR(50), '.
-        'ds_content                     VARCHAR(255), '.
+        'ds_content                     TEXT, '.
         'dt_register                    DATETIME, '.
         'dt_updated                     DATETIME)'
     );
@@ -83,9 +83,14 @@
         'cd_login                        NVARCHAR(50), '.
         'ds_message                      NVARCHAR(256))'
     );
-
 ?>
 
-<div class="alert alert-success text-center">Base de dados criada com sucesso!</div>
+<div class="alert alert-success text-center mt-2 mb-2">Base de dados criada com sucesso!</div>
+
+<?php
+    //Como a base inteira foi zerada, ele automaticamente insere conteudo e user padrão.
+    include_once('setup_inserir_conteudo.php');
+    include_once('setup_inserir_utilizadores.php');
+?>
 
 
