@@ -59,12 +59,18 @@
         <div class="row">
             <?php for($i = 0; $i<=count($card)-1; $i++) :?>
                 <!-- CARD-->
-                <div class="col-md-4 col-sm-6 col-xs-12">
+                <?php if(count($card) >= 3) :?>
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                <?php elseif(count($card) == 2) :?>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                <?php else :?>
+                    <div class="col-md-12 col-sm-6 col-xs-12">
+                <?php endif;?>
                     <div class="panel panel-default text-center espaco-paineis">
                         <!-- Titulo carregado direto da base de dados -->
                         <p class="titulo-painel"><?php echo $card[$i]['ds_title']?></p>
                         <!-- Conteúdo carregado direto da base de dados -->
-                        <div class="conteudo-baixo"><p><?php echo substr($card[$i]['ds_content'], 0, 225).'  (...)'?></p></div>
+                        <div class="conteudo-baixo mb-3"><div><?php echo substr($card[$i]['ds_content'], 0, 225)?></div></div>
                         <div class="text-center p-0 ml-0">
                             <?php if(funcoes::VerificarLogin()) :?>
                                 <a href="#edit<?php echo $card[$i]['cd_card']?>" class="btn btn-outline-success p-2 mr-1" data-toggle="collapse" role="button" aria-expanded="false"><i class="fas fa-edit"></i>Edit</a>                    
@@ -79,7 +85,7 @@
                                             </div>
                                             <div class="form-goup mt-2">
                                                 <label><b>Conteúdo:</b></label>
-                                                <textarea type="text" name="card_text_content" class="form-control"></textarea>
+                                                <textarea type="text" name="card_text_content" class="form-control" rows="3"></textarea>
                                             </div>  
                                             <div class="text-right p-0 mr-0 mt-2"><button type="submit" class="btn btn-success">Aplicar</button></div>
                                         </form>

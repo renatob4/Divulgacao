@@ -27,7 +27,8 @@
             'contatos',
             'servicos',
             'galeria',
-            'recuperar_senha'
+            'recuperar_senha',
+            'conteudo'
         ];
         //bypass do sistema normal
         if(!in_array($a, $routes_especiais)){
