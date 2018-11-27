@@ -45,10 +45,10 @@
             <div class="col card m-3 p-3">
                 <h4 class="text-center">PERFIL DE UTILIZADOR</h4>
                 <!--DADOS DO UTILIZADOR-->
-                <h5 class="mb-5 mt-3"><i class="fa fa-user mr-1" aria-hidden="true"></i><?php echo $dados[0]['nm_user'] ?></h5>
-                <h5 class="mb-3"><i class="far fa-id-badge mr-1" aria-hidden="true"></i>Login:  <label id="grey"><?php echo $dados[0]['cd_login']?></label><a href="?a=perfil_alterar_login" class="btn btn-outline-success m-0 ml-3"><i class="fas fa-edit"></i></a></h5>
-                <h5 class="mb-3"><i class="fa fa-key mr-1" aria-hidden="true"></i>Senha:  <label id="grey"><?php echo str_repeat("*", 6)?></label><a href="?a=perfil_alterar_senha" class="btn btn-outline-success m-0 ml-3"><i class="fas fa-edit"></i></a></h5>  
-                <h5 class="mb-3"><i class="fa fa-envelope mr-1" aria-hidden="true"></i>Email:  <label id="grey"><?php echo $dados[0]['ds_email']?></label><a href="?a=perfil_alterar_email" class="btn btn-outline-success m-0 ml-3"><i class="fas fa-edit"></i></a></h5>
+                <h5 class="mb-5 mt-3"><i class="fa fa-user mr-2" aria-hidden="true"></i><?php echo $dados[0]['nm_user'] ?></h5>
+                <h5 class="mb-3"><i class="far fa-id-badge mr-2" aria-hidden="true"></i>Login:  <label id="grey"><?php echo $dados[0]['cd_login']?></label><a href="?a=perfil_alterar_login" class="btn btn-outline-success m-0 ml-3"><i class="fas fa-edit"></i></a></h5>
+                <h5 class="mb-3"><i class="fa fa-key mr-2" aria-hidden="true"></i>Senha:  <label id="grey"><?php echo str_repeat("*", 6)?></label><a href="?a=perfil_alterar_senha" class="btn btn-outline-success m-0 ml-3"><i class="fas fa-edit"></i></a></h5>  
+                <h5 class="mb-3"><i class="fa fa-envelope mr-2" aria-hidden="true"></i>Email:  <label id="grey"><?php echo $dados[0]['ds_email']?></label><a href="?a=perfil_alterar_email" class="btn btn-outline-success m-0 ml-3"><i class="fas fa-edit"></i></a></h5>
                 <!--DADOS DO CONTEÚDO DO SITE-->
                 <hr><h4 class="text-center">GERENCIAR CONTEÚDO DO SITE</h4>
                  <!--Voltar--> 

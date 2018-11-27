@@ -50,7 +50,8 @@
                                   rows="10" ><?php echo $card[0]['ds_content']?></textarea>
                     </div>  
                     <div class="text-right p-0 mr-0 mt-2">
-                        <button type="submit" class="btn btn-success borda-painel">Aplicar</button>
+                        <a href="?a=card_deletar&card=<?php echo $card[0]['cd_card']?>" class="btn btn-danger borda-painel mr-2"><i class="fas fa-trash"></i>Apagar</a>
+                        <button type="submit" class="btn btn-success borda-painel"><i class="fas fa-edit"></i>Aplicar alterações</button>
                     </div>
                 </form>
             </div>

@@ -10,12 +10,11 @@
     //busca o conteúdo da pagina no banco de dados.
     $conteudo = $acesso->EXE_QUERY('SELECT * FROM tab_content');
     $card = $acesso->EXE_QUERY('SELECT * FROM tab_card');
+    $post = $acesso->EXE_QUERY('SELECT * FROM tab_post');
 
 ?>
 <!-- ________________________________________________________CONTEÚDO DA PAGINA INICIAL__________________________________________________________ -->
 
-        <!-- Barra divisoria branca -->
-        <div class="row barra-branca"></div>
         <!-- Imagem Painel -->
         <div class="row">
             <div class="imagem-painel">
@@ -24,14 +23,6 @@
                 </div>
             </div>
         </div>
-
-        <!-- Nome da empresa e slogan -->
-         <!-- <div class="row">
-            <div class="col-xs-6 col-xs-offset-3 text-center espaco-services mt-2 pb-0">
-                <h1><?php //echo $conteudo[0]['nm_company']?></h1>
-                <p><?php //echo $conteudo[0]['ds_slogan']?></p>
-            </div>
-         </div> -->
 
         <!-- Apresentação da empresa, texto. -->
         <hr>
@@ -43,8 +34,8 @@
                         <p class="mb-4"><?php echo $conteudo[0]['ds_presentation']?></p>        
                     </div>
                 </div>
-                <!-- Painel rapido de contatos telefonicos -->
                 <div class="col-md-4 p-0">
+                    <!-- Painel rapido de contatos telefonicos -->
                     <div class="card painel-direito text-center p-4 ml-3">
                         <h4 id="black"><i class="fas fa-phone-square mr-2 "></i>Fale conosco:</h4><hr>
                         <h5>Telefone 1: <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_1'])?></h5>
@@ -53,7 +44,7 @@
                     </div>
                 </div>
             </div>
-        <hr>
+        <hr class="mb-1">
 
         <!-- Cards de texto -->
         <div class="row">
@@ -105,7 +96,7 @@
             <?php if(count($card) < 6) :?>      
             <div class="row text-right p-0 mt-2 ">
                 <div class="col">
-                    <a href="?a=card_inserir" class="btn btn-success text-center borda-painel" >Adicinar novo card<i class="fas fa-plus-square mr-2 ml-2"></i></a>                   
+                    <a href="?a=card_inserir" class="btn btn-success text-center mt-2">Adicinar novo card<i class="fas fa-plus-square mr-2 ml-2"></i></a>                   
                 </div>
             </div>
             <?php else :?>
@@ -116,6 +107,27 @@
                 </div>
             <?php endif; ?>
         <?php endif;?>
+
+        <!-- Noticias/Microforum -->
+        <hr>
+        <div class="row borda-painel m-0">
+            <div class="col p-0">
+                <div class="card painel-direito"><div id="black" class="text-center mt-3"><h5>NOTICIAS RECENTES</h5></div>
+                    <!-- Corpo da noticia -->
+                    <div class="card text-left p-0 m-2">
+                        <div class="p-2">
+                            <div class="row p-0">
+                                <div id="black" class="col-sm-6 text-left m-0"><h6>Título | <label id="grey">Nome do autor </label>
+                                <?php echo funcoes::VerificarLogin()? "<a class='ml-3' href='?a=post_editar'>Editar</a> | <a href='?a=post_deletar'>Apagar</a>" : "";?></h6></div>
+                                <div id="grey" class="col text-right mr-3"><h6>data</h6></div>                               
+                            </div><hr class="mb-1 mt-0">
+                            <p>Nisi nostrud ullamco velit incididunt nisi ut dolor incididunt sint laborum proident irure ea occaecat.</p>
+                        </div>
+                    </div>
+                    <!-- Encerra corpo -->
+                </div>
+            </div>
+        </div>
 
 <!-- ______________________________________________________________________________________________________________________________________ -->
 

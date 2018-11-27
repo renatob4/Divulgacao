@@ -75,6 +75,17 @@
         'dt_updated                     DATETIME)'
     );
 
+    //tabela tab_posts
+    $gestor->EXE_NON_QUERY(
+        'CREATE TABLE tab_post('.
+        'cd_post                        INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
+        'ds_title                       VARCHAR(50), '.
+        'ds_content                     VARCHAR(255), '.
+        'nm_autor                       VARCHAR(30), '.
+        'dt_register                    DATETIME, '.
+        'dt_updated                     DATETIME)'
+    );
+
     //tabela tab_log
     $gestor->EXE_NON_QUERY(
         'CREATE TABLE tab_log('.
