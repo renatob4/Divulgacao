@@ -48,7 +48,7 @@
 
         <!-- Cards de texto -->
         <div class="row">
-            <?php for($i = 0; $i<=count($card)-1; $i++) :?>
+            <?php for($i = 0; $i <= count($card)-1; $i++) :?>
                 <!-- CARD-->
                 <?php if(count($card) >= 3) :?>
                     <div class="col-md-4 col-sm-6 col-xs-12">
@@ -109,25 +109,50 @@
         <?php endif;?>
 
         <!-- Noticias/Microforum -->
+        <?php if(count($post) > 0) :?>
         <hr>
         <div class="row borda-painel m-0">
             <div class="col p-0">
-                <div class="card painel-direito"><div id="black" class="text-center mt-3"><h5>NOTICIAS RECENTES</h5></div>
-                    <!-- Corpo da noticia -->
-                    <div class="card text-left p-0 m-2">
-                        <div class="p-2">
-                            <div class="row p-0">
-                                <div id="black" class="col-sm-6 text-left m-0"><h6>Título | <label id="grey">Nome do autor </label>
-                                <?php echo funcoes::VerificarLogin()? "<a class='ml-3' href='?a=post_editar'>Editar</a> | <a href='?a=post_deletar'>Apagar</a>" : "";?></h6></div>
-                                <div id="grey" class="col text-right mr-3"><h6>data</h6></div>                               
-                            </div><hr class="mb-1 mt-0">
-                            <p>Nisi nostrud ullamco velit incididunt nisi ut dolor incididunt sint laborum proident irure ea occaecat.</p>
-                        </div>
-                    </div>
-                    <!-- Encerra corpo -->
+                <div class="card painel-direito"><div id="black" class="text-center mt-3 mb-2"><h5>NOTÍCIAS RECENTES</h5></div>
+                    <?php for($x = 0; $x < count($post); $x++) :?>
+                        <!-- Corpo da noticia -->
+                        <div class="card text-left p-0 m-2">
+                            <div class="p-2">
+                                <div class="row p-0">
+                                    <div id="black" class="col-sm-6 text-left m-0"><h6><?php echo $post[$x]['ds_title']?> | <label id="grey"><?php echo $post[$x]['nm_autor']?> </label>                                
+                                    <?php if(funcoes::VerificarLogin()):?>
+                                        <a class="ml-3" href="?a=post_editar&post=<?php echo $post[$x]['cd_post']?>">Editar</a> | <a href="?a=post_deletar&post=<?php echo $post[$x]['cd_post']?>">Apagar</a>
+                                    <?php endif;?></h6></div>                                  
+                                    <div id="grey" class="col text-right mr-2"><h6><?php echo $post[$x]['dt_updated']?></h6></div>                               
+                                </div><hr class="mb-1 mt-0">
+                                <p><?php echo $post[$x]['ds_content']?></p>
+                            </div>
+                        </div><!-- Encerra corpo -->
+                    <?php endfor;?>
                 </div>
-            </div>
+            </div>   
         </div>
+        <?php endif; ?>
+        <!-- Form para postar noticias -->
+        <?php if(funcoes::VerificarLogin()) :?>
+            <hr><form class="p-0" action="?a=post_inserir" method="POST">
+                <div class="form-row">
+                    <div class="col-md-8">
+                        <label><b>Título:</b></label>
+                        <input type="text" name="post_text_titulo" class="form-control" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label><b>Autor:</b></label>
+                        <input type="text" name="post_text_autor" class="form-control" value="<?php echo $_SESSION['nm_user']?>" required>
+                    </div>                      
+                </div>
+                <div class="form-goup">
+                    <label><b>Conteúdo:</b></label>
+                    <textarea type="text" name="post_text_content" class="form-control" rows="3" required></textarea>
+                </div>  
+                <div class="text-right p-0 mr-0 mt-3"><button type="submit" class="btn btn-success">Postar<i class="fas fa-plus-square mr-2 ml-2"></i></button></div>
+            </form>
+        <?php endif;?>
 
 <!-- ______________________________________________________________________________________________________________________________________ -->
 

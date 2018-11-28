@@ -82,14 +82,23 @@
 
         // ========================== CONTROLE DE DADOS =======================
 
-        //Alterar Login
+        //Deletar Card
         case 'card_deletar':                    include_once('controls/card_deletar.php'); break;
 
-        //Alterar Login
+        //Editar Card
         case 'card_editar':                     include_once('controls/card_editar.php'); break;
 
-        //Alterar Login
-        case 'card_inserir':                     include_once('controls/card_inserir.php'); break;
+        //Inserir Card
+        case 'card_inserir':                    include_once('controls/card_inserir.php'); break;
+
+        //Deletar Post
+        case 'post_deletar':                    include_once('controls/post_deletar.php'); break;
+
+        //Alterar Post
+        case 'post_editar':                     include_once('controls/post_editar.php'); break;
+
+        //Inserir Post
+        case 'post_inserir':                    include_once('controls/post_inserir.php'); break;
 
         // ============================ SETUP =================================
 
