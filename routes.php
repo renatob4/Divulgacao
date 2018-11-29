@@ -16,13 +16,9 @@
 
     //verificar o login ativo
     if(!funcoes::VerificarLogin()){
-        //Casos especiais (PODEM SER ACESSADOS MESMO O ADM NÃO ESTANDO LOGADO) ***
+        //PODEM SER ACESSADOS MESMO O ADM NÃO ESTANDO LOGADO
         $routes_especiais = [
             'recuperar_senha',
-            'setup',
-            'setup_criar_bd',
-            'setup_inserir_utilizadores',
-            'setup_inserir_conteudo',
             'login',
             'contatos',
             'servicos',

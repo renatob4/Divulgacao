@@ -5,6 +5,7 @@
     }
     //verifica se existe card definido
     if(!isset($_GET['card'])){
+        header("Location:?a=home");
         exit();
     } 
 

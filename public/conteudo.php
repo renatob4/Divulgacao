@@ -1,4 +1,9 @@
 <?php
+
+    // ========================================
+    // Referente ao forma da Pagina CONTEUDO ao abrir um card
+    // ========================================
+
     //verificar a sessão.
     if(!isset($_SESSION['a'])){
         exit();
@@ -7,20 +12,23 @@
     //Instancia do banco de dados.
     $acesso = new cl_gestorBD();
 
-     //Pega o codigo do card na URL
-     $cd_card = $_GET['card'];
+    //Pega o codigo do card na URL
+    if(isset($_GET['card']))
+        $cd_card = $_GET['card'];
+    else
+        header("Location:?a=home");    
 
-     //pesquisa se existe card com esse codigo na base
-     $parametros = [
-         ':cd_card'   =>  $cd_card
-     ];
-     $card = $acesso->EXE_QUERY('SELECT * FROM tab_card WHERE cd_card = :cd_card', $parametros);
+    //pesquisa se existe card com esse codigo na base
+    $parametros = [
+        ':cd_card'   =>  $cd_card
+    ];
+    $card = $acesso->EXE_QUERY('SELECT * FROM tab_card WHERE cd_card = :cd_card', $parametros);
      
-     //Se não existir card de mesmo codigo na base ele encerra.
-     if(count($card) == 0){
-         header("Location:?a=home");
-         exit();
-     }
+    //Se não existir card de mesmo codigo na base ele encerra.
+    if(count($card) == 0){
+        header("Location:?a=home");
+        exit();
+    }
 ?>
 
 <div class="row borda-painel">

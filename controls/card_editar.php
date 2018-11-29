@@ -1,17 +1,25 @@
 <?php
+
+    // ========================================
+    // Referente ao forma da Pagina HOME
+    // ========================================
+
     //verificar a sessão.
     if(!isset($_SESSION['a'])){
         exit();
     }
-    //verifica se existe card definido
+
+    // verifica se existe card definido
     if(!isset($_GET['card'])){
+        header("Location:?a=home");
         exit();
     } 
 
     //Instancia do banco de dados.
     $acesso = new cl_gestorBD();
+    $data = new DateTime();
 
-    //Pega o codigo do card na URL
+    //Pega card da url
     $cd_card = $_GET['card'];
 
     //pesquisa se existe card com esse codigo na base
@@ -41,13 +49,16 @@
         $parametros = [
             ':cd_card'      =>  $cd_card,
             ':ds_title'     =>  $novo_titulo,
-            ':ds_content'   =>  $novo_conteudo
+            ':ds_content'   =>  $novo_conteudo,
+            ':dt_updated'   =>  $data->format('Y-m-d H:i:s')
         ];  
         //Atualizar a DB
-        $acesso->EXE_NON_QUERY('UPDATE tab_card SET ds_title = :ds_title, ds_content = :ds_content WHERE cd_card = :cd_card', $parametros);
+        $acesso->EXE_NON_QUERY('UPDATE tab_card SET ds_title = :ds_title, ds_content = :ds_content, dt_updated = :dt_updated 
+                                WHERE cd_card = :cd_card', $parametros);
+    
+        //Redirecionar
+        header("Location:?a=home");
     }
-
-    header("Location:?a=home");
 ?>
 
 

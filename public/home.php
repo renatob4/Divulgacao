@@ -29,7 +29,7 @@
             <div class="row m-1">
                 <div class="col-md-8 p-0">
                     <div class="text-center p-4">
-                        <h4 class="mb-3">Apresentação</h4>
+                        <h4 class="mb-3">APRESENTAÇÃO</h4>
                         <!-- Dados contidos no campo 'ds_presentation' do banco de dados -->
                         <p class="mb-4"><?php echo $conteudo[0]['ds_presentation']?></p>        
                     </div>
@@ -64,9 +64,9 @@
                         <div class="conteudo-baixo mb-3"><div><?php echo substr($card[$i]['ds_content'], 0, 225)?></div></div>
                         <div class="text-center p-0 ml-0">
                             <?php if(funcoes::VerificarLogin()) :?>
-                                <a href="#edit<?php echo $card[$i]['cd_card']?>" class="btn btn-outline-success p-2 mr-1" data-toggle="collapse" role="button" aria-expanded="false"><i class="fas fa-edit"></i>Edit</a>                    
+                                <a href="#edit<?php echo $card[$i]['cd_card']?>" class="btn btn-outline-success p-2 mr-1" data-toggle="collapse" role="button" aria-expanded="false"><i class="fas fa-edit mr-1"></i>Edit</a>                    
                                 <a href="?a=conteudo&card=<?php echo $card[$i]['cd_card']?>" class="btn btn-primary p-2">Saiba mais</a>
-                                <a href="?a=card_deletar&card=<?php echo $card[$i]['cd_card']?>" class="btn btn-outline-danger p-2 ml-1"><i class="fas fa-trash"></i>Del</a>   
+                                <a href="?a=card_deletar&card=<?php echo $card[$i]['cd_card']?>" class="btn btn-outline-danger p-2 ml-1"><i class="fas fa-trash mr-1"></i>Del</a>   
                                 <div class="collapse" id="edit<?php echo $card[$i]['cd_card']?>"><hr>
                                     <div class="text-left">
                                         <form action="?a=card_editar&card=<?php echo $card[$i]['cd_card']?>" method="POST">
@@ -83,7 +83,7 @@
                                     </div>
                                 </div>
                             <?php else : ?>
-                                <a href="?a=conteudo&card=<?php echo $card[$i]['cd_card']?>" class="btn btn-primary p-2">Saiba mais...</a>
+                                <a href="?a=conteudo&card=<?php echo $card[$i]['cd_card']?>" class="btn btn-primary p-2">Saiba mais</a>
                             <?php endif; ?>
                         </div>
                     </div>              
@@ -123,7 +123,7 @@
                                     <?php if(funcoes::VerificarLogin()):?>
                                         <a class="ml-3" href="?a=post_editar&post=<?php echo $post[$x]['cd_post']?>">Editar</a> | <a href="?a=post_deletar&post=<?php echo $post[$x]['cd_post']?>">Apagar</a>
                                     <?php endif;?></h6></div>                                  
-                                    <div id="grey" class="col text-right mr-2"><h6><?php echo $post[$x]['dt_updated']?></h6></div>                               
+                                    <div id="grey" class="col text-right mr-2"><h6><?php echo $post[$x]['dt_register']?></h6></div>                               
                                 </div><hr class="mb-1 mt-0">
                                 <p><?php echo $post[$x]['ds_content']?></p>
                             </div>
