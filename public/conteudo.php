@@ -34,7 +34,7 @@
 <div class="row borda-painel">
     <div class="col p-0">
         <div class="card p-5">
-            <div><h5 class="text-right" id="grey"><?php echo $card[0]['dt_updated']?></h5><h4 class="text-center"><?php echo $card[0]['ds_title']?></h4></div>
+            <div><h5 class="text-right" id="grey"><i class="far fa-clock mr-2"></i><?php echo $card[0]['dt_updated']?></h5><h4 class="text-center"><i id="gold" class="fas fa-star mr-2"></i><?php echo $card[0]['ds_title']?></h4></div>
             <div class="card text-center p-3 m-3 mb-5"><p><?php echo $card[0]['ds_content']?></p></div>
         </div>
     </div>
@@ -47,19 +47,20 @@
                 <h5 id="black" class="text-left">Edite as informações do conteúdo acima:</h5>
                 <form action="?a=card_editar&card=<?php echo $card[0]['cd_card']?>" method="POST">
                     <div class="form-goup mt-2">
-                        <label><b>Título:</b></label>
-                        <input type="text" name="cardtext_titulo" class="form-control" value="<?php echo $card[0]['ds_title']?>">
+                        <label><b><i class="far fa-star mr-2"></i>Título:</b></label>
+                        <input type="text" name="cardtext_titulo" class="form-control" value="<?php echo $card[0]['ds_title']?> required">
                     </div>
                     <div class="form-goup mt-2">
-                        <label><b>Conteúdo:</b></label>
+                        <label><b><i class="fas fa-file-alt mr-2"></i>Conteúdo:</b></label>
                         <textarea type="text" 
                                   name="cardtext_content" 
                                   class="form-control" 
-                                  rows="10" ><?php echo $card[0]['ds_content']?></textarea>
+                                  rows="10" 
+                                  required><?php echo $card[0]['ds_content']?></textarea>
                     </div>  
                     <div class="text-right p-0 mr-0 mt-2">
-                        <a href="?a=card_deletar&card=<?php echo $card[0]['cd_card']?>" class="btn btn-danger borda-painel mr-2"><i class="fas fa-trash"></i>Apagar</a>
-                        <button type="submit" class="btn btn-success borda-painel"><i class="fas fa-edit"></i>Aplicar alterações</button>
+                        <a href="?a=card_deletar&card=<?php echo $card[0]['cd_card']?>" class="btn btn-danger borda-painel mr-2"><i class="fas fa-trash mr-2"></i>Apagar</a>
+                        <button type="submit" class="btn btn-success borda-painel"><i class="fas fa-edit mr-2"></i>Aplicar alterações</button>
                     </div>
                 </form>
             </div>

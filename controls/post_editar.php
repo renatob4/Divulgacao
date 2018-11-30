@@ -52,8 +52,8 @@
 <div class="card borda-painel text-left mt-3 p-0 m-0">
     <div class="p-2">
         <div class="row p-0">
-            <div id="black" class="col-sm-6 text-left m-0"><h6><?php echo $post[0]['ds_title']?> | <label id="grey"><?php echo $post[0]['nm_autor']?></label></h6></div>                                  
-            <div id="grey" class="col text-right mr-2"><h6><?php echo $post[0]['dt_updated']?></h6></div>                               
+            <div id="black" class="col-sm-6 text-left m-0"><h6><i class="fas fa-flag mr-2"></i><?php echo $post[0]['ds_title']?> | <label id="grey"><?php echo $post[0]['nm_autor']?></label></h6></div>                                  
+            <div id="grey" class="col text-right mr-2"><h6><i class="far fa-clock mr-2"></i><?php echo $post[0]['dt_updated']?></h6></div>                               
         </div><hr class="mb-1 mt-0">
         <p><?php echo $post[0]['ds_content']?></p>
     </div>
@@ -62,24 +62,25 @@
 <div class="row mt-5">
     <div class="col p-0">
         <div class="card painel-direito p-3">
-            <h5 id="black" class="text-left">Edite as informações do POST acima:</h5>
+            <h5 id="black" class="text-left mb-3">Edite as informações do POST acima:</h5>
             <form method="POST" action="?a=post_editar&post=<?php echo $post[0]['cd_post']?>">
                 <div class="form-row">
                         <div class="col-md-8">
-                            <label><b>Título:</b></label>
+                            <label><b><i class="far fa-star mr-2"></i>Título:</b></label>
                             <input type="text" name="posttext_titulo" class="form-control" value="<?php echo $post[0]['ds_title']?>" required>
                         </div>
                         <div class="col-md-4">
-                            <label><b>Autor:</b></label>
+                            <label><b><i class="far fa-user mr-2"></i>Autor:</b></label>
                             <input type="text" name="posttext_autor" class="form-control" value="<?php echo $post[0]['nm_autor']?>" required>
                         </div>                      
                     </div>
                 <div class="form-goup mt-2">
-                    <label><b>Conteúdo:</b></label>
+                    <label><b><i class="fas fa-file-alt mr-2"></i>Conteúdo:</b></label>
                     <textarea type="text" 
                                 name="posttext_content" 
                                 class="form-control" 
-                                rows="5" ><?php echo $post[0]['ds_content']?></textarea>
+                                rows="5" 
+                                required><?php echo $post[0]['ds_content']?></textarea>
                 </div>
                 <div class="text-right p-0 mr-0 mt-2">
                     <a href="?a=post_deletar&post=<?php echo $post[0]['cd_post']?>" class="btn btn-danger borda-painel mr-2"><i class="fas fa-trash mr-1"></i>Apagar</a>

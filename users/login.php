@@ -80,10 +80,10 @@
 
             <form action="?a=login" method="post">
                 <div class="form-group">
-                    <input type="text" name="text_utilizador" class="form-control" placeholder="Utilizador">
+                    <input type="text" name="text_utilizador" class="form-control" placeholder="Utilizador" required>
                 </div>
                 <div class="form-group">
-                    <input type="password" name="text_password" class="form-control" placeholder="Password">
+                    <input type="password" name="text_password" class="form-control" placeholder="Password" required>
                 </div>
                 <div class="form-group text-center">
                     <button role="submit" class="btn btn-primary btn-size-150">Login</button>
