@@ -62,7 +62,7 @@
         // ========================== MANAGEMENT ==============================
 
         //Pagina de recuperação de senha
-        case 'perfil_configuracoes':            include_once('users/perfil_configuracoes.php'); break;
+        case 'configuracoes':                   include_once('users/configuracoes.php'); break;
 
         //Pagina de recuperação de senha
         case 'recuperar_senha':                 include_once('users/recuperar_senha.php'); break;
@@ -110,7 +110,5 @@
         //Inserir Conteúdo
         case 'setup_inserir_conteudo':          include_once('setup/setup.php'); break;
 
-    }    
-        
-?>                    
-
+    }       
+?>                  

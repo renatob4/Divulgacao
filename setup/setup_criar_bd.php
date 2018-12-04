@@ -40,7 +40,6 @@
         'CREATE TABLE tab_content('.
         'cd_info                        INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
         'nm_company                     VARCHAR(60), '.
-        'ds_slogan                      VARCHAR(255), '.
         'ds_presentation                TEXT, '.
         'ds_email                       VARCHAR(60), '.
         'ds_document                    VARCHAR(18), '.

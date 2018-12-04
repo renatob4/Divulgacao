@@ -3,16 +3,14 @@
     if(!isset($_SESSION['a'])){
         exit();
     }
-
     //Instancia do banco de dados.
     $acesso = new cl_gestorBD();
-
     //busca o conteúdo da pagina no banco de dados.
     $conteudo = $acesso->EXE_QUERY('SELECT * FROM tab_content');
     $card = $acesso->EXE_QUERY('SELECT * FROM tab_card');
     $post = $acesso->EXE_QUERY('SELECT * FROM tab_post');
-
 ?>
+
 <!-- ________________________________________________________CONTEÚDO DA PAGINA INICIAL__________________________________________________________ -->
 
         <!-- Imagem Painel -->
@@ -23,7 +21,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Apresentação da empresa, texto. -->
         <hr>
             <div class="row m-1">
@@ -45,7 +42,6 @@
                 </div>
             </div>
         <hr class="mb-1">
-
         <!-- Cards de texto -->
         <div class="row">
             <?php for($i = 0; $i <= count($card)-1; $i++) :?>
@@ -90,7 +86,6 @@
                 </div>
             <?php endfor;?>
         </div>
-
         <!-- Botão para adição de novos cards, limitados a quantidade maxima de 6. -->
         <?php if(funcoes::VerificarLogin()) :?>
             <?php if(count($card) < 6) :?>      
@@ -107,7 +102,6 @@
                 </div>
             <?php endif; ?>
         <?php endif;?>
-
         <!-- Noticias/Microforum -->
         <?php if(count($post) > 0) :?>
         <hr>
@@ -135,7 +129,7 @@
         <?php endif; ?>
         <!-- Form para postar noticias -->
         <?php if(funcoes::VerificarLogin()) :?>
-            <hr><form class="p-0" action="?a=post_inserir" method="POST">
+            <hr><form class="p-0 mb-0" method="POST" action="?a=post_inserir">
                 <div class="form-row">
                     <div class="col-md-8">
                         <label><b><i class="far fa-star mr-2"></i>Título:</b></label>

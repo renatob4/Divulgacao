@@ -25,11 +25,7 @@ $data = new DateTime();
 //definição de parametros/dados
 $parametros = [
     ':nm_company'           => 'Empresa',
-    ':ds_slogan'            => 'Frase de impacto/Resumo da empresa ou negócio',
-    ':ds_presentation'      => 'Descrição breve sobre o negócio/empresa, seu ramo de atividade, 
-                                seus produtos ou serviços, seus objetivos, o foco,  osdiferenciais ou o que tem a oferecer de bom para o mundo. 
-                                Também é interessante conter um pouco da história da empresa no mercado ou algo que convide o consumidor
-                                a conhecer mais sobre o negocio. Palavras chaves e frases de impacto também são bem vindas.',
+    ':ds_presentation'      => 'Descrição breve sobre o negócio/empresa, seu ramo de atividade, seus produtos ou serviços, seus objetivos, o foco,  os diferenciais ou o que tem a oferecer de bom para o mundo. Também é interessante conter um pouco da história da empresa no mercado ou algo que convide o consumidor a conhecer mais sobre o negocio. Palavras chaves e frases de impacto também são bem vindas.',
     ':ds_email'             => 'empresa@contato.com',
     ':ds_document'          => '00.000.000/0001-12',
     ':cd_phone_1'           => '0000000000',
@@ -41,8 +37,8 @@ $parametros = [
 
 //inserir o conteúdo
 $gestor->EXE_NON_QUERY(
-    'INSERT INTO tab_content(nm_company, ds_slogan, ds_presentation, ds_email, ds_document, cd_phone_1, cd_phone_2, ds_text_footer, dt_register, dt_updated)
-     VALUES(:nm_company, :ds_slogan, :ds_presentation, :ds_email, :ds_document, :cd_phone_1, :cd_phone_2, :ds_text_footer, :dt_register, :dt_updated)', $parametros);
+    'INSERT INTO tab_content(nm_company, ds_presentation, ds_email, ds_document, cd_phone_1, cd_phone_2, ds_text_footer, dt_register, dt_updated)
+     VALUES(:nm_company, :ds_presentation, :ds_email, :ds_document, :cd_phone_1, :cd_phone_2, :ds_text_footer, :dt_register, :dt_updated)', $parametros);
 
 //--------------------------------------------------------------------------------- TABELA TAB_LINK
 

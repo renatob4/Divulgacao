@@ -27,6 +27,6 @@
             'INSERT INTO tab_post(ds_title, ds_content, nm_autor, dt_register, dt_updated)
             VALUES(:ds_title, :ds_content, :nm_autor, :dt_register, :dt_updated)', $parametros);
 
-        header("Location:?a=home");   
-    }
+        header("Location:?a=home");
+    } 
 ?>

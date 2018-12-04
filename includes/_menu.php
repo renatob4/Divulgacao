@@ -1,10 +1,7 @@
 <?php
-
     //======================== MENU SUSPENSO ============================
-
     //Instancia do banco de dados.
     $acesso = new cl_gestorBD();
-
     //busca o conteúdo da pagina no banco de dados.
     $conteudo = $acesso->EXE_QUERY('SELECT nm_company FROM tab_content');
 ?>

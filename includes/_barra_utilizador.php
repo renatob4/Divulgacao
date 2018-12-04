@@ -2,19 +2,16 @@
     // ==========================================================
     // Barra do utilizador
     // ==========================================================
-
     //verificar a sessão.
     if(!isset($_SESSION['a'])){
         exit();
     }
-
     $classe = 'barra_utilizador_inativo';
     //vefifica se existe login ativo
     if(funcoes::VerificarLogin()){
         $nome_utilizador = $_SESSION['nm_user'];
         $classe = 'barra_utilizador_ativo';
     }
-
 ?>
 
 <div class="barra_utilizador p-2">
@@ -28,19 +25,11 @@
             <i class="fa fa-cog"></i> 
         </button>
         <div class="dropdown-menu" aria-labelledby="d1">
-            <a class="dropdown-item" href="?a=perfil_configuracoes"><strong>Configurações</strong></a>
+            <a class="dropdown-item" href="?a=configuracoes"><strong>Configurações</strong></a>
             <a class="dropdown-item" href="?a=perfil_alterar_login">Alterar Login</a>
             <a class="dropdown-item" href="?a=perfil_alterar_senha">Alterar Password</a>
             <a class="dropdown-item" href="?a=perfil_alterar_email">Alterar Email</a>
-
             <div class="dropdown-divider"></div>
-            
-            <!-- opções disponíveis apenas para admin - indice 0 -->
-            <?php //if(funcoes::Permissao(0)): ?>
-                <!-- <a class="dropdown-item" href="?a=utilizadores_gerir">Gerir utilizadores</a>
-                <div class="dropdown-divider"></div> -->
-            <?php //endif; ?>
-                    
             <a class="dropdown-item" href="?a=logout">Logout</a>
         </div>
     </div>

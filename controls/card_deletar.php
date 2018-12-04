@@ -32,7 +32,6 @@
     ];  
     //Atualizar a DB
     $acesso->EXE_NON_QUERY('DELETE FROM tab_card WHERE cd_card = :cd_card', $parametros);
-
-
+    
     header("Location:?a=home");
 ?>
