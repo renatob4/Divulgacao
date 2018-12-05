@@ -33,7 +33,7 @@
 
 <div class="row borda-painel">
     <div class="col p-0">
-        <div class="card p-5">
+        <div class="card p-5 borda-painel">
             <div><h5 class="text-right" id="grey"><i class="far fa-clock mr-2"></i><?php echo $card[0]['dt_updated']?></h5><h4 class="text-center"><i id="gold" class="fas fa-star mr-2"></i><?php echo $card[0]['ds_title']?></h4></div>
             <div class="card text-center p-3 m-3 mb-5"><p><?php echo $card[0]['ds_content']?></p></div>
         </div>

@@ -16,10 +16,10 @@
                 </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item"><a class="texto-menu mr-3"><a href="?a=home">HOME</a></li>
-                    <li class="nav-item"><a class="texto-menu mr-3"><a href="?a=galeria">GALERIA</a></li>
-                    <li class="nav-item"><a class="texto-menu mr-3"><a href="?a=servicos">SERVIÇOS</a></li>
-                    <li class="nav-item"><a class="texto-menu mr-3"><a href="?a=contatos">CONTATOS</a></li>
+                    <li class="nav-item"><a class="texto-menu mr-3"><a href="?a=home"><i class="fas fa-home mr-1"></i>INICIO</a></li>
+                    <li class="nav-item"><a class="texto-menu mr-3"><a href="?a=galeria"><i class="fas fa-image mr-1"></i>GALERIA</a></li>
+                    <li class="nav-item"><a class="texto-menu mr-3"><a href="?a=servicos"><i class="fas fa-wrench mr-1"></i>SERVIÇOS</a></li>
+                    <li class="nav-item"><a class="texto-menu mr-3"><a href="?a=contatos"><i class="fas fa-phone mr-1"></i>CONTATOS</a></li>
                 </ul>
             </div>
         </nav>     

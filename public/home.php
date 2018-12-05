@@ -35,8 +35,10 @@
                     <!-- Painel rapido de contatos telefonicos -->
                     <div class="card painel-direito text-center p-4 ml-3">
                         <h4 id="black"><i class="fas fa-phone-square mr-2 "></i>Fale conosco:</h4><hr>
-                        <h5>Telefone 1: <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_1'])?></h5>
-                        <h5>Telefone 2: <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_2'])?></h5><hr>
+                        <h5><label id="black">Contato:</label> <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_1'])?></h5>
+                        <?php if($conteudo[0]['cd_phone_2'] != '') :?>
+                            <h5><label id="black">Ou:</label> <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_2'])?></h5><hr>
+                        <?php endif;?>    
                         <p id="black"><i class="fas fa-envelope ml-2 mr-1"></i>Ou envie um e-mail direto <a href="?a=contatos">Aqui</a></p>
                     </div>
                 </div>
@@ -107,13 +109,13 @@
         <hr>
         <div class="row borda-painel m-0">
             <div class="col p-0">
-                <div class="card painel-direito"><div id="black" class="text-center mt-3 mb-2"><h5><i class="fas fa-comments mr-2"></i>NOTÍCIAS RECENTES</h5></div>
+                <div class="card painel-direito"><div id="black" class="text-center mt-3 mb-2"><h5><i id="green" class="fas fa-comments mr-2"></i><label>NOTÍCIAS RECENTES</label></h5></div>
                     <?php for($x = 0; $x < count($post); $x++) :?>
                         <!-- Corpo da noticia -->
                         <div class="card text-left p-0 m-2">
                             <div class="p-2">
                                 <div class="row p-0">
-                                    <div id="black" class="col-sm-6 text-left m-0"><h6><i id="blue" class="fas fa-flag mr-2"></i><?php echo $post[$x]['ds_title']?> | <label id="grey"><?php echo $post[$x]['nm_autor']?> </label>                                
+                                    <div id="black" class="col-sm-6 text-left m-0"><h6><i id="green" class="fas fa-flag mr-2"></i><?php echo $post[$x]['ds_title']?> | <label id="grey"><?php echo $post[$x]['nm_autor']?> </label>                                
                                     <?php if(funcoes::VerificarLogin()):?>
                                         <a class="ml-3" href="?a=post_editar&post=<?php echo $post[$x]['cd_post']?>">Editar</a> | <a href="?a=post_deletar&post=<?php echo $post[$x]['cd_post']?>">Apagar</a>
                                     <?php endif;?></h6></div>                                  

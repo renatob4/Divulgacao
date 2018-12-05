@@ -33,6 +33,13 @@ body{
     background-color:rgb(150, 150, 150);
     color: green;
 }
+.Obs{
+    color: red;
+    font-size: 0.7em;
+}
+.und{
+    text-decoration: underline;
+}
 #black {
     color: black;
 }

@@ -10,8 +10,6 @@
 
     //busca o conteúdo da pagina no banco de dados.
     $conteudo = $acesso->EXE_QUERY('SELECT * FROM tab_content');
-
-
 ?>
 
 
@@ -19,7 +17,7 @@
 
     <div class="row">
         <div class="col p-0">
-            <div class="card p-5">
+            <div class="card p-5 borda-painel">
                 <h3 class="text-center">Esta é a pagina exemplo de Galeria!</h3>
             </div>
         </div>

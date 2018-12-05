@@ -30,7 +30,7 @@ $parametros = [
     ':ds_document'          => '00.000.000/0001-12',
     ':cd_phone_1'           => '0000000000',
     ':cd_phone_2'           => '0000000000',
-    ':ds_text_footer'       => 'Texto que fica contido no rodapé, também pode repetir o slogan da empresa, um convite ou agradecimento.',
+    ':ds_text_footer'       => 'Texto que fica exposto no rodapé, também pode conter o slogan da empresa, um convite ou agradecimento.',
     ':dt_register'          => $data->format('Y-m-d H:i:s'),
     ':dt_updated'           => $data->format('Y-m-d H:i:s')
 ];
@@ -48,8 +48,8 @@ $parametros = [
     ':ds_link_twit'         => 'https://twitter.com/login?lang=pt',
     ':ds_link_linked'       => 'https://br.linkedin.com/',
     ':ds_link_insta'        => 'https://www.instagram.com/',
-    ':ds_link_olx'          => 'https://www.olx.com.br/',
-    ':ds_link_market'       => 'https://www.mercadolivre.com.br/',
+    ':ds_link_olx'          => '',
+    ':ds_link_market'       => '',
     ':dt_register'          => $data->format('Y-m-d H:i:s'),
     ':dt_updated'           => $data->format('Y-m-d H:i:s')
 ];
