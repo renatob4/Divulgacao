@@ -5,7 +5,7 @@
     //busca o conteúdo da pagina no banco de dados.
     $conteudo = $acesso->EXE_QUERY('SELECT nm_company FROM tab_content');
 ?>
-<div class="row">
+<div class="row mr-1 ml-1">
     <div class="col m-0 mt-2 p-0">
         <nav class="navbar navbar-expand-sm navbar-dark bg-dark contentor-menu">
             <a href="?a=home" class="navbar-brand mb-0 mr-3 h1" id="lightseagreen"><?php echo $conteudo[0]['nm_company']?></a>

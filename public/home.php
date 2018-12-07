@@ -12,7 +12,7 @@
 ?>
 <!-- ________________________________________________________CONTEÚDO DA PAGINA INICIAL__________________________________________________________ -->
     <!-- Imagem Painel -->
-    <div class="row">
+    <div class="row mt-0 mr-1 ml-1">
         <div class="imagem-painel">
             <div class="posicao-botao">
                 <button class="btn btn-primary botao">Call to Action!</button>
@@ -32,23 +32,24 @@
             <div class="col-md-4 p-0">
                 <!-- Painel rapido de contatos telefonicos -->
                 <div class="card painel-direito text-center p-4">
-                    <h4 id="black"><i class="fas fa-phone-square mr-2"></i>Fale conosco:</h4><hr>
+                    <h4 id="black"><i class="fas fa-phone-square mr-2"></i>Fale conosco:</h4>
+                    <div class="card m-2 pt-4 p-3 borda-painel">
                     <h5><label class="mb-0" id="black">Contato:</label> <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_1'])?></h5>
                     <?php if($conteudo[0]['cd_phone_2'] != ''):?>
                         <h5><label id="black">Ou:</label> <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_2'])?></h5>
-                        <hr class="mt-1">
-                    <?php endif;?>
-                    <p id="black"><i class="fas fa-envelope ml-2 mr-1"></i>Ou envie um e-mail direto <a href="?a=contatos">Aqui</a></p>
+                        <?php endif;?>
+                    </div>
+                    <div class="text-center mt-2"><p id="black"><i class="fas fa-envelope ml-2 mr-1"></i>Ou envie um e-mail direto <a href="?a=contatos">Aqui</a></p></div>
                 </div>
                 <?php if($conteudo[0]['lnk_map'] != ''):?>
                 <!-- Painel rapido de localização/mapa -->
                 <div class="card painel-direito text-center p-2 pt-4 mt-3">
-                    <h4 id="black"><i class="fas fa-map-marked mr-2"></i>Encontre-nos:</h4>
+                    <h4 id="black"><i class="fas fa-map-marked mr-2"></i>Nos encontre:</h4>
                     <div class="card mt-2">
                         <!-- iframe do mapa -->
                         <?php echo $conteudo[0]['lnk_map']?>
                     </div>
-                    <div class="text-left mt-2 ml-1"><p id="black"><strong><i class="fas fa-thumbtack mr-1"></i>Endereço:</strong></p></div>    
+                    <!-- <div class="text-left mt-2 ml-1"><p id="black"><strong><i class="fas fa-thumbtack mr-1"></i>Endereço:</strong></p></div>     -->
                 </div>
                 <?php endif;?>
             </div>
@@ -73,7 +74,7 @@
                     <div class="text-center p-0 ml-0">
                         <?php if(funcoes::VerificarLogin()):?>
                             <a href="#edit<?php echo $card[$i]['cd_card']?>" class="btn btn-outline-success p-2 mr-1" data-toggle="collapse" role="button" aria-expanded="false"><i class="fas fa-edit mr-1"></i>Edit</a>                    
-                            <a href="?a=conteudo&card=<?php echo $card[$i]['cd_card']?>" class="btn btn-primary p-2"><i class="fas fa-plus-square mr-2"></i>Saiba mais</a>
+                            <a href="?a=conteudo&card=<?php echo $card[$i]['cd_card']?>" class="btn btn-primary p-2"><i class="fas fa-plus-square mr-2"></i>Mais</a>
                             <a href="?a=card_deletar&card=<?php echo $card[$i]['cd_card']?>" class="btn btn-outline-danger p-2 ml-1"><i class="fas fa-trash mr-1"></i>Del</a>   
                             <div class="collapse" id="edit<?php echo $card[$i]['cd_card']?>"><hr>
                                 <div class="text-left">
@@ -143,11 +144,11 @@
     <?php if(funcoes::VerificarLogin()):?>
         <hr><form class="p-0 mb-0" method="POST" action="?a=post_inserir">
             <div class="form-row">
-                <div class="col-md-8">
+                <div class="col-md-8 mt-1">
                     <label><b><i class="far fa-star mr-2"></i>Título:</b></label>
                     <input type="text" name="post_text_titulo" class="form-control" required>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 mt-1">
                     <label><b><i class="far fa-user mr-2"></i>Autor:</b></label>
                     <input type="text" name="post_text_autor" class="form-control" value="<?php echo $_SESSION['nm_user']?>" required>
                 </div>

@@ -97,7 +97,7 @@
     }
 ?>
 <div class="container m-0 p-0">
-    <div class="row">
+    <div class="row mr-1 ml-1">
         <div class="col card p-3">
             <div class="card p-3 borda-painel">
                 <h5 id="green" class="text-center">PERFIL DE UTILIZADOR</h5>
