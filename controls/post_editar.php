@@ -45,7 +45,8 @@
                                 WHERE cd_post = :cd_post', $parametros);
 
         //redireciona após terminar a atualização.
-        header("Location:?a=home");                        
+        header("Location:?a=home");
+        exit();                        
     }
 ?>
 

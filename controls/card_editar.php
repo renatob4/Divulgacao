@@ -58,6 +58,7 @@
     
         //Redirecionar
         header("Location:?a=home");
+        exit();
     }
 ?>
 

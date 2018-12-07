@@ -7,11 +7,10 @@
     if(!isset($_SESSION['a'])){
         exit();
     }
-
     //Cria a base de dados.
     $gestor = new cl_gestorBD();
     $configs = include('./class/config.php');
-
+    
     //Apagar a base de dados caso ela exista.
     $gestor->EXE_NON_QUERY('DROP DATABASE IF EXISTS '.$configs['BD_DATABASE']);
     //Criar a nova base de dados.
@@ -34,7 +33,6 @@
         'dt_register                    DATETIME, '.
         'dt_updated                     DATETIME)'
     );
-
     //tabela tab_content
     $gestor->EXE_NON_QUERY(
         'CREATE TABLE tab_content('.
@@ -46,10 +44,10 @@
         'cd_phone_1                     VARCHAR(20), '.
         'cd_phone_2                     VARCHAR(20), '.
         'ds_text_footer                 VARCHAR(255), '.
+        'lnk_map                        TEXT, '.
         'dt_register                    DATETIME, '.
         'dt_updated                     DATETIME)'
     );
-
     //tabela tab_links
     $gestor->EXE_NON_QUERY(
         'CREATE TABLE tab_link('.
@@ -63,7 +61,6 @@
         'dt_register                    DATETIME, '.
         'dt_updated                     DATETIME)'
     );
-
     //tabela tab_cards
     $gestor->EXE_NON_QUERY(
         'CREATE TABLE tab_card('.
@@ -73,7 +70,6 @@
         'dt_register                    DATETIME, '.
         'dt_updated                     DATETIME)'
     );
-
     //tabela tab_posts
     $gestor->EXE_NON_QUERY(
         'CREATE TABLE tab_post('.
@@ -84,7 +80,6 @@
         'dt_register                    DATETIME, '.
         'dt_updated                     DATETIME)'
     );
-
     //tabela tab_log
     $gestor->EXE_NON_QUERY(
         'CREATE TABLE tab_log('.
@@ -102,5 +97,3 @@
     include_once('setup_inserir_conteudo.php');
     include_once('setup_inserir_utilizadores.php');
 ?>
-
-

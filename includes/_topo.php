@@ -4,7 +4,6 @@
     //busca o conteúdo da pagina no banco de dados.
     $conteudo = $acesso->EXE_QUERY('SELECT * FROM tab_content');
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -13,21 +12,21 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Trust</title>
         <!-- Bootstrap 3.3.7-->
-        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
         <!--Bootstrap 4.0-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
         integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
         <!-- Icones font AWESOME -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" 
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
         integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         <!-- Css -->
         <link rel="stylesheet" href="css/main.css">
     </head>
-    <body>     
+    <body>
         <!-- Contentor Global -->
         <div class="container contentor-global mt-1">
         <!-- Incluir Cabeçalho -->
-        <?php include_once('_cabecalho.php'); ?>
+        <?php include_once('_cabecalho.php');?>
         <!-- Incluir Menu -->
-        <?php include_once('_menu.php'); ?>
+        <?php include_once('_menu.php');?>

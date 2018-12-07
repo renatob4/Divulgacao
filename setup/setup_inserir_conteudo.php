@@ -31,14 +31,15 @@ $parametros = [
     ':cd_phone_1'           => '0000000000',
     ':cd_phone_2'           => '0000000000',
     ':ds_text_footer'       => 'Texto que fica exposto no rodapé, também pode conter o slogan da empresa, um convite ou agradecimento.',
+    ':lnk_map'              => '',
     ':dt_register'          => $data->format('Y-m-d H:i:s'),
     ':dt_updated'           => $data->format('Y-m-d H:i:s')
 ];
 
 //inserir o conteúdo
 $gestor->EXE_NON_QUERY(
-    'INSERT INTO tab_content(nm_company, ds_presentation, ds_email, ds_document, cd_phone_1, cd_phone_2, ds_text_footer, dt_register, dt_updated)
-     VALUES(:nm_company, :ds_presentation, :ds_email, :ds_document, :cd_phone_1, :cd_phone_2, :ds_text_footer, :dt_register, :dt_updated)', $parametros);
+    'INSERT INTO tab_content(nm_company, ds_presentation, ds_email, ds_document, cd_phone_1, cd_phone_2, ds_text_footer, lnk_map, dt_register, dt_updated)
+     VALUES(:nm_company, :ds_presentation, :ds_email, :ds_document, :cd_phone_1, :cd_phone_2, :ds_text_footer, :lnk_map, :dt_register, :dt_updated)', $parametros);
 
 //--------------------------------------------------------------------------------- TABELA TAB_LINK
 
@@ -75,7 +76,5 @@ for($i = 0; $i < 3; $i++){
         'INSERT INTO tab_card(ds_title, ds_content, dt_register, dt_updated)
         VALUES(:ds_title, :ds_content, :dt_register, :dt_updated)', $parametros);
 }
-
 ?>
-
 <div class="alert alert-success text-center mt-2 mb-2">Conteúdo inserido com sucesso.</div>

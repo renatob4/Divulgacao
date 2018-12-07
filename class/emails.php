@@ -1,7 +1,5 @@
 <?php 
-
 // =================================== CLASSE DE ENVIO DE EMAILS ====================================
-
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
@@ -93,5 +91,4 @@ use PHPMailer\PHPMailer\Exception;
             return $enviada;
         }
     }
-
 ?>

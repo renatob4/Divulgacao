@@ -3,7 +3,6 @@ body{
     margin: 0px !important;
 }
 .contentor-global{
-    margin-top: 30px;
     margin-bottom: 0px;
     padding: 50px;
     padding-top: 30px;
@@ -54,4 +53,7 @@ body{
 }
 #green{
     color: green;
+}
+#lightseagreen{
+    color: lightseagreen;
 }

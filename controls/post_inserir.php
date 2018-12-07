@@ -28,5 +28,6 @@
             VALUES(:ds_title, :ds_content, :nm_autor, :dt_register, :dt_updated)', $parametros);
 
         header("Location:?a=home");
+        exit();
     } 
 ?>
