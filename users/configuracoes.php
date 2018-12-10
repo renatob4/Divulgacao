@@ -25,7 +25,11 @@
 
         //Buscando os valores do form tab_content
         $empresa = $_POST['form_nm_company'];
+
+        //Busca e tratamento do form Apresentação do site
         $apresentacao = $_POST['form_ds_presentation'];
+        $apresentacao = str_replace('"',"'", $apresentacao);
+
         $email = $_POST['form_ds_email'];
         $doc = $_POST['form_ds_document'];
         $tel1 = $_POST['form_cd_tel1'];
@@ -41,7 +45,7 @@
 
         //Get e tratamento do link do mapa inserido no campo.
         $mapa = $_POST['form_lnk_map'];
-        $lnk_mapa = str_replace('"',"'", $mapa);
+        $mapa = str_replace('"',"'", $mapa);
 
         //Atualiza a base de dados TAB_CONTENT =====================================
         $parametros = [
@@ -53,7 +57,7 @@
             ':cd_phone_1'       => $tel1,
             ':cd_phone_2'       => $tel2,
             ':ds_text_footer'   => $rodape,
-            ':lnk_map'          => $lnk_mapa,
+            ':lnk_map'          => $mapa,
             ':dt_updated'       => $data->format('Y-m-d H:i:s')
         ];
         $gestor->EXE_NON_QUERY(
@@ -126,6 +130,7 @@
                         <div class="form-goup mt-4">
                             <label><b><i class="fas fa-file-alt mr-2"></i>Apresentação:</b></label>
                             <textarea type="text" name="form_ds_presentation" class="form-control" rows="6" required><?php echo $conteudo[0]['ds_presentation']?></textarea>
+                            <label class="Obs2 mt-1"><i class="fas fa-exclamation-triangle mr-2"></i>Obs. Este campo aceita um link de imagem em formato html aconselhavel: 650x250px.</label>
                         </div>
                         <div class="form-row mt-4">
                             <div class="col-md-6 mt-1">

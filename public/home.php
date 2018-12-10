@@ -26,7 +26,7 @@
                 <div class="text-center p-4">
                     <h4 class="mb-3">APRESENTAÇÃO</h4>
                     <!-- Dados contidos no campo 'ds_presentation' do banco de dados -->
-                    <p class="mb-4"><?php echo $conteudo[0]['ds_presentation']?></p> 
+                    <p class="mb-4"><?php echo $conteudo[0]['ds_presentation']?></p>                   
                 </div>
             </div>
             <div class="col-md-4 p-0">
