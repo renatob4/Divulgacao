@@ -5,7 +5,8 @@
     }
     //verifica se existe post definido
     if(!isset($_GET['post'])){
-        header("Location:?a=home");
+        //header("Location:?a=home");
+        echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
         exit();
     } 
 
@@ -34,6 +35,7 @@
     $acesso->EXE_NON_QUERY('DELETE FROM tab_post WHERE cd_post = :cd_post', $parametros);
 
 
-    header("Location:?a=home");
+    //header("Location:?a=home");
+    echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
     exit();
 ?>

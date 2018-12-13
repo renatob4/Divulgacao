@@ -82,6 +82,14 @@
     );
     //tabela tab_log
     $gestor->EXE_NON_QUERY(
+        'CREATE TABLE tab_imagem('.
+        'cd_img                          INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
+        'img_header                      NVARCHAR(50), '.
+        'img_body                        NVARCHAR(50), '.
+        'dt_updated                      DATETIME)'
+    );
+    //tabela tab_log
+    $gestor->EXE_NON_QUERY(
         'CREATE TABLE tab_log('.
         'cd_log                          INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
         'dt_hour                         DATETIME, '.

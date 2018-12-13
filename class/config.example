@@ -1,7 +1,5 @@
-﻿<?php
-
+<?php
     //=========================================== CLASSE DE CONFIGURAÇões ===============================================
-
     return [
         //configurações
         'BD_HOST'        => 'localhost',
@@ -19,7 +17,4 @@
         //Endereço base  
         'BASE_URL'          => 'http://localhost:8080/Divulgacao/'
     ]
-
 ?>
-
-//Renomear este arquivo para "config.php"

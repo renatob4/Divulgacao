@@ -30,7 +30,8 @@
     
     //Se não existir card de mesmo codigo na base ele encerra.
     if(count($result) == 0){
-        header("Location:?a=home");
+        //header("Location:?a=home");
+        echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
         exit();
     }
 
@@ -57,7 +58,8 @@
                                 WHERE cd_card = :cd_card', $parametros);
     
         //Redirecionar
-        header("Location:?a=home");
+        //header("Location:?a=home");
+        echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
         exit();
     }
 ?>

@@ -79,30 +79,24 @@
     </div>
 <?php endif; ?>
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col card m-3 p-3">
-            <h4 class="text-center">ALTERAR E-MAIL DA CONTA</h4>
-            <hr>
-                <!--Apresenta o email atual-->
-                <div><strong>Email atual:</strong> <?php echo $_SESSION['ds_email'] ?></div>
-            <hr>
-
+<div class="container p-0">
+    <div class="row mr-1 ml-1 mt-2 borda-painel">
+        <div class="col card">
+            <h4 class="text-center mt-3">ALTERAR E-MAIL DA CONTA</h4>
+            <hr><div><strong>Email atual:</strong> <?php echo $_SESSION['ds_email'] ?></div><hr>
             <!-- formulário -->
             <form action="?a=perfil_alterar_email" method="post">
-                    <div class="col-sm-4 offset-sm-4 justify-content-center">
-                        <div class="form-group">
-                            <label>Novo e-mail:</label>
-                            <input type="email" class="form-control" name="text_novo_email" title="No mínimo 5 e no máximo 50 caracteres." pattern=".{5,50}" required>
-                        </div>
+                <div class="col-sm-4 offset-sm-4 justify-content-center">
+                    <div class="form-group">
+                        <label>Novo e-mail:</label>
+                        <input type="email" class="form-control" name="text_novo_email" title="No mínimo 5 e no máximo 50 caracteres." pattern=".{5,50}" required>
                     </div>
-                   
-                    <div class="text-center">
-                        <a href="?a=home" class="btn btn-primary btn-size-150">Voltar</a>
-                        <button role="submit" class="btn btn-primary btn-size-150">Alterar</button>                    
-                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="?a=home" class="btn btn-primary btn-size-150">Voltar</a>
+                    <button role="submit" class="btn btn-primary btn-size-150">Alterar</button>                    
+                </div>
             </form>
-
         </div>        
     </div>
 </div>

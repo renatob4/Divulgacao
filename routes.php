@@ -1,9 +1,7 @@
 <?php
-
     // ==========================================================
     // ROUTES
     // ==========================================================
-
     //verificar a sessão.
     if(!isset($_SESSION['a'])){
         exit();
@@ -13,7 +11,6 @@
     if(isset($_GET['a'])){
         $a = $_GET['a'];
     }
-
     //verificar o login ativo
     if(!funcoes::VerificarLogin()){
         //PODEM SER ACESSADOS MESMO O ADM NÃO ESTANDO LOGADO
@@ -29,13 +26,10 @@
         //bypass do sistema normal
         if(!in_array($a, $routes_especiais)){
             $a='home';
-        }   
+        }
     }
- 
     switch ($a) {
-
         // =========================== WEBSITE ================================
-
         //Pagina principal
         case 'home':                            include_once('public/home.php'); break;
 
@@ -46,7 +40,7 @@
         case 'servicos':                        include_once('public/servicos.php'); break;
 
         //Pagina de contatos
-        case 'galeria':                        include_once('public/galeria.php'); break;
+        case 'galeria':                         include_once('public/galeria.php'); break;
 
         //Pagina de contatos
         case 'conteudo':                        include_once('public/conteudo.php'); break;
@@ -96,6 +90,9 @@
         //Inserir Post
         case 'post_inserir':                    include_once('controls/post_inserir.php'); break;
 
+        //Inserir imagens
+        case 'recebe_imagem':                   include_once('controls/recebeUpload.php'); break;
+
         // ============================ SETUP =================================
 
         //Criar a base de dados
@@ -109,6 +106,5 @@
 
         //Inserir Conteúdo
         case 'setup_inserir_conteudo':          include_once('setup/setup.php'); break;
-
-    }       
-?>                  
+    }
+?>

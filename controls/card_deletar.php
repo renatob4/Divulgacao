@@ -5,7 +5,8 @@
     }
     //verifica se existe card definido
     if(!isset($_GET['card'])){
-        header("Location:?a=home");
+        //header("Location:?a=home");
+        echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
         exit();
     } 
 
@@ -33,6 +34,7 @@
     //Atualizar a DB
     $acesso->EXE_NON_QUERY('DELETE FROM tab_card WHERE cd_card = :cd_card', $parametros);
     
-    header("Location:?a=home");
+    //header("Location:?a=home");
+    echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
     exit();
 ?>

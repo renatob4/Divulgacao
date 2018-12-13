@@ -94,7 +94,7 @@
 </div>
 <?php else : //====================================================?>
     <div class="container-fluid">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mt-3">
             <div class="col-md-4 card m-3 p-3 text-center borda-painel">          
                 <p>Bem-vindo, <strong><?php echo $dados[0]['nm_user'] ?></strong> </p>
                 <a href="?a=home" class="btn btn-primary">Avançar</a>

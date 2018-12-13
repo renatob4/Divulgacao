@@ -77,30 +77,24 @@
     </div>
 <?php endif; ?>
 
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col card m-3 p-3">
-            <h4 class="text-center">ALTERAR LOGIN DA CONTA</h4>
-            <hr>
-                <!--Apresenta o email atual-->
-                <div><strong>Login atual:</strong> <?php echo $_SESSION['cd_login'] ?></div>
-            <hr>
-
+<div class="container p-0">
+    <div class="row ml-1 mr-1 mt-2 borda-painel">
+        <div class="col card">
+            <h4 class="text-center mt-3">ALTERAR LOGIN DA CONTA</h4>
+            <hr><div><strong>Login atual:</strong> <?php echo $_SESSION['cd_login'] ?></div><hr>
             <!-- formulário -->
             <form action="?a=perfil_alterar_login" method="post">
-                    <div class="col-sm-4 offset-sm-4 justify-content-center">
-                        <div class="form-group">
-                            <label>Novo Login:</label>
-                            <input type="text" class="form-control" name="text_novo_login" title="No mínimo 5 e no máximo 30 caracteres." pattern=".{5,30}" required>
-                        </div>
+                <div class="col-sm-4 offset-sm-4 justify-content-center">
+                    <div class="form-group">
+                        <label>Novo Login:</label>
+                        <input type="text" class="form-control" name="text_novo_login" title="No mínimo 5 e no máximo 30 caracteres." pattern=".{5,30}" required>
                     </div>
-                   
-                    <div class="text-center">
-                        <a href="?a=home" class="btn btn-primary btn-size-150">Voltar</a>
-                        <button role="submit" class="btn btn-primary btn-size-150">Alterar</button>                    
-                    </div>
+                </div>
+                <div class="text-center">
+                    <a href="?a=home" class="btn btn-primary btn-size-150">Voltar</a>
+                    <button role="submit" class="btn btn-primary btn-size-150">Alterar</button>                    
+                </div>
             </form>
-
         </div>        
     </div>
 </div>

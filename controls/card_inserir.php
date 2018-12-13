@@ -11,7 +11,8 @@
     //Verifica se ja existe o limite de 6 cards na base.
     $result = $gestor->EXE_QUERY('SELECT * FROM tab_card');
     if(count($result) >= 6){  
-        header("Location:?a=home");  
+        //header("Location:?a=home");
+        echo('<meta http-equiv="refresh" content="0;URL=?a=home">');  
         exit();
     }
 
@@ -27,6 +28,7 @@
         'INSERT INTO tab_card(ds_title, ds_content, dt_register, dt_updated)
         VALUES(:ds_title, :ds_content, :dt_register, :dt_updated)', $parametros);
 
-    header("Location:?a=home");
+    //header("Location:?a=home");
+    echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
     exit();
 ?>

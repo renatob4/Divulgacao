@@ -40,6 +40,9 @@ body{
     color: green;
     font-size: 0.7em;
 }
+.file{
+    font-size: 0.8em;
+}
 .und{
     text-decoration: underline;
 }
@@ -52,6 +55,12 @@ body{
 #gold{
     color: gold;
 }
+#red{
+    color: red;
+}
+#orange{
+    color: orange;
+}
 #blue{
     color: rgb(62, 62, 238);
 }
@@ -61,3 +70,4 @@ body{
 #lightseagreen{
     color: lightseagreen;
 }
+

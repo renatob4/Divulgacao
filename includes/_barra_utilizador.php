@@ -17,7 +17,7 @@
     <?php if(funcoes::VerificarLogin()):?>
     <!-- dropdown -->
     <div class="dropdown">
-        <span class="mr-3"><i id="green" class="fa fa-user mr-3"></i><?php echo $nome_utilizador ?></span>
+        <span class="mr-3"><i id="green" class="fa fa-user mr-3"></i><?php echo $nome_utilizador;?></span>
         <button class="btn btn-secondary dropdown-toggle" type="button" id="d1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-cog"></i>
         </button>

@@ -8,10 +8,14 @@
     $data = new DateTime();
 
     //Pega o codigo do post na URL
-    if(isset($_GET['post']))
+    if(isset($_GET['post'])){
         $cd_post = $_GET['post'];
-    else
-        header("Location:?a=home");    
+    }
+    else{
+        //header("Location:?a=home");
+        echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
+        exit();
+    }
 
     //pesquisa se existe post com esse codigo na base
     $parametros = [
@@ -21,7 +25,8 @@
      
     //Se não existir post de mesmo codigo na base ele encerra.
     if(count($post) == 0){
-        header("Location:?a=home");
+        //header("Location:?a=home");
+        echo('<meta http-equiv="refresh" content="0;URL=?a=configuracoes">');
     }
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -45,7 +50,8 @@
                                 WHERE cd_post = :cd_post', $parametros);
 
         //redireciona após terminar a atualização.
-        header("Location:?a=home");
+        //header("Location:?a=home");
+        echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
         exit();                        
     }
 ?>

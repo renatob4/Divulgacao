@@ -1,13 +1,7 @@
-<?php
-    //Instancia do banco de dados.
-    $acesso = new cl_gestorBD();
-    //busca o conteúdo da pagina no banco de dados.
-    $conteudo = $acesso->EXE_QUERY('SELECT * FROM tab_content');
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Trust</title>
@@ -23,10 +17,10 @@
         <!-- Css -->
         <link rel="stylesheet" href="css/main.css">
     </head>
-    <body>
-        <!-- Contentor Global -->
-        <div class="container contentor-global mt-1">
-        <!-- Incluir Cabeçalho -->
-        <?php include_once('_cabecalho.php');?>
-        <!-- Incluir Menu -->
-        <?php include_once('_menu.php');?>
+<body>
+<!-- Contentor Global -->
+<div class="container contentor-global mt-4 pt-2">
+<!-- Incluir Cabeçalho -->
+<?php include_once('_cabecalho.php');?>
+<!-- Incluir Menu -->
+<?php include_once('_menu.php');?>

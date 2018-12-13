@@ -85,10 +85,9 @@
                 <div class="alert alert-danger text-center"><?php echo $mensagem ?></div>
                 <?php endif; ?>
                 <!--Apresentação do formulario de recuperação-->
-                <div class="container-fluid">
-                    <div class="row justify-content-center">
-                        <div class="col-md-4 card m-3 p-3">
-                        
+                <div class="container-fluid p-0">
+                    <div class="row mr-1 ml-1 mt-2 borda-painel">
+                        <div class="col-md-4 card m-0 p-3">
                             <form action="?a=recuperar_senha" method="post">
                                 <div class="text-center">
                                     <h3>Recuperar Password</h3>
@@ -97,7 +96,6 @@
                                 <div class="form-group">
                                     <input type="email" name="text_email" class="form-control" placeholder="E-mail" required>
                                 </div>
-                                
                                 <div class="form-group text-center">
                                     <a href="?a=home" class="btn btn-primary btn-size-150">Cancelar</a>
                                     <button role="submit" class="btn btn-primary btn-size-150">Recuperar</button>
@@ -108,15 +106,15 @@
                 </div>
     <?php else : ?>
                 <!--Apresentação da mensagem de sucesso ao recuperar-->
-                <div class="container-fluid">
-                        <div class="row justify-content-center">
-                            <div class="col-md-4 card m-3 p-3">                                  
-                                <div class="text-center">
-                                    <h3>Senha recuperada com sucesso!</h3><hr><p>Verifique seu e-mail e utilize a senha provisória recebida para fazer login.</p>   
-                                    <a href="?a=home" class="btn btn-primary btn-size-150">Voltar</a>
-                                    <a href="?a=login" class="btn btn-primary btn-size-150">Fazer login</a>
-                                </div>
-                            </div>        
-                        </div>
+                <div class="container-fluid p-0">
+                    <div class="row mr-1 ml-1 mt-2">
+                        <div class="col-md-4 card m-3 p-3">                                  
+                            <div class="text-center">
+                                <h3>Senha recuperada com sucesso!</h3><hr><p>Verifique seu e-mail e utilize a senha provisória recebida para fazer login.</p>   
+                                <a href="?a=home" class="btn btn-primary btn-size-150">Voltar</a>
+                                <a href="?a=login" class="btn btn-primary btn-size-150">Fazer login</a>
+                            </div>
+                        </div>        
+                    </div>
                 </div>
 <?php endif;?>
