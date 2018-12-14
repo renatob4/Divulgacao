@@ -11,12 +11,9 @@
     $post = $acesso->EXE_QUERY('SELECT * FROM tab_post');
     $img = $acesso->EXE_QUERY('SELECT img_body FROM tab_imagem');
 ?>
+<!-- Imagem de apresentação do site -->
 <div class="row mt-0 mr-1 ml-1 mt-2">
-    <div class="imagem-painel">
-        <div class="posicao-botao">
-            <button class="btn btn-primary botao">Call to Action!</button>
-        </div>
-    </div>
+    <img class="img-fluid borda-painel" src="images/painel.jpg" height="600" width="100%">
 </div>
 <!-- Apresentação da empresa, texto. -->
 <hr><div class="row m-1">
@@ -28,6 +25,29 @@
                 <!-- Mostra a imagem no corpo da apresentação se ela existir -->
                 <?php if($img[0]['img_body'] != ''):?>
                 <img class="img-fluid" src="<?php echo $img[0]['img_body']?>" width="650" height="250">
+                <?php endif;?>
+                <?php if(funcoes::VerificarLogin()):?>
+                <div class="row mt-2 mb-2">
+                    <div class="col p-0 text-left mt-1">
+                        <form class="p-0 m-0" action="?a=recebe_imagem&sender=body" method="post" enctype="multipart/form-data">
+                            <label class="p-0 m-0">
+                                <strong><i id="grey" class="fas fa-image mr-1 ml-1"></i>
+                                    <a data-toggle="collapse" href="#collapseInputB" id="green" role="button" aria-expanded="false" aria-controls="collapseExample">Inserir imagem</a>
+                                    <label class="ml-1 file" id="grey">(650x250)</label>
+                                </strong>
+                            </label>
+                            <div class="collapse" id="collapseInputB">
+                                <input class="btn btn-warning file p-0" name="arquivo" type="file" accept="image/*">
+                                <input class="btn btn-success file m-0 p-1" type="submit" value="Enviar">
+                            </div>
+                        </form>
+                    </div>
+                    <?php if($img[0]['img_body'] != ''):?>
+                    <div class="col p-0 text-right mt-1">
+                        <strong><i id="grey" class="fas fa-trash-alt mr-2"></i><a href="?a=deleta_imagem&sender=body&img=<?php echo $img[0]['img_body']?>">Remover imagem</a></strong>
+                    </div>
+                    <?php endif;?>
+                </div>
                 <?php endif;?>
             </div>
         </div>

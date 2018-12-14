@@ -16,7 +16,7 @@
         <div class="col p-0">
             <form class="p-0 m-0" action="?a=recebe_imagem&sender=header" method="post" enctype="multipart/form-data">
                 <label class="p-0 m-0">
-                    <strong><i class="fas fa-image mr-1 ml-1"></i>
+                    <strong><i id="grey" class="fas fa-image mr-1 ml-1"></i>
                         <a data-toggle="collapse" href="#collapseInput" id="green" role="button" aria-expanded="false" aria-controls="collapseExample">Alterar imagem</a>
                         <label class="ml-1 file" id="grey">(320x100)</label>
                     </strong>

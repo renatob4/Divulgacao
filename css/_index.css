@@ -1,9 +1,9 @@
 .imagem-painel{
-    background-image: url("../images/imagem_painel.jpg");
+    /* background-image: url("../images/painel.jpg"); */
     height: 600px;
     display: table;
     width: 100%;
-    border: 2px solid rgb(62, 194, 247); 
+    border: 2px solid rgb(62, 194, 247);
 }
 .espaco-services{
     padding: 20px 0px;

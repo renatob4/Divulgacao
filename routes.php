@@ -93,6 +93,9 @@
         //Inserir imagens
         case 'recebe_imagem':                   include_once('controls/recebeUpload.php'); break;
 
+        //Apagar imagens
+        case 'deleta_imagem':                   include_once('controls/deletaImagem.php'); break;
+
         // ============================ SETUP =================================
 
         //Criar a base de dados
