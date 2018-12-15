@@ -9,72 +9,89 @@
     $conteudo = $acesso->EXE_QUERY('SELECT * FROM tab_content');
     $card = $acesso->EXE_QUERY('SELECT * FROM tab_card');
     $post = $acesso->EXE_QUERY('SELECT * FROM tab_post');
-    $img = $acesso->EXE_QUERY('SELECT img_body FROM tab_imagem');
+    $img = $acesso->EXE_QUERY('SELECT * FROM tab_imagem');
 ?>
 <!-- Imagem de apresentação do site -->
 <div class="row mt-0 mr-1 ml-1 mt-2">
-    <img class="img-fluid borda-painel" src="images/painel.jpg" height="600" width="100%">
+    <img class="img-fluid imagem-painel" src="<?php echo $img[0]['img_panel']?>" height="600" width="100%">
+    <?php if(funcoes::VerificarLogin()):?>
+    <div>
+        <form class="p-0 m-0 mt-2" action="?a=recebe_imagem&sender=panel" method="post" enctype="multipart/form-data">
+            <label class="p-0 m-0">
+                <strong><i id="grey" class="fas fa-image mr-1 ml-1"></i>
+                    <a data-toggle="collapse" href="#collapseInputP" id="green" role="button" aria-expanded="false" aria-controls="collapseExample">Alterar imagem</a>
+                    <label class="ml-1 file" id="grey">(1300x600)</label>
+                </strong>
+            </label>
+            <div class="collapse" id="collapseInputP">
+                <input class="btn btn-warning file p-0" name="arquivo" type="file" accept="image/*">
+                <input class="btn btn-success file m-0 p-1" type="submit" value="Enviar">
+            </div>
+        </form>
+    </div>
+    <?php endif;?>
 </div>
 <!-- Apresentação da empresa, texto. -->
-<hr><div class="row m-1">
-        <div class="col-md-8 p-0">
-            <div class="text-center p-4">
-                <h4 class="mb-3">APRESENTAÇÃO</h4>
-                <!-- Dados contidos no campo 'ds_presentation' do banco de dados -->
-                <p class="mb-4"><?php echo $conteudo[0]['ds_presentation']?></p>
-                <!-- Mostra a imagem no corpo da apresentação se ela existir -->
+<hr>
+<div class="row m-1">
+    <div class="col-md-8 p-0">
+        <div class="text-center p-4">
+            <h4 class="mb-3">APRESENTAÇÃO</h4>
+            <!-- Dados contidos no campo 'ds_presentation' do banco de dados -->
+            <p class="mb-4"><?php echo $conteudo[0]['ds_presentation']?></p>
+            <!-- Mostra a imagem no corpo da apresentação se ela existir -->
+            <?php if($img[0]['img_body'] != ''):?>
+            <img class="img-fluid" src="<?php echo $img[0]['img_body']?>">
+            <?php endif;?>
+            <?php if(funcoes::VerificarLogin()):?>
+            <div class="row mt-2 mb-2">
+                <div class="col p-0 text-left mt-1">
+                    <form class="p-0 m-0" action="?a=recebe_imagem&sender=body" method="post" enctype="multipart/form-data">
+                        <label class="p-0 m-0">
+                            <strong><i id="grey" class="fas fa-image mr-1 ml-1"></i>
+                                <a data-toggle="collapse" href="#collapseInputB" id="green" role="button" aria-expanded="false" aria-controls="collapseExample">Inserir</a>
+                                <label class="ml-1 file" id="grey">(650x250)</label>
+                            </strong>
+                        </label>
+                        <div class="collapse" id="collapseInputB">
+                            <input class="btn btn-warning file p-0" name="arquivo" type="file" accept="image/*">
+                            <input class="btn btn-success file m-0 p-1" type="submit" value="Enviar">
+                        </div>
+                    </form>
+                </div>
                 <?php if($img[0]['img_body'] != ''):?>
-                <img class="img-fluid" src="<?php echo $img[0]['img_body']?>" width="650" height="250">
-                <?php endif;?>
-                <?php if(funcoes::VerificarLogin()):?>
-                <div class="row mt-2 mb-2">
-                    <div class="col p-0 text-left mt-1">
-                        <form class="p-0 m-0" action="?a=recebe_imagem&sender=body" method="post" enctype="multipart/form-data">
-                            <label class="p-0 m-0">
-                                <strong><i id="grey" class="fas fa-image mr-1 ml-1"></i>
-                                    <a data-toggle="collapse" href="#collapseInputB" id="green" role="button" aria-expanded="false" aria-controls="collapseExample">Inserir imagem</a>
-                                    <label class="ml-1 file" id="grey">(650x250)</label>
-                                </strong>
-                            </label>
-                            <div class="collapse" id="collapseInputB">
-                                <input class="btn btn-warning file p-0" name="arquivo" type="file" accept="image/*">
-                                <input class="btn btn-success file m-0 p-1" type="submit" value="Enviar">
-                            </div>
-                        </form>
-                    </div>
-                    <?php if($img[0]['img_body'] != ''):?>
-                    <div class="col p-0 text-right mt-1">
-                        <strong><i id="grey" class="fas fa-trash-alt mr-2"></i><a href="?a=deleta_imagem&sender=body&img=<?php echo $img[0]['img_body']?>">Remover imagem</a></strong>
-                    </div>
-                    <?php endif;?>
+                <div class="col p-0 text-right mt-1">
+                    <strong><i id="grey" class="fas fa-trash-alt mr-2"></i><a href="?a=deleta_imagem&sender=body&img=<?php echo $img[0]['img_body']?>">Remover</a></strong>
                 </div>
                 <?php endif;?>
-            </div>
-        </div>
-        <div class="col-md-4 p-0">
-            <!-- Painel rapido de contatos telefonicos -->
-            <div class="card painel-direito text-center p-4">
-                <h4 id="black"><i class="fas fa-phone-square mr-2"></i>Fale conosco:</h4>
-                <div class="card m-2 pt-4 p-3 borda-painel">
-                <h5><label class="mb-0" id="black">Contato:</label> <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_1'])?></h5>
-                <?php if($conteudo[0]['cd_phone_2'] != ''):?>
-                    <h5><label id="black">Ou:</label> <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_2'])?></h5>
-                    <?php endif;?>
-                </div>
-                <div class="text-center mt-2"><p id="black"><i class="fas fa-envelope ml-2 mr-1"></i>Ou envie um e-mail direto <a href="?a=contatos">Aqui</a></p></div>
-            </div>
-            <?php if($conteudo[0]['lnk_map'] != ''):?>
-            <!-- Painel rapido de localização/mapa -->
-            <div class="card painel-direito text-center p-2 pt-4 mt-3">
-                <h4 id="black"><i class="fas fa-map-marked mr-2"></i>Nos encontre:</h4>
-                <div class="card mt-2">
-                    <!-- iframe do mapa -->
-                    <?php echo $conteudo[0]['lnk_map'];?>
-                </div>
-                <!-- <div class="text-left mt-2 ml-1"><p id="black"><strong><i class="fas fa-thumbtack mr-1"></i>Endereço:</strong></p></div>     -->
             </div>
             <?php endif;?>
         </div>
+    </div>
+    <div class="col-md-4 p-0">
+        <!-- Painel rapido de contatos telefonicos -->
+        <div class="card painel-direito text-center p-4">
+            <h4 id="black"><i class="fas fa-phone-square mr-2"></i>Fale conosco:</h4>
+            <div class="card m-2 pt-4 p-3 borda-painel">
+            <h5><label class="mb-0" id="black">Contato:</label> <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_1'])?></h5>
+            <?php if($conteudo[0]['cd_phone_2'] != ''):?>
+                <h5><label id="black">Ou:</label> <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_2'])?></h5>
+                <?php endif;?>
+            </div>
+            <div class="text-center mt-2"><p id="black"><i class="fas fa-envelope ml-2 mr-1"></i>Ou envie um e-mail direto <a href="?a=contatos">Aqui</a></p></div>
+        </div>
+        <?php if($conteudo[0]['lnk_map'] != ''):?>
+        <!-- Painel rapido de localização/mapa -->
+        <div class="card painel-direito text-center p-2 pt-4 mt-3">
+            <h4 id="black"><i class="fas fa-map-marked mr-2"></i>Nos encontre:</h4>
+            <div class="card mt-2">
+                <!-- iframe do mapa -->
+                <?php echo $conteudo[0]['lnk_map'];?>
+            </div>
+            <!-- <div class="text-left mt-2 ml-1"><p id="black"><strong><i class="fas fa-thumbtack mr-1"></i>Endereço:</strong></p></div>     -->
+        </div>
+        <?php endif;?>
+    </div>
     </div>
 <hr class="mb-1">
 <!-- Cards de texto -->

@@ -11,7 +11,7 @@
     $mensagem = '';
     $img = $acesso->EXE_QUERY('SELECT * FROM tab_imagem');
 
-    if(!isset($_GET['sender']) || ($_GET['sender'] != 'header' && $_GET['sender'] != 'body')){
+    if(!isset($_GET['sender']) || ($_GET['sender'] != 'header' && $_GET['sender'] != 'body' && $_GET['sender'] != 'panel')){
         //header("Location:?a=home");
         echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
         exit();
@@ -58,7 +58,6 @@
                         ':dt_updated'       => $data->format('Y-m-d H:i:s')
                     ];
                     $acesso->EXE_NON_QUERY('UPDATE tab_imagem SET img_header = :img_header, dt_updated = :dt_updated WHERE cd_img = :cd_img', $parametros);
-                    $mensagem = 'Arquivo salvo com sucesso!.';
 
                 }elseif($sender == 'body'){
                     if($img[0]['img_body'] != 'images/welcome.jpg'){
@@ -72,9 +71,23 @@
                         ':dt_updated'       => $data->format('Y-m-d H:i:s')
                     ];
                     $acesso->EXE_NON_QUERY('UPDATE tab_imagem SET img_body = :img_body, dt_updated = :dt_updated WHERE cd_img = :cd_img', $parametros);
-                    $mensagem = 'Arquivo salvo com sucesso!.';
+
+                }elseif($sender == 'panel'){
+                    if($img[0]['img_panel'] != 'images/panel.jpg'){
+                        //Apaga a imagem antiga do diretorio do site.
+                        unlink("./".$img[0]['img_panel']);
+                    }
+                    //Atualiza o banco com o nome da nova imagem.
+                    $parametros = [
+                        ':cd_img'           => 1,
+                        ':img_panel'       => "images/".$novoNome,
+                        ':dt_updated'       => $data->format('Y-m-d H:i:s')
+                    ];
+                    $acesso->EXE_NON_QUERY('UPDATE tab_imagem SET img_panel = :img_panel, dt_updated = :dt_updated WHERE cd_img = :cd_img', $parametros);
                 }
 
+                $mensagem = 'Arquivo salvo com sucesso!.';
+                
             }else{
                 $mensagem = 'Erro ao salvar o arquivo. Aparentemente você não tem permissão de escrita.<br />';
             }

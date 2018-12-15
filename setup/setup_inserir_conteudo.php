@@ -81,12 +81,13 @@ for($i = 0; $i < 3; $i++){
 
 $parametros = [
     ':img_header'           => 'images/logo.png',
+    ':img_panel'            => 'images/panel.jpg',
     ':img_body'             => 'images/welcome.jpg',
     ':dt_updated'           => $data->format('Y-m-d H:i:s')
 ];
 
 //inserir as imagens do conteudo
-$gestor->EXE_NON_QUERY('INSERT INTO tab_imagem(img_header, img_body, dt_updated) VALUES(:img_header, :img_body, :dt_updated)', $parametros);
+$gestor->EXE_NON_QUERY('INSERT INTO tab_imagem(img_header, img_panel, img_body, dt_updated) VALUES(:img_header, :img_panel, :img_body, :dt_updated)', $parametros);
 
 ?>
 <div class="alert alert-success text-center mt-2 mb-2">Conteúdo inserido com sucesso.</div>

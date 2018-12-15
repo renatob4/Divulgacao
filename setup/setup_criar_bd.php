@@ -80,11 +80,12 @@
         'dt_register                    DATETIME, '.
         'dt_updated                     DATETIME)'
     );
-    //tabela tab_log
+    //tabela tab_imagem
     $gestor->EXE_NON_QUERY(
         'CREATE TABLE tab_imagem('.
         'cd_img                          INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
         'img_header                      NVARCHAR(50), '.
+        'img_panel                       NVARCHAR(50), '.
         'img_body                        NVARCHAR(50), '.
         'dt_updated                      DATETIME)'
     );

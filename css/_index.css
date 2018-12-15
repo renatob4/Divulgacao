@@ -1,10 +1,20 @@
 .imagem-painel{
-    /* background-image: url("../images/painel.jpg"); */
-    height: 600px;
+    max-height: 600px;
     display: table;
     width: 100%;
     border: 2px solid rgb(62, 194, 247);
 }
+/* Quando a tela for menor do que 720px entao a classe sera alterada pelo media query */
+@media screen and (max-width: 720px) {
+    .imagem-painel{ 
+        max-height: 50%;
+    }
+ }
+ @media screen and (max-width: 420px) {
+    .imagem-painel{ 
+        max-height: 30%;
+    }
+ }
 .espaco-services{
     padding: 20px 0px;
 }
