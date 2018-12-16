@@ -3,7 +3,7 @@
     // PERFIL - Configurações e conteúdo
     // ==========================================================
     //verificar a sessão.
-    if(!isset($_SESSION['a'])){
+    if (!isset($_SESSION['a'])) {
         exit();
     }
 
@@ -20,15 +20,16 @@
     //Busca o conteúdo da base de dados.
     $conteudo = $gestor->EXE_QUERY('SELECT * FROM tab_content');
     $link = $gestor->EXE_QUERY('SELECT * FROM tab_link');
+    $config = $gestor->EXE_QUERY('SELECT * FROM tab_config');
  
-    if($_SERVER['REQUEST_METHOD'] == 'POST'){
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         //Buscando os valores do form tab_content
         $empresa = $_POST['form_nm_company'];
 
         //Busca e tratamento do form Apresentação do site
         $apresentacao = $_POST['form_ds_presentation'];
-        $apresentacao = str_replace('"',"'", $apresentacao);
+        $apresentacao = str_replace('"', "'", $apresentacao);
 
         $email = $_POST['form_ds_email'];
         $doc = $_POST['form_ds_document'];
@@ -43,9 +44,16 @@
         $olx = $_POST['form_lnk_olx'];
         $market = $_POST['form_lnk_mark'];
 
+        //Buscando dados dos checkboxes
+        $check_contact = (isset($_POST['check_contact'])) ? 1 : 0;
+        $check_map  = (isset($_POST['check_map']))  ? 1 : 0;
+        $check_doc = (isset($_POST['check_document'])) ? 1 : 0;
+        $check_card  = (isset($_POST['check_card']))  ? 1 : 0;
+        $check_post = (isset($_POST['check_post'])) ? 1 : 0;
+
         //Get e tratamento do link do mapa inserido no campo.
         $mapa = $_POST['form_lnk_map'];
-        $mapa = str_replace('"',"'", $mapa);
+        $mapa = str_replace('"', "'", $mapa);
 
         //Atualiza a base de dados TAB_CONTENT =====================================
         $parametros = [
@@ -71,7 +79,9 @@
              ds_text_footer = :ds_text_footer,
              lnk_map = :lnk_map,
              dt_updated = :dt_updated
-             WHERE cd_info = :cd_info', $parametros);
+             WHERE cd_info = :cd_info',
+            $parametros
+        );
 
         //Atualiza a base de dados TAB_LINK =======================================
         $parametros = [
@@ -93,7 +103,31 @@
              ds_link_olx = :ds_link_olx,
              ds_link_market = :ds_link_market,
              dt_updated = :dt_updated
-             WHERE cd_link = :cd_link', $parametros);
+             WHERE cd_link = :cd_link',
+            $parametros
+        );
+
+        //Atualiza a base de dados TAB_CONFIG =======================================
+        $parametros = [
+            ':cd_config'            => $config[0]['cd_config'],
+            ':st_contact'           => $check_contact,
+            ':st_map'               => $check_map,
+            ':st_document'          => $check_doc,
+            ':st_card'              => $check_card,
+            ':st_post'              => $check_post,
+            ':dt_updated'           => $data->format('Y-m-d H:i:s')
+        ];
+        $gestor->EXE_NON_QUERY(
+        'UPDATE tab_config SET
+            st_contact = :st_contact,
+            st_map = :st_map,
+            st_document = :st_document,
+            st_card = :st_card,
+            st_post = :st_post,
+            dt_updated = :dt_updated
+            WHERE cd_config = :cd_config',
+            $parametros
+        );
 
         //$conteudo = $gestor->EXE_QUERY('SELECT * FROM tab_content');
         //header('Location:?a=configuracoes');
@@ -138,11 +172,12 @@
                         <div class="col-md-6 mt-1">
                             <label><b><i class="fas fa-phone-square mr-2"></i>Telefone 1:</b></label>
                             <input type="tel" name="form_cd_tel1" class="form-control" value="<?php echo $conteudo[0]['cd_phone_1']?>" required>
+                            <label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Desmarque os contatos no fim da pagina se não quiser que ele apareça no Site.</label>
                         </div>
                         <div class="col-md-6 mt-1">
                             <label><b><i class="fab fa-whatsapp mr-2"></i>Telefone 2:</b></label>
                             <input type="tel" name="form_cd_tel2" class="form-control" value="<?php echo $conteudo[0]['cd_phone_2']?>">
-                            <label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe este campo em branco se não quiser que ele apareça no Site.</label>
+                            <label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe este campo em branco ou desmarque se não quiser que ele apareça no Site.</label>
                         </div>
                     </div>
                     <div class="form-goup mt-4">
@@ -156,7 +191,7 @@
                     <div class="form-goup mt-3">
                         <label><b><i class="fas fa-map-marker-alt mr-2"></i>Mapa: <label id="grey">(Tag do tipo iframe)</label></b></label>
                         <input type="text" name="form_lnk_map" class="form-control" value="<?php echo $conteudo[0]['lnk_map']?>">
-                        <label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe este campo em branco se não quiser que o mapa apareça no Site.</label>
+                        <label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe este campo em branco ou desmarque no fim da pagina se não quiser que o mapa apareça no Site.</label>
                     </div>
                     <hr class="m-"><h5 id="green" class="text-center mb-5">GERENCIAR LINKS</h5>
                     <div class="form-group row pr-3">
@@ -195,7 +230,30 @@
                             <input type="text" name="form_lnk_mark" class="form-control p-0 ml-3" value="<?php echo $link[0]['ds_link_market']?>">
                         </div>
                     </div>
-                    <label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe em branco os links que não quiser que apareçam no Site.</label>
+                    <label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe em branco os links que não quiser que apareçam no Site.</label>          
+                    <hr class="m-"><h5 id="green" class="text-center mb-3">CONFIGURAÇÕES DE EXIBIÇÃO</h5>
+                    <div class="card m-3">
+                        <div class="form-check ml-2 mb-1 mt-3">
+                            <input class="form-check-input" name="check_contact" type="checkbox" id="Check1" <?php echo $config[0]['st_contact'] == 1 ? 'checked' : '';?>>
+                            <label class="form-check-label" for="Check1">Exibir contatos na pagina inicial.</label>
+                        </div>
+                        <div class="form-check ml-2 mb-1">
+                            <input class="form-check-input" name="check_map" type="checkbox" id="Check2" <?php echo $config[0]['st_map'] == 1 ? 'checked' : '';?>>
+                            <label class="form-check-label" for="Check2">Exibir mapa na pagina inicial.</label>
+                        </div>
+                        <div class="form-check ml-2 mb-1">
+                            <input class="form-check-input" name="check_document" type="checkbox" id="Check3" <?php echo $config[0]['st_document'] == 1 ? 'checked' : '';?>>
+                            <label class="form-check-label" for="Check3">Exibir documento no rodapé.</label>
+                        </div>
+                        <div class="form-check ml-2 mb-1">
+                            <input class="form-check-input" name="check_card" type="checkbox" id="Check4" <?php echo $config[0]['st_card'] == 1 ? 'checked' : '';?>>
+                            <label class="form-check-label" for="Check4">Exibir sessão de cards na pagina inicial.</label>
+                        </div>
+                        <div class="form-check ml-2 mb-3">
+                            <input class="form-check-input" name="check_post" type="checkbox" id="Check5" <?php echo $config[0]['st_post'] == 1 ? 'checked' : '';?>>
+                            <label class="form-check-label" for="Check5">Exibir sessão de posts na pagina inicial.</label>
+                        </div>
+                    </div>
                     <!-- Botões voltar e aplicar alterações -->
                     <div class="text-center">
                         <hr><a href="?a=home" class="btn btn-primary btn-size-150 m-2"><i class="fas fa-arrow-circle-left mr-2"></i>Voltar</a>

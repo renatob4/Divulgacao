@@ -15,7 +15,7 @@
                 <h3 class="mb-3">Sobre nossa empresa</h3>
                 <p><?php echo $conteudo[0]['ds_text_footer']?></p>
                 <!-- DOCUMENTO DA EMPRESA -->
-                <?php if($conteudo[0]['ds_document'] != ''):?>
+                <?php if ($conteudo[0]['ds_document'] != ''):?>
                     <div class="text-left mt-4">
                         <label id="green">Todos os direitos reservados.</label>
                         <label id="green"><strong>CNPJ:</strong> <?php echo $conteudo[0]['ds_document']?></label>
@@ -26,22 +26,22 @@
         <!-- LINKS SOCIAIS -->
         <div class="col-sm-4 col-12 rodape-social text-center">
             <div class="mb-5 pb-5">
-                <?php if($link[0]['ds_link_face'] != ''):?>
+                <?php if ($link[0]['ds_link_face'] != ''):?>
                     <a href="<?php echo $link[0]['ds_link_face']?>" target="_blank"><i class="fab fa-facebook-square mr-3"></i></a>
                 <?php endif;?>
-                <?php if($link[0]['ds_link_twit'] != ''):?>
+                <?php if ($link[0]['ds_link_twit'] != ''):?>
                     <a href="<?php echo $link[0]['ds_link_twit']?>" target="_blank"><i class="fab fa-twitter-square mr-3"></i></a>
                 <?php endif;?>
-                <?php if($link[0]['ds_link_insta'] != ''):?>
+                <?php if ($link[0]['ds_link_insta'] != ''):?>
                     <a href="<?php echo $link[0]['ds_link_insta']?>" target="_blank"><i class="fab fa-instagram mr-3"></i></a>
                 <?php endif;?>
-                <?php if($link[0]['ds_link_linked'] != ''):?>
+                <?php if ($link[0]['ds_link_linked'] != ''):?>
                     <a href="<?php echo $link[0]['ds_link_linked']?>" target="_blank"><i class="fab fa-linkedin mr-3"></i></a>
                 <?php endif;?>
-                <?php if($link[0]['ds_link_olx'] != ''):?>
+                <?php if ($link[0]['ds_link_olx'] != ''):?>
                     <a href="<?php echo $link[0]['ds_link_olx']?>" target="_blank"><i class="far fa-handshake mr-2"></i></a>
                 <?php endif;?>
-                <?php if($link[0]['ds_link_market'] != ''):?>
+                <?php if ($link[0]['ds_link_market'] != ''):?>
                     <a href="<?php echo $link[0]['ds_link_market']?>" target="_blank"><i class="fas fa-shopping-cart"></i></a>
                 <?php endif;?>
             </div>

@@ -87,7 +87,23 @@ $parametros = [
 ];
 
 //inserir as imagens do conteudo
-$gestor->EXE_NON_QUERY('INSERT INTO tab_imagem(img_header, img_panel, img_body, dt_updated) VALUES(:img_header, :img_panel, :img_body, :dt_updated)', $parametros);
+$gestor->EXE_NON_QUERY('INSERT INTO tab_imagem(img_header, img_panel, img_body, dt_updated) 
+                        VALUES(:img_header, :img_panel, :img_body, :dt_updated)', $parametros);
+
+//--------------------------------------------------------------------------------- TABELA TAB_CONFIG
+
+$parametros = [
+    ':st_contact'           => 1,
+    ':st_map'               => 1,
+    ':st_document'          => 1,
+    ':st_card'              => 1,
+    ':st_post'              => 1,
+    ':dt_updated'           => $data->format('Y-m-d H:i:s')
+];
+
+//inserir as imagens do conteudo
+$gestor->EXE_NON_QUERY('INSERT INTO tab_config(st_contact, st_map, st_document, st_card, st_post, dt_updated) 
+                        VALUES(:st_contact, :st_map, :st_document, :st_card, :st_post, :dt_updated)', $parametros);
 
 ?>
 <div class="alert alert-success text-center mt-2 mb-2">Conteúdo inserido com sucesso.</div>

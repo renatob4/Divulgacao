@@ -3,7 +3,7 @@
     //Código
 
     //verificar a sessão.
-    if(!isset($_SESSION['a'])){
+    if (!isset($_SESSION['a'])) {
         exit();
     }
 

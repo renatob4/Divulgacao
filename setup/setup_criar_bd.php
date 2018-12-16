@@ -89,6 +89,17 @@
         'img_body                        NVARCHAR(50), '.
         'dt_updated                      DATETIME)'
     );
+    //tabela tab_config
+    $gestor->EXE_NON_QUERY(
+        'CREATE TABLE tab_config('.
+        'cd_config                          INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
+        'st_contact                         BOOLEAN, '.
+        'st_map                             BOOLEAN, '.
+        'st_document                        BOOLEAN, '.
+        'st_card                            BOOLEAN, '.
+        'st_post                            BOOLEAN, '.
+        'dt_updated                         DATETIME)'
+    );
     //tabela tab_log
     $gestor->EXE_NON_QUERY(
         'CREATE TABLE tab_log('.
