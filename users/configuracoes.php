@@ -193,7 +193,7 @@
                         <input type="text" name="form_lnk_map" class="form-control" value="<?php echo $conteudo[0]['lnk_map']?>">
                         <label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe este campo em branco ou desmarque no fim da pagina se não quiser que o mapa apareça no Site.</label>
                     </div>
-                    <hr class="m-"><h5 id="green" class="text-center mb-5">GERENCIAR LINKS</h5>
+                    <hr class=""><h5 id="green" class="text-center mb-5">GERENCIAR LINKS</h5>
                     <div class="form-group row pr-3">
                         <label class="col-sm-2 col-form-label p-0 ml-3"><b><i id="grey" class="fab fa-facebook-square mr-2"></i>Facebook:</b></label>
                         <div class="col">
@@ -231,7 +231,7 @@
                         </div>
                     </div>
                     <label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe em branco os links que não quiser que apareçam no Site.</label>          
-                    <hr class="m-"><h5 id="green" class="text-center mb-3">CONFIGURAÇÕES DE EXIBIÇÃO</h5>
+                    <hr class=""><h5 id="green" class="text-center mb-3">CONFIGURAÇÕES DE EXIBIÇÃO</h5>
                     <div class="card m-3 pr-2">
                         <div class="form-check form-inline line ml-2 mb-2 mt-3">
                             <input class="form-check-input" name="check_contact" type="checkbox" id="Check1" <?php echo $config[0]['st_contact'] == 1 ? 'checked' : '';?>>

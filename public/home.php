@@ -80,21 +80,21 @@
     <?php endif;?>
         <?php if($config[0]['st_contact'] == 1):?>
         <!-- Painel rapido de contatos telefonicos -->
-        <div class="card painel-direito text-center p-4">
-            <h4 id="black"><i class="fas fa-phone-square mr-2"></i>Fale conosco:</h4>
-            <div class="card m-2 pt-4 pb-3 pr-0 pl-0 borda-painel">
-                <h5><label class="mb-0" id="black">Contato:</label> <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_1'])?></h5>
+        <div class="card painel-direito text-center p-4 borda-painel">
+            <h4 id="black"><i id="white" class="fas fa-phone-square mr-2"></i>Fale conosco:</h4>
+            <div class="card m-2 pt-4 pb-3 pr-0 pl-3 text-left borda-painel">
+                <h5><label class="mb-0" id="black"><i id="grey" class="fas fa-phone mr-2"></i>Contato:</label> <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_1'])?></h5>
                 <?php if ($conteudo[0]['cd_phone_2'] != ''):?>
-                <h5><label id="black">Ou:</label> <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_2'])?></h5>
+                <h5><label id="black"><i id="grey" class="fab fa-whatsapp mr-2"></i>Ou:</label> <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_2'])?></h5>
                 <?php endif;?>
             </div>
-            <div class="text-center mt-2"><p id="black"><i class="fas fa-envelope ml-2 mr-1"></i>Ou envie um e-mail direto <a href="?a=contatos">Aqui</a></p></div>
+            <div class="text-center mt-2"><p id="white"><i class="fas fa-envelope ml-2 mr-1"></i>Ou envie um e-mail direto <a href="?a=contatos">Aqui</a></p></div>
         </div>
         <?php endif;?>
         <?php if ($conteudo[0]['lnk_map'] != '' && $config[0]['st_map'] == 1):?>
         <!-- Painel rapido de localização/mapa -->
-        <div class="card painel-direito text-center p-2 pt-4 mt-3">
-            <h4 id="black"><i class="fas fa-map-marked mr-2"></i>Nos encontre:</h4>
+        <div class="card painel-direito text-center p-2 pt-4 mt-3 mb-1 borda-painel">
+            <h4 id="black"><i id="white" class="fas fa-map-marked mr-2"></i>Nos encontre:</h4>
             <div class="card mt-2">
                 <!-- iframe do mapa -->
                 <?php echo $conteudo[0]['lnk_map'];?>
@@ -105,7 +105,7 @@
     </div>
 </div>
 <?php if($config[0]['st_card'] == 1):?>
-    <hr class="mb-1 mt-0">
+    <hr class="mb-1 mt-2">
     <!-- Cards de texto -->
     <div class="row">
         <?php for ($i = 0; $i <= count($card)-1; $i++):?>

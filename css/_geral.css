@@ -67,10 +67,18 @@ body{
 #green{
     color: green;
 }
+#white{
+    color: white;
+}
 #lightseagreen{
     color: lightseagreen;
 }
 .line{
     background-color: aliceblue;
 }
-
+.shadow{
+    box-shadow: 2px 2px 2px rgba(0,0,0,.5);	
+}
+.altura{
+    min-height: 300px;
+}

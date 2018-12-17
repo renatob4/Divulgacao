@@ -25,7 +25,7 @@ $data = new DateTime();
 //definição de parametros/dados
 $parametros = [
     ':nm_company'           => 'Empresa',
-    ':ds_presentation'      => 'Descrição breve sobre o negócio/empresa, seu ramo de atividade, seus produtos ou serviços, seus objetivos, o foco,  os diferenciais ou o que tem a oferecer de bom para o mundo. Também é interessante conter um pouco da história da empresa no mercado ou algo que convide o consumidor a conhecer mais sobre o negocio. Palavras chaves e frases de impacto também são bem vindas.',
+    ':ds_presentation'      => 'Coloque aqui uma descrição breve sobre o negócio/empresa, seu ramo de atividade, seus produtos ou serviços, seus objetivos, o foco, os diferenciais ou o que tem a oferecer de bom para o mundo. Também é interessante conter um pouco da história da empresa no mercado ou algo que convide o consumidor a conhecer mais sobre o negocio ou entrar em contato. Palavras chaves e frases de impacto também são super bem vindas e por fim, insira uma imagem a seu gosto para ilustrar sua apresentação ou remova a imagem padrão welcome e deixe so o texto, é por sua conta. Seja criativo e Boa divulgação!.',
     ':ds_email'             => 'empresa@contato.com',
     ':ds_document'          => '00.000.000/0001-12',
     ':cd_phone_1'           => '0000000000',
