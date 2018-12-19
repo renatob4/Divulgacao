@@ -215,3 +215,12 @@
     </form>
     <?php endif;?>
 <?php endif;?>
+<?php if($config[0]['st_comment'] == 1 && $conteudo[0]['lnk_script'] != ''):?>
+<!-- Comentarios do facebook -->
+<hr class="bordahr">
+<div class="row mt-3 m-1 p-0">
+    <div class="col p-0 m-0">
+        <div class="fb-comments" data-href="<?php echo "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"?>" data-width="100%" data-numposts="6"></div>
+    </div>
+</div>
+<?php endif;?>

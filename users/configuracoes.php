@@ -50,10 +50,16 @@
         $check_doc = (isset($_POST['check_document'])) ? 1 : 0;
         $check_card  = (isset($_POST['check_card']))  ? 1 : 0;
         $check_post = (isset($_POST['check_post'])) ? 1 : 0;
+        $check_comment = (isset($_POST['check_comment'])) ? 1 : 0;
+        $check_page = (isset($_POST['check_page'])) ? 1 : 0;
 
         //Get e tratamento do link do mapa inserido no campo.
         $mapa = $_POST['form_lnk_map'];
         $mapa = str_replace('"', "'", $mapa);
+
+        //Get e tratamento do script do facebook inserido no campo.
+        $script = $_POST['form_lnk_script'];
+        $script = str_replace('"', "'", $script);
 
         //Atualiza a base de dados TAB_CONTENT =====================================
         $parametros = [
@@ -66,6 +72,7 @@
             ':cd_phone_2'       => $tel2,
             ':ds_text_footer'   => $rodape,
             ':lnk_map'          => $mapa,
+            ':lnk_script'       => $script,
             ':dt_updated'       => $data->format('Y-m-d H:i:s')
         ];
         $gestor->EXE_NON_QUERY(
@@ -78,6 +85,7 @@
              cd_phone_2 = :cd_phone_2,
              ds_text_footer = :ds_text_footer,
              lnk_map = :lnk_map,
+             lnk_script = :lnk_script,
              dt_updated = :dt_updated
              WHERE cd_info = :cd_info',
             $parametros
@@ -111,6 +119,8 @@
         $parametros = [
             ':cd_config'            => $config[0]['cd_config'],
             ':st_contact'           => $check_contact,
+            ':st_comment'           => $check_comment,
+            ':st_fbpage'            => $check_page,
             ':st_map'               => $check_map,
             ':st_document'          => $check_doc,
             ':st_card'              => $check_card,
@@ -120,6 +130,8 @@
         $gestor->EXE_NON_QUERY(
         'UPDATE tab_config SET
             st_contact = :st_contact,
+            st_comment = :st_comment,
+            st_fbpage = :st_fbpage,
             st_map = :st_map,
             st_document = :st_document,
             st_card = :st_card,
@@ -253,10 +265,29 @@
                             <i id="grey" class="fas fa-star ml-2 mr-3"></i>
                             <label class="form-check-label" for="Check4">Exibir sessão de cards na pagina inicial.</label>
                         </div>
-                        <div class="form-check form-inline line ml-2 mb-3">
+                        <div class="form-check form-inline line ml-2 mb-2">
                             <input class="form-check-input" name="check_post" type="checkbox" id="Check5" <?php echo $config[0]['st_post'] == 1 ? 'checked' : '';?>>
                             <i id="grey" class="fas fa-flag ml-2 mr-3"></i>
                             <label class="form-check-label" for="Check5">Exibir sessão de posts na pagina inicial.</label>
+                        </div>
+                        <div class="form-check form-inline line ml-2 mb-2">
+                            <input class="form-check-input" name="check_comment" type="checkbox" id="Check6" <?php echo $config[0]['st_comment'] == 1 ? 'checked' : '';?>>
+                            <i id="grey" class="fas fa-comment ml-2 mr-3"></i>
+                            <label class="form-check-label" for="Check6">Exibir plugin de comentarios do facebook.</label>
+                        </div>
+                        <div class="form-check form-inline line ml-2 mb-3">
+                            <input class="form-check-input" name="check_page" type="checkbox" id="Check7" <?php echo $config[0]['st_fbpage'] == 1 ? 'checked' : '';?>>
+                            <i id="grey" class="fab fa-facebook-square ml-2 mr-3"></i>
+                            <label class="form-check-label" for="Check7">Exibir pagina do facebook no rodapé.</label><label class="Obs3 mt-1 ml-2">Obs. Para o componente funcionar o link do facebook fornecido deve ser do tipo Página comercial.</label>
+                        </div>
+                    </div>
+                    <div class="text-right mr-3">
+                        <i id="grey" class="fas fa-wrench mr-2"></i><a data-toggle="collapse" href="#dev" id="green" role="button" aria-expanded="false" aria-controls="collapseExample">Campos para desenvolvedor</a>
+                        <div class="collapse" id="dev">
+                            <div class="form-goup text-left mt-3">
+                                <label><b><i id="grey" class="fas fa-wrench mr-2"></i>Script de plugins facebook:</b></label>
+                                <input type="text" name="form_lnk_script" class="form-control" value="<?php echo $conteudo[0]['lnk_script']?>">
+                            </div>
                         </div>
                     </div>
                     <!-- Botões voltar e aplicar alterações -->

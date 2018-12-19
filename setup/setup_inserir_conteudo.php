@@ -32,14 +32,15 @@ $parametros = [
     ':cd_phone_2'           => '0000000000',
     ':ds_text_footer'       => 'Texto que fica exposto no rodapé, também pode conter o slogan da empresa, um convite ou agradecimento.',
     ':lnk_map'              => '',
+    ':lnk_script'           => "<div id='fb-root'></div> <script>(function(d, s, id) {   var js, fjs = d.getElementsByTagName(s)[0];   if (d.getElementById(id)) return;   js = d.createElement(s); js.id = id;   js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2';   fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>",
     ':dt_register'          => $data->format('Y-m-d H:i:s'),
     ':dt_updated'           => $data->format('Y-m-d H:i:s')
 ];
 
 //inserir o conteúdo
 $gestor->EXE_NON_QUERY(
-    'INSERT INTO tab_content(nm_company, ds_presentation, ds_email, ds_document, cd_phone_1, cd_phone_2, ds_text_footer, lnk_map, dt_register, dt_updated)
-     VALUES(:nm_company, :ds_presentation, :ds_email, :ds_document, :cd_phone_1, :cd_phone_2, :ds_text_footer, :lnk_map, :dt_register, :dt_updated)', $parametros);
+    'INSERT INTO tab_content(nm_company, ds_presentation, ds_email, ds_document, cd_phone_1, cd_phone_2, ds_text_footer, lnk_map, lnk_script, dt_register, dt_updated)
+     VALUES(:nm_company, :ds_presentation, :ds_email, :ds_document, :cd_phone_1, :cd_phone_2, :ds_text_footer, :lnk_map, :lnk_script, :dt_register, :dt_updated)', $parametros);
 
 //--------------------------------------------------------------------------------- TABELA TAB_LINK
 
@@ -94,6 +95,12 @@ $gestor->EXE_NON_QUERY('INSERT INTO tab_imagem(img_header, img_panel, img_body, 
 
 $parametros = [
     ':st_contact'           => 1,
+    ':st_service'           => 1,
+    ':st_product'           => 1,
+    ':st_adress'            => 1,
+    ':st_activity'          => 1,
+    ':st_comment'           => 1,
+    ':st_fbpage'            => 1,
     ':st_map'               => 1,
     ':st_document'          => 1,
     ':st_card'              => 1,
@@ -102,8 +109,8 @@ $parametros = [
 ];
 
 //inserir as imagens do conteudo
-$gestor->EXE_NON_QUERY('INSERT INTO tab_config(st_contact, st_map, st_document, st_card, st_post, dt_updated) 
-                        VALUES(:st_contact, :st_map, :st_document, :st_card, :st_post, :dt_updated)', $parametros);
+$gestor->EXE_NON_QUERY('INSERT INTO tab_config(st_contact, st_service, st_product, st_adress, st_activity, st_comment, st_fbpage, st_map, st_document, st_card, st_post, dt_updated)
+                        VALUES(:st_contact, :st_service, :st_product, :st_adress, :st_activity, :st_comment, :st_fbpage, :st_map, :st_document, :st_card, :st_post, :dt_updated)', $parametros);
 
 ?>
 <div class="alert alert-success text-center mt-2 mb-2">Conteúdo inserido com sucesso.</div>

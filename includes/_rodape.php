@@ -16,17 +16,18 @@
                 <h3 class="mb-3">Sobre nossa empresa</h3>
                 <p><?php echo $conteudo[0]['ds_text_footer']?></p>
                 <!-- DOCUMENTO DA EMPRESA -->
-                <?php if ($conteudo[0]['ds_document'] != '' && $config[0]['st_document']):?>
+                <?php if ($conteudo[0]['ds_document'] != '' && $config[0]['st_document'] == 1):?>
                     <div class="text-left mt-4">
                         <label id="green">Todos os direitos reservados.</label>
                         <label id="green"><strong>CNPJ:</strong> <?php echo $conteudo[0]['ds_document']?></label>
                     </div>
                 <?php endif;?>
-            </div>    
+                <label id="grey" class="mr-3 mt-4">Developed by. <a href="mailto:renato.rodrigues_costa@hotmail.com">Renato Rodrigues</a></label>
+            </div>
         </div>
         <!-- LINKS SOCIAIS -->
         <div class="col-sm-4 col-12 rodape-social text-center">
-            <div class="conteudo-baixo2 mb-5 pb-5">
+            <div class="conteudo-baixo">
                 <?php if ($link[0]['ds_link_face'] != ''):?>
                     <a href="<?php echo $link[0]['ds_link_face']?>" target="_blank"><i class="fab fa-facebook-square mr-2"></i></a>
                 <?php endif;?>
@@ -45,10 +46,18 @@
                 <?php if ($link[0]['ds_link_market'] != ''):?>
                     <a href="<?php echo $link[0]['ds_link_market']?>" target="_blank"><i class="fas fa-shopping-cart"></i></a>
                 <?php endif;?>
+                <?php if ($link[0]['ds_link_face'] != '' && $config[0]['st_fbpage'] == 1 && $conteudo[0]['lnk_script'] != ''):?>
+                <div class="text-center mt-5 p-0">
+                    <div class="fb-page"
+                         data-href="<?php echo $link[0]['ds_link_face']?>"
+                         data-small-header="false"
+                         data-adapt-container-width="true"
+                         data-hide-cover="false"
+                         data-show-facepile="false">
+                    </div>
+                </div>
+                <?php endif;?>
             </div>
-            <div class="text-center mt-3">
-                <label id="green" class="dev mr-3">Developed by. <a href="mailto:renato.rodrigues_costa@hotmail.com">Renato Rodrigues</a></label>
-            </div>          
         </div>
     </div>
 </div>

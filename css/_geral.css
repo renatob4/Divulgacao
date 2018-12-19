@@ -15,6 +15,12 @@ body{
 .borda{
     border: 1px solid red;
 }
+.borda-p-1{
+    border: 1px solid rgb(62, 194, 247);
+}
+.borda-g-1{
+    border: 3px solid rgb(62, 194, 247);
+}
 .margem-top-10{
     margin-top: 10px;
 }
@@ -32,6 +38,9 @@ body{
     background-color:rgb(150, 150, 150);
     color: green;
 }
+.bordahr{
+    border-top: 2px solid green;
+}
 .Obs{
     color: red;
     font-size: 0.7em;
@@ -39,6 +48,11 @@ body{
 .Obs2{
     color: green;
     font-size: 0.7em;
+}
+.Obs3{
+    color: grey;
+    font-style: italic; 
+    font-size: 0.8em;
 }
 .file{
     font-size: 0.8em;

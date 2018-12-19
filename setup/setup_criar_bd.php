@@ -45,6 +45,7 @@
         'cd_phone_2                     VARCHAR(20), '.
         'ds_text_footer                 VARCHAR(255), '.
         'lnk_map                        TEXT, '.
+        'lnk_script                     TEXT, '.
         'dt_register                    DATETIME, '.
         'dt_updated                     DATETIME)'
     );
@@ -94,6 +95,12 @@
         'CREATE TABLE tab_config('.
         'cd_config                          INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
         'st_contact                         BOOLEAN, '.
+        'st_service                         BOOLEAN, '.
+        'st_product                         BOOLEAN, '.
+        'st_adress                          BOOLEAN, '.
+        'st_activity                        BOOLEAN, '.
+        'st_comment                         BOOLEAN, '.
+        'st_fbpage                          BOOLEAN, '.
         'st_map                             BOOLEAN, '.
         'st_document                        BOOLEAN, '.
         'st_card                            BOOLEAN, '.

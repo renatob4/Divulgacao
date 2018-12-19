@@ -19,22 +19,22 @@
                     <h6>Estamos prontos para te atender das 10h as 18h de Segunda a Sábado.</h6>
                     <div>
                     <?php if ($link[0]['ds_link_face'] != ''):?>
-                    <i id="grey" class="fab fa-facebook-square mr-2"></i><label class="mt-2 mb-0">Facebook: </label> <a href="<?php echo $link[0]['ds_link_face']?>"><?php echo $link[0]['ds_link_face']?></a><br/>
+                    <i id="grey" class="fab fa-facebook-square mr-2"></i><label class="mt-2 mb-0">Facebook: </label> <a href="<?php echo $link[0]['ds_link_face']?>" target="_blank"><?php echo $link[0]['ds_link_face']?></a><br/>
                     <?php endif;?>
                     <?php if ($link[0]['ds_link_twit'] != ''):?>
-                    <i id="grey" class="fab fa-twitter-square mr-2"></i><label class="mt-0 mb-0">Twitter: </label> <a href="<?php echo $link[0]['ds_link_twit']?>"><?php echo $link[0]['ds_link_twit']?></a><br/>
+                    <i id="grey" class="fab fa-twitter-square mr-2"></i><label class="mt-0 mb-0">Twitter: </label> <a href="<?php echo $link[0]['ds_link_twit']?>" target="_blank"><?php echo $link[0]['ds_link_twit']?></a><br/>
                     <?php endif;?>
                     <?php if ($link[0]['ds_link_insta'] != ''):?>
-                    <i id="grey" class="fab fa-instagram mr-2"></i><label class="mt-0 mb-0">Instagram: </label> <a href="<?php echo $link[0]['ds_link_insta']?>"><?php echo $link[0]['ds_link_insta']?></a><br/>
+                    <i id="grey" class="fab fa-instagram mr-2"></i><label class="mt-0 mb-0">Instagram: </label> <a href="<?php echo $link[0]['ds_link_insta']?>" target="_blank"><?php echo $link[0]['ds_link_insta']?></a><br/>
                     <?php endif;?>
                     <?php if ($link[0]['ds_link_linked'] != ''):?>
-                    <i id="grey" class="fab fa-linkedin mr-2"></i><label class="mt-0 mb-0">LinkedIn: </label> <a href="<?php echo $link[0]['ds_link_linked']?>"><?php echo $link[0]['ds_link_linked']?></a><br/>
+                    <i id="grey" class="fab fa-linkedin mr-2"></i><label class="mt-0 mb-0">LinkedIn: </label> <a href="<?php echo $link[0]['ds_link_linked']?>" target="_blank"><?php echo $link[0]['ds_link_linked']?></a><br/>
                     <?php endif;?>
                     <?php if ($link[0]['ds_link_olx'] != ''):?>
-                    <i id="grey" class="far fa-handshake mr-2"></i><label class="mt-0 mb-0">Instagram: </label> <a href="<?php echo $link[0]['ds_link_olx']?>"><?php echo $link[0]['ds_link_olx']?></a><br/>
+                    <i id="grey" class="far fa-handshake mr-2"></i><label class="mt-0 mb-0">Instagram: </label> <a href="<?php echo $link[0]['ds_link_olx']?>" target="_blank"><?php echo $link[0]['ds_link_olx']?></a><br/>
                     <?php endif;?>
                     <?php if ($link[0]['ds_link_market'] != ''):?>
-                    <i id="grey" class="fas fa-shopping-cart mr-2"></i><label class="mt-0 mb-0">LinkedIn: </label> <a href="<?php echo $link[0]['ds_link_market']?>"><?php echo $link[0]['ds_link_market']?></a><br/>
+                    <i id="grey" class="fas fa-shopping-cart mr-2"></i><label class="mt-0 mb-0">LinkedIn: </label> <a href="<?php echo $link[0]['ds_link_market']?>" target="_blank"><?php echo $link[0]['ds_link_market']?></a><br/>
                     <?php endif;?>
                 </div>
             </div>
@@ -100,7 +100,9 @@
                 </div>
                 <div class="col-md-4 p-3">
                     <div class="text-center"><img class="img-fluid" src="images/mensagem.png"></div>
-                    <label id="green" class="mt-5 text-center"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Preencha todos os campos corretamente para que possamos entrar em contato o mais breve possivel.</label>
+                    <label id="green" class="mt-5 text-center"><i class="fas fa-exclamation-circle mr-2">
+                    </i>Obs. Preencha todos os campos corretamente para que possamos entrar em contato o mais breve possivel. Obrigado pelo interesse!.
+                    </label>
                 </div>
             </div>
         </div>

@@ -1,4 +1,7 @@
 </div>
+        <!-- Script de plugins sociais facebook -->
+        <?php include_once('_facebook_plugin.php')?>
+  
         <!-- Incluir Rodapé -->
         <?php include_once('_rodape.php');?>
         <!-- Javascript -->
