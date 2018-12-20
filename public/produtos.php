@@ -6,9 +6,9 @@
 
     //Instancia do banco de dados.
     $acesso = new cl_gestorBD();
-    $config = $acesso->EXE_QUERY('SELECT st_service FROM tab_config');
+    $config = $acesso->EXE_QUERY('SELECT st_product FROM tab_config');
 
-    if($config[0]['st_service'] == 0){
+    if($config[0]['st_product'] == 0){
         //header("Location:?a=home");
         echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
         exit();
@@ -23,11 +23,11 @@
         // *
     }
 ?>
-<!-- ________________________________________________________CONTEÚDO DA PAGINA SERVIÇOS__________________________________________________________ -->
+<!-- ________________________________________________________CONTEÚDO DA PAGINA PRODUTOS__________________________________________________________ -->
 <div class="row mr-1 ml-1 mt-2">
     <div class="col p-0">
         <div class="card p-5 borda-painel">
-            <h3 class="text-center">Esta é a pagina exemplo de Serviços!</h3>
+            <h3 class="text-center">Esta é a pagina exemplo de Produtos!</h3>
         </div>
     </div>
 </div>

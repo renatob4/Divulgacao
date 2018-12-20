@@ -50,6 +50,8 @@
         $check_doc = (isset($_POST['check_document'])) ? 1 : 0;
         $check_card  = (isset($_POST['check_card']))  ? 1 : 0;
         $check_post = (isset($_POST['check_post'])) ? 1 : 0;
+        $check_product = (isset($_POST['check_product'])) ? 1 : 0;
+        $check_service = (isset($_POST['check_service'])) ? 1 : 0;
         $check_comment = (isset($_POST['check_comment'])) ? 1 : 0;
         $check_page = (isset($_POST['check_page'])) ? 1 : 0;
 
@@ -119,6 +121,8 @@
         $parametros = [
             ':cd_config'            => $config[0]['cd_config'],
             ':st_contact'           => $check_contact,
+            ':st_service'           => $check_service,
+            ':st_product'           => $check_product,
             ':st_comment'           => $check_comment,
             ':st_fbpage'            => $check_page,
             ':st_map'               => $check_map,
@@ -130,6 +134,8 @@
         $gestor->EXE_NON_QUERY(
         'UPDATE tab_config SET
             st_contact = :st_contact,
+            st_service = :st_service,
+            st_product = :st_product,
             st_comment = :st_comment,
             st_fbpage = :st_fbpage,
             st_map = :st_map,
@@ -271,14 +277,24 @@
                             <label class="form-check-label" for="Check5">Exibir sessão de posts na pagina inicial.</label>
                         </div>
                         <div class="form-check form-inline line ml-2 mb-2">
-                            <input class="form-check-input" name="check_comment" type="checkbox" id="Check6" <?php echo $config[0]['st_comment'] == 1 ? 'checked' : '';?>>
+                            <input class="form-check-input" name="check_product" type="checkbox" id="Check6" <?php echo $config[0]['st_product'] == 1 ? 'checked' : '';?>>
+                            <i id="grey" class="fas fa-shopping-cart ml-2 mr-3"></i>
+                            <label class="form-check-label" for="Check6">Exibir pagina de Produtos.</label>
+                        </div>
+                        <div class="form-check form-inline line ml-2 mb-2">
+                            <input class="form-check-input" name="check_service" type="checkbox" id="Check7" <?php echo $config[0]['st_service'] == 1 ? 'checked' : '';?>>
+                            <i id="grey" class="fas fa-wrench ml-2 mr-3"></i>
+                            <label class="form-check-label" for="Check7">Exibir pagina de Serviços.</label>
+                        </div>
+                        <div class="form-check form-inline line ml-2 mb-2">
+                            <input class="form-check-input" name="check_comment" type="checkbox" id="Check8" <?php echo $config[0]['st_comment'] == 1 ? 'checked' : '';?>>
                             <i id="grey" class="fas fa-comment ml-2 mr-3"></i>
-                            <label class="form-check-label" for="Check6">Exibir plugin de comentarios do facebook.</label>
+                            <label class="form-check-label" for="Check8">Exibir plugin de comentarios do facebook.</label>
                         </div>
                         <div class="form-check form-inline line ml-2 mb-3">
-                            <input class="form-check-input" name="check_page" type="checkbox" id="Check7" <?php echo $config[0]['st_fbpage'] == 1 ? 'checked' : '';?>>
+                            <input class="form-check-input" name="check_page" type="checkbox" id="Check9" <?php echo $config[0]['st_fbpage'] == 1 ? 'checked' : '';?>>
                             <i id="grey" class="fab fa-facebook-square ml-2 mr-3"></i>
-                            <label class="form-check-label" for="Check7">Exibir pagina do facebook no rodapé.</label><label class="Obs3 mt-1 ml-2">Obs. Para o componente funcionar o link do facebook fornecido deve ser do tipo Página comercial.</label>
+                            <label class="form-check-label" for="Check9">Exibir pagina do facebook no rodapé.</label><label class="Obs3 mt-1 ml-2">Obs. Para o componente funcionar o link do facebook fornecido deve ser do tipo Página comercial.</label>
                         </div>
                     </div>
                     <div class="text-right mr-3">

@@ -3,6 +3,7 @@
     $acesso = new cl_gestorBD();
     //busca o conteúdo da pagina no banco de dados.
     $conteudo = $acesso->EXE_QUERY('SELECT * FROM tab_content');
+    $config = $acesso->EXE_QUERY('SELECT * FROM tab_config');
 ?>
 <div class="row mr-1 ml-1">
     <div class="col m-0 p-0">
@@ -14,8 +15,12 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item"><a class="texto-menu mr-2"><a href="?a=home"><i class="fas fa-home mr-1"></i>INICIO</a></li>
-                    <li class="nav-item"><a class="texto-menu mr-2"><a href="?a=galeria"><i class="fas fa-image mr-1"></i>GALERIA</a></li>
+                    <?php if($config[0]['st_product'] == 1):?>
+                    <li class="nav-item"><a class="texto-menu mr-2"><a href="?a=produtos"><i class="fas fa-shopping-cart mr-1"></i>PRODUTOS</a></li>
+                    <?php endif;?>
+                    <?php if($config[0]['st_service'] == 1):?>
                     <li class="nav-item"><a class="texto-menu mr-2"><a href="?a=servicos"><i class="fas fa-wrench mr-1"></i>SERVICOS</a></li>
+                    <?php endif;?>
                     <li class="nav-item"><a class="texto-menu mr-2"><a href="?a=contatos"><i class="fas fa-phone mr-1"></i>CONTATOS</a></li>
                 </ul>
             </div>

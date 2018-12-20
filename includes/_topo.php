@@ -9,9 +9,7 @@
         <meta name="keywords" content="divulgação, conheça, palavras, chave">
         <meta name="robots" content="index">
         <meta http-equiv="Refresh" content="600">
-
-        <title>Trust</title>
-
+            <title>Trust</title>
         <!--Bootstrap 4.0-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
         integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">

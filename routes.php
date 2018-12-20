@@ -19,7 +19,7 @@
             'login',
             'contatos',
             'servicos',
-            'galeria',
+            'produtos',
             'recuperar_senha',
             'conteudo'
         ];
@@ -36,13 +36,13 @@
         //Pagina de contatos
         case 'contatos':                        include_once('public/contatos.php'); break;
 
-        //Pagina de contatos
+        //Pagina de serviços
         case 'servicos':                        include_once('public/servicos.php'); break;
 
-        //Pagina de contatos
-        case 'galeria':                         include_once('public/galeria.php'); break;
+        //Pagina de produtos
+        case 'produtos':                         include_once('public/produtos.php'); break;
 
-        //Pagina de contatos
+        //Pagina de conteudo
         case 'conteudo':                        include_once('public/conteudo.php'); break;
 
         // ========================= LOGIN/LOGOUT =============================
