@@ -14,7 +14,6 @@
     $parametros = [
         ':cd_login'    =>  $_SESSION['cd_login']
     ];
-
     $user = $gestor->EXE_QUERY('SELECT * FROM tab_user WHERE cd_login = :cd_login', $parametros);
 
     //Busca o conteúdo da base de dados.
@@ -22,6 +21,7 @@
     $link = $gestor->EXE_QUERY('SELECT * FROM tab_link');
     $config = $gestor->EXE_QUERY('SELECT * FROM tab_config');
     $endereco = $gestor->EXE_QUERY('SELECT * FROM tab_adress');
+    $atividade = $gestor->EXE_QUERY('SELECT * FROM tab_activity');
  
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -36,6 +36,7 @@
         $tel1 = $_POST['form_cd_tel1'];
         $tel2 = $_POST['form_cd_tel2'];
         $rodape = $_POST['form_ds_footer'];
+        $activity = $_POST['form_ds_activity'];
 
         //Buscando os valores do form tab_link
         $face = $_POST['form_lnk_face'];
@@ -60,6 +61,7 @@
         $check_service = (isset($_POST['check_service'])) ? 1 : 0;
         $check_comment = (isset($_POST['check_comment'])) ? 1 : 0;
         $check_adress = (isset($_POST['check_adress'])) ? 1 : 0;
+        $check_activity = (isset($_POST['check_activity'])) ? 1 : 0;
         $check_page = (isset($_POST['check_page'])) ? 1 : 0;
 
         //Get e tratamento do link do mapa inserido no campo.
@@ -105,16 +107,30 @@
             ':cd_adress'        => $endereco[0]['cd_adress'],
             ':ds_adress'        => $adress,
             ':ds_city'          => $cidade,
-            ':ds_uf'            => $estado,
+            ':cd_uf'            => $estado,
             ':dt_updated'       => $data->format('Y-m-d H:i:s')
         ];
         $gestor->EXE_NON_QUERY(
             'UPDATE tab_adress SET
             ds_adress = :ds_adress,
             ds_city = :ds_city,
-            ds_uf = :ds_uf,
+            cd_uf = :cd_uf,
             dt_updated = :dt_updated
             WHERE cd_adress = :cd_adress',
+            $parametros
+        );
+
+        //Atualiza a base de dados TAB_ACTIVITY =====================================
+        $parametros = [
+            ':cd_activity'      => $atividade[0]['cd_activity'],
+            ':ds_activity'      => $activity,
+            ':dt_updated'       => $data->format('Y-m-d H:i:s')
+        ];
+        $gestor->EXE_NON_QUERY(
+            'UPDATE tab_activity SET
+            ds_activity = :ds_activity,
+            dt_updated = :dt_updated
+            WHERE cd_activity = :cd_activity',
             $parametros
         );
 
@@ -149,6 +165,7 @@
             ':st_service'           => $check_service,
             ':st_product'           => $check_product,
             ':st_adress'            => $check_adress,
+            ':st_activity'          => $check_activity,
             ':st_comment'           => $check_comment,
             ':st_fbpage'            => $check_page,
             ':st_map'               => $check_map,
@@ -163,6 +180,7 @@
             st_service = :st_service,
             st_product = :st_product,
             st_adress = :st_adress,
+            st_activity = :st_activity,
             st_comment = :st_comment,
             st_fbpage = :st_fbpage,
             st_map = :st_map,
@@ -233,6 +251,11 @@
                         <label><b><i id="grey" class="fas fa-book mr-2"></i>Texto do rodapé:</b></label>
                         <textarea type="text" name="form_ds_footer" class="form-control" rows="3" required><?php echo $conteudo[0]['ds_text_footer']?></textarea>
                     </div>
+                    <div class="form-goup mt-4">
+                        <label><b><i id="grey" class="fas fa-business-time mr-2"></i>Descreva o seu horario de funcionamento: <label class="file" id="grey">(Ex. Segunda a sexta das 8hrs ás 19hrs.)</label></b></label></b></label>
+                        <input type="text" name="form_ds_activity" class="form-control" value="<?php echo $atividade[0]['ds_activity']?>">
+                        <label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Se este campo estiver vazio os horarios nao aparecerão no site.</label>
+                    </div>
                     <div class="form-row mt-4">
                         <div class="col-md-6 mt-1">
                             <label><b><i id="grey" class="fas fa-map-marker mr-2"></i>Endereço:</b></label>
@@ -246,43 +269,43 @@
                             <label><b>UF:</b></label>
                             <select class="form-control" name="form_ds_estado">
                                 <optgroup label="Categoria">
-                                    <?php if($endereco[0]['ds_uf'] != ''):?>
-                                    <option class="alert alert-success" value="<?php echo $endereco[0]['ds_city']?>" selected><strong><?php echo $endereco[0]['ds_uf']?></strong></option>
+                                    <?php if($endereco[0]['cd_uf'] != ''):?>
+                                    <option class="alert alert-success" value="<?php echo $endereco[0]['cd_uf']?>" selected><strong><?php echo $endereco[0]['cd_uf']?></strong></option>
                                     <?php endif;?>
-                                    <option value="Acre">Acre</option>
-                                    <option value="Alagoas">Alagoas</option>
-                                    <option value="Amapá">Amapá</option>
-                                    <option value="Amazonas">Amazonas</option>
-                                    <option value="Bahia">Bahia</option>
-                                    <option value="Ceará">Ceará</option>
-                                    <option value="Distrito Federal">Distrito Federal</option>
-                                    <option value="Espírito Santo">Espírito Santo</option>
-                                    <option value="Goiás">Goiás</option>
-                                    <option value="Maranhão">Maranhão</option>
-                                    <option value="Mato Grosso">Mato Grosso</option>
-                                    <option value="Mato Grosso do Sul">Mato Grosso do Sul</option>
-                                    <option value="Minas Gerais">Minas Gerais</option>
-                                    <option value="Pará">Pará</option>
-                                    <option value="Paraíba">Paraíba</option>
-                                    <option value="Paraná">Paraná</option>
-                                    <option value="Pernambuco">Pernambuco</option>
-                                    <option value="Piauí">Piauí</option>
-                                    <option value="Rio de Janeiro">Rio de Janeiro</option>
-                                    <option value="Rio Grande do Norte">Rio Grande do Norte</option>
-                                    <option value="Rio Grande do Sul">Rio Grande do Sul</option>
-                                    <option value="Rondônia">Rondônia</option>
-                                    <option value="Roraima">Roraima</option>
-                                    <option value="Santa Catarina">Santa Catarina</option>
-                                    <option value="São Paulo">São Paulo</option>
-                                    <option value="Sergipe">Sergipe</option>
-                                    <option value="Tocantins">Tocantins</option>
+                                    <option value="AC">Acre</option>
+                                    <option value="AL">Alagoas</option>
+                                    <option value="AP">Amapá</option>
+                                    <option value="AM">Amazonas</option>
+                                    <option value="BA">Bahia</option>
+                                    <option value="CE">Ceará</option>
+                                    <option value="DF">Distrito Federal</option>
+                                    <option value="ES">Espirito Santo</option>
+                                    <option value="GO">Goiás</option>
+                                    <option value="MA">Maranhão</option>
+                                    <option value="MS">Mato Grosso do Sul</option>
+                                    <option value="MT">Mato Grosso</option>
+                                    <option value="MG">Minas Gerais</option>
+                                    <option value="PA">Pará</option>
+                                    <option value="PB">Paraíba</option>
+                                    <option value="PR">Paraná</option>
+                                    <option value="PE">Pernambuco</option>
+                                    <option value="PI">Piauí</option>
+                                    <option value="RJ">Rio de Janeiro</option>
+                                    <option value="RN">Rio Grande do Norte</option>
+                                    <option value="RS">Rio Grande do Sul</option>
+                                    <option value="RO">Rondônia</option>
+                                    <option value="RR">Roraima</option>
+                                    <option value="SC">Santa Catarina</option>
+                                    <option value="SP">São Paulo</option>
+                                    <option value="SE">Sergipe</option>
+                                    <option value="TO">Tocantins</option>
                                 </optgroup>
                             </select>
                         </div>
                         <label class="Obs ml-1 mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe estes campos em branco se não quiser que ele apareçam no Site.</label>
                     </div>
-                    <div class="form-goup mt-3">
-                        <label><b><i id="grey" class="fas fa-map-marker-alt mr-2"></i>Mapa: <label id="grey">(Tag do tipo iframe)</label></b></label>
+                    <div class="form-goup mt-4">
+                        <label><b><i id="grey" class="fas fa-map-marker-alt mr-2"></i>Mapa: <label class="file" id="grey">(Tag do tipo iframe.)</label></b></label>
                         <input type="text" name="form_lnk_map" class="form-control" value="<?php echo $conteudo[0]['lnk_map']?>">
                         <label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe este campo em branco ou desmarque no fim da pagina se não quiser que o mapa apareça no Site.</label>
                     </div>
@@ -333,7 +356,7 @@
                         </div>
                         <div class="form-check form-inline line ml-2 mb-2">
                             <input class="form-check-input" name="check_map" type="checkbox" id="Check2" <?php echo $config[0]['st_map'] == 1 ? 'checked' : '';?>>
-                            <i id="grey" class="fas fa-map-marker-alt ml-2 mr-3"></i>
+                            <i id="grey" class="fas fa-map-marked ml-2 mr-3"></i>
                             <label class="form-check-label" for="Check2">Exibir mapa na pagina inicial.</label>
                         </div>
                         <div class="form-check form-inline line ml-2 mb-2">
@@ -342,39 +365,44 @@
                             <label class="form-check-label" for="Check3">Exibir endereço na pagina de contatos.</label>
                         </div>
                         <div class="form-check form-inline line ml-2 mb-2">
-                            <input class="form-check-input" name="check_document" type="checkbox" id="Check4" <?php echo $config[0]['st_document'] == 1 ? 'checked' : '';?>>
+                            <input class="form-check-input" name="check_activity" type="checkbox" id="Check4" <?php echo $config[0]['st_activity'] == 1 ? 'checked' : '';?>>
+                            <i id="grey" class="fas fa-business-time ml-2 mr-2"></i>
+                            <label class="form-check-label" for="Check4">Exibir horario de funcionamento na pagina de contatos.</label>
+                        </div>
+                        <div class="form-check form-inline line ml-2 mb-2">
+                            <input class="form-check-input" name="check_document" type="checkbox" id="Check5" <?php echo $config[0]['st_document'] == 1 ? 'checked' : '';?>>
                             <i id="grey" class="fas fa-book ml-2 mr-3"></i>
-                            <label class="form-check-label" for="Check4">Exibir documento/cnpj no rodapé.</label>
+                            <label class="form-check-label" for="Check5">Exibir documento/cnpj no rodapé.</label>
                         </div>
                         <div class="form-check form-inline line ml-2 mb-2">
-                            <input class="form-check-input" name="check_card" type="checkbox" id="Check5" <?php echo $config[0]['st_card'] == 1 ? 'checked' : '';?>>
+                            <input class="form-check-input" name="check_card" type="checkbox" id="Check6" <?php echo $config[0]['st_card'] == 1 ? 'checked' : '';?>>
                             <i id="grey" class="fas fa-star ml-2 mr-3"></i>
-                            <label class="form-check-label" for="Check5">Exibir sessão de cards na pagina inicial.</label>
+                            <label class="form-check-label" for="Check6">Exibir sessão de cards na pagina inicial.</label>
                         </div>
                         <div class="form-check form-inline line ml-2 mb-2">
-                            <input class="form-check-input" name="check_post" type="checkbox" id="Check6" <?php echo $config[0]['st_post'] == 1 ? 'checked' : '';?>>
+                            <input class="form-check-input" name="check_post" type="checkbox" id="Check7" <?php echo $config[0]['st_post'] == 1 ? 'checked' : '';?>>
                             <i id="grey" class="fas fa-flag ml-2 mr-3"></i>
-                            <label class="form-check-label" for="Check6">Exibir sessão de posts na pagina inicial.</label>
+                            <label class="form-check-label" for="Check7">Exibir sessão de posts na pagina inicial.</label>
                         </div>
                         <div class="form-check form-inline line ml-2 mb-2">
-                            <input class="form-check-input" name="check_product" type="checkbox" id="Check7" <?php echo $config[0]['st_product'] == 1 ? 'checked' : '';?>>
+                            <input class="form-check-input" name="check_product" type="checkbox" id="Check8" <?php echo $config[0]['st_product'] == 1 ? 'checked' : '';?>>
                             <i id="grey" class="fas fa-shopping-cart ml-2 mr-3"></i>
-                            <label class="form-check-label" for="Check7">Exibir pagina de Produtos.</label>
+                            <label class="form-check-label" for="Check8">Exibir pagina de Produtos.</label>
                         </div>
                         <div class="form-check form-inline line ml-2 mb-2">
-                            <input class="form-check-input" name="check_service" type="checkbox" id="Check8" <?php echo $config[0]['st_service'] == 1 ? 'checked' : '';?>>
+                            <input class="form-check-input" name="check_service" type="checkbox" id="Check9" <?php echo $config[0]['st_service'] == 1 ? 'checked' : '';?>>
                             <i id="grey" class="fas fa-wrench ml-2 mr-3"></i>
-                            <label class="form-check-label" for="Check8">Exibir pagina de Serviços.</label>
+                            <label class="form-check-label" for="Check9">Exibir pagina de Serviços.</label>
                         </div>
                         <div class="form-check form-inline line ml-2 mb-2">
-                            <input class="form-check-input" name="check_comment" type="checkbox" id="Check9" <?php echo $config[0]['st_comment'] == 1 ? 'checked' : '';?>>
+                            <input class="form-check-input" name="check_comment" type="checkbox" id="Check10" <?php echo $config[0]['st_comment'] == 1 ? 'checked' : '';?>>
                             <i id="grey" class="fas fa-comment ml-2 mr-3"></i>
-                            <label class="form-check-label" for="Check9">Exibir plugin de comentarios do facebook.</label>
+                            <label class="form-check-label" for="Check10">Exibir plugin de comentarios do facebook.</label>
                         </div>
                         <div class="form-check form-inline line ml-2 mb-3">
-                            <input class="form-check-input" name="check_page" type="checkbox" id="Check10" <?php echo $config[0]['st_fbpage'] == 1 ? 'checked' : '';?>>
+                            <input class="form-check-input" name="check_page" type="checkbox" id="Check11" <?php echo $config[0]['st_fbpage'] == 1 ? 'checked' : '';?>>
                             <i id="grey" class="fab fa-facebook-square ml-2 mr-3"></i>
-                            <label class="form-check-label" for="Check10">Exibir pagina do facebook no rodapé.</label><label class="Obs3 mt-1 ml-2 mb-1">Obs. Para o componente funcionar o link do facebook fornecido deve ser do tipo Página comercial.</label>
+                            <label class="form-check-label" for="Check11">Exibir pagina do facebook no rodapé.</label><label class="Obs3 mt-1 ml-2 mb-1">Obs. Para o componente funcionar o link do facebook fornecido deve ser do tipo Página comercial.</label>
                         </div>
                     </div>
                     <div class="text-right mr-3">

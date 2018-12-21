@@ -100,21 +100,21 @@
                                     <a href="?a=home" class="btn btn-primary btn-size-150">Cancelar</a>
                                     <button role="submit" class="btn btn-primary btn-size-150">Recuperar</button>
                                 </div>
-                            </form>       
-                        </div>        
+                            </form>
+                        </div>
                     </div>
                 </div>
     <?php else : ?>
                 <!--Apresentação da mensagem de sucesso ao recuperar-->
                 <div class="container-fluid p-0">
                     <div class="row mr-1 ml-1 mt-2">
-                        <div class="col-md-4 card m-3 p-3">                                  
+                        <div class="col-md-4 card m-3 p-3">                            
                             <div class="text-center">
                                 <h3>Senha recuperada com sucesso!</h3><hr><p>Verifique seu e-mail e utilize a senha provisória recebida para fazer login.</p>   
                                 <a href="?a=home" class="btn btn-primary btn-size-150">Voltar</a>
                                 <a href="?a=login" class="btn btn-primary btn-size-150">Fazer login</a>
                             </div>
-                        </div>        
+                        </div>
                     </div>
                 </div>
 <?php endif;?>

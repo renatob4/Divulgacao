@@ -14,14 +14,14 @@
 ?>
 <!-- Imagem de apresentação do site -->
 <div class="row mt-0 mr-1 ml-1 mt-2">
-    <img class="img-fluid imagem-painel" src="<?php echo $img[0]['img_panel']?>" height="600" width="100%">
+    <img class="img-fluid imagem-painel shadow-strong" src="<?php echo $img[0]['img_panel']?>" height="600" width="100%">
     <?php if (funcoes::VerificarLogin()):?>
     <div>
         <form class="p-0 m-0 mt-2" action="?a=recebe_imagem&sender=panel" method="post" enctype="multipart/form-data">
             <label class="p-0 m-0">
                 <strong><i id="grey" class="fas fa-image mr-1 ml-1"></i>
                     <a data-toggle="collapse" href="#collapseInputP" id="green" role="button" aria-expanded="false" aria-controls="collapseExample">Alterar imagem</a>
-                    <label class="ml-1 file" id="grey">(1300x600)</label>
+                    <label class="ml-1 file" id="grey">(Ideal: 1300x600)</label>
                 </strong>
             </label>
             <div class="collapse" id="collapseInputP">
@@ -33,20 +33,20 @@
     <?php endif;?>
 </div>
 <!-- Apresentação da empresa, texto. -->
-<hr>
+<hr class="mt-3 mb-3">
 <div class="row m-1">
     <?php if(($config[0]['st_map'] == 1 || $config[0]['st_contact'] == 1) && ($conteudo[0]['lnk_map'] != '' || $config[0]['st_contact'] == 1)):?>
     <div class="col-md-8 p-0">
     <?php else:?>
     <div class="col p-0">
     <?php endif;?>
-        <div class="text-center p-4">
+        <div class="text-center pt-1 pr-3 pl-3 pb-3">
             <h4 class="mb-3">APRESENTAÇÃO</h4>
             <!-- Dados contidos no campo 'ds_presentation' do banco de dados -->
             <p class="mb-4"><?php echo $conteudo[0]['ds_presentation']?></p>
             <!-- Mostra a imagem no corpo da apresentação se ela existir -->
             <?php if ($img[0]['img_body'] != ''):?>
-            <img class="img-fluid" src="<?php echo $img[0]['img_body']?>">
+            <img class="img-fluid shadow-strong" src="<?php echo $img[0]['img_body']?>">
             <?php endif;?>
             <?php if (funcoes::VerificarLogin()):?>
             <div class="row mt-2 mb-0">
@@ -55,7 +55,7 @@
                         <label class="p-0 m-0">
                             <strong><i id="grey" class="fas fa-image mr-1 ml-1"></i>
                                 <a data-toggle="collapse" href="#collapseInputB" id="green" role="button" aria-expanded="false" aria-controls="collapseExample">Inserir</a>
-                                <label class="ml-1 file" id="grey">(950x450)</label>
+                                <label class="ml-1 file" id="grey">(Ideal: 960x460)</label>
                             </strong>
                         </label>
                         <div class="collapse" id="collapseInputB">
@@ -80,20 +80,22 @@
     <?php endif;?>
         <?php if($config[0]['st_contact'] == 1):?>
         <!-- Painel rapido de contatos telefonicos -->
-        <div class="card painel-direito text-center p-4 borda-painel">
+        <div class="card painel-direito text-center p-4 borda-painel shadow-strong">
             <h4 id="black"><i id="white" class="fas fa-phone-square mr-2"></i>Fale conosco:</h4>
-            <div class="card m-2 pt-4 pb-3 pr-0 pl-3 text-left borda-painel">
-                <h5><label class="mb-0" id="black"><i id="grey" class="fas fa-phone mr-2"></i>Contato:</label> <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_1'])?></h5>
-                <?php if ($conteudo[0]['cd_phone_2'] != ''):?>
-                <h5><label id="black"><i id="grey" class="fab fa-whatsapp mr-2"></i>Ou:</label> <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_2'])?></h5>
-                <?php endif;?>
+            <div class="flex-media">
+                <div class="card m-2 pt-4 pb-3 pr-0 borda-painel">
+                    <label><label class="mb-0" id="black"><i id="grey" class="fas fa-phone mr-2"></i>Contato:</label> <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_1'])?></label>
+                    <?php if ($conteudo[0]['cd_phone_2'] != ''):?>
+                    <label><label id="black"><i id="grey" class="fab fa-whatsapp mr-2"></i>Ou:</label> <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_2'])?></label>
+                    <?php endif;?>
+                </div>
             </div>
             <div class="text-center mt-2"><p id="white"><i class="fas fa-envelope ml-2 mr-1"></i>Ou envie um e-mail direto <a href="?a=contatos">Aqui</a></p></div>
         </div>
         <?php endif;?>
         <?php if ($conteudo[0]['lnk_map'] != '' && $config[0]['st_map'] == 1):?>
         <!-- Painel rapido de localização/mapa -->
-        <div class="card painel-direito text-center p-2 pt-4 mt-3 mb-1 borda-painel">
+        <div class="card painel-direito text-center p-2 pt-4 mt-3 mb-1 borda-painel shadow-strong">
             <h4 id="black"><i id="white" class="fas fa-map-marked mr-2"></i>Nos encontre:</h4>
             <div class="card mt-2">
                 <!-- iframe do mapa -->
@@ -105,7 +107,7 @@
     </div>
 </div>
 <?php if($config[0]['st_card'] == 1):?>
-    <hr class="mb-1 mt-2">
+    <hr class="mt-3 mb-0">
     <!-- Cards de texto -->
     <div class="row">
         <?php for ($i = 0; $i <= count($card)-1; $i++):?>
@@ -117,7 +119,7 @@
             <?php else:?>
                 <div class="col-md-12 col-sm-6 col-xs-12">
             <?php endif;?>
-                <div class="panel panel-default text-center espaco-paineis">
+                <div class="panel panel-default text-center espaco-paineis shadow-strong">
                     <!-- Titulo carregado direto da base de dados -->
                     <p class="titulo-painel"><i id="gold" class="fas fa-star mr-2"></i><?php echo $card[$i]['ds_title']?></p>
                     <!-- Conteúdo carregado direto da base de dados -->
@@ -171,7 +173,7 @@
 <?php if($config[0]['st_post'] == 1):?>
     <?php if (count($post) > 0):?>
     <hr>
-    <div class="row borda-painel m-0">
+    <div class="row borda-painel m-0 shadow-strong">
         <div class="col p-0">
             <div class="card painel-direito"><div id="black" class="text-center mt-3 mb-2"><h5><i id="green" class="fas fa-comments mr-2"></i><label>NOTÍCIAS RECENTES</label></h5></div>
                 <?php for ($x = 0; $x < count($post); $x++):?>

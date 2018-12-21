@@ -7,7 +7,7 @@
 ?>
 <div class="row mr-1 ml-1">
     <div class="col m-0 p-0">
-        <nav class="navbar navbar-expand-sm navbar-dark bg-dark contentor-menu">
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark contentor-menu shadow-strong">
             <a href="?a=home" id="lightseagreen" class="navbar-brand mb-0 mr-3 h1"><?php echo $conteudo[0]['nm_company']?></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

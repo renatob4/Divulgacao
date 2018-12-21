@@ -105,9 +105,20 @@
         'cd_adress                      INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
         'ds_adress                      NVARCHAR(60), '.
         'ds_city                        NVARCHAR(50), '.
-        'ds_uf                          NVARCHAR(30), '.
+        'cd_uf                          NVARCHAR(30), '.
         'dt_register                    DATETIME, '.
         'dt_updated                     DATETIME)'
+    );
+    //tabela tab_prospects
+    $gestor->EXE_NON_QUERY(
+        'CREATE TABLE tab_prospect('.
+        'cd_prospect                     INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
+        'nm_prospect                     NVARCHAR(50), '.
+        'ds_email                        NVARCHAR(50), '.
+        'cd_phone                        NVARCHAR(20), '.
+        'ds_channel                      NVARCHAR(120), '.
+        'dt_register                     DATETIME, '.
+        'dt_updated                      DATETIME)'
     );
     //tabela tab_config
     $gestor->EXE_NON_QUERY(

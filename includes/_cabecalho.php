@@ -18,7 +18,7 @@
                 <label class="p-0 m-0">
                     <strong><i id="grey" class="fas fa-image mr-1 ml-1"></i>
                         <a data-toggle="collapse" href="#collapseInput" id="green" role="button" aria-expanded="false" aria-controls="collapseExample">Alterar imagem</a>
-                        <label class="ml-1 file" id="grey">(320x100)</label>
+                        <label class="ml-1 file" id="grey">(Ideal: 320x100)</label>
                     </strong>
                 </label>
                 <div class="collapse" id="collapseInput">

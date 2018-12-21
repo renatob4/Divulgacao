@@ -38,6 +38,28 @@ body{
     background-color:rgb(150, 150, 150);
     color: green;
 }
+.flex-media{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+/* Quando a tela for menor do que 720px entao a classe sera alterada pelo media query */
+@media screen and (max-width: 720px) {
+    .flex-media{
+        font-weight: bold;
+        font-size: 1.0em;
+    }
+ }
+ @media screen and (max-width: 420px) {
+    .flex-media{ 
+        font-weight: bold;
+        font-size: 0.9em;
+    }
+ }
+ @media screen and (max-width: 320px) {
+    .flex-media{ 
+        font-size: 0.7em;
+    }
+ }
 .bordahr{
     border-top: 2px solid green;
 }
@@ -92,6 +114,9 @@ body{
 }
 .shadow{
     box-shadow: 2px 2px 2px rgba(0,0,0,.5);	
+}
+.shadow-strong{
+    box-shadow: 4px 4px 4px rgba(0,0,0,.5);	
 }
 .altura{
     min-height: 300px;
