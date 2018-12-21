@@ -61,6 +61,36 @@ $gestor->EXE_NON_QUERY(
     'INSERT INTO tab_link(ds_link_face, ds_link_twit, ds_link_linked, ds_link_insta, ds_link_olx, ds_link_market, dt_register, dt_updated)
      VALUES(:ds_link_face, :ds_link_twit, :ds_link_linked, :ds_link_insta, :ds_link_olx, :ds_link_market, :dt_register, :dt_updated)', $parametros);
 
+//--------------------------------------------------------------------------------- TABELA TAB_ADRESS
+
+//definição de parametros/dados
+$parametros = [
+    ':ds_adress'            => '',
+    ':ds_city'              => '',
+    ':ds_uf'                => '',
+    ':dt_register'          => $data->format('Y-m-d H:i:s'),
+    ':dt_updated'           => $data->format('Y-m-d H:i:s')
+];
+
+//inserir os links
+$gestor->EXE_NON_QUERY(
+    'INSERT INTO tab_adress(ds_adress, ds_city, ds_uf, dt_register, dt_updated)
+     VALUES(:ds_adress, :ds_city, :ds_uf, :dt_register, :dt_updated)', $parametros);
+
+//--------------------------------------------------------------------------------- TABELA TAB_ACTIVITY
+
+//definição de parametros/dados
+$parametros = [
+    ':ds_activity'          => '',
+    ':dt_register'          => $data->format('Y-m-d H:i:s'),
+    ':dt_updated'           => $data->format('Y-m-d H:i:s')
+];
+
+//inserir os links
+$gestor->EXE_NON_QUERY(
+    'INSERT INTO tab_activity(ds_activity, dt_register, dt_updated)
+     VALUES(:ds_activity, :dt_register, :dt_updated)', $parametros);
+
 //--------------------------------------------------------------------------------- TABELA TAB_CARD
 
 //inserir os cards (Especificamente 3 como conteudo padrão.)
@@ -84,12 +114,13 @@ $parametros = [
     ':img_header'           => 'images/logo.png',
     ':img_panel'            => 'images/panel.jpg',
     ':img_body'             => 'images/welcome.jpg',
+    ':dt_register'          => $data->format('Y-m-d H:i:s'),
     ':dt_updated'           => $data->format('Y-m-d H:i:s')
 ];
 
 //inserir as imagens do conteudo
-$gestor->EXE_NON_QUERY('INSERT INTO tab_imagem(img_header, img_panel, img_body, dt_updated) 
-                        VALUES(:img_header, :img_panel, :img_body, :dt_updated)', $parametros);
+$gestor->EXE_NON_QUERY('INSERT INTO tab_imagem(img_header, img_panel, img_body, dt_register, dt_updated) 
+                        VALUES(:img_header, :img_panel, :img_body, :dt_register ,:dt_updated)', $parametros);
 
 //--------------------------------------------------------------------------------- TABELA TAB_CONFIG
 
@@ -105,12 +136,13 @@ $parametros = [
     ':st_document'          => 1,
     ':st_card'              => 1,
     ':st_post'              => 1,
+    ':dt_register'          => $data->format('Y-m-d H:i:s'),
     ':dt_updated'           => $data->format('Y-m-d H:i:s')
 ];
 
 //inserir as imagens do conteudo
-$gestor->EXE_NON_QUERY('INSERT INTO tab_config(st_contact, st_service, st_product, st_adress, st_activity, st_comment, st_fbpage, st_map, st_document, st_card, st_post, dt_updated)
-                        VALUES(:st_contact, :st_service, :st_product, :st_adress, :st_activity, :st_comment, :st_fbpage, :st_map, :st_document, :st_card, :st_post, :dt_updated)', $parametros);
+$gestor->EXE_NON_QUERY('INSERT INTO tab_config(st_contact, st_service, st_product, st_adress, st_activity, st_comment, st_fbpage, st_map, st_document, st_card, st_post, dt_register, dt_updated)
+                        VALUES(:st_contact, :st_service, :st_product, :st_adress, :st_activity, :st_comment, :st_fbpage, :st_map, :st_document, :st_card, :st_post, :dt_register, :dt_updated)', $parametros);
 
 ?>
 <div class="alert alert-success text-center mt-2 mb-2">Conteúdo inserido com sucesso.</div>

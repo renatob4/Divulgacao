@@ -88,7 +88,26 @@
         'img_header                      NVARCHAR(50), '.
         'img_panel                       NVARCHAR(50), '.
         'img_body                        NVARCHAR(50), '.
+        'dt_register                     DATETIME, '.
         'dt_updated                      DATETIME)'
+    );
+    //tabela tab_activity
+    $gestor->EXE_NON_QUERY(
+        'CREATE TABLE tab_activity('.
+        'cd_activity                     INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
+        'ds_activity                     NVARCHAR(255), '.
+        'dt_register                     DATETIME, '.
+        'dt_updated                      DATETIME)'
+    );
+    //tabela tab_adress
+    $gestor->EXE_NON_QUERY(
+        'CREATE TABLE tab_adress('.
+        'cd_adress                      INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
+        'ds_adress                      NVARCHAR(60), '.
+        'ds_city                        NVARCHAR(50), '.
+        'ds_uf                          NVARCHAR(30), '.
+        'dt_register                    DATETIME, '.
+        'dt_updated                     DATETIME)'
     );
     //tabela tab_config
     $gestor->EXE_NON_QUERY(
@@ -105,6 +124,7 @@
         'st_document                        BOOLEAN, '.
         'st_card                            BOOLEAN, '.
         'st_post                            BOOLEAN, '.
+        'dt_register                        DATETIME, '.
         'dt_updated                         DATETIME)'
     );
     //tabela tab_log
