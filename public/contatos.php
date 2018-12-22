@@ -11,11 +11,61 @@
     $endereco = $acesso->EXE_QUERY('SELECT * FROM tab_adress');
     $activity = $acesso->EXE_QUERY('SELECT * FROM tab_activity');
 
+    $resposta = false;
+
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    
+        //captura dos dados do formulário.
+        $text_client = $_POST['nm_client'];
+        $text_email = $_POST['ds_email'];
+        $text_tel = $_POST['cd_tel'];
+        $text_subject = $_POST['ds_subject'];
+        $text_message = $_POST['ds_message'];
+        $text_interview = $_POST['ds_interview'];
+
+        //======================================================================================  
+        $email = new emails();
+        //preparação dos dados e do corpo do email.
+        $temp = [
+            $conteudo[0]['ds_email'],
+            $text_subject,
+            "<div style='background-color: aliceblue; padding: 20px;border: 1px solid black'>
+            <h4 style='color:green;'>Nova mensagem de cliente! <label style='color:black;'>- $text_subject</label></h4>
+            <hr>
+            <h5 style='color:black;'>Nome do cliente: <label style='font-weight:normal;color:grey;'>$text_client</label></h5>
+            <h5 style='color:black;'>Email do cliente: <label style='font-weight:normal;color:grey;'>$text_email</label></h5>
+            <h5 style='color:black;'>Contato do cliente: <label style='font-weight:normal;color:grey;'>$text_tel</label></h5>
+            <hr>
+            <h5 style='color:black;'>Onde ele nos encontrou: <label style='font-weight:normal;color:grey;'>$text_interview</label></h5>
+            <div style='border: 2px solid green; padding: 10px;'>
+            <h5>Mensagem: <label style='font-weight:normal;color:grey;'>$text_message</label></h5>
+            </div>
+            </div>",
+            $text_client
+        ];
+        //enviar o email
+        $resposta = $email->EnviarMensagem($temp);
+        //======================================================================================
+        
+        if($resposta){
+            $_SESSION['resultado'] = "Mensagem enviada com sucesso!";
+            //header("Location:?a=home");
+            echo('<meta http-equiv="refresh" content="0;URL=?a=contatos">');
+            exit();
+        }else{
+            $_SESSION['resultado'] = "Falha ao enviar sua mensagem.";
+            //header("Location:?a=home");
+            echo('<meta http-equiv="refresh" content="0;URL=?a=contatos">');
+            exit();
+        }
+    }
+
 ?>
+
 <!-- ________________________________________________________CONTEÚDO DA PAGINA CONTATOS__________________________________________________________ -->
 <div class="row mr-1 ml-1 mt-2 borda-painel">
     <div class="col m-0 p-0">
-        <div class="card p-0 m-0 shadow">
+        <div class="card p-0 m-0 shadow-strong">
             <div class="row p-2 pb-0 m-0">
                 <div class="col p-4">
                     <h5 id="green" class="text-center mb-3">COMO E ONDE NOS ENCONTRAR</h5><hr>
@@ -72,27 +122,27 @@
 <!-- Formulario para envio de mensagem pelo site -->
 <div class="row mr-1 ml-1 mt-2 borda-painel">
     <div class="col m-0 p-0">
-        <div class="card p-3 m-0 shadow">
+        <div class="card pb-0 pr-3 pl-3  pt-3 m-0 shadow-strong">
             <h5 id="green" class="text-center mb-2 mt-3">NOS DEIXE UMA MENSAGEM</h5><hr>
             <div class="row">
                 <div class="col-md-8 pl-3 p-3">
-                    <form class="mt-0 pt-0 p-3 line shadow-strong" method="post" action="">
+                    <form class="mt-0 pt-0 p-3 line shadow-strong" method="post" action="?a=contatos">
                         <div class="form-goup">
-                            <label><b><i id="grey" class="fas fa-building mr-2"></i>Nome:</b></label>
-                            <input type="text" name="" class="form-control" value="" required>
+                            <label><b><i id="grey" class="far fa-address-book mr-2"></i>Nome:</b></label>
+                            <input type="text" name="nm_client" class="form-control" required>
                         </div>
                         <div class="form-goup mt-4">
                             <label><b><i id="grey" class="fas fa-at mr-2"></i>E-mail:</b></label>
-                            <input type="email" name="" class="form-control" value="" required>
+                            <input type="email" name="ds_email" class="form-control" required>
                         </div>
                         <div class="form-row mt-4">
                             <div class="col-md-6 mt-1">
                                 <label><b><i id="grey" class="fab fa-whatsapp mr-2"></i>Telefone/WhatsApp:</b></label>
-                                <input type="tel" name="" class="form-control" value="" required>
+                                <input type="tel" name="cd_tel" class="form-control" required>
                             </div>
                             <div class="col-md-6 mt-1">
                                 <label><b><i id="grey" class="fas fa-exclamation mr-2"></i>Assunto:</b></label>
-                                <select class="form-control" name="" placeholder="Assunto" required>
+                                <select class="form-control" name="ds_subject" required>
                                 <optgroup label="Categoria">
                                     <option value="Duvida" selected>Duvida</option>
                                     <option value="Critica">Critica</option>
@@ -105,20 +155,20 @@
                         </div>
                         <div class="form-goup mt-4">
                             <label><b><i id="grey" class="fas fa-envelope-open mr-2"></i>Mensagem:</b></label>
-                            <textarea type="text" name="" class="form-control" rows="5" required></textarea>
+                            <textarea type="text" name="ds_message" class="form-control" rows="5" required></textarea>
                         </div>
                         <div class="form-row mt-4">
                             <div class="col-md-7 mt-2">
                                 <label class=""><b><i id="grey" class="fas fa-question-circle mr-2"></i>Como nos conheceu?</b></label>
-                                <select class="form-control" name="" placeholder="Assunto" required>
+                                <select class="form-control" name="ds_interview" placeholder="Assunto" required>
                                     <optgroup label="Categoria">
-                                        <option value="" selected>Indicação de um amigo.</option>
-                                        <option value="">Através do facebook ou outra rede social.</option>
-                                        <option value="">Por meio de panfletos.</option>
-                                        <option value="">Encontrei a loja presencialmente.</option>
-                                        <option value="">Através do Google ou outro motor de busca.</option>
-                                        <option value="">Ja sou cliente.</option>
-                                        <option value="">Outros...</option>
+                                        <option value="Indicação de um amigo." selected>Indicação de um amigo.</option>
+                                        <option value="Através do facebook ou outra rede social.">Através do facebook ou outra rede social.</option>
+                                        <option value="Por meio de panfletos.">Por meio de panfletos.</option>
+                                        <option value="Encontrei a loja presencialmente.">Encontrei a loja presencialmente.</option>
+                                        <option value="Através do Google ou outro motor de busca.">Através do Google ou outro motor de busca.</option>
+                                        <option value="Ja sou cliente.">Ja sou cliente.</option>
+                                        <option value="Outros...">Outros...</option>
                                     </optgroup>
                                 </select>
                             </div>
@@ -145,11 +195,22 @@
                 </div>
                 <div class="col-md-4 p-3">
                     <div class="text-center"><img class="img-fluid" src="images/mensagem.png"></div>
-                    <label id="green" class="mt-5 text-center"><i class="fas fa-exclamation-circle mr-2">
+                    <label id="grey" class="mt-5 text-center"><i class="fas fa-exclamation-circle mr-2">
                     </i>Obs. Preencha todos os campos corretamente para que possamos entrar em contato o mais breve possivel. Obrigado pelo interesse!.
                     </label>
+                    <!-- Verifica se o script cadastro_produtos retornou resultado. -->
+                    <?php if(isset($_SESSION['resultado'])) : ?>
+                        <!-- Se o resultado guardado na variavel de sessao reg-product tiver um final "!", ou seja, um codigo de sucesso, então a classe do alerta será success -->
+                        <div id="resultado" class="<?php echo (substr($_SESSION['resultado'], -1) == '!') ? 'alert alert-success text-center mt-2 mb-2 pt-4 pb-4' : 'alert alert-danger text-center mt-2 mb-2 pt-4 pb-4';?>"><?php echo $_SESSION['resultado']?></div>
+                    <?php endif;?>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<?php
+    //Reinicia a variavel de resposta.
+    if(isset($_SESSION['resultado'])){
+        unset($_SESSION['resultado']);
+    }
+?>

@@ -49,11 +49,13 @@ use PHPMailer\PHPMailer\Exception;
             return $enviada;
         }
 
-        public function EnviarEmailCliente($dados){
+        public function EnviarMensagem($dados){
 
-            // dados[0] = endereço de email do cliente
+            // dados[0] = endereço de email do destinatario
             // dados[1] = assunto
             // dados[2] = mensagem
+            // dados[3] = nome do cliente
+
             require 'phpmailer/src/Exception.php';
             require 'phpmailer/src/PHPMailer.php';
             require 'phpmailer/src/SMTP.php';
@@ -78,8 +80,8 @@ use PHPMailer\PHPMailer\Exception;
             $mail->Username = $configs['MAIL_USERNAME'];                        
             //$mail->Username = 'fsdfdsf';                        
             $mail->Password = $configs['MAIL_PASSWORD'];
-            $mail->setFrom ($configs['MAIL_FROM'], 'Site');
-            $mail->addAddress($dados[0], $dados[0]);
+            $mail->setFrom ($configs['MAIL_FROM'], $dados[3]);
+            $mail->addAddress($dados[0], $dados[3]);
             $mail->CharSet = "UTF-8";
             //assunto
             $mail->Subject = $dados[1];

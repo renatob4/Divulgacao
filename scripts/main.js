@@ -4,3 +4,10 @@ if(iframe != null){
     iframe.setAttribute("width", "100%");
     iframe.setAttribute("height", 200);
 }
+
+var divresult = document.getElementById("resultado");
+if(divresult != null){
+    setTimeout(function() {
+        $("#resultado").hide();
+    }, 5000);
+}
