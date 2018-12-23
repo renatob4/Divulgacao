@@ -1,0 +1,67 @@
+/* =================================================================================================== */
+
+/* Quando a tela for menor do que 720px entao a classe sera alterada pelo media query */
+@media screen and (max-width: 720px) {
+    .imagem-painel{ 
+        max-height: 50%;
+    }
+ }
+ /* Quando a tela for menor do que 420px entao a classe sera alterada pelo media query */
+ @media screen and (max-width: 420px) {
+    .imagem-painel{ 
+        max-height: 30%;
+    }
+ }
+
+/* =================================================================================================== */
+
+ /* Quando a tela for menor do que 720px entao a classe sera alterada pelo media query */
+@media screen and (max-width: 720px) {
+    .flex-media{
+        font-weight: bold;
+        font-size: 1.0em;
+    }
+ }
+ /* Quando a tela for menor do que 420px entao a classe sera alterada pelo media query */
+ @media screen and (max-width: 420px) {
+    .flex-media{ 
+        font-weight: bold;
+        font-size: 0.9em;
+    }
+ }
+ /* Quando a tela for menor do que 320px entao a classe sera alterada pelo media query */
+ @media screen and (max-width: 320px) {
+    .flex-media{ 
+        font-size: 0.7em;
+    }
+ }
+
+/* =================================================================================================== */
+
+ /* Quando a tela for menor do que 420px entao a classe sera alterada pelo media query */
+ @media screen and (max-width: 420px) {
+    .cap{ 
+        transform:scale(0.82);
+        -webkit-transform:scale(0.82);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
+    }
+ }
+ /* Quando a tela for menor do que 380px entao a classe sera alterada pelo media query */
+ @media screen and (max-width: 380px) {
+    .cap{ 
+        transform:scale(0.77);
+        -webkit-transform:scale(0.77);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
+    }
+ }
+ /* Quando a tela for menor do que 320px entao a classe sera alterada pelo media query */
+ @media screen and (max-width: 320px) {
+    .cap{ 
+        transform:scale(0.68);
+        -webkit-transform:scale(0.68);
+        transform-origin:0 0;
+        -webkit-transform-origin:0 0;
+    }
+ }

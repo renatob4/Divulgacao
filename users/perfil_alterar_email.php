@@ -15,9 +15,9 @@
 
     //verifica se foi feito post
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
+        
         //busca o valor inseridos nos inputs
         $novo_email = $_POST['text_novo_email'];
-
 
         $gestor = new cl_gestorBD();
 

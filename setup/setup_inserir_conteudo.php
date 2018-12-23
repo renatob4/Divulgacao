@@ -91,23 +91,6 @@ $gestor->EXE_NON_QUERY(
     'INSERT INTO tab_activity(ds_activity, dt_register, dt_updated)
      VALUES(:ds_activity, :dt_register, :dt_updated)', $parametros);
 
-//--------------------------------------------------------------------------------- TABELA TAB_PROSPECT
-
-//definição de parametros/dados
-$parametros = [
-    ':nm_prospect'          => '',
-    ':ds_email'             => '',
-    ':cd_phone'             => '',
-    ':ds_channel'           => '',
-    ':dt_register'          => $data->format('Y-m-d H:i:s'),
-    ':dt_updated'           => $data->format('Y-m-d H:i:s')
-];
-
-//inserir os links
-$gestor->EXE_NON_QUERY(
-    'INSERT INTO tab_prospect(nm_prospect, ds_email, cd_phone, ds_channel, dt_register, dt_updated)
-     VALUES(:nm_prospect, :ds_email, :cd_phone, :ds_channel, :dt_register, :dt_updated)', $parametros);
-
 //--------------------------------------------------------------------------------- TABELA TAB_CARD
 
 //inserir os cards (Especificamente 3 como conteudo padrão.)

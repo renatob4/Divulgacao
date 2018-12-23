@@ -117,8 +117,7 @@
         'ds_email                        NVARCHAR(50), '.
         'cd_phone                        NVARCHAR(20), '.
         'ds_channel                      NVARCHAR(120), '.
-        'dt_register                     DATETIME, '.
-        'dt_updated                      DATETIME)'
+        'dt_register                     DATETIME)'
     );
     //tabela tab_config
     $gestor->EXE_NON_QUERY(

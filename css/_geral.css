@@ -38,27 +38,44 @@ body{
     background-color:rgb(150, 150, 150);
     color: green;
 }
+.imagem-painel{
+    max-height: 600px;
+    display: table;
+    width: 100%;
+    border: 2px solid rgb(62, 194, 247);
+}
+.espaco-services{
+    padding: 20px 0px;
+}
+.espaco-paineis{
+    padding: 15px;
+    border: 2px solid rgb(62, 194, 247);
+    margin-top: 15px;
+    background-color: white;
+
+}
+.titulo-painel{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.borda-painel{
+    border: 2px solid rgb(62, 194, 247);
+}
+.conteudo-baixo{
+    min-height: 100px;
+}
+.conteudo-baixo2{
+    min-height: 112px;
+}
 .flex-media{
     font-weight: bold;
     font-size: 1.2em;
 }
-/* Quando a tela for menor do que 720px entao a classe sera alterada pelo media query */
-@media screen and (max-width: 720px) {
-    .flex-media{
-        font-weight: bold;
-        font-size: 1.0em;
-    }
- }
- @media screen and (max-width: 420px) {
-    .flex-media{ 
-        font-weight: bold;
-        font-size: 0.9em;
-    }
- }
- @media screen and (max-width: 320px) {
-    .flex-media{ 
-        font-size: 0.7em;
-    }
+.cap{
+    transform:scale(0.88);
+    -webkit-transform:scale(0.88);
+    transform-origin:0 0;
+    -webkit-transform-origin:0 0;
  }
 .bordahr{
     border-top: 2px solid green;
