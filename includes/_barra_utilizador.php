@@ -12,6 +12,9 @@
         $nome_utilizador = $_SESSION['nm_user'];
         $classe = 'barra_utilizador_ativo';
     }
+    //Instancia do banco de dados.
+    $acesso = new cl_gestorBD();
+    $prospects = $acesso->EXE_QUERY('SELECT * FROM tab_prospect');
 ?>
 <div class="barra_utilizador p-2">
     <?php if(funcoes::VerificarLogin()):?>
@@ -24,6 +27,10 @@
         <div class="dropdown-menu" aria-labelledby="d1">
             <div class="text-center"><a class="dropdown-item" href="?a=configuracoes"><strong>Configurações</strong></a></div>
             <div class="dropdown-divider"></div>
+            <?php if(count($prospects) != 0):?>
+            <a class="dropdown-item" href="?a=prospects"><i id="green" class="fas fa-chart-line mr-2"></i>Prospects</a>
+            <div class="dropdown-divider"></div>
+            <?php endif;?>
             <a class="dropdown-item" href="?a=perfil_alterar_login"><i id="green" class="fas fa-id-badge mr-2"></i>Alterar Login</a>
             <a class="dropdown-item" href="?a=perfil_alterar_senha"><i id="green" class="fas fa-key mr-2"></i>Alterar Senha</a>
             <a class="dropdown-item" href="?a=perfil_alterar_email"><i id="green" class="fas fa-at mr-2"></i>Alterar Email</a>

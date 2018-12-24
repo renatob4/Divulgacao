@@ -60,7 +60,7 @@
                     $acesso->EXE_NON_QUERY('UPDATE tab_imagem SET img_header = :img_header, dt_updated = :dt_updated WHERE cd_img = :cd_img', $parametros);
 
                 }elseif($sender == 'body'){
-                    if($img[0]['img_body'] != 'images/welcome.jpg'){
+                    if($img[0]['img_body'] != 'images/welcome.jpg' && $img[0]['img_body'] != ''){
                         //Apaga a imagem antiga do diretorio do site.
                         unlink("./".$img[0]['img_body']);
                     }

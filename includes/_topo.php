@@ -1,3 +1,4 @@
+<?php header("X-XSS-Protection: 0; mode=block");?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -25,7 +26,7 @@
     </head>
 <body>
 <!-- Contentor Global -->
-<div class="container contentor-global mt-4 pt-2">
+<div class="container contentor-global mt-3 pt-1">
 <!-- Incluir Cabeçalho -->
 <?php include_once('_cabecalho.php');?>
 <!-- Incluir Menu -->

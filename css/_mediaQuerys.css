@@ -65,3 +65,12 @@
         -webkit-transform-origin:0 0;
     }
  }
+
+/* =================================================================================================== */
+
+ @media screen and (max-width: 420px) {
+    .table-padding{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+ }

@@ -70,6 +70,9 @@
         //Alterar Login
         case 'perfil_alterar_login':            include_once('users/perfil_alterar_login.php'); break;
 
+        //Alterar prospects
+        case 'prospects':                       include_once('users/prospects.php'); break;
+
         // ========================== CONTROLE DE DADOS =======================
 
         //Deletar Card

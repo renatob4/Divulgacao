@@ -2,8 +2,13 @@
     include_once('./class/gestorBD.php');
     $gestor = new cl_gestorBD();
     $conteudo = $gestor->EXE_QUERY('SELECT lnk_script FROM tab_content');
+    $config = $gestor->EXE_QUERY('SELECT st_fbpage, st_comment FROM tab_config');
 ?>
-<?php echo $conteudo[0]['lnk_script']?>
+<?php 
+    if($config[0]['st_fbpage'] == 1 || $config[0]['st_fbpage'] == 1){
+        echo $conteudo[0]['lnk_script'];
+    }
+?>
 <!-- <div id="fb-root"></div>
 <script>(function(d, s, id) {
 var js, fjs = d.getElementsByTagName(s)[0];

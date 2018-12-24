@@ -45,18 +45,16 @@
             funcoes::CriarLOG('utilizador '.$_SESSION['cd_login'].': '.$mensagem, $_SESSION['nm_user']);
         }     
     }
-
 ?>
-
 <?php if($erro) : //===============================================?>
-<?php 
+<?php
     if($mensagem != ''){
             echo '<div class="alert alert-danger text-center">'.$mensagem.'</div>';
-    }       
+    }
 ?>
 <div class="container-fluid">
     <div class="row justify-content-center mt-4">
-        <div class="col-md-4 card bg-secondary m-3 p-3 pt-4 pb-4 borda-painel">      
+        <div class="col-md-4 card bg-secondary m-3 p-3 pt-4 pb-4 borda-painel shadow-strong">
             <!-- <form action="?a=login" method="post">
                 <div class="form-group row">
                     <label for="iL" class="col-sm-1 col-form-label"><i class="fas fa-user m-1"></i></label>
@@ -88,14 +86,14 @@
             </form>
             <div class="text-center">
                 <a style="color: white" href="?a=recuperar_senha">Recuperar senha</a>
-            </div>          
-        </div>        
+            </div>
+        </div> 
     </div>
 </div>
 <?php else : //====================================================?>
     <div class="container-fluid">
         <div class="row justify-content-center mt-3">
-            <div class="col-md-4 card m-3 p-3 text-center borda-painel">          
+            <div class="col-md-4 card m-3 p-3 text-center borda-painel shadow-strong">
                 <p>Bem-vindo, <strong><?php echo $dados[0]['nm_user'] ?></strong> </p>
                 <a href="?a=home" class="btn btn-primary">Avançar</a>
             </div>        

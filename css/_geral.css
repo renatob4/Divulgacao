@@ -1,6 +1,6 @@
 body{
     background-color: black;
-    margin: 0px !important;
+    margin-top: 0px !important;
 }
 .contentor-global{
     margin-bottom: 0px;
@@ -17,6 +17,9 @@ body{
 }
 .borda-p-1{
     border: 1px solid rgb(62, 194, 247);
+}
+.borda-b{
+    border: 1px solid black;
 }
 .borda-g-1{
     border: 3px solid rgb(62, 194, 247);
@@ -137,4 +140,18 @@ body{
 }
 .altura{
     min-height: 300px;
+}
+.largura{
+    min-width: 200px;
+}
+.table-padding{
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.navbar-fixed-top{
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 1030;
 }

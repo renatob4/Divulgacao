@@ -31,11 +31,11 @@
     }
 ?>
 
-<div class="row mr-1 ml-1 mt-2 borda-painel">
+<div class="row mr-1 ml-1 mt-2 borda-painel shadow-strong">
     <div class="col p-0">
-        <div class="card p-5 borda-painel">
+        <div class="card p-5">
             <div><h5 class="text-right" id="grey"><i class="far fa-clock mr-2"></i><?php echo $card[0]['dt_updated']?></h5><h4 class="text-center"><i id="gold" class="fas fa-star mr-2"></i><?php echo $card[0]['ds_title']?></h4></div>
-            <div class="card text-center p-3 m-3 mb-5"><p><?php echo $card[0]['ds_content']?></p></div>
+            <div class="card text-center p-3 m-3 mb-5 shadow"><p><?php echo $card[0]['ds_content']?></p></div>
         </div>
     </div>
 </div>

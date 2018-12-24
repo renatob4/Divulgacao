@@ -33,14 +33,14 @@
     <?php endif;?>
 </div>
 <!-- Apresentação da empresa, texto. -->
-<hr class="mt-3 mb-3">
+<hr class="mt-3 mb-2">
 <div class="row m-1">
     <?php if(($config[0]['st_map'] == 1 || $config[0]['st_contact'] == 1) && ($conteudo[0]['lnk_map'] != '' || $config[0]['st_contact'] == 1)):?>
     <div class="col-md-8 p-0">
     <?php else:?>
     <div class="col p-0">
     <?php endif;?>
-        <div class="text-center pt-1 pr-3 pl-3 pb-3">
+        <div class="text-center pt-1 pr-3 pl-3 pb-0">
             <h4 class="mb-3">APRESENTAÇÃO</h4>
             <!-- Dados contidos no campo 'ds_presentation' do banco de dados -->
             <p class="mb-4"><?php echo $conteudo[0]['ds_presentation']?></p>
@@ -80,7 +80,7 @@
     <?php endif;?>
         <?php if($config[0]['st_contact'] == 1):?>
         <!-- Painel rapido de contatos telefonicos -->
-        <div class="card painel-direito text-center p-4 borda-painel shadow-strong">
+        <div class="card painel-direito text-center p-4 mb-3 borda-painel shadow-strong">
             <h4 id="black"><i id="white" class="fas fa-phone-square mr-2"></i>Fale conosco:</h4>
             <div class="flex-media">
                 <div class="card m-2 pt-4 pb-3 pr-0 borda-painel">
@@ -95,7 +95,7 @@
         <?php endif;?>
         <?php if ($conteudo[0]['lnk_map'] != '' && $config[0]['st_map'] == 1):?>
         <!-- Painel rapido de localização/mapa -->
-        <div class="card painel-direito text-center p-2 pt-4 mt-3 mb-1 borda-painel shadow-strong">
+        <div class="card painel-direito text-center p-2 pt-4 mt-2 mb-1 borda-painel shadow-strong">
             <h4 id="black"><i id="white" class="fas fa-map-marked mr-2"></i>Nos encontre:</h4>
             <div class="card mt-2">
                 <!-- iframe do mapa -->
@@ -201,17 +201,17 @@
     <form class="p-0 mb-0" method="POST" action="?a=post_inserir">
         <div class="form-row">
             <div class="col-md-8 mt-1">
-                <label><b><i class="far fa-star mr-2"></i>Título:</b></label>
-                <input type="text" name="post_text_titulo" class="form-control" required>
+                <label><b><i class="fas fa-star mr-2"></i>Título:</b></label>
+                <input type="text" name="post_text_titulo" class="form-control shadow" required>
             </div>
             <div class="col-md-4 mt-1">
-                <label><b><i class="far fa-user mr-2"></i>Autor:</b></label>
-                <input type="text" name="post_text_autor" class="form-control" value="<?php echo $_SESSION['nm_user']?>" required>
+                <label><b><i class="fas fa-user mr-2"></i>Autor:</b></label>
+                <input type="text" name="post_text_autor" class="form-control shadow" value="<?php echo $_SESSION['nm_user']?>" required>
             </div>
         </div>
         <div class="form-goup mt-2">
             <label><b><i class="fas fa-file-alt mr-2"></i>Conteúdo:</b></label>
-            <textarea type="text" name="post_text_content" class="form-control" rows="3" required></textarea>
+            <textarea type="text" name="post_text_content" class="form-control shadow" rows="3" required></textarea>
         </div>
         <div class="text-right p-0 mr-0 mt-3"><button type="submit" class="btn btn-success">Postar<i class="fas fa-plus-square mr-2 ml-2"></i></button></div>
     </form>
