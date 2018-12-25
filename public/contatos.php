@@ -126,26 +126,26 @@
                     <h5>Estamos prontos para te atender!</h5>
                     <?php endif;?>
                     <div>
-                    <?php if ($link[0]['ds_link_face'] != ''):?>
-                    <i id="grey" class="fab fa-facebook-square mr-2"></i><label class="mt-2 mb-0">Facebook: </label> <a href="<?php echo $link[0]['ds_link_face']?>" target="_blank"><?php echo $link[0]['ds_link_face']?></a><br/>
-                    <?php endif;?>
-                    <?php if ($link[0]['ds_link_twit'] != ''):?>
-                    <i id="grey" class="fab fa-twitter-square mr-2"></i><label class="mt-0 mb-0">Twitter: </label> <a href="<?php echo $link[0]['ds_link_twit']?>" target="_blank"><?php echo $link[0]['ds_link_twit']?></a><br/>
-                    <?php endif;?>
-                    <?php if ($link[0]['ds_link_insta'] != ''):?>
-                    <i id="grey" class="fab fa-instagram mr-2"></i><label class="mt-0 mb-0">Instagram: </label> <a href="<?php echo $link[0]['ds_link_insta']?>" target="_blank"><?php echo $link[0]['ds_link_insta']?></a><br/>
-                    <?php endif;?>
-                    <?php if ($link[0]['ds_link_linked'] != ''):?>
-                    <i id="grey" class="fab fa-linkedin mr-2"></i><label class="mt-0 mb-0">LinkedIn: </label> <a href="<?php echo $link[0]['ds_link_linked']?>" target="_blank"><?php echo $link[0]['ds_link_linked']?></a><br/>
-                    <?php endif;?>
-                    <?php if ($link[0]['ds_link_olx'] != ''):?>
-                    <i id="grey" class="far fa-handshake mr-2"></i><label class="mt-0 mb-0">Instagram: </label> <a href="<?php echo $link[0]['ds_link_olx']?>" target="_blank"><?php echo $link[0]['ds_link_olx']?></a><br/>
-                    <?php endif;?>
-                    <?php if ($link[0]['ds_link_market'] != ''):?>
-                    <i id="grey" class="fas fa-shopping-cart mr-2"></i><label class="mt-0 mb-0">LinkedIn: </label> <a href="<?php echo $link[0]['ds_link_market']?>" target="_blank"><?php echo $link[0]['ds_link_market']?></a><br/>
-                    <?php endif;?>
+                        <?php if ($link[0]['ds_link_face'] != ''):?>
+                        <i id="grey" class="fab fa-facebook-square mr-2"></i><label class="mt-2 mb-0">Facebook: </label> <a href="<?php echo $link[0]['ds_link_face']?>" target="_blank"><?php echo $link[0]['ds_link_face']?></a><br/>
+                        <?php endif;?>
+                        <?php if ($link[0]['ds_link_twit'] != ''):?>
+                        <i id="grey" class="fab fa-twitter-square mr-2"></i><label class="mt-0 mb-0">Twitter: </label> <a href="<?php echo $link[0]['ds_link_twit']?>" target="_blank"><?php echo $link[0]['ds_link_twit']?></a><br/>
+                        <?php endif;?>
+                        <?php if ($link[0]['ds_link_insta'] != ''):?>
+                        <i id="grey" class="fab fa-instagram mr-2"></i><label class="mt-0 mb-0">Instagram: </label> <a href="<?php echo $link[0]['ds_link_insta']?>" target="_blank"><?php echo $link[0]['ds_link_insta']?></a><br/>
+                        <?php endif;?>
+                        <?php if ($link[0]['ds_link_linked'] != ''):?>
+                        <i id="grey" class="fab fa-linkedin mr-2"></i><label class="mt-0 mb-0">LinkedIn: </label> <a href="<?php echo $link[0]['ds_link_linked']?>" target="_blank"><?php echo $link[0]['ds_link_linked']?></a><br/>
+                        <?php endif;?>
+                        <?php if ($link[0]['ds_link_olx'] != ''):?>
+                        <i id="grey" class="far fa-handshake mr-2"></i><label class="mt-0 mb-0">Instagram: </label> <a href="<?php echo $link[0]['ds_link_olx']?>" target="_blank"><?php echo $link[0]['ds_link_olx']?></a><br/>
+                        <?php endif;?>
+                        <?php if ($link[0]['ds_link_market'] != ''):?>
+                        <i id="grey" class="fas fa-shopping-cart mr-2"></i><label class="mt-0 mb-0">LinkedIn: </label> <a href="<?php echo $link[0]['ds_link_market']?>" target="_blank"><?php echo $link[0]['ds_link_market']?></a><br/>
+                        <?php endif;?>
+                    </div>
                 </div>
-            </div>
                 <div class="col m-0 p-0">
                     <div class="painel-direito text-center altura p-3 m-0 shadow-strong">
                         <div class="flex-media">
@@ -156,9 +156,9 @@
                                 <label><label id="black"><i id="grey" class="fab fa-whatsapp mr-1"></i>Ou:</label> <?php echo funcoes::FormataTelefone($conteudo[0]['cd_phone_2'])?></label>
                                 <?php endif;?>
                                 <label><label id="black"><i id="grey" class="fas fa-at mr-1"></i>Email:</label> <?php echo $conteudo[0]['ds_email']?></label>                
-                            </div>
-                            <?php if ($endereco[0]['ds_adress'] != '' && $endereco[0]['ds_city'] != '' && $endereco[0]['cd_uf'] != '' && $config[0]['st_adress'] == 1):?>
-                        </div>   
+                            </div>  
+                        </div>
+                        <?php if ($endereco[0]['ds_adress'] != '' && $endereco[0]['ds_city'] != '' && $endereco[0]['cd_uf'] != '' && $config[0]['st_adress'] == 1):?>
                         <div class="text-center">
                             <label id="black" class="mr-2"><strong><i id="white" class="fas fa-map-marker-alt mr-2"></i>Endereço:</strong></label>
                             <label id="white"><?php echo $endereco[0]['ds_adress']?>.  <?php echo $endereco[0]['ds_city']?> - <?php echo $endereco[0]['cd_uf']?></label>

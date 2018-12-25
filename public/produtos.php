@@ -26,7 +26,7 @@
 <!-- ________________________________________________________CONTEÚDO DA PAGINA PRODUTOS__________________________________________________________ -->
 <div class="row mr-1 ml-1 mt-2">
     <div class="col p-0">
-        <div class="card p-5 borda-painel">
+        <div class="card p-5 borda-painel shadow-strong">
             <h3 class="text-center">Esta é a pagina exemplo de Produtos!</h3>
         </div>
     </div>

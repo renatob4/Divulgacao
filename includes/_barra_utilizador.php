@@ -18,12 +18,9 @@
 ?>
 <div class="barra_utilizador p-2">
     <?php if(funcoes::VerificarLogin()):?>
-    <!-- dropdown -->
     <div class="dropdown">
         <span class="mr-3"><i id="green" class="fa fa-user mr-3"></i><?php echo $nome_utilizador;?></span>
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="d1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-cog"></i>
-        </button>
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="d1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog"></i></button>
         <div class="dropdown-menu" aria-labelledby="d1">
             <div class="text-center"><a class="dropdown-item" href="?a=configuracoes"><strong>Configurações</strong></a></div>
             <div class="dropdown-divider"></div>
@@ -38,7 +35,7 @@
             <div class="text-center"><a class="dropdown-item" href="?a=logout"><strong>Logout</strong></a></div>
         </div>
     </div>
-    <?php else:?>
-        <span class="<?php echo $classe ?>"><i class="fa fa-user"></i> Nenhum usuário ativo | <a href="?a=login" class="mr-2" ><i class="fas fa-sign-in-alt"></i>Login</a></span>
-    <?php endif;?>
+<?php else:?>
+<span class="<?php echo $classe ?>"><i class="fa fa-user"></i> Nenhum usuário ativo | <a href="?a=login" class="mr-2" ><i class="fas fa-sign-in-alt"></i>Login</a></span>
+<?php endif;?>
 </div>

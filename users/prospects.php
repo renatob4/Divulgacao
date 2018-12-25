@@ -17,7 +17,6 @@
             unset($_SESSION['texto_pesquisa']);
         }
     }
-
     //Veficica se ocorreu um POST
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         if($_POST['text_pesquisa'] != ''){
@@ -66,7 +65,7 @@
                     <p>Clientes prospects são aquelas pessoas que de alguma forma ja demonstram interesse em manter um relacionamento com a sua empresa.
                     Neste caso em particular os clientes que enviaram mensagem para o seu email através do site e tiveram seus dados capturados para futuras ações de marketing, mala direta, dentre outros.</p>
                 </div>
-                <label id="grey" class="table-padding">Obs. Aconcelhavel consultar a tabela em um computador ou tela maior do que um smartphone.</label>
+                <label id="grey" class="table-padding text-center">Obs. Aconcelhavel consultar a tabela em um computador ou tela maior do que um smartphone.</label>
             </div>
             <div class="pt-0 table-padding m-0">
                 <nav class="navbar navbar-light line shadow borda-b">

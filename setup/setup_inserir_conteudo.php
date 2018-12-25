@@ -99,13 +99,14 @@ for($i = 0; $i < 3; $i++){
     $parametros = [
         ':ds_title'             =>  'Título do Card ',
         ':ds_content'           =>  'Aqui ficam expostas noticias, atualizações, promoções ou avisos importantes que precisem ficar destacados.',
+        ':img_card'             =>  '',
         ':dt_register'          =>  $data->format('Y-m-d H:i:s'),
         ':dt_updated'           =>  $data->format('Y-m-d H:i:s')
     ];
     //Inserçao do card na tabela tab_card
     $gestor->EXE_NON_QUERY(
-        'INSERT INTO tab_card(ds_title, ds_content, dt_register, dt_updated)
-        VALUES(:ds_title, :ds_content, :dt_register, :dt_updated)', $parametros);
+        'INSERT INTO tab_card(ds_title, ds_content, img_card, dt_register, dt_updated)
+        VALUES(:ds_title, :ds_content, :img_card, :dt_register, :dt_updated)', $parametros);
 }
 
 //--------------------------------------------------------------------------------- TABELA TAB_IMAGEM
@@ -113,7 +114,7 @@ for($i = 0; $i < 3; $i++){
 $parametros = [
     ':img_header'           => 'images/logo.png',
     ':img_panel'            => 'images/panel.jpg',
-    ':img_body'             => 'images/welcome.jpg',
+    ':img_body'             => '',
     ':dt_register'          => $data->format('Y-m-d H:i:s'),
     ':dt_updated'           => $data->format('Y-m-d H:i:s')
 ];
