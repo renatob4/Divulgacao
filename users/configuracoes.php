@@ -22,6 +22,7 @@
     $config = $gestor->EXE_QUERY('SELECT * FROM tab_config');
     $endereco = $gestor->EXE_QUERY('SELECT * FROM tab_adress');
     $atividade = $gestor->EXE_QUERY('SELECT * FROM tab_activity');
+    $code = $gestor->EXE_QUERY('SELECT * FROM tab_code');
  
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -83,7 +84,6 @@
             ':cd_phone_2'       => $tel2,
             ':ds_text_footer'   => $rodape,
             ':lnk_map'          => $mapa,
-            ':lnk_script'       => $script,
             ':dt_updated'       => $data->format('Y-m-d H:i:s')
         ];
         $gestor->EXE_NON_QUERY(
@@ -96,7 +96,6 @@
              cd_phone_2 = :cd_phone_2,
              ds_text_footer = :ds_text_footer,
              lnk_map = :lnk_map,
-             lnk_script = :lnk_script,
              dt_updated = :dt_updated
              WHERE cd_info = :cd_info',
             $parametros
@@ -131,6 +130,20 @@
             ds_activity = :ds_activity,
             dt_updated = :dt_updated
             WHERE cd_activity = :cd_activity',
+            $parametros
+        );
+
+        //Atualiza a base de dados TAB_CODE =====================================
+        $parametros = [
+            ':cd_code'          => $code[0]['cd_code'],
+            ':lnk_script'       => $script,
+            ':dt_updated'       => $data->format('Y-m-d H:i:s')
+        ];
+        $gestor->EXE_NON_QUERY(
+            'UPDATE tab_code SET
+            lnk_script = :lnk_script,
+            dt_updated = :dt_updated
+            WHERE cd_code = :cd_code',
             $parametros
         );
 
@@ -412,7 +425,7 @@
                         <div class="collapse" id="dev">
                             <div class="form-goup text-left mt-3">
                                 <label><b><i id="grey" class="fas fa-wrench mr-2"></i>Script de plugins facebook:</b></label>
-                                <input type="text" name="form_lnk_script" class="form-control shadow" value="<?php echo $conteudo[0]['lnk_script']?>">
+                                <input type="text" name="form_lnk_script" class="form-control shadow" value="<?php echo $code[0]['lnk_script']?>">
                             </div>
                         </div>
                     </div>

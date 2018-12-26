@@ -5,6 +5,7 @@
     //busca o conteúdo da pagina no banco de dados.
     $conteudo = $acesso->EXE_QUERY('SELECT * FROM tab_content');
     $link = $acesso->EXE_QUERY('SELECT * FROM tab_link');
+    $code = $acesso->EXE_QUERY('SELECT * FROM tab_code');
     $config = $acesso->EXE_QUERY('SELECT * FROM tab_config');
 ?>
 <!-- Rodapé-->
@@ -46,7 +47,7 @@
                 <?php if ($link[0]['ds_link_market'] != ''):?>
                     <a href="<?php echo $link[0]['ds_link_market']?>" target="_blank"><i class="fas fa-shopping-cart shadow-strong"></i></a>
                 <?php endif;?>
-                <?php if ($link[0]['ds_link_face'] != '' && $config[0]['st_fbpage'] == 1 && $conteudo[0]['lnk_script'] != ''):?>
+                <?php if ($link[0]['ds_link_face'] != '' && $config[0]['st_fbpage'] == 1 && $code[0]['lnk_script'] != ''):?>
                 <div class="text-center mt-5 p-0">
                     <div class="fb-page shadow-strong"
                          data-href="<?php echo $link[0]['ds_link_face']?>"

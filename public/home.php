@@ -10,6 +10,7 @@
     $card = $acesso->EXE_QUERY('SELECT * FROM tab_card');
     $post = $acesso->EXE_QUERY('SELECT * FROM tab_post');
     $img = $acesso->EXE_QUERY('SELECT * FROM tab_imagem');
+    $code = $acesso->EXE_QUERY('SELECT * FROM tab_code');
     $config = $acesso->EXE_QUERY('SELECT * FROM tab_config');
 ?>
 <!-- Imagem de apresentação do site -->
@@ -122,7 +123,7 @@
         <!-- Titulo carregado direto da base de dados -->
         <p class="titulo-painel"><i id="gold" class="fas fa-star mr-2"></i><?php echo $card[$i]['ds_title']?></p>
         <!-- Conteúdo carregado direto da base de dados -->
-        <div class="conteudo-baixo mb-3"><div><?php echo substr($card[$i]['ds_content'], 0, 225)?></div></div>
+        <div class="conteudo-baixo mb-3"><div><?php echo substr($card[$i]['ds_content'], 0, 192)?></div></div>
         <div class="text-center p-0 ml-0">
             <?php if (funcoes::VerificarLogin()):?>
             <a href="#edit<?php echo $card[$i]['cd_card']?>" class="btn btn-outline-success p-2 mr-1" data-toggle="collapse" role="button" aria-expanded="false"><i class="fas fa-edit mr-1"></i>Edit</a>                    
@@ -215,7 +216,7 @@
     </form>
     <?php endif;?>
 <?php endif;?>
-<?php if($config[0]['st_comment'] == 1 && $conteudo[0]['lnk_script'] != ''):?>
+<?php if($config[0]['st_comment'] == 1 && $code[0]['lnk_script'] != ''):?>
 <!-- Comentarios do facebook -->
 <hr class="bordahr">
 <div class="row mt-3 m-1 p-0">

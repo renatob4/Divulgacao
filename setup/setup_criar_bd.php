@@ -45,7 +45,6 @@
         'cd_phone_2                     VARCHAR(20), '.
         'ds_text_footer                 VARCHAR(255), '.
         'lnk_map                        TEXT, '.
-        'lnk_script                     TEXT, '.
         'dt_register                    DATETIME, '.
         'dt_updated                     DATETIME)'
     );
@@ -79,6 +78,29 @@
         'ds_title                       VARCHAR(50), '.
         'ds_content                     VARCHAR(255), '.
         'nm_autor                       VARCHAR(30), '.
+        'dt_register                    DATETIME, '.
+        'dt_updated                     DATETIME)'
+    );
+    //tabela tab_product
+    $gestor->EXE_NON_QUERY(
+        'CREATE TABLE tab_product('.
+        'cd_product                     INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
+        'cd_alternative_product         VARCHAR(12), '.
+        'nm_product                     VARCHAR(32), '.
+        'ds_category                    VARCHAR(22), '.
+        'vl_product                     FLOAT, '.
+        'ds_description                 VARCHAR(255), '.
+        'ds_unity                       VARCHAR(12), '.
+        'dt_register                    DATETIME, '.
+        'dt_updated                     DATETIME)'
+    );
+    //tabela tab_service
+    $gestor->EXE_NON_QUERY(
+        'CREATE TABLE tab_service('.
+        'cd_service                     INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
+        'nm_service                     VARCHAR(32), '.
+        'vl_service                     FLOAT, '.
+        'ds_description                 VARCHAR(255), '.
         'dt_register                    DATETIME, '.
         'dt_updated                     DATETIME)'
     );
@@ -119,6 +141,13 @@
         'cd_phone                        NVARCHAR(20), '.
         'ds_channel                      NVARCHAR(120), '.
         'dt_register                     DATETIME)'
+    );
+    //tabela tab_code
+    $gestor->EXE_NON_QUERY(
+        'CREATE TABLE tab_code('.
+        'cd_code                         INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
+        'lnk_script                      TEXT, '.
+        'dt_updated                      DATETIME)'
     );
     //tabela tab_config
     $gestor->EXE_NON_QUERY(

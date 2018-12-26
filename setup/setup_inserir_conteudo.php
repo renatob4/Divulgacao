@@ -14,9 +14,22 @@ $gestor = new cl_gestorBD();
 $gestor->EXE_NON_QUERY('DELETE FROM tab_content');
 $gestor->EXE_NON_QUERY('DELETE FROM tab_link');
 $gestor->EXE_NON_QUERY('DELETE FROM tab_card');
+$gestor->EXE_NON_QUERY('DELETE FROM tab_adress');
+$gestor->EXE_NON_QUERY('DELETE FROM tab_activity');
+$gestor->EXE_NON_QUERY('DELETE FROM tab_card');
+$gestor->EXE_NON_QUERY('DELETE FROM tab_imagem');
+$gestor->EXE_NON_QUERY('DELETE FROM tab_code');
+$gestor->EXE_NON_QUERY('DELETE FROM tab_config');
+
 $gestor->EXE_NON_QUERY('ALTER TABLE tab_content AUTO_INCREMENT = 1');
 $gestor->EXE_NON_QUERY('ALTER TABLE tab_link AUTO_INCREMENT = 1');
 $gestor->EXE_NON_QUERY('ALTER TABLE tab_card AUTO_INCREMENT = 1');
+$gestor->EXE_NON_QUERY('ALTER TABLE tab_adress AUTO_INCREMENT = 1');
+$gestor->EXE_NON_QUERY('ALTER TABLE tab_activity AUTO_INCREMENT = 1');
+$gestor->EXE_NON_QUERY('ALTER TABLE tab_card AUTO_INCREMENT = 1');
+$gestor->EXE_NON_QUERY('ALTER TABLE tab_imagem AUTO_INCREMENT = 1');
+$gestor->EXE_NON_QUERY('ALTER TABLE tab_code AUTO_INCREMENT = 1');
+$gestor->EXE_NON_QUERY('ALTER TABLE tab_config AUTO_INCREMENT = 1');
 
 $data = new DateTime();
 
@@ -32,15 +45,14 @@ $parametros = [
     ':cd_phone_2'           => '0000000000',
     ':ds_text_footer'       => 'Texto que fica exposto no rodapé, também pode conter o slogan da empresa, um convite ou agradecimento.',
     ':lnk_map'              => '',
-    ':lnk_script'           => "<div id='fb-root'></div> <script>(function(d, s, id) {   var js, fjs = d.getElementsByTagName(s)[0];   if (d.getElementById(id)) return;   js = d.createElement(s); js.id = id;   js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2';   fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>",
     ':dt_register'          => $data->format('Y-m-d H:i:s'),
     ':dt_updated'           => $data->format('Y-m-d H:i:s')
 ];
 
 //inserir o conteúdo
 $gestor->EXE_NON_QUERY(
-    'INSERT INTO tab_content(nm_company, ds_presentation, ds_email, ds_document, cd_phone_1, cd_phone_2, ds_text_footer, lnk_map, lnk_script, dt_register, dt_updated)
-     VALUES(:nm_company, :ds_presentation, :ds_email, :ds_document, :cd_phone_1, :cd_phone_2, :ds_text_footer, :lnk_map, :lnk_script, :dt_register, :dt_updated)', $parametros);
+    'INSERT INTO tab_content(nm_company, ds_presentation, ds_email, ds_document, cd_phone_1, cd_phone_2, ds_text_footer, lnk_map, dt_register, dt_updated)
+     VALUES(:nm_company, :ds_presentation, :ds_email, :ds_document, :cd_phone_1, :cd_phone_2, :ds_text_footer, :lnk_map, :dt_register, :dt_updated)', $parametros);
 
 //--------------------------------------------------------------------------------- TABELA TAB_LINK
 
@@ -122,6 +134,17 @@ $parametros = [
 //inserir as imagens do conteudo
 $gestor->EXE_NON_QUERY('INSERT INTO tab_imagem(img_header, img_panel, img_body, dt_register, dt_updated) 
                         VALUES(:img_header, :img_panel, :img_body, :dt_register ,:dt_updated)', $parametros);
+
+//--------------------------------------------------------------------------------- TABELA TAB_CODE
+
+$parametros = [
+    ':lnk_script'          => "<div id='fb-root'></div> <script>(function(d, s, id) {   var js, fjs = d.getElementsByTagName(s)[0];   if (d.getElementById(id)) return;   js = d.createElement(s); js.id = id;   js.src = 'https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v3.2';   fjs.parentNode.insertBefore(js, fjs); }(document, 'script', 'facebook-jssdk'));</script>",
+    ':dt_updated'          => $data->format('Y-m-d H:i:s')
+];
+
+//inserir as imagens do conteudo
+$gestor->EXE_NON_QUERY('INSERT INTO tab_code(lnk_script, dt_updated) 
+                        VALUES(:lnk_script,:dt_updated)', $parametros);
 
 //--------------------------------------------------------------------------------- TABELA TAB_CONFIG
 
