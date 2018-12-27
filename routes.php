@@ -99,6 +99,9 @@
         //Apagar imagens
         case 'deleta_imagem':                   include_once('controls/deletaImagem.php'); break;
 
+        //Inserir Produto
+        case 'produto_inserir':                   include_once('controls/produto_inserir.php'); break;
+
         // ============================ SETUP =================================
 
         //Criar a base de dados

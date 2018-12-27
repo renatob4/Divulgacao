@@ -148,6 +148,38 @@ body{
     padding-left: 25px;
     padding-right: 25px;
 }
+.product-img{
+    width: 150px;
+    height: 150px;
+    font-size: 7.0em;
+    padding-top: 20px;
+    /* border-right: 1px solid black; */
+}
+.borda-produto{
+    box-shadow: 2px 2px 2px rgba(0,0,0,.5);	
+}
+.borda-produto:hover{
+    border: 1px solid green;
+    box-shadow: 3px 3px 3px rgba(0,0,0,.5);
+    background-color: aliceblue;
+}
+.prrdiv{
+    border-right: 1px solid rgba(128,128,128,.3);
+}
+.prldiv{
+    border-left: 1px solid rgba(128,128,128,.3);
+}
+.lnk-info{
+    position: absolute;
+    float: right;
+    bottom: 0;
+}
+.brad{
+    border-radius: 0;
+}
+.price{
+    font-size: 1.9em;
+}
 .navbar-fixed-top{
     position: fixed;
     right: 0;

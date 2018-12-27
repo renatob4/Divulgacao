@@ -85,12 +85,13 @@
     $gestor->EXE_NON_QUERY(
         'CREATE TABLE tab_product('.
         'cd_product                     INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
-        'cd_alternative_product         VARCHAR(12), '.
+        'cd_alternative_product         VARCHAR(12) UNIQUE, '.
         'nm_product                     VARCHAR(32), '.
         'ds_category                    VARCHAR(22), '.
         'vl_product                     FLOAT, '.
         'ds_description                 VARCHAR(255), '.
         'ds_unity                       VARCHAR(12), '.
+        'img_product                    VARCHAR(50), '.
         'dt_register                    DATETIME, '.
         'dt_updated                     DATETIME)'
     );
