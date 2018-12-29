@@ -99,8 +99,11 @@
         //Apagar imagens
         case 'deleta_imagem':                   include_once('controls/deletaImagem.php'); break;
 
+        //Configurar Exibição
+        case 'update_config':                   include_once('controls/update_config.php'); break;
+
         //Inserir Produto
-        case 'produto_inserir':                   include_once('controls/produto_inserir.php'); break;
+        case 'produto_inserir':                 include_once('controls/produto_inserir.php'); break;
 
         // ============================ SETUP =================================
 

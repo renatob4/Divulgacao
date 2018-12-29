@@ -93,13 +93,12 @@
                 echo " | ";
 
                 //proxima pagina
-                if($pagina_atual == $max_paginas){
+                if($pagina_atual > $max_paginas){
                     echo 'Próxima';
                 } else{
                     echo '<a href="'.$source.'&p='.($pagina_atual+1).'">Próxima</a>';
                 }
             echo '</div>';
         }
-
     }
 ?>

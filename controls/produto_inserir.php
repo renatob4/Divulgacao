@@ -20,8 +20,8 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         //captura dos dados do form
-        $cd_produto = $_POST['cd_produto'];
-        $nm_produto = $_POST['nm_produto'];
+        $cd_produto = strtoupper($_POST['cd_produto']);
+        $nm_produto = strtoupper($_POST['nm_produto']);
         $ds_unidade = $_POST['ds_unidade'];
         $cat_produto = $_POST['cat_produto'];
         $ds_unidade = $_POST['ds_unidade'];

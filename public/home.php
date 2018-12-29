@@ -34,7 +34,7 @@
     <?php endif;?>
 </div>
 <!-- Apresentação da empresa, texto. -->
-<hr class="mt-3 mb-2">
+<hr class="mt-2 mb-3">
 <div class="row m-1">
     <?php if(($config[0]['st_map'] == 1 || $config[0]['st_contact'] == 1) && ($conteudo[0]['lnk_map'] != '' || $config[0]['st_contact'] == 1)):?>
     <div class="col-md-8 p-0">
@@ -81,7 +81,7 @@
     <?php endif;?>
     <?php if($config[0]['st_contact'] == 1):?>
     <!-- Painel rapido de contatos telefonicos -->
-    <div class="card painel-direito text-center p-4 mb-3 borda-painel shadow-strong">
+    <div class="card painel-direito text-center p-4 mb-2 borda-painel shadow-strong">
         <h4 id="black"><i id="white" class="fas fa-phone-square mr-2"></i>Fale conosco:</h4>
         <div class="flex-media">
             <div class="card m-2 pt-4 pb-3 pr-0 borda-painel">
@@ -107,7 +107,7 @@
     </div>
 </div>
 <?php if($config[0]['st_card'] == 1):?>
-<hr class="mt-3 mb-0">
+<hr class="mt-2 mb-0">
 <!-- Cards de texto -->
 <div class="row">
     <?php for ($i = 0; $i <= count($card)-1; $i++):?>

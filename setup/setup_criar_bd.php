@@ -165,6 +165,12 @@
         'st_document                        BOOLEAN, '.
         'st_card                            BOOLEAN, '.
         'st_post                            BOOLEAN, '.
+        'sp_relevance                       INT, '.
+        'sp_category                        INT, '.
+        'sp_amount                          INT, '.
+        'ss_relevance                       INT, '.
+        'ss_category                        INT, '.
+        'ss_amount                          INT, '.
         'dt_register                        DATETIME, '.
         'dt_updated                         DATETIME)'
     );
