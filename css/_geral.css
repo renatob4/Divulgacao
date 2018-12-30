@@ -96,6 +96,14 @@ body{
     font-style: italic; 
     font-size: 0.8em;
 }
+.Obs4{
+    color: green;
+    font-size: 0.8em;
+}
+.pmtn{
+    font-style: none; 
+    font-size: 1.0em;
+}
 .file{
     font-size: 0.8em;
 }
@@ -155,11 +163,16 @@ body{
     padding-top: 20px;
     /* border-right: 1px solid black; */
 }
+.pdimg-size{
+    max-width: 160px;
+    max-height: 160px;
+}
 .borda-produto{
+    border: 2px solid black;
     box-shadow: 2px 2px 2px rgba(0,0,0,.5);	
 }
 .borda-produto:hover{
-    border: 1px solid green;
+    border: 2px solid green;
     box-shadow: 3px 3px 3px rgba(0,0,0,.5);
     background-color: aliceblue;
 }
@@ -174,14 +187,16 @@ body{
 }
 .prrdiv{
     border-right: 1px solid rgba(128,128,128,.3);
+    min-height: 180px;
 }
 .prldiv{
     border-left: 1px solid rgba(128,128,128,.3);
 }
+.prbdiv{
+    border-bottom: 1px solid rgba(128,128,128,.3);
+}
 .lnk-info{
-    position: absolute;
-    float: right;
-    bottom: 0;
+    color: blue;
 }
 .adm-product{
     background-color: beige;

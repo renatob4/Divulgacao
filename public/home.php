@@ -157,7 +157,7 @@
     <?php if (count($card) < 6):?>
     <div class="row text-right p-0 mt-2">
         <div class="col">
-            <a href="?a=card_inserir" class="btn btn-success text-center mt-2">Adicinar novo card<i class="fas fa-plus-square mr-2 ml-2"></i></a>                   
+            <a href="?a=card_inserir" class="btn btn-success text-center shadow mt-2">Adicinar novo card<i class="fas fa-plus-square mr-2 ml-2"></i></a>                   
         </div>
     </div>
     <?php else:?>
@@ -212,7 +212,7 @@
             <label><b><i class="fas fa-file-alt mr-2"></i>Conteúdo:</b></label>
             <textarea type="text" name="post_text_content" class="form-control shadow" rows="3" required></textarea>
         </div>
-        <div class="text-right p-0 mr-0 mt-3"><button type="submit" class="btn btn-success">Postar<i class="fas fa-plus-square mr-2 ml-2"></i></button></div>
+        <div class="text-right p-0 mr-0 mt-3"><button type="submit" class="btn btn-success shadow">Postar<i class="fas fa-plus-square mr-2 ml-2"></i></button></div>
     </form>
     <?php endif;?>
 <?php endif;?>

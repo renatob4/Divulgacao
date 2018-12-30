@@ -94,16 +94,22 @@
         case 'post_inserir':                    include_once('controls/post_inserir.php'); break;
 
         //Inserir imagens
-        case 'recebe_imagem':                   include_once('controls/recebeUpload.php'); break;
+        case 'recebe_imagem':                   include_once('controls/recebe_imagem.php'); break;
 
         //Apagar imagens
-        case 'deleta_imagem':                   include_once('controls/deletaImagem.php'); break;
+        case 'deleta_imagem':                   include_once('controls/deleta_imagem.php'); break;
 
         //Configurar Exibição
         case 'update_config':                   include_once('controls/update_config.php'); break;
 
         //Inserir Produto
         case 'produto_inserir':                 include_once('controls/produto_inserir.php'); break;
+
+        //Apagar Produto
+        case 'produto_deletar':                 include_once('controls/produto_deletar.php'); break;
+
+        //Apagar Editar
+        case 'produto_editar':                  include_once('controls/produto_editar.php'); break;
 
         // ============================ SETUP =================================
 

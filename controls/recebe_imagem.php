@@ -11,12 +11,26 @@
     $mensagem = '';
     $img = $acesso->EXE_QUERY('SELECT * FROM tab_imagem');
 
-    if(!isset($_GET['sender']) || ($_GET['sender'] != 'header' && $_GET['sender'] != 'body' && $_GET['sender'] != 'panel')){
+    if(!isset($_GET['sender']) || ($_GET['sender'] != 'header' && $_GET['sender'] != 'body' && $_GET['sender'] != 'panel' && $_GET['sender'] != 'product')){
         //header("Location:?a=home");
         echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
         exit();
     }else{
         $sender = $_GET['sender'];
+    }
+
+    if($sender == 'product'){
+        if(isset($_GET['p'])){
+            $id_produto = $_GET['p'];
+        }
+        $parametros = [
+            ':cd_product'   =>  $id_produto
+        ];
+        $p = $acesso->EXE_QUERY('SELECT * FROM tab_product WHERE cd_product = :cd_product', $parametros);
+        if(count($p) == 0){
+            echo('<meta http-equiv="refresh" content="0;URL=?a=produtos">');
+            exit();
+        }
     }
 
     // verifica se foi enviado um arquivo
@@ -84,6 +98,19 @@
                         ':dt_updated'       => $data->format('Y-m-d H:i:s')
                     ];
                     $acesso->EXE_NON_QUERY('UPDATE tab_imagem SET img_panel = :img_panel, dt_updated = :dt_updated WHERE cd_img = :cd_img', $parametros);
+                
+                }elseif($sender == 'product'){
+                    if($p[0]['img_product'] != ''){
+                        // Apaga a imagem antiga do diretorio do site.
+                        unlink("./".$p[0]['img_product']);
+                    }
+                    //Atualiza o banco com o nome da nova imagem.
+                    $parametros = [
+                        ':cd_product'      => $id_produto,
+                        ':img_product'     => "images/".$novoNome,
+                        ':dt_updated'      => $data->format('Y-m-d H:i:s')
+                    ];
+                    $acesso->EXE_NON_QUERY('UPDATE tab_product SET img_product = :img_product, dt_updated = :dt_updated WHERE cd_product = :cd_product', $parametros);
                 }
 
                 $mensagem = 'Arquivo salvo com sucesso!.';
@@ -97,8 +124,14 @@
     }else{
         $mensagem = 'Você não enviou nenhum arquivo!';
     }
-    
-    //header("Location:?a=home");
-    echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
-    exit();
+
+    if($sender == 'product'){
+        //header("Location:?a=home");
+        echo('<meta http-equiv="refresh" content="0;URL=?a=produtos">');
+        exit();
+    } else{
+        //header("Location:?a=home");
+        echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
+        exit();
+    }
 ?>

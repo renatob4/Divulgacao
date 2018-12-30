@@ -4,7 +4,7 @@
         exit();
     }
 
-    if((!isset($_GET['img']) || !isset($_GET['sender'])) || ($_GET['sender'] != 'body' && $_GET['sender'] != 'card')){
+    if((!isset($_GET['img']) || !isset($_GET['sender'])) || ($_GET['sender'] != 'body' && $_GET['sender'] != 'card' && $_GET['sender'] != 'product')){
         //header("Location:?a=home");
         echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
         exit();
@@ -62,7 +62,34 @@
             //Apaga a imagem do diretório.
             unlink("./".$img);
         }
+
+    } elseif($sender == 'product'){
+
+        $parametros = [
+            ':img_product' => $img
+        ];
+        $path = $acesso->EXE_QUERY('SELECT * FROM tab_product WHERE img_product = :img_product', $parametros);
+        //Verifica no banco se retornou resultado.
+        if(count($path) == 0){
+            $erro = true;
+        }
+        if(!$erro){
+            //Atualiza o banco com o nome vazio da imagem.
+            $parametros = [
+                ':cd_product'       => $path[0]['cd_product'],
+                ':img_product'         =>  '',
+                ':dt_updated'       => $data->format('Y-m-d H:i:s')
+            ];
+            $acesso->EXE_NON_QUERY('UPDATE tab_product SET img_product = :img_product, dt_updated = :dt_updated WHERE cd_product = :cd_product', $parametros);
+            //Apaga a imagem do diretório.
+            unlink("./".$img);
     }
+
     // Redireciona
-    echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
+    if($sender == 'product'){
+        echo('<meta http-equiv="refresh" content="0;URL=?a=produtos">');
+    } else{
+        echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
+    }
+}
 ?>

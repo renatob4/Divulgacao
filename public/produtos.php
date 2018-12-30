@@ -70,7 +70,7 @@
 
         //Pesquisa com filtro
         $parametros = ['pesquisa'   =>  '%'.$_SESSION['texto_pesquisa'].'%' ];
-        $produtos = $acesso->EXE_QUERY('SELECT * FROM tab_product WHERE nm_product LIKE :pesquisa OR ds_description LIKE :pesquisa ORDER BY nm_product ASC LIMIT '.$item_inicial.','.$itens_por_pagina, $parametros);
+        $produtos = $acesso->EXE_QUERY('SELECT * FROM tab_product WHERE nm_product LIKE :pesquisa OR ds_description LIKE :pesquisa OR cd_alternative_product LIKE :pesquisa ORDER BY nm_product ASC LIMIT '.$item_inicial.','.$itens_por_pagina, $parametros);
         //Contagem dos produtos na tabela.
         $total_produtos = count($acesso->EXE_QUERY('SELECT * FROM tab_product WHERE nm_product LIKE :pesquisa OR ds_description LIKE :pesquisa ORDER BY nm_product ASC', $parametros));
     
@@ -195,7 +195,7 @@
             <!-- Card do produto -->
             <div class="<?php echo $produto['st_promotion'] == 1 ? 'card borda-produto-p mb-3' : 'card borda-produto mb-3';?>">
                 <div class="row p-0 m-0">
-                    <div class="col-md-3 p-0 text-center">
+                    <div class="col-md-3 p-0 text-center prrdiv">
                         <?php if($produto['st_promotion'] == 1):?>
                         <i id="gold" class="fas fa-star mr-2 star"></i>
                         <?php endif;?>
@@ -203,42 +203,61 @@
                         <?php if($produto['img_product'] == ''):?>
                         <label class="product-img text-center m-0"><i id="grey" class="fas fa-shopping-cart"></i></label>
                         <?php else:?>
-                        <img src="produto.png">
+                        <div class="p-2 text-center"><img class="img-fluid pdimg-size" src="<?php echo $produto['img_product']?>"></div>
                         <?php endif;?>
                     </div>
                     <div class="col-md-9 p-0">
                         <div class="row m-0 p-0">
-                            <div class="col-sm-9 p-2 prldiv prrdiv">
+                            <div class="col-sm-9 p-2 prrdiv prbdiv">
                                 <h5><label id="green" class="mr-2"><i class="fas fa-barcode mr-1"></i><?php echo $produto['cd_alternative_product'];?></label><?php echo $produto['nm_product'];?></h5>
-                                <p class="mb-4" id="grey"><?php echo substr($produto['ds_description'], 0, 210)?></p>
-                                <div class="lnk-info mb-1"><a data-toggle="collapse" href="#<?php echo $produto['cd_alternative_product'];?>" role="button" aria-expanded="false" aria-controls="collapseExample"><i id="grey "class="fas fa-arrow-alt-circle-down mr-2"></i>Descrição Completa</a></div>
+                                <p class="mb-4" id="grey"><?php echo substr($produto['ds_description'], 0, 200)?><a data-toggle="collapse" class="Obs4" href="#<?php echo $produto['cd_alternative_product'];?>" role="button" aria-expanded="false" aria-controls="collapseExample"><i id="grey "class="fas fa-arrow-alt-circle-down ml-2 mr-1"></i>Descrição Completa</a></p>
                             </div>
                             <div class="col-sm-3 p-2 text-center">
                                 <label id="grey" class="Obs3 mb-0"><label id="black" class="price mr-1 mb-0"><strong>R$ <?php echo number_format($produto['vl_product'],2, ',', '.');?></strong></label>/<?php echo $produto['ds_unity'];?></label>
-                                <?php if($produto['st_promotion'] == 1):?>
-                                <label id="blue" class="Obs3 m-0 p-0">Promoção!</label>
-                                <?php endif;?>
                                 <a class="btn btn-success mt-2 p-3" href="?a=contatos">Interessado?</a>
                                 <label class="Obs3 mt-2">Entre em contato para adquirir.</label>
+                                <?php if($produto['st_promotion'] == 1):?>
+                                <p id="blue" class="pmtn m-0 p-0"><b>Promoção!</b></p>
+                                <?php endif;?>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="collapse" id="<?php echo $produto['cd_alternative_product'];?>">
                     <div class="card brad p-3">
-                        <p class="mb-2" id="green"><?php echo $produto['ds_description'];?></p>
+                        <p class="mb-1" id="green"><?php echo $produto['ds_description'];?></p>
                     </div>
                 </div>
                 <?php if(funcoes::VerificarLogin()):?>
-                <div class="card line p-1 text-center brt">
-                    <div class="p-0 m-0 mr-3">
-                        <a id="black" href="?a=produto_editar&p=<?php echo $produto['cd_product'];?>" class="mr-2"><i id="black" class="fas fa-edit mr-1"></i>Editar</a>|<a id="black" href="?a=produto_deletar&p=<?php echo $produto['cd_product'];?>" class="ml-2"><i id="black" class="fas fa-trash mr-1"></i>Apagar</a>
+                <div class="card line text-center brt">
+                    <div class="row p-0 m-0">
+                        <div class="col-sm-8 pl-0 text-left">
+                            <div class="row m-1">
+                                <div class="col-sm-10 p-0 text-left mt-0 mb-0">
+                                    <form class="p-0 m-0" action="?a=recebe_imagem&sender=product&p=<?php echo $produto['cd_product'];?>" method="post" enctype="multipart/form-data">
+                                        <div class="m-1">
+                                            <input class="btn btn-warning file mr-2 p-0" name="arquivo" type="file" accept="image/*">
+                                            <input class="btn btn-success file m-0 p-1" type="submit" value="Enviar">
+                                            <label class="ml-1 file" id="grey">(Ideal: 200x200)</label>
+                                            <?php if ($produto['img_product'] != ''):?>
+                                            <label class="mr-2 ml-2">|</label><strong><i id="grey" class="fas fa-image mr-2 file"></i><a href="?a=deleta_imagem&sender=product&img=<?php echo $produto['img_product']?>" class="file">Remover</a></strong>
+                                            <?php endif;?>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4 text-right">
+                            <div class="mt-2 mr-1">
+                                <a id="black" href="?a=produto_editar&p=<?php echo $produto['cd_product'];?>" class="mr-2"><i id="grey" class="fas fa-edit mr-1"></i><b>Editar</b></a>|<a id="black" href="?a=produto_deletar&p=<?php echo $produto['cd_product'];?>" class="ml-2"><i id="grey" class="fas fa-trash mr-1"></i><b>Apagar</b></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <?php endif;?>
             </div>
             <?php endforeach;?>
-            <div class="row mt-0 mb-1 mr-1 ml-1">
+            <div class="row mt-0 mb-1 mr-3 ml-3">
                 <!--Pagina Atual-->
                 <div class="col-sm-6 text-left">
                     <label style="opacity: 0.5"><?php echo 'Pagina: ' . $pagina ?></label>
@@ -333,7 +352,7 @@
                 <div class="text-left">
                     <div class="form-row p-0 mt-2">
                         <div class="col-sm-6 mb-2">
-                            <label id="black"><b>Exibir lista de produtos na página por:</b></label>
+                            <label id="black">Exibir lista de produtos na página por:</label>
                             <select class="form-control shadow" name="cfg_rel" required>
                                 <optgroup label="Relevancia">
                                     <option value=1 <?php echo $config[0]['sp_relevance'] == 1 ? 'selected' : '';?>>1 - Preço crescente</option>
@@ -345,7 +364,7 @@
                             </select>
                         </div>
                         <div class="col-sm-6 mb-1">
-                            <label id="black"><b>Quantidade de itens por página:</b></label>
+                            <label id="black">Quantidade de itens por página:</label>
                             <select class="form-control shadow" name="cfg_amount" required>
                                 <optgroup label="Quantidade">
                                     <option value=5 <?php echo $config[0]['sp_amount'] == 5 ? 'selected' : '';?>>5</option>
