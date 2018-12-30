@@ -128,7 +128,7 @@
             <?php if (funcoes::VerificarLogin()):?>
             <a href="#edit<?php echo $card[$i]['cd_card']?>" class="btn btn-outline-success p-2 mr-1" data-toggle="collapse" role="button" aria-expanded="false"><i class="fas fa-edit mr-1"></i>Edit</a>                    
             <a href="?a=conteudo&card=<?php echo $card[$i]['cd_card']?>" class="btn btn-primary p-2"><i class="fas fa-plus-square mr-2"></i>Mais</a>
-            <a href="?a=card_deletar&card=<?php echo $card[$i]['cd_card']?>" class="btn btn-outline-danger p-2 ml-1"><i class="fas fa-trash mr-1"></i>Del</a>   
+            <a href="?a=card_deletar&card=<?php echo $card[$i]['cd_card']?>" class="btn btn-outline-danger p-2 ml-1"><i class="fas fa-trash mr-1"></i>Del</a>
             <div class="collapse" id="edit<?php echo $card[$i]['cd_card']?>"><hr>
                 <div class="text-left">
                     <form action="?a=card_editar&card=<?php echo $card[$i]['cd_card']?>" method="POST">

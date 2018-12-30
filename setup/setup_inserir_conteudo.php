@@ -161,18 +161,16 @@ $parametros = [
     ':st_card'              => 1,
     ':st_post'              => 1,
     ':sp_relevance'         => 1,
-    ':sp_category'          => 1,
     ':sp_amount'            => 10,
     ':ss_relevance'         => 1,
-    ':ss_category'          => 1,
     ':ss_amount'            => 10,
     ':dt_register'          => $data->format('Y-m-d H:i:s'),
     ':dt_updated'           => $data->format('Y-m-d H:i:s')
 ];
 
 //inserir as imagens do conteudo
-$gestor->EXE_NON_QUERY('INSERT INTO tab_config(st_contact, st_service, st_product, st_adress, st_activity, st_comment, st_fbpage, st_map, st_document, st_card, st_post, sp_relevance, sp_category, sp_amount, ss_relevance, ss_category, ss_amount, dt_register, dt_updated)
-                        VALUES(:st_contact, :st_service, :st_product, :st_adress, :st_activity, :st_comment, :st_fbpage, :st_map, :st_document, :st_card, :st_post, :sp_relevance, :sp_category, :sp_amount, :ss_relevance, :ss_category, :ss_amount, :dt_register, :dt_updated)', $parametros);
+$gestor->EXE_NON_QUERY('INSERT INTO tab_config(st_contact, st_service, st_product, st_adress, st_activity, st_comment, st_fbpage, st_map, st_document, st_card, st_post, sp_relevance, sp_amount, ss_relevance, ss_amount, dt_register, dt_updated)
+                        VALUES(:st_contact, :st_service, :st_product, :st_adress, :st_activity, :st_comment, :st_fbpage, :st_map, :st_document, :st_card, :st_post, :sp_relevance, :sp_amount, :ss_relevance, :ss_amount, :dt_register, :dt_updated)', $parametros);
 
 ?>
 <div class="alert alert-success text-center mt-2 mb-2">Conteúdo inserido com sucesso.</div>

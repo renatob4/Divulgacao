@@ -27,6 +27,8 @@
         $ds_unidade = $_POST['ds_unidade'];
         $vl_produto = $_POST['vl_produto'];
         $ds_descricao = $_POST['ds_descricao'];
+        //Captura valor do radio selectin de promoções
+        $radio = $_POST['pmtradio'];
 
         //Verifica se ja existe produto com o mesmo código.
         $parametros = [
@@ -35,7 +37,7 @@
         $produtos = $acesso->EXE_QUERY('SELECT * FROM tab_product WHERE cd_alternative_product = :cd_alternative_product', $parametros);
         if(count($produtos) != 0){
             $erro = true;
-            $mensagem = 'Ja existe outro produto com o mesmo código.';
+            $mensagem = "Ja existe outro produto com o mesmo código: (".$produtos[0]['cd_alternative_product'].")";
         }
 
         if(!$erro){
@@ -47,17 +49,30 @@
                 ':vl_product'                         =>  $vl_produto,
                 ':ds_description'                     =>  $ds_descricao,
                 ':ds_unity'                           =>  $ds_unidade,
+                ':st_promotion'                       =>  $radio,
                 ':img_product'                        =>  '',
                 ':dt_register'                        =>  $data->format('Y-m-d H:i:s'),
                 ':dt_updated'                         =>  $data->format('Y-m-d H:i:s')
             ];
             //Inserçao do card na tabela tab_card
             $acesso->EXE_NON_QUERY(
-                'INSERT INTO tab_product(cd_alternative_product, nm_product, ds_category, vl_product, ds_description, ds_unity, img_product, dt_register, dt_updated)
-                VALUES(:cd_alternative_product, :nm_product, :ds_category, :vl_product, :ds_description, :ds_unity, :img_product, :dt_register, :dt_updated)', $parametros);
+                'INSERT INTO tab_product(cd_alternative_product, nm_product, ds_category, vl_product, ds_description, ds_unity, st_promotion, img_product, dt_register, dt_updated)
+                 VALUES(:cd_alternative_product, :nm_product, :ds_category, :vl_product, :ds_description, :ds_unity, :st_promotion, :img_product, :dt_register, :dt_updated)', $parametros);
+             
+            $mensagem = 'Novo produto cadastrado com sucesso!';
         }
-        //header("Location:?a=home");
-        echo('<meta http-equiv="refresh" content="0;URL=?a=produtos">');
-        exit();
+
+        //Resultado das operações.
+        if($erro){
+            $_SESSION['resultado'] = $mensagem;
+            //header("Location:?a=home");
+            echo('<meta http-equiv="refresh" content="0;URL=?a=produtos">');
+            exit();
+        }else{
+            $_SESSION['resultado'] = $mensagem;
+            //header("Location:?a=home");
+            echo('<meta http-equiv="refresh" content="0;URL=?a=produtos">');
+            exit();
+        }
     }
 ?>

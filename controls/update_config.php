@@ -21,36 +21,32 @@
 
         if($sender == 'products'){
 
-            $cfg_relevance = $_POST['cfg_relevance'];
-            $cfg_category = $_POST['cfg_category'];
+            $cfg_relevance = $_POST['cfg_rel'];
             $cfg_amount = $_POST['cfg_amount'];
 
             $parametros = [
                 ':cd_config'     =>  $config[0]['cd_config'],
                 ':sp_relevance'  =>  $cfg_relevance,
-                ':sp_category'   =>  $cfg_category,
                 ':sp_amount'     =>  $cfg_amount,
                 ':dt_updated'    =>  $data->format('Y-m-d H:i:s')
             ];  
 
-            $acesso->EXE_NON_QUERY('UPDATE tab_config SET sp_relevance = :sp_relevance, sp_category = :sp_category, sp_amount = :sp_amount, dt_updated = :dt_updated WHERE cd_config = :cd_config', $parametros);
+            $acesso->EXE_NON_QUERY('UPDATE tab_config SET sp_relevance = :sp_relevance, sp_amount = :sp_amount, dt_updated = :dt_updated WHERE cd_config = :cd_config', $parametros);
         }
 
         if($sender == 'services'){
             
-            $cfg_relevance = $_POST['cfg_relevance'];
-            $cfg_category = $_POST['cfg_category'];
+            $cfg_relevance = $_POST['cfg_rel'];
             $cfg_amount = $_POST['cfg_amount'];
 
             $parametros = [
                 ':cd_config'     =>  $config[0]['cd_config'],
                 ':ss_relevance'  =>  $cfg_relevance,
-                ':ss_category'   =>  $cfg_category,
                 ':ss_amount'     =>  $cfg_amount,
                 ':dt_updated'    =>  $data->format('Y-m-d H:i:s')
             ];  
 
-            $acesso->EXE_NON_QUERY('UPDATE tab_config SET ss_relevance = :ss_relevance, ss_category = :ss_category, ss_amount = :ss_amount, dt_updated = :dt_updated WHERE cd_config = :cd_config', $parametros);
+            $acesso->EXE_NON_QUERY('UPDATE tab_config SET ss_relevance = :ss_relevance, ss_amount = :ss_amount, dt_updated = :dt_updated WHERE cd_config = :cd_config', $parametros);
         }
         
     }

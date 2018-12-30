@@ -9,5 +9,5 @@ var divresult = document.getElementById("resultado");
 if(divresult != null){
     setTimeout(function() {
         $("#resultado").hide();
-    }, 5000);
+    }, 10000);
 }

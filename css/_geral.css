@@ -163,6 +163,15 @@ body{
     box-shadow: 3px 3px 3px rgba(0,0,0,.5);
     background-color: aliceblue;
 }
+.borda-produto-p{
+    border: 2px solid red;
+    box-shadow: 2px 2px 2px rgba(0,0,0,.5);	
+}
+.borda-produto-p:hover{
+    border: 2px solid red;
+    box-shadow: 3px 3px 3px rgba(0,0,0,.5);
+    background-color: aliceblue;
+}
 .prrdiv{
     border-right: 1px solid rgba(128,128,128,.3);
 }
@@ -174,11 +183,25 @@ body{
     float: right;
     bottom: 0;
 }
+.adm-product{
+    background-color: beige;
+}
 .brad{
     border-radius: 0;
 }
+.brt{
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
 .price{
     font-size: 2.0em;
+}
+.star{
+    position: absolute;
+    float: left;
+    top: 5px;
+    left: 5px;
+    font-size: 1.4em;
 }
 .navbar-fixed-top{
     position: fixed;

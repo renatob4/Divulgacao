@@ -91,6 +91,7 @@
         'vl_product                     FLOAT, '.
         'ds_description                 VARCHAR(255), '.
         'ds_unity                       VARCHAR(12), '.
+        'st_promotion                   BOOLEAN, '.
         'img_product                    VARCHAR(50), '.
         'dt_register                    DATETIME, '.
         'dt_updated                     DATETIME)'
@@ -166,10 +167,8 @@
         'st_card                            BOOLEAN, '.
         'st_post                            BOOLEAN, '.
         'sp_relevance                       INT, '.
-        'sp_category                        INT, '.
         'sp_amount                          INT, '.
         'ss_relevance                       INT, '.
-        'ss_category                        INT, '.
         'ss_amount                          INT, '.
         'dt_register                        DATETIME, '.
         'dt_updated                         DATETIME)'
