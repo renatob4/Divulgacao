@@ -64,14 +64,15 @@ $parametros = [
     ':ds_link_insta'        => 'https://www.instagram.com/',
     ':ds_link_olx'          => '',
     ':ds_link_market'       => '',
+    ':ds_link_ytb'          => '',
     ':dt_register'          => $data->format('Y-m-d H:i:s'),
     ':dt_updated'           => $data->format('Y-m-d H:i:s')
 ];
 
 //inserir os links
 $gestor->EXE_NON_QUERY(
-    'INSERT INTO tab_link(ds_link_face, ds_link_twit, ds_link_linked, ds_link_insta, ds_link_olx, ds_link_market, dt_register, dt_updated)
-     VALUES(:ds_link_face, :ds_link_twit, :ds_link_linked, :ds_link_insta, :ds_link_olx, :ds_link_market, :dt_register, :dt_updated)', $parametros);
+    'INSERT INTO tab_link(ds_link_face, ds_link_twit, ds_link_linked, ds_link_insta, ds_link_olx, ds_link_market, ds_link_ytb, dt_register, dt_updated)
+     VALUES(:ds_link_face, :ds_link_twit, :ds_link_linked, :ds_link_insta, :ds_link_olx, :ds_link_market, :ds_link_ytb, :dt_register, :dt_updated)', $parametros);
 
 //--------------------------------------------------------------------------------- TABELA TAB_ADRESS
 
@@ -152,6 +153,7 @@ $parametros = [
     ':st_contact'           => 1,
     ':st_service'           => 1,
     ':st_product'           => 1,
+    ':st_promotion'         => 1,
     ':st_adress'            => 1,
     ':st_activity'          => 1,
     ':st_comment'           => 1,
@@ -169,8 +171,8 @@ $parametros = [
 ];
 
 //inserir as imagens do conteudo
-$gestor->EXE_NON_QUERY('INSERT INTO tab_config(st_contact, st_service, st_product, st_adress, st_activity, st_comment, st_fbpage, st_map, st_document, st_card, st_post, sp_relevance, sp_amount, ss_relevance, ss_amount, dt_register, dt_updated)
-                        VALUES(:st_contact, :st_service, :st_product, :st_adress, :st_activity, :st_comment, :st_fbpage, :st_map, :st_document, :st_card, :st_post, :sp_relevance, :sp_amount, :ss_relevance, :ss_amount, :dt_register, :dt_updated)', $parametros);
+$gestor->EXE_NON_QUERY('INSERT INTO tab_config(st_contact, st_service, st_product, st_promotion, st_adress, st_activity, st_comment, st_fbpage, st_map, st_document, st_card, st_post, sp_relevance, sp_amount, ss_relevance, ss_amount, dt_register, dt_updated)
+                        VALUES(:st_contact, :st_service, :st_product, :st_promotion, :st_adress, :st_activity, :st_comment, :st_fbpage, :st_map, :st_document, :st_card, :st_post, :sp_relevance, :sp_amount, :ss_relevance, :ss_amount, :dt_register, :dt_updated)', $parametros);
 
 ?>
 <div class="alert alert-success text-center mt-2 mb-2">Conteúdo inserido com sucesso.</div>

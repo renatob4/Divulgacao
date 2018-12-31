@@ -118,7 +118,7 @@
                 </div>
                 <div class="collapse" id="<?php echo $produtos[0]['cd_alternative_product'];?>">
                     <div class="card brad p-3">
-                        <p class="mb-1" id="green"><?php echo $produtos[0]['ds_description'];?></p>
+                        <p class="mb-1" id="green"><?php echo nl2br($produtos[0]['ds_description']);?></p>
                     </div>
                 </div>
                 <div class="card line text-center brt">
@@ -197,7 +197,7 @@
                     </div>
                     <div class="form-goup mt-2">
                         <label id="black"><i id="black" class="fas fa-info-circle mr-2"></i><b>Descrição:</b></label>
-                        <textarea type="text" name="edit_desc" class="form-control shadow" rows="5" title="Informações do produto" required><?php echo $produtos[0]['ds_description'];?></textarea>
+                        <textarea type="text" name="edit_desc" class="form-control shadow" rows="7" title="Informações do produto" required><?php echo $produtos[0]['ds_description'];?></textarea>
                     </div>
                     <div class="form-row mt-3 p-0">
                         <div class="col">
@@ -209,7 +209,8 @@
                         </div>
                         <div class="col">
                             <div class="text-right">
-                                <a href="?a=produto_deletar&p=<?php echo $produtos[0]['cd_product'];?>" class="btn btn-danger shadow mb-0 mr-2"><i id="black" class="fas fa-trash mr-1"></i>Apagar</a>
+                                <a href="?a=produtos" class="btn btn-primary shadow mr-2">Voltar</a>
+                                <a href="?a=produto_deletar&p=<?php echo $produtos[0]['cd_product'];?>" class="btn btn-danger shadow mb-0 mr-2">Apagar</a>
                                 <button class="btn btn-success shadow mb-0">Atualizar Produto</button>
                             </div>    
                         </div>

@@ -144,6 +144,9 @@
                         <?php if ($link[0]['ds_link_market'] != ''):?>
                         <i id="grey" class="fas fa-shopping-cart mr-2"></i><label class="mt-0 mb-0">LinkedIn: </label> <a href="<?php echo $link[0]['ds_link_market']?>" target="_blank"><?php echo $link[0]['ds_link_market']?></a><br/>
                         <?php endif;?>
+                        <?php if ($link[0]['ds_link_ytb'] != ''):?>
+                        <i id="grey" class="fab fa-youtube mr-2"></i><label class="mt-0 mb-0">Youtube: </label> <a href="<?php echo $link[0]['ds_link_ytb']?>" target="_blank"><?php echo $link[0]['ds_link_ytb']?></a><br/>
+                        <?php endif;?>
                     </div>
                 </div>
                 <div class="col m-0 p-0">

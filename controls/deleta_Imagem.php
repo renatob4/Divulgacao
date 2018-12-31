@@ -39,6 +39,9 @@
             //Apaga a imagem do diretório.
             if($img != 'images/welcome.jpg')
             unlink("./".$img);
+
+            echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
+            exit();
         }
 
     } elseif($sender == 'card'){
@@ -61,6 +64,9 @@
             $acesso->EXE_NON_QUERY('UPDATE tab_card SET img_card = :img_card, dt_updated = :dt_updated WHERE cd_card = :cd_card', $parametros);
             //Apaga a imagem do diretório.
             unlink("./".$img);
+
+            echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
+            exit();
         }
 
     } elseif($sender == 'product'){
@@ -83,13 +89,9 @@
             $acesso->EXE_NON_QUERY('UPDATE tab_product SET img_product = :img_product, dt_updated = :dt_updated WHERE cd_product = :cd_product', $parametros);
             //Apaga a imagem do diretório.
             unlink("./".$img);
-    }
 
-    // Redireciona
-    if($sender == 'product'){
-        echo('<meta http-equiv="refresh" content="0;URL=?a=produtos">');
-    } else{
-        echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
+            echo('<meta http-equiv="refresh" content="0;URL=?a=produtos">');
+            exit();
+        }
     }
-}
 ?>

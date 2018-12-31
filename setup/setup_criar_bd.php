@@ -58,6 +58,7 @@
         'ds_link_insta                  VARCHAR(120), '.
         'ds_link_olx                    VARCHAR(120), '.
         'ds_link_market                 VARCHAR(120), '.
+        'ds_link_ytb                    VARCHAR(120), '.
         'dt_register                    DATETIME, '.
         'dt_updated                     DATETIME)'
     );
@@ -89,7 +90,7 @@
         'nm_product                     VARCHAR(32), '.
         'ds_category                    VARCHAR(22), '.
         'vl_product                     FLOAT, '.
-        'ds_description                 VARCHAR(255), '.
+        'ds_description                 TEXT, '.
         'ds_unity                       VARCHAR(12), '.
         'st_promotion                   BOOLEAN, '.
         'img_product                    VARCHAR(50), '.
@@ -151,6 +152,15 @@
         'lnk_script                      TEXT, '.
         'dt_updated                      DATETIME)'
     );
+    //tabela tab_promotion
+    $gestor->EXE_NON_QUERY(
+        'CREATE TABLE tab_promotion('.
+        'cd_promotion                    INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
+        'nm_customer                     VARCHAR(50), '.
+        'cd_cupom                        VARCHAR(12), '.
+        'pc_discount                     INT, '.
+        'dt_created                      DATETIME)'
+    );
     //tabela tab_config
     $gestor->EXE_NON_QUERY(
         'CREATE TABLE tab_config('.
@@ -158,6 +168,7 @@
         'st_contact                         BOOLEAN, '.
         'st_service                         BOOLEAN, '.
         'st_product                         BOOLEAN, '.
+        'st_promotion                       BOOLEAN, '.
         'st_adress                          BOOLEAN, '.
         'st_activity                        BOOLEAN, '.
         'st_comment                         BOOLEAN, '.

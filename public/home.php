@@ -34,15 +34,15 @@
     <?php endif;?>
 </div>
 <!-- Apresentação da empresa, texto. -->
-<hr class="mt-2 mb-3">
-<div class="row m-1">
+<hr class="mt-3 mb-2">
+<div class="row mr-1 ml-1 pt-0">
     <?php if(($config[0]['st_map'] == 1 || $config[0]['st_contact'] == 1) && ($conteudo[0]['lnk_map'] != '' || $config[0]['st_contact'] == 1)):?>
-    <div class="col-md-8 p-0">
+    <div class="col-md-7 p-0">
     <?php else:?>
     <div class="col p-0">
     <?php endif;?>
         <div class="text-center pt-2 pr-3 pl-3 pb-0">
-            <h4 class="mb-3">APRESENTAÇÃO</h4>
+            <h4 class="mb-2">APRESENTAÇÃO</h4>
             <!-- Dados contidos no campo 'ds_presentation' do banco de dados -->
             <p class="mb-3"><?php echo $conteudo[0]['ds_presentation']?></p>
             <!-- Mostra a imagem no corpo da apresentação se ela existir -->
@@ -75,13 +75,13 @@
         </div>
     </div>
     <?php if(($config[0]['st_map'] == 1 || $config[0]['st_contact'] == 1) && ($conteudo[0]['lnk_map'] != '' || $config[0]['st_contact'] == 1)):?>
-    <div class="col-md-4 p-0">
+    <div class="col-md-5 p-0">
     <?php else:?>
     <div>
     <?php endif;?>
     <?php if($config[0]['st_contact'] == 1):?>
     <!-- Painel rapido de contatos telefonicos -->
-    <div class="card painel-direito text-center p-4 mb-2 borda-painel shadow-strong">
+    <div class="card painel-direito text-center p-2 pt-3 mt-2 mb-3 borda-painel shadow-strong">
         <h4 id="black"><i id="white" class="fas fa-phone-square mr-2"></i>Fale conosco:</h4>
         <div class="flex-media">
             <div class="card m-2 pt-4 pb-3 pr-0 borda-painel">
@@ -96,7 +96,7 @@
     <?php endif;?>
     <?php if ($conteudo[0]['lnk_map'] != '' && $config[0]['st_map'] == 1):?>
     <!-- Painel rapido de localização/mapa -->
-    <div class="card painel-direito text-center p-2 pt-4 mt-2 mb-1 borda-painel shadow-strong">
+    <div class="card painel-direito text-center p-2 pt-3 mt-2 mb-2 borda-painel shadow-strong">
         <h4 id="black"><i id="white" class="fas fa-map-marked mr-2"></i>Nos encontre:</h4>
         <div class="card mt-2">
             <!-- iframe do mapa -->
@@ -107,7 +107,7 @@
     </div>
 </div>
 <?php if($config[0]['st_card'] == 1):?>
-<hr class="mt-2 mb-0">
+<hr class="mt-3 mb-0">
 <!-- Cards de texto -->
 <div class="row">
     <?php for ($i = 0; $i <= count($card)-1; $i++):?>
@@ -197,7 +197,7 @@
     <?php endif;?>
     <!-- Form para postar noticias -->
     <?php if (funcoes::VerificarLogin()):?>
-    <hr><form class="p-0 mb-0" method="POST" action="?a=post_inserir">
+    <hr class="mb-2"><form class="p-0 mb-0" method="POST" action="?a=post_inserir">
         <div class="form-row">
             <div class="col-md-8 mt-1">
                 <label><b><i class="fas fa-star mr-2"></i>Título:</b></label>

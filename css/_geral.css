@@ -55,7 +55,6 @@ body{
     border: 2px solid rgb(62, 194, 247);
     margin-top: 15px;
     background-color: white;
-
 }
 .titulo-painel{
     font-size: 1.2em;
@@ -97,7 +96,7 @@ body{
     font-size: 0.8em;
 }
 .Obs4{
-    color: green;
+    color: blue;
     font-size: 0.8em;
 }
 .pmtn{

@@ -1,0 +1,27 @@
+{
+    "short_name": "Meu site",
+    "name": "Descrição breve do site.",
+    "start_url": "index.php",
+    "background_color": "#000000",
+    "theme_color": "#B4AFAF",
+    "display": "standalone",
+    "icons": [
+      {
+        "src": "images/logo.png",
+        "type": "image/png",
+        "sizes": "128x128"
+      }, {
+        "src": "images/logo.png",
+        "type": "image/png",
+        "sizes": "152x152"
+      }, {
+        "src": "images/logo.png",
+        "type": "image/png",
+        "sizes": "144x144"
+      }, {
+        "src": "images/logo.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      }
+    ]
+  }

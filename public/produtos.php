@@ -214,7 +214,7 @@
                             </div>
                             <div class="col-sm-3 p-2 text-center">
                                 <label id="grey" class="Obs3 mb-0"><label id="black" class="price mr-1 mb-0"><strong>R$ <?php echo number_format($produto['vl_product'],2, ',', '.');?></strong></label>/<?php echo $produto['ds_unity'];?></label>
-                                <a class="btn btn-success mt-2 p-3" href="?a=contatos">Interessado?</a>
+                                <a href="?a=contatos" class="btn btn-success mt-2 p-3">Interessado?</a>
                                 <label class="Obs3 mt-2">Entre em contato para adquirir.</label>
                                 <?php if($produto['st_promotion'] == 1):?>
                                 <p id="blue" class="pmtn m-0 p-0"><b>Promoção!</b></p>
@@ -225,7 +225,7 @@
                 </div>
                 <div class="collapse" id="<?php echo $produto['cd_alternative_product'];?>">
                     <div class="card brad p-3">
-                        <p class="mb-1" id="green"><?php echo $produto['ds_description'];?></p>
+                        <p class="mb-1" id="green"><?php echo nl2br($produto['ds_description']);?></p>
                     </div>
                 </div>
                 <?php if(funcoes::VerificarLogin()):?>
@@ -323,7 +323,7 @@
                     </div>
                     <div class="form-goup mt-2">
                         <label id="black"><i id="black" class="fas fa-info-circle mr-2"></i><b>Descrição:</b></label>
-                        <textarea type="text" name="ds_descricao" class="form-control shadow" rows="5" title="Informações do produto" required></textarea>
+                        <textarea type="text" name="ds_descricao" class="form-control shadow" rows="7" title="Informações do produto" required></textarea>
                     </div>
                     <div class="form-row mt-3 p-0">
                         <div class="col">
@@ -336,7 +336,7 @@
                         <div class="col">
                             <div class="text-right">
                                 <button class="btn btn-success shadow mb-0">Inserir Produto</button>
-                            </div>    
+                            </div>
                         </div>
                     </div>
                 </div> 
@@ -359,7 +359,7 @@
                                     <option value=2 <?php echo $config[0]['sp_relevance'] == 2 ? 'selected' : '';?>>2 - Preço decrescente</option>
                                     <option value=3 <?php echo $config[0]['sp_relevance'] == 3 ? 'selected' : '';?>>3 - Ultimos a serem adicionados</option>
                                     <option value=4 <?php echo $config[0]['sp_relevance'] == 4 ? 'selected' : '';?>>4 - Primeiros a serem adicionados</option>
-                                    <option value=5 <?php echo $config[0]['sp_relevance'] == 5 ? 'selected' : '';?>>5 - Em promoção</option>
+                                    <option value=5 <?php echo $config[0]['sp_relevance'] == 5 ? 'selected' : '';?>>5 - Apenas em promoção</option>
                                 </optgroup>
                             </select>
                         </div>

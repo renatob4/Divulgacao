@@ -9,6 +9,18 @@
         <meta name="description" content="Site de divulgação de pequena empresa/negócio.">
         <meta name="keywords" content="divulgação, conheça, palavras, chave">
         <meta name="robots" content="index">
+        <!-- Tags do facebook -->
+        <meta property="og:locale" content="pt_BR">
+        <meta property="og:url" content="<?php echo 'http://$_SERVER[HTTP_HOST]'?>">
+        <meta property="og:title" content="Título da página ou artigo">
+        <meta property="og:site_name" content="Nome do meu site">
+        <meta property="og:description" content="Minha boa descrição para intrigar os usuários.">
+        <meta property="og:image" content="<?php echo 'http://$_SERVER[HTTP_HOST]'?>/images/logo.png">
+        <meta property="og:image:type" content="image/png">
+        <!-- <meta property="og:image:width" content="800"> -->
+        <!-- <meta property="og:image:height" content="600"> -->
+        <meta property="og:type" content="website">
+        <!-- Atualização da Página a cada 10 minutos -->
         <meta http-equiv="Refresh" content="600">
             <title>Trust</title>
         <!--Bootstrap 4.0-->
@@ -21,6 +33,8 @@
         <script src='https://www.google.com/recaptcha/api.js'></script>
         <!-- Css -->
         <link rel="stylesheet" href="css/main.css"/>
+        <!-- Arquivo manifest para web app -->
+        <link rel="manifest" href="/manifest.json">
         <!--Favicon-->
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-ico"/>
     </head>

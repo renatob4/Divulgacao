@@ -46,6 +46,7 @@
         $instagram = $_POST['form_lnk_inst'];
         $olx = $_POST['form_lnk_olx'];
         $market = $_POST['form_lnk_mark'];
+        $youtube = $_POST['form_lnk_ytb'];
 
         //Buscando os valores do form tab_adress
         $adress = $_POST['form_ds_endereco'];
@@ -64,6 +65,7 @@
         $check_adress = (isset($_POST['check_adress'])) ? 1 : 0;
         $check_activity = (isset($_POST['check_activity'])) ? 1 : 0;
         $check_page = (isset($_POST['check_page'])) ? 1 : 0;
+        $check_promotion = (isset($_POST['check_promotion'])) ? 1 : 0;
 
         //Get e tratamento do link do mapa inserido no campo.
         $mapa = $_POST['form_lnk_map'];
@@ -156,6 +158,7 @@
             ':ds_link_insta'    => $instagram,
             ':ds_link_olx'      => $olx,
             ':ds_link_market'   => $market,
+            ':ds_link_ytb'      => $youtube,
             ':dt_updated'       => $data->format('Y-m-d H:i:s')
         ];
         $gestor->EXE_NON_QUERY(
@@ -166,6 +169,7 @@
              ds_link_insta = :ds_link_insta,
              ds_link_olx = :ds_link_olx,
              ds_link_market = :ds_link_market,
+             ds_link_ytb = :ds_link_ytb,
              dt_updated = :dt_updated
              WHERE cd_link = :cd_link',
             $parametros
@@ -177,6 +181,7 @@
             ':st_contact'           => $check_contact,
             ':st_service'           => $check_service,
             ':st_product'           => $check_product,
+            ':st_promotion'         => $check_promotion,
             ':st_adress'            => $check_adress,
             ':st_activity'          => $check_activity,
             ':st_comment'           => $check_comment,
@@ -192,6 +197,7 @@
             st_contact = :st_contact,
             st_service = :st_service,
             st_product = :st_product,
+            st_promotion = :st_promotion,
             st_adress = :st_adress,
             st_activity = :st_activity,
             st_comment = :st_comment,
@@ -360,6 +366,12 @@
                                 <input type="text" name="form_lnk_mark" class="form-control p-0 ml-3 line" value="<?php echo $link[0]['ds_link_market']?>">
                             </div>
                         </div>
+                        <div class="form-group row pr-3">
+                            <label class="col-sm-2 col-form-label p-0 ml-3"><b><i id="grey" class="fab fa-youtube mr-2"></i>Canal Youtube:</b></label>
+                            <div class="col">
+                                <input type="text" name="form_lnk_ytb" class="form-control p-0 ml-3 line" value="<?php echo $link[0]['ds_link_ytb']?>">
+                            </div>
+                        </div>
                         <label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe em branco os links que não quiser que apareçam no Site.</label>          
                     </div>
                     <hr class=""><h5 id="green" class="text-center mb-3">CONFIGURAÇÕES DE EXIBIÇÃO</h5>
@@ -410,14 +422,19 @@
                             <label class="form-check-label" for="Check9">Exibir pagina de Serviços.</label>
                         </div>
                         <div class="form-check form-inline line ml-2 mb-2">
-                            <input class="form-check-input" name="check_comment" type="checkbox" id="Check10" <?php echo $config[0]['st_comment'] == 1 ? 'checked' : '';?>>
+                            <input class="form-check-input" name="check_promotion" type="checkbox" id="Check10" <?php echo $config[0]['st_promotion'] == 1 ? 'checked' : '';?>>
+                            <i id="grey" class="fas fa-percentage ml-2 mr-3"></i>
+                            <label class="form-check-label" for="Check10">Exibir pagina e mecânismo de Promoções.</label>
+                        </div>
+                        <div class="form-check form-inline line ml-2 mb-2">
+                            <input class="form-check-input" name="check_comment" type="checkbox" id="Check11" <?php echo $config[0]['st_comment'] == 1 ? 'checked' : '';?>>
                             <i id="grey" class="fas fa-comment ml-2 mr-3"></i>
-                            <label class="form-check-label" for="Check10">Exibir plugin de comentarios do facebook.</label>
+                            <label class="form-check-label" for="Check11">Exibir plugin de comentarios do facebook.</label>
                         </div>
                         <div class="form-check form-inline line ml-2 mb-3">
-                            <input class="form-check-input" name="check_page" type="checkbox" id="Check11" <?php echo $config[0]['st_fbpage'] == 1 ? 'checked' : '';?>>
+                            <input class="form-check-input" name="check_page" type="checkbox" id="Check12" <?php echo $config[0]['st_fbpage'] == 1 ? 'checked' : '';?>>
                             <i id="grey" class="fab fa-facebook-square ml-2 mr-3"></i>
-                            <label class="form-check-label" for="Check11">Exibir pagina do facebook no rodapé.</label><label class="Obs3 mt-1 ml-2 mb-1">Obs. Para o componente funcionar o link do facebook fornecido deve ser do tipo Página comercial.</label>
+                            <label class="form-check-label" for="Check12">Exibir pagina do facebook no rodapé.</label><label class="Obs3 mt-1 ml-2 mb-1">Obs. Para o componente funcionar o link do facebook fornecido deve ser do tipo Página comercial.</label>
                         </div>
                     </div>
                     <div class="text-right mr-3">
@@ -431,8 +448,8 @@
                     </div>
                     <!-- Botões voltar e aplicar alterações -->
                     <div class="text-center">
-                        <hr><a href="?a=home" class="btn btn-primary btn-size-150 m-2"><i class="fas fa-arrow-circle-left mr-2"></i>Voltar</a>
-                        <button type="submit" class="btn btn-success">Aplicar alterações<i class="fas fa-edit ml-2"></i></button>
+                        <hr><a href="?a=home" class="btn btn-primary btn-size-150 shadow m-2"><i class="fas fa-arrow-circle-left mr-2"></i>Voltar</a>
+                        <button type="submit" class="btn btn-success shadow">Aplicar alterações<i class="fas fa-edit ml-2"></i></button>
                     </div>
                 </form>
             </div>
