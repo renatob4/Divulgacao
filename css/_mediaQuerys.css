@@ -1,18 +1,36 @@
 /* =================================================================================================== */
 
 /* Quando a tela for menor do que 720px entao a classe sera alterada pelo media query */
+@media screen and (max-width: 920px) {
+    .imagem-painel{ 
+        height: 90%;
+    }
+ }
+/* Quando a tela for menor do que 720px entao a classe sera alterada pelo media query */
+@media screen and (max-width: 800px) {
+    .imagem-painel{ 
+        height: 70%;
+    }
+ }
+/* Quando a tela for menor do que 720px entao a classe sera alterada pelo media query */
 @media screen and (max-width: 720px) {
     .imagem-painel{ 
-        max-height: 50%;
+        height: 50%;
     }
  }
  /* Quando a tela for menor do que 420px entao a classe sera alterada pelo media query */
- @media screen and (max-width: 420px) {
+ @media screen and (max-width: 520px) {
     .imagem-painel{ 
-        max-height: 30%;
+        height: 40%;
     }
  }
-
+  /* Quando a tela for menor do que 420px entao a classe sera alterada pelo media query */
+  @media screen and (max-width: 420px) {
+    .imagem-painel{ 
+        height: 30%;
+    }
+ }
+ 
 /* =================================================================================================== */
 
  /* Quando a tela for menor do que 720px entao a classe sera alterada pelo media query */

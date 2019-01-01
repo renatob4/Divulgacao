@@ -41,8 +41,8 @@
     //Veficica se ocorreu um POST
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-        $edit_cd  =  $_POST['edit_cd'];
-        $edit_nm  =  $_POST['edit_nm'];
+        $edit_cd  =  strtoupper($_POST['edit_cd']);
+        $edit_nm  =  strtoupper($_POST['edit_nm']);
         $edit_cat  =  $_POST['edit_cat'];
         $edit_un  =  $_POST['edit_un'];
         $edit_vl  =  $_POST['edit_vl'];
@@ -208,10 +208,10 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="text-right">
+                            <div class="text-right mb-3">
                                 <a href="?a=produtos" class="btn btn-primary shadow mr-2">Voltar</a>
                                 <a href="?a=produto_deletar&p=<?php echo $produtos[0]['cd_product'];?>" class="btn btn-danger shadow mb-0 mr-2">Apagar</a>
-                                <button class="btn btn-success shadow mb-0">Atualizar Produto</button>
+                                <button class="btn btn-success shadow">Atualizar Produto</button>
                             </div>    
                         </div>
                     </div>

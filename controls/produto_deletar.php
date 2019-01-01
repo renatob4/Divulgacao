@@ -27,10 +27,6 @@
         exit();
     } 
 
-    //Atualizar os dados no banco
-    $parametros = [
-        ':cd_product'      =>  $cd_produto
-    ];  
     //Atualizar a DB
     $acesso->EXE_NON_QUERY('DELETE FROM tab_product WHERE cd_product = :cd_product', $parametros);
 

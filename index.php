@@ -19,9 +19,7 @@
     include_once('class/gestorBD.php');
 
     /* Estrutura */
-    //barra do utilizador
-    include_once('includes/_barra_utilizador.php');
-    //Topo (Cabeçalho e menu são incluidos dentro deste arquivo)
+    //Topo (Cabeçalho, barra de utilizador e menu são incluidos dentro deste arquivo)
     include_once('includes/_topo.php');
     //Mecanismo de fluxo de paginas.
     include_once('routes.php');

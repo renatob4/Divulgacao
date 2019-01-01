@@ -15,7 +15,7 @@
 ?>
 <!-- Imagem de apresentação do site -->
 <div class="row mt-0 mr-1 ml-1 mt-2">
-    <img class="img-fluid imagem-painel shadow-strong" src="<?php echo $img[0]['img_panel']?>" height="600" width="100%">
+    <img class="img-fluid imagem-painel shadow-strong" src="<?php echo $img[0]['img_panel']?>">
     <?php if (funcoes::VerificarLogin()):?>
     <div>
         <form class="p-0 m-0 mt-2" action="?a=recebe_imagem&sender=panel" method="post" enctype="multipart/form-data">
@@ -34,20 +34,20 @@
     <?php endif;?>
 </div>
 <!-- Apresentação da empresa, texto. -->
-<hr class="mt-3 mb-2">
+<hr class="mt-2 mb-2">
 <div class="row mr-1 ml-1 pt-0">
     <?php if(($config[0]['st_map'] == 1 || $config[0]['st_contact'] == 1) && ($conteudo[0]['lnk_map'] != '' || $config[0]['st_contact'] == 1)):?>
     <div class="col-md-7 p-0">
     <?php else:?>
     <div class="col p-0">
     <?php endif;?>
-        <div class="text-center pt-2 pr-3 pl-3 pb-0">
+        <div class="text-center pt-3 pr-3 pl-3 pb-0">
             <h4 class="mb-2">APRESENTAÇÃO</h4>
             <!-- Dados contidos no campo 'ds_presentation' do banco de dados -->
-            <p class="mb-3"><?php echo $conteudo[0]['ds_presentation']?></p>
+            <p class="mb-2"><?php echo $conteudo[0]['ds_presentation']?></p>
             <!-- Mostra a imagem no corpo da apresentação se ela existir -->
             <?php if ($img[0]['img_body'] != ''):?>
-            <img class="img-fluid shadow-strong" src="<?php echo $img[0]['img_body']?>">
+            <img class="img-fluid shadow-strong mt-2" src="<?php echo $img[0]['img_body']?>">
             <?php endif;?>
             <?php if (funcoes::VerificarLogin()):?>
             <div class="row mt-2 mb-0">
@@ -81,7 +81,7 @@
     <?php endif;?>
     <?php if($config[0]['st_contact'] == 1):?>
     <!-- Painel rapido de contatos telefonicos -->
-    <div class="card painel-direito text-center p-2 pt-3 mt-2 mb-3 borda-painel shadow-strong">
+    <div class="card painel-direito text-center p-2 pt-3 mt-2 mb-0 borda-painel shadow-strong">
         <h4 id="black"><i id="white" class="fas fa-phone-square mr-2"></i>Fale conosco:</h4>
         <div class="flex-media">
             <div class="card m-2 pt-4 pb-3 pr-0 borda-painel">
@@ -96,7 +96,7 @@
     <?php endif;?>
     <?php if ($conteudo[0]['lnk_map'] != '' && $config[0]['st_map'] == 1):?>
     <!-- Painel rapido de localização/mapa -->
-    <div class="card painel-direito text-center p-2 pt-3 mt-2 mb-2 borda-painel shadow-strong">
+    <div class="card painel-direito text-center p-2 pt-3 mt-3 mb-2 borda-painel shadow-strong">
         <h4 id="black"><i id="white" class="fas fa-map-marked mr-2"></i>Nos encontre:</h4>
         <div class="card mt-2">
             <!-- iframe do mapa -->

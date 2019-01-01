@@ -8,7 +8,7 @@
         $sender = $_GET['sender'];
     }else{
         //header("Location:?a=home");
-        echo('<meta http-equiv="refresh" content="0;URL=?a=produtos">');
+        echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
         exit();
     }
 
@@ -20,37 +20,33 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         if($sender == 'products'){
-
             $cfg_relevance = $_POST['cfg_rel'];
             $cfg_amount = $_POST['cfg_amount'];
-
             $parametros = [
                 ':cd_config'     =>  $config[0]['cd_config'],
                 ':sp_relevance'  =>  $cfg_relevance,
                 ':sp_amount'     =>  $cfg_amount,
                 ':dt_updated'    =>  $data->format('Y-m-d H:i:s')
             ];  
-
             $acesso->EXE_NON_QUERY('UPDATE tab_config SET sp_relevance = :sp_relevance, sp_amount = :sp_amount, dt_updated = :dt_updated WHERE cd_config = :cd_config', $parametros);
+            //header("Location:?a=home");
+            echo('<meta http-equiv="refresh" content="0;URL=?a=produtos">');
+            exit();
         }
-
+        
         if($sender == 'services'){
-            
-            $cfg_relevance = $_POST['cfg_rel'];
-            $cfg_amount = $_POST['cfg_amount'];
-
+            $cfg_relevance = $_POST['cfg_rel_service'];
+            $cfg_amount = $_POST['cfg_amount_service'];
             $parametros = [
                 ':cd_config'     =>  $config[0]['cd_config'],
                 ':ss_relevance'  =>  $cfg_relevance,
                 ':ss_amount'     =>  $cfg_amount,
                 ':dt_updated'    =>  $data->format('Y-m-d H:i:s')
             ];  
-
             $acesso->EXE_NON_QUERY('UPDATE tab_config SET ss_relevance = :ss_relevance, ss_amount = :ss_amount, dt_updated = :dt_updated WHERE cd_config = :cd_config', $parametros);
+            //header("Location:?a=home");
+            echo('<meta http-equiv="refresh" content="0;URL=?a=servicos">');
+            exit();
         }
-        
     }
-    //header("Location:?a=home");
-    echo('<meta http-equiv="refresh" content="0;URL=?a=produtos">');
-    exit();
 ?>

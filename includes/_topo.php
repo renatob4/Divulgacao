@@ -39,6 +39,8 @@
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-ico"/>
     </head>
 <body>
+<!-- Inclui a barra de utilizador -->
+<?php include_once('includes/_barra_utilizador.php'); ?>
 <!-- Contentor Global -->
 <div class="container contentor-global mt-3 pt-1">
 <!-- Incluir Cabeçalho -->

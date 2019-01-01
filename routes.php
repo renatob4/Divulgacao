@@ -21,7 +21,8 @@
             'servicos',
             'produtos',
             'recuperar_senha',
-            'conteudo'
+            'conteudo',
+            'promocoes'
         ];
         //bypass do sistema normal
         if(!in_array($a, $routes_especiais)){
@@ -44,6 +45,9 @@
 
         //Pagina de conteudo
         case 'conteudo':                        include_once('public/conteudo.php'); break;
+
+        //Pagina de promocoes
+        case 'promocoes':                        include_once('public/promocoes.php'); break;
 
         // ========================= LOGIN/LOGOUT =============================
 
@@ -108,8 +112,17 @@
         //Apagar Produto
         case 'produto_deletar':                 include_once('controls/produto_deletar.php'); break;
 
-        //Apagar Editar
+        //Editar Produto
         case 'produto_editar':                  include_once('controls/produto_editar.php'); break;
+
+        //Inserir servico
+        case 'servico_inserir':                 include_once('controls/servico_inserir.php'); break;
+
+        //Apagar servico
+        case 'servico_deletar':                 include_once('controls/servico_deletar.php'); break;
+
+        //Editar servico
+        case 'servico_editar':                  include_once('controls/servico_editar.php'); break;
 
         // ============================ SETUP =================================
 

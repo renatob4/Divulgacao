@@ -11,11 +11,11 @@
     $erro = false;
     $mensagem = '';
 
-    // if($config[0]['st_product'] == 0){
-    //     //header("Location:?a=home");
-    //     echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
-    //     exit();
-    // }
+    if($config[0]['st_product'] == 0){
+        //header("Location:?a=home");
+        echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
+        exit();
+    }
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -24,7 +24,6 @@
         $nm_produto = strtoupper($_POST['nm_produto']);
         $ds_unidade = $_POST['ds_unidade'];
         $cat_produto = $_POST['cat_produto'];
-        $ds_unidade = $_POST['ds_unidade'];
         $vl_produto = $_POST['vl_produto'];
         $ds_descricao = $_POST['ds_descricao'];
         //Captura valor do radio selectin de promoções

@@ -5,12 +5,12 @@
     text-align: right;
     background-color: #293d50;
     color: #4fbaeb;
-    border-bottom: 2px solid lightseagreen;
+    border-bottom: 2px solid rgb(62, 194, 247);
    }
   
   .barra_utilizador a {
     text-decoration: none;
-    color: lightseagreen;
+    color: rgb(62, 194, 247);
   }
   .barra_utilizador a:hover {
     color: white;
@@ -21,7 +21,7 @@
   }
   .barra_utilizador .dropdown a:hover {
     text-decoration: none;
-    color: lightseagreen;
+    color: rgb(62, 194, 247);
     background-color: #293d50;
   }
   .barra_utilizador_inativo {

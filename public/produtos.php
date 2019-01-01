@@ -136,10 +136,10 @@
             <div class="card line shadow borda-b pb-3 pt-2">
                 <form class="p-0 m-0" action="?a=produtos" method="POST">
                     <div class="form-row">
-                        <div class="col-md-2 p-2">
+                        <div class="col-md-2 p-1 pr-2 pl-2">
                             <div class="form-inline text-center ml-4 mt-2"><h5>Produtos: <label id="grey"><?php echo $total_produtos; ?> <?php echo $total_produtos > 1 ? 'Produtos' : 'Produto'; ?></label></h5></div>
                         </div>
-                        <div class="col-md-3 p-2">
+                        <div class="col-md-3 p-1 pr-2 pl-2">
                             <label id="black" class="Obs3 mb-1 ml-1">Exibir itens da categoria:</b></label>
                             <select class="form-control mb-1 shadow" name="cfg_category" required>
                                 <optgroup label="Categoria">
@@ -149,8 +149,8 @@
                                 </optgroup>
                             </select>
                         </div>
-                        <div class="col-md-3 p-2">
-                            <label id="black" class="Obs3 mb-1 ml-1">Exibir lista de produtos na página por:</b></label>
+                        <div class="col-md-3 p-1 pr-2 pl-2">
+                            <label id="black" class="Obs3 mb-1 ml-1">Por relevancia:</b></label>
                             <select class="form-control mb-1 shadow" name="cfg_relevance" required>
                                 <optgroup label="Relevancia">
                                 <?php if(isset($_SESSION['cfg_relevance'])):?>
@@ -169,8 +169,8 @@
                                 </optgroup>
                             </select>
                         </div>
-                        <div class="col-md-4 p-2">
-                            <label id="black" class="Obs3 mb-1 ml-1">Pequise por uma palavra chave:</b></label>
+                        <div class="col-md-4 p-1 pr-2 pl-2">
+                            <label id="black" class="Obs3 mb-1 ml-1">Por uma palavra chave:</b></label>
                             <div class="form-inline">
                                 <input type="search" class="form-control shadow  mb-1" name="text_pesquisa" placeholder="Pesquisar" value="<?php echo (isset($_SESSION['texto_pesquisa'])) ? $_SESSION['texto_pesquisa'] : ''; ?>">
                                 <button class="btn btn-primary pr-3 pl-3 p-2 mb-1 ml-3 mr-2 shadow"><i class="fa fa-search"></i></button>
@@ -191,7 +191,11 @@
 <div class="row mr-1 ml-1 mt-2">
     <div class="col p-0">
         <div class="card p-3 borda-painel shadow-strong">
-            <?php foreach ($produtos as $produto) : ?>
+        <h5 id="green" class="text-center mt-2 mb-3">NOSSOS PRODUTOS</h5><hr class="mb-1 mt-1">
+            <?php if(count($produtos) == 0):?>
+                <div class="text-center mt-1"><p>Nenhum produto disponível no momento.</p></div>
+            <?php endif;?>
+            <?php foreach ($produtos as $produto):?>
             <!-- Card do produto -->
             <div class="<?php echo $produto['st_promotion'] == 1 ? 'card borda-produto-p mb-3' : 'card borda-produto mb-3';?>">
                 <div class="row p-0 m-0">
@@ -334,7 +338,7 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="text-right">
+                            <div class="text-right mb-3">
                                 <button class="btn btn-success shadow mb-0">Inserir Produto</button>
                             </div>
                         </div>
@@ -377,7 +381,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="text-right mt-2">
+                <div class="text-right mt-2 mb-3">
                     <button class="btn btn-success shadow">Atualizar</button>
                 </div>        
             </form>

@@ -101,9 +101,11 @@
     $gestor->EXE_NON_QUERY(
         'CREATE TABLE tab_service('.
         'cd_service                     INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
+        'cd_alternative_service         VARCHAR(12) UNIQUE, '.
         'nm_service                     VARCHAR(32), '.
         'vl_service                     FLOAT, '.
-        'ds_description                 VARCHAR(255), '.
+        'ds_description                 TEXT, '.
+        'st_promotion                   BOOLEAN, '.
         'dt_register                    DATETIME, '.
         'dt_updated                     DATETIME)'
     );
