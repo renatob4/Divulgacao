@@ -1,4 +1,10 @@
-<?php header("X-XSS-Protection: 0; mode=block");?>
+<?php
+    // Correção de defesa do chrome.
+    header("X-XSS-Protection: 0; mode=block");
+    //Acesso á DB
+    $acesso = new cl_gestorBD();
+    $code = $acesso->EXE_QUERY('SELECT id_app FROM tab_code');
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -10,12 +16,15 @@
         <meta name="keywords" content="divulgação, conheça, palavras, chave">
         <meta name="robots" content="index">
         <!-- Tags do facebook -->
+<?php if($code[0]['id_app'] != '' &&  $code[0]['id_app'] != null):?>
+        <meta property="fb:app_id" content="<?php echo $code[0]['id_app'];?>">
+<?php endif;?>
         <meta property="og:locale" content="pt_BR">
-        <meta property="og:url" content="<?php echo 'http://$_SERVER[HTTP_HOST]'?>">
+        <meta property="og:url" content="<?php echo 'http://$_SERVER[HTTP_HOST]';?>">
         <meta property="og:title" content="Título da página ou artigo">
         <meta property="og:site_name" content="Nome do meu site">
         <meta property="og:description" content="Minha boa descrição para intrigar os usuários.">
-        <meta property="og:image" content="<?php echo 'http://$_SERVER[HTTP_HOST]'?>/images/logo.png">
+        <meta property="og:image" content="<?php echo 'http://$_SERVER[HTTP_HOST]';?>/images/logo.png">
         <meta property="og:image:type" content="image/png">
         <!-- <meta property="og:image:width" content="800"> -->
         <!-- <meta property="og:image:height" content="600"> -->

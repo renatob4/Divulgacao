@@ -152,6 +152,8 @@
         'CREATE TABLE tab_code('.
         'cd_code                         INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
         'lnk_script                      TEXT, '.
+        'id_app                          VARCHAR(20), '.
+        'secret_app                      VARCHAR(32), '.
         'dt_updated                      DATETIME)'
     );
     //tabela tab_promotion

@@ -72,9 +72,10 @@
         $mapa = str_replace('"', "'", $mapa);
 
         //Get e tratamento do script do facebook inserido no campo.
+        $appid = $_POST['app_id'];
         $script = $_POST['form_lnk_script'];
         $script = str_replace('"', "'", $script);
-
+        
         //Atualiza a base de dados TAB_CONTENT =====================================
         $parametros = [
             ':cd_info'          => $conteudo[0]['cd_info'],
@@ -139,11 +140,13 @@
         $parametros = [
             ':cd_code'          => $code[0]['cd_code'],
             ':lnk_script'       => $script,
+            ':id_app'           => $appid,
             ':dt_updated'       => $data->format('Y-m-d H:i:s')
         ];
         $gestor->EXE_NON_QUERY(
             'UPDATE tab_code SET
             lnk_script = :lnk_script,
+            id_app = :id_app,
             dt_updated = :dt_updated
             WHERE cd_code = :cd_code',
             $parametros
@@ -438,11 +441,17 @@
                         </div>
                     </div>
                     <div class="text-right mr-3">
-                        <i id="grey" class="fas fa-wrench mr-2"></i><a data-toggle="collapse" href="#dev" id="green" role="button" aria-expanded="false" aria-controls="collapseExample">Campos para desenvolvedor</a>
-                        <div class="collapse" id="dev">
-                            <div class="form-goup text-left mt-3">
-                                <label><b><i id="grey" class="fas fa-wrench mr-2"></i>Script de plugins facebook:</b></label>
-                                <input type="text" name="form_lnk_script" class="form-control shadow" value="<?php echo $code[0]['lnk_script']?>">
+                        <i id="grey" class="fas fa-wrench mr-2"></i><a data-toggle="collapse" href="#dev" id="green" role="button" aria-expanded="false" aria-controls="collapseExample">Configurações de desenvolvedor</a>
+                        <div class="collapse text-left" id="dev">
+                            <div class="form-row mt-2">
+                                <div class="col-md-8 pl-3 mt-1">
+                                    <label><b><i id="grey" class="fas fa-code mr-2"></i>Script de plugins facebook:</b></label>
+                                    <input type="text" name="form_lnk_script" class="form-control shadow" value="<?php echo $code[0]['lnk_script']?>">
+                                </div>
+                                <div class="col-md-4 mt-1">
+                                    <label><b><i id="grey" class="fas fa-key mr-2"></i>App ID:</b></label>
+                                    <input type="text" name="app_id" class="form-control shadow" value="<?php echo $code[0]['id_app']?>">
+                                </div>
                             </div>
                         </div>
                     </div>

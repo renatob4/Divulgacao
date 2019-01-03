@@ -13,3 +13,25 @@ if(divresult != null){
     //Da foco no resultado.
     window.location.hash = '#resultado';
 }
+
+//Script de acesso á API do facebook para receber resposta de compartilhamentos.
+function share(url){
+
+    FB.ui({
+        method: 'share',
+        display: 'popup',
+        href: url,
+    }, function(response){
+
+    if(response.post_id !== 'undefined'){
+        document.getElementById("nmc").setAttribute("placeholder", "");
+        document.getElementById("nmc").disabled = false;
+        document.getElementById("gcp").disabled = false;
+        document.getElementById("gcp").style.backgroundColor = "green";
+        document.getElementById("gcp").innerHTML = "";
+        document.getElementById("gcp").innerHTML = "<b>GERAR CUPOM</b><i class='fas fa-check ml-2'></i>";
+        document.getElementById("lbl").style.color = "green";
+    }
+
+  });
+}
