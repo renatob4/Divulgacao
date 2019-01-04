@@ -31,6 +31,7 @@ function share(url){
         document.getElementById("gcp").innerHTML = "";
         document.getElementById("gcp").innerHTML = "<b>GERAR CUPOM</b><i class='fas fa-check ml-2'></i>";
         document.getElementById("lbl").style.color = "green";
+        document.getElementById("captcha").setAttribute("class", "g-recaptcha cap");
     }
 
   });

@@ -210,6 +210,9 @@ body{
 .prbdiv{
     border-bottom: 1px solid rgba(128,128,128,.3);
 }
+.prbdiv-g{
+    border-bottom: 2px solid rgba(128,128,128);
+}
 .lnk-info{
     color: blue;
 }
@@ -275,4 +278,24 @@ body{
 }
 .border-none{
     border: 1px solid rgba(128,128,128,.5);
+}
+.cupom-card{
+    background-color: green;
+    border: 3px solid gold;
+}
+.cupom-font{
+    font-size: 46px;
+    font-weight: bold;
+}
+.cupom-pc{
+    font-size: 46px;
+    margin: 0px;
+    padding: 0px;
+    color: grey;
+    font-weight: bold;
+    top: 0px;
+}
+.disabled-element {
+    opacity: 0.60;
+    pointer-events: none;
 }

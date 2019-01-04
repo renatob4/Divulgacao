@@ -156,14 +156,24 @@
         'secret_app                      VARCHAR(32), '.
         'dt_updated                      DATETIME)'
     );
+    //tabela tab_cupom
+    $gestor->EXE_NON_QUERY(
+        'CREATE TABLE tab_cupom('.
+        'cd_cpm                          INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
+        'cd_cupom                        VARCHAR(12), '.
+        'ds_discount                     INT, '.
+        'nm_customer                     VARCHAR(50), '.
+        'dt_valid                        DATETIME, '.
+        'dt_register                     DATETIME)'
+    );
     //tabela tab_promotion
     $gestor->EXE_NON_QUERY(
         'CREATE TABLE tab_promotion('.
         'cd_promotion                    INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
-        'nm_customer                     VARCHAR(50), '.
-        'cd_cupom                        VARCHAR(12), '.
         'pc_discount                     INT, '.
-        'dt_created                      DATETIME)'
+        'vl_discount                     INT, '.
+        'dt_valid                        DATETIME, '.
+        'dt_register                     DATETIME)'
     );
     //tabela tab_config
     $gestor->EXE_NON_QUERY(
