@@ -6,6 +6,7 @@
     //Instancia do banco de dados.
     $acesso = new cl_gestorBD();
     $data_db = new DateTime();
+    $data_atual = new DateTime();
     $erro = false;
     $mensagem = "";
 
@@ -69,9 +70,9 @@
 <div class="row mr-1 ml-1 mt-3 border-none">
     <div class="col-md-6 m-0 p-0 border-none">
         <div class="text-center p-0">
-            <label class="pc_pmt">5%</label>
+            <label class="pc_pmt"><?php echo $promotion[0]['ds_type'] == 'pc' ? $promotion[0]['ds_discount'].'%' : 'R$'.$promotion[0]['ds_discount'];?></label>
             <p class="title_pmt mt-0"><B>GARANTA JÁ SEU CUPOM DE DESCONTO!</B></p>
-            <label id="green" class="Obs3 mb-4">Depois use o cupom em algum produto ou serviço a sua escolha!</label>
+            <label id="green" class="Obs3 mb-4">Depois utilize o cupom em algum produto ou serviço de sua escolha!</label>
         </div>
     </div>
     <div class="col-md-6 border-none">
@@ -113,7 +114,7 @@
 <div class="row mr-1 ml-1 mt-3 border-none">
     <div class="col p-3 text-center">
         <p class="title_pmt mt-0"><B>PARABÉNS!</B></p>
-        <p id="green" class="title2_pmt mb-3">Tire uma foto ou anote o código de seu cupom e leve ou envie para o responsável. O cupom será valido em um(1) produto ou serviço.</p>
+        <p id="green" class="title2_pmt mb-3">Tire uma foto ou anote o código de seu cupom e leve ou envie para o responsável. O cupom será valido em um produto ou serviço.</p>
     </div>
     <div class="col p-3 text-center">
         <div class="card cupom-card border-none p-2 mb-2 shadow-strong">
@@ -130,21 +131,48 @@
                     <div class="cupom-font  m-0 p-0"><?php echo $_SESSION['cupom'];?></div>
                 </div>
                 <div class="col-sm-4 p-0 text-right">
-                    <div class="cupom-pc">5%</div>
-                </div>        
+                    <div class="cupom-pc"><?php echo $promotion[0]['ds_type'] == 'pc' ? $promotion[0]['ds_discount'].'%' : 'R$'.$promotion[0]['ds_discount'];?></div>
+                </div>
             </div>    
         </div>
-        <a href="?a=home" class="m-2">Tudo bem, entendi.</a>
+        <a href="?a=home" class="m-2">Voltar</a>
     </div>
 </div>
 <?php endif;?>
 <?php if(funcoes::VerificarLogin()):?>
 <div class="row mr-1 ml-1 mt-2">
     <div class="col m-0 p-0">
-        <div class="card p-3 m-0 shadow-strong borda-painel">
-            <h5 id="green" class="text-center mt-3 mb-2">CONFIGURAÇÃO DE PROMOÇÕES</h5><hr class="mt-1">
+        <div class="card p-2 m-0 shadow-strong borda-painel">
+            <h5 id="green" class="text-center mt-3 mb-2">CONFIGURAÇÃO DE PROMOÇÕES</h5>
+            <div class="card shadow mt-1 p-2">
+                <form class="mt-0 pt-0 p-3 line" method="post" action="">
+                    <div class="form-row mt-1">
+                        <div class="col-md-3 mt-1">
+                            <label><b><i id="grey" class=""></i>Tipo do desconto:</b></label>
+                            <select id="type" class="form-control" name="type-discount" required>
+                                <optgroup label="Tipo">
+                                    <option value="pc" <?php echo $promotion[0]['ds_type'] == 'pc' ? 'selected' : '';?>>Porcentagem</option>
+                                    <option value="vl" <?php echo $promotion[0]['ds_type'] == 'vl' ? 'selected' : '';?>>Valor Fixo</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="col-md-3 mt-1">
+                            <label><b>Desconto:<label id="tag" class="m-0 p-0 ml-2"><?php echo $promotion[0]['ds_type'] == "pc" ? "%":"R$";?></label></b></label>
+                            <input id="desc" type="number" name="" min="1" max="100" class="form-control" value="<?php echo $promotion[0]['ds_discount'];?>" required>
+                        </div>
+                        <div class="col-md-3 mt-1">
+                            <label><b><i id="grey" class=""></i>Validade:</b><label class="Obs3 ml-2 m-0 p-0">(CUPOM VALIDO ATÉ)</label></label>
+                            <input id="val" type="date" name="" value="<?php echo $data_atual->format('Y-m-d');?>" class="form-control" required>
+                        </div>
+                        <div class="col-md-3 mt-1 pt-1 text-center">
+                            <button type="submit" class="btn btn-success shadow text-center pt-3 pb-3 mt-2">Aplicar Configurações<i class="fas fa-edit ml-2"></i></button>
+                        </div>
+                    </div>
+                    <label class="Obs3 mt-2">Validos para os proximos cupons gerados a partir da aplicação das configurações</label>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-<?php endif;?>
+<?php endif;?>  
 <?php unset($_SESSION['cupom']);?>

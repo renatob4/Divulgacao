@@ -20,6 +20,7 @@ $gestor->EXE_NON_QUERY('DELETE FROM tab_card');
 $gestor->EXE_NON_QUERY('DELETE FROM tab_imagem');
 $gestor->EXE_NON_QUERY('DELETE FROM tab_code');
 $gestor->EXE_NON_QUERY('DELETE FROM tab_config');
+$gestor->EXE_NON_QUERY('DELETE FROM tab_promotion');
 
 $gestor->EXE_NON_QUERY('ALTER TABLE tab_content AUTO_INCREMENT = 1');
 $gestor->EXE_NON_QUERY('ALTER TABLE tab_link AUTO_INCREMENT = 1');
@@ -30,6 +31,7 @@ $gestor->EXE_NON_QUERY('ALTER TABLE tab_card AUTO_INCREMENT = 1');
 $gestor->EXE_NON_QUERY('ALTER TABLE tab_imagem AUTO_INCREMENT = 1');
 $gestor->EXE_NON_QUERY('ALTER TABLE tab_code AUTO_INCREMENT = 1');
 $gestor->EXE_NON_QUERY('ALTER TABLE tab_config AUTO_INCREMENT = 1');
+$gestor->EXE_NON_QUERY('ALTER TABLE tab_promotion AUTO_INCREMENT = 1');
 
 $data = new DateTime();
 
@@ -146,6 +148,19 @@ $parametros = [
 //inserir as imagens do conteudo
 $gestor->EXE_NON_QUERY('INSERT INTO tab_code(lnk_script, dt_updated) 
                         VALUES(:lnk_script,:dt_updated)', $parametros);
+
+//--------------------------------------------------------------------------------- TABELA TAB_PROMOTION
+
+$parametros = [
+    ':ds_type'          => "pc",
+    ':ds_discount'      => 5,
+    ':dt_valid'         => $data->format('Y-m-d'),
+    ':dt_updated'       => $data->format('Y-m-d H:i:s')
+];
+
+//inserir as imagens do conteudo
+$gestor->EXE_NON_QUERY('INSERT INTO tab_promotion(ds_type, ds_discount, dt_valid, dt_updated) 
+                        VALUES(:ds_type, :ds_discount, :dt_valid, :dt_updated)', $parametros);
 
 //--------------------------------------------------------------------------------- TABELA TAB_CONFIG
 

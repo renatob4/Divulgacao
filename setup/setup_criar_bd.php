@@ -170,10 +170,10 @@
     $gestor->EXE_NON_QUERY(
         'CREATE TABLE tab_promotion('.
         'cd_promotion                    INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
-        'pc_discount                     INT, '.
-        'vl_discount                     INT, '.
+        'ds_type                         VARCHAR(2), '.
+        'ds_discount                     INT, '.
         'dt_valid                        DATETIME, '.
-        'dt_register                     DATETIME)'
+        'dt_updated                      DATETIME)'
     );
     //tabela tab_config
     $gestor->EXE_NON_QUERY(

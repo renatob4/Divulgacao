@@ -36,3 +36,21 @@ function share(url){
 
   });
 }
+// Manipulação dos campos de configuração de promoções.
+$(document).ready(function () {
+    $('#type').change(function () {
+        var op = document.getElementById('type');
+        opValor = op.options[op.selectedIndex].value;
+        switch (opValor) {
+            case 'pc':
+
+                document.getElementById("tag").innerHTML = "<b>%</b>";
+                break;
+
+            case 'vl':
+
+                document.getElementById("tag").innerHTML = "R$";
+                break;
+        }
+    });
+});

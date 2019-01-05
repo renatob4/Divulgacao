@@ -299,3 +299,6 @@ body{
     opacity: 0.60;
     pointer-events: none;
 }
+#tag{
+    color: green;
+}
