@@ -172,7 +172,7 @@
         'cd_promotion                    INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
         'ds_type                         VARCHAR(2), '.
         'ds_discount                     INT, '.
-        'dt_valid                        DATETIME, '.
+        'qt_days                         INT, '.
         'dt_updated                      DATETIME)'
     );
     //tabela tab_config

@@ -154,13 +154,13 @@ $gestor->EXE_NON_QUERY('INSERT INTO tab_code(lnk_script, dt_updated)
 $parametros = [
     ':ds_type'          => "pc",
     ':ds_discount'      => 5,
-    ':dt_valid'         => $data->format('Y-m-d'),
+    ':qt_days'          => 3,
     ':dt_updated'       => $data->format('Y-m-d H:i:s')
 ];
 
 //inserir as imagens do conteudo
-$gestor->EXE_NON_QUERY('INSERT INTO tab_promotion(ds_type, ds_discount, dt_valid, dt_updated) 
-                        VALUES(:ds_type, :ds_discount, :dt_valid, :dt_updated)', $parametros);
+$gestor->EXE_NON_QUERY('INSERT INTO tab_promotion(ds_type, ds_discount, qt_days, dt_updated)
+                        VALUES(:ds_type, :ds_discount, :qt_days, :dt_updated)', $parametros);
 
 //--------------------------------------------------------------------------------- TABELA TAB_CONFIG
 

@@ -44,12 +44,17 @@
             
             $nm_customer = strtoupper($_POST['nm_customer']);
             $_SESSION['cupom'] = strtoupper(funcoes::CriarCodigoAlfanumerico(6));
+
+            $data_validade = new DateTime();
+            $arg = "P".$promotion[0]['qt_days']."D";
+            $data_validade->add(new DateInterval($arg));
+            $_SESSION['dt_validade'] = $data_validade->format('d/m/Y');
     
             $parametros = [
                 ':cd_cupom'             =>  $_SESSION['cupom'],
                 ':ds_discount'          =>  5,
                 ':nm_customer'          =>  $nm_customer,
-                ':dt_valid'             =>  $data_db->format('Y-m-d H:i:s'),
+                ':dt_valid'             =>  $data_validade->format('Y-m-d'),
                 ':dt_register'          =>  $data_db->format('Y-m-d H:i:s')
             ];
             $acesso->EXE_NON_QUERY(
@@ -57,14 +62,16 @@
                  VALUES(:cd_cupom, :ds_discount, :nm_customer, :dt_valid, :dt_register)', $parametros);
             
             $mensagem = 'Cupom gerado com sucesso!.';
+            echo('<meta http-equiv="refresh" content="0;URL=?a=promocoes">');
+            exit();
         }
         else{
             $mensagem = "Por gentileza, resolva o reCaptcha para sabermos que você não é um robô.";
             echo('<meta http-equiv="refresh" content="0;URL=?a=promocoes">');
             exit();
          }
-        //echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
     }
+
 ?>
 <?php if(!isset($_SESSION['cupom'])):?>
 <div class="row mr-1 ml-1 mt-3 border-none">
@@ -117,62 +124,32 @@
         <p id="green" class="title2_pmt mb-3">Tire uma foto ou anote o código de seu cupom e leve ou envie para o responsável. O cupom será valido em um produto ou serviço.</p>
     </div>
     <div class="col p-3 text-center">
-        <div class="card cupom-card border-none p-2 mb-2 shadow-strong">
+        <div class="card cupom-card border-none mt-3 p-2 mb-2 shadow-strong">
             <div class="row m-0 p-0 prbdiv-g">
                 <div class="col text-left p-0">
                     <label id="gold">CUPOM</label>
                 </div>
                 <div class="col p-0 text-right">
-                    <label class="mr-2"><b>VAL.</b></label><label id="gold">12/3</label>
+                    <label class="mr-2"><b>VAL.</b></label><label id="gold"><?php echo $_SESSION['dt_validade'];?></label>
                 </div>
             </div>
             <div class="row m-0 p-0">
                 <div class="col-sm-8 p-0 text-left">
-                    <div class="cupom-font  m-0 p-0"><?php echo $_SESSION['cupom'];?></div>
+                    <div class="cupom-font m-0 p-0"><?php echo $_SESSION['cupom'];?></div>
                 </div>
                 <div class="col-sm-4 p-0 text-right">
                     <div class="cupom-pc"><?php echo $promotion[0]['ds_type'] == 'pc' ? $promotion[0]['ds_discount'].'%' : 'R$'.$promotion[0]['ds_discount'];?></div>
                 </div>
             </div>    
         </div>
-        <a href="?a=home" class="m-2">Voltar</a>
     </div>
 </div>
 <?php endif;?>
-<?php if(funcoes::VerificarLogin()):?>
-<div class="row mr-1 ml-1 mt-2">
-    <div class="col m-0 p-0">
-        <div class="card p-2 m-0 shadow-strong borda-painel">
-            <h5 id="green" class="text-center mt-3 mb-2">CONFIGURAÇÃO DE PROMOÇÕES</h5>
-            <div class="card shadow mt-1 p-2">
-                <form class="mt-0 pt-0 p-3 line" method="post" action="">
-                    <div class="form-row mt-1">
-                        <div class="col-md-3 mt-1">
-                            <label><b><i id="grey" class=""></i>Tipo do desconto:</b></label>
-                            <select id="type" class="form-control" name="type-discount" required>
-                                <optgroup label="Tipo">
-                                    <option value="pc" <?php echo $promotion[0]['ds_type'] == 'pc' ? 'selected' : '';?>>Porcentagem</option>
-                                    <option value="vl" <?php echo $promotion[0]['ds_type'] == 'vl' ? 'selected' : '';?>>Valor Fixo</option>
-                                </optgroup>
-                            </select>
-                        </div>
-                        <div class="col-md-3 mt-1">
-                            <label><b>Desconto:<label id="tag" class="m-0 p-0 ml-2"><?php echo $promotion[0]['ds_type'] == "pc" ? "%":"R$";?></label></b></label>
-                            <input id="desc" type="number" name="" min="1" max="100" class="form-control" value="<?php echo $promotion[0]['ds_discount'];?>" required>
-                        </div>
-                        <div class="col-md-3 mt-1">
-                            <label><b><i id="grey" class=""></i>Validade:</b><label class="Obs3 ml-2 m-0 p-0">(CUPOM VALIDO ATÉ)</label></label>
-                            <input id="val" type="date" name="" value="<?php echo $data_atual->format('Y-m-d');?>" class="form-control" required>
-                        </div>
-                        <div class="col-md-3 mt-1 pt-1 text-center">
-                            <button type="submit" class="btn btn-success shadow text-center pt-3 pb-3 mt-2">Aplicar Configurações<i class="fas fa-edit ml-2"></i></button>
-                        </div>
-                    </div>
-                    <label class="Obs3 mt-2">Validos para os proximos cupons gerados a partir da aplicação das configurações</label>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-<?php endif;?>  
-<?php unset($_SESSION['cupom']);?>
+<?php
+    if(isset($_SESSION['dt_validade'])){
+        unset($_SESSION['dt_validade']);
+    }
+    if(isset($_SESSION['cupom'])){
+        unset($_SESSION['cupom']);
+    }
+?>

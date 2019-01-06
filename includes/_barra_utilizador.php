@@ -24,7 +24,7 @@
         <div class="dropdown-menu" aria-labelledby="d1">
             <div class="text-center"><a class="dropdown-item" href="?a=configuracoes"><strong>Configurações</strong></a></div>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="?a=promocoes"><i id="green" class="fas fa-percentage mr-2"></i>Promoções</a>
+            <a class="dropdown-item" href="?a=promocoes_config"><i id="green" class="fas fa-percentage mr-2"></i>Cfg Promoções</a>
             <a class="dropdown-item" href="?a=prospects"><i id="green" class="fas fa-chart-line mr-2"></i>Prospects</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="?a=perfil_alterar_login"><i id="green" class="fas fa-id-badge mr-2"></i>Alterar Login</a>

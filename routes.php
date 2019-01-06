@@ -77,6 +77,9 @@
         //Alterar prospects
         case 'prospects':                       include_once('users/prospects.php'); break;
 
+        //Alterar prospects
+        case 'promocoes_config':                include_once('users/promocoes_config.php'); break;
+
         // ========================== CONTROLE DE DADOS =======================
 
         //Deletar Card
