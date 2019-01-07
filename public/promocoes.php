@@ -53,13 +53,14 @@
             $parametros = [
                 ':cd_cupom'             =>  $_SESSION['cupom'],
                 ':ds_discount'          =>  5,
+                ':ds_type'              =>  $promotion[0]['ds_type'],
                 ':nm_customer'          =>  $nm_customer,
-                ':dt_valid'             =>  $data_validade->format('Y-m-d'),
+                ':dt_valid'             =>  $data_validade->format('Y/m/d'),
                 ':dt_register'          =>  $data_db->format('Y-m-d H:i:s')
             ];
             $acesso->EXE_NON_QUERY(
-                'INSERT INTO tab_cupom(cd_cupom, ds_discount, nm_customer, dt_valid, dt_register)
-                 VALUES(:cd_cupom, :ds_discount, :nm_customer, :dt_valid, :dt_register)', $parametros);
+                'INSERT INTO tab_cupom(cd_cupom, ds_discount, ds_type, nm_customer, dt_valid, dt_register)
+                 VALUES(:cd_cupom, :ds_discount, :ds_type, :nm_customer, :dt_valid, :dt_register)', $parametros);
             
             $mensagem = 'Cupom gerado com sucesso!.';
             echo('<meta http-equiv="refresh" content="0;URL=?a=promocoes">');
@@ -79,7 +80,7 @@
         <div class="text-center p-0">
             <label class="pc_pmt"><?php echo $promotion[0]['ds_type'] == 'pc' ? $promotion[0]['ds_discount'].'%' : 'R$'.$promotion[0]['ds_discount'];?></label>
             <p class="title_pmt mt-0"><B>GARANTA JÁ SEU CUPOM DE DESCONTO!</B></p>
-            <label id="green" class="Obs3 mb-4">Depois utilize o cupom em algum produto ou serviço de sua escolha!</label>
+            <label id="green" class="Obs3 mb-4">Depois utilize o cupom em algum produto ou serviço.</label>
         </div>
     </div>
     <div class="col-md-6 border-none">
@@ -100,7 +101,7 @@
                         <div class="col pt-2 pb-2 text-center">
                             <form action="?a=promocoes" method="POST">
                                 <label id="lbl" class="title2_pmt" style="color: rgb(110,39,43); opacity: 0.7;"><b>INSIRA SEU NOME:</b></label>
-                                <input id="nmc" class="form-control shadow mr-2" type="text" name="nm_customer" placeholder="Primeiro compartilhe para ativar os controles" required>
+                                <input id="nmc" class="form-control shadow mr-2" type="text" name="nm_customer" placeholder="Compartilhe para ativar" required>
                                 <div class="row mt-2 m-0 p-0">
                                     <div class="col-sm-7 p-0 m-0">
                                         <div id="captcha" class="g-recaptcha cap" data-sitekey="6LdQZYQUAAAAADpC60g28DqxTeKYX1npukOXTe9L"></div>

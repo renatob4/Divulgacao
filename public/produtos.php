@@ -394,4 +394,7 @@
     if(isset($_SESSION['resultado'])){
         unset($_SESSION['resultado']);
     }
+    if(isset($_SESSION['texto_pesquisa'])){
+        unset($_SESSION['texto_pesquisa']);
+    }
 ?>

@@ -162,6 +162,7 @@
         'cd_cpm                          INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
         'cd_cupom                        VARCHAR(12), '.
         'ds_discount                     INT, '.
+        'ds_type                         VARCHAR(2), '.
         'nm_customer                     VARCHAR(50), '.
         'dt_valid                        DATETIME, '.
         'dt_register                     DATETIME)'
