@@ -127,6 +127,9 @@
         //Editar servico
         case 'servico_editar':                  include_once('controls/servico_editar.php'); break;
 
+        //Editar servico
+        case 'conceder_cupom':                  include_once('controls/conceder_cupom.php'); break;
+
         // ============================ SETUP =================================
 
         //Criar a base de dados

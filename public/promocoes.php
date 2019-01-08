@@ -3,6 +3,7 @@
     if (!isset($_SESSION['a'])) {
         exit();
     }
+
     //Instancia do banco de dados.
     $acesso = new cl_gestorBD();
     $data_db = new DateTime();
@@ -20,7 +21,16 @@
         echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
         exit();
     }
-    // || $code[0]['lnk_script'] == '' || $code[0]['id_app'] == ''
+    if($code[0]['lnk_script'] == ''){
+        //header("Location:?a=home");
+        echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
+        exit();
+    }
+    if($code[0]['id_app'] == ''){
+        //header("Location:?a=home");
+        echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
+        exit();
+    }
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -85,29 +95,28 @@
     </div>
     <div class="col-md-6 border-none">
         <div class="text-center p-3">
-            <p class="title2_pmt mt-3 mb-0">BASTA CURTIR E COMPARTILHAR A NOSSA PÁGINA:</p>
+            <p class="title2_pmt mt-3 mb-0">BASTA COMPARTILHAR A NOSSA PÁGINA:</p>
             <div class="form-row">
                 <div class="col text-left">
                     <div class="row">
                         <div class="col text-center">
-                            <button id="likeBtn" class="btn btn-primary btnshade shadow mr-1 mt-2 pr-3 pl-3"><i id="white" class="far fa-thumbs-up"></i></button>
-                            <button id="shareBtn" class="btn btn-primary btnshade shadow mb-3 mt-4" onclick="share('<?php echo 'https://zenit.games/priston/'?>')">
+                            <button id="shareBtn" class="btn btn-primary btnshare shadow mb-3 mt-4" onclick="share('<?php echo 'https://zenit.games/priston/'?>')">
                                 <i id="white" class="fab fa-facebook-square mr-2"></i><b>Compartilhar</b>
                             </button>
-                            <label id="green" class="Obs3">Se ja curtiu apenas compartilhe, após a sua ação o botão de gerar cupons será liberado!</label>
+                            <label id="black" class="Obs3">Após a sua ação o botão de gerar cupons será liberado!</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col pt-2 pb-2 text-center">
                             <form action="?a=promocoes" method="POST">
                                 <label id="lbl" class="title2_pmt" style="color: rgb(110,39,43); opacity: 0.7;"><b>INSIRA SEU NOME:</b></label>
-                                <input id="nmc" class="form-control shadow mr-2" type="text" name="nm_customer" placeholder="Compartilhe para ativar" required>
+                                <input id="nmc" class="form-control shadow mr-2" type="text" name="nm_customer" placeholder="Compartilhe para ativar" disabled="true" required>
                                 <div class="row mt-2 m-0 p-0">
                                     <div class="col-sm-7 p-0 m-0">
-                                        <div id="captcha" class="g-recaptcha cap" data-sitekey="6LdQZYQUAAAAADpC60g28DqxTeKYX1npukOXTe9L"></div>
+                                        <div id="captcha" class="g-recaptcha cap ds-element" data-sitekey="6LdQZYQUAAAAADpC60g28DqxTeKYX1npukOXTe9L"></div>
                                     </div>
                                     <div class="col-sm-5 p-0 m-0">
-                                        <button id="gcp" class="btn btn-danger mt-1 p-3 shadow-strong" style="background-color: rgb(110,39,43); border: none; font-size: 1.2em;"><b>GERAR CUPOM</b><i class="fas fa-hourglass-start ml-2"></i></button>
+                                        <button id="gcp" class="btn btn-danger mt-1 p-3 shadow-strong" style="background-color: rgb(110,39,43); border: none; font-size: 1.2em;" disabled="true"><b>GERAR CUPOM</b><i class="fas fa-hourglass-start ml-2"></i></button>
                                     </div>
                                 </div>
                             </form>

@@ -154,7 +154,7 @@ $gestor->EXE_NON_QUERY('INSERT INTO tab_code(lnk_script, dt_updated)
 $parametros = [
     ':ds_type'          => "pc",
     ':ds_discount'      => 5,
-    ':qt_days'          => 3,
+    ':qt_days'          => 7,
     ':dt_updated'       => $data->format('Y-m-d H:i:s')
 ];
 

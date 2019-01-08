@@ -262,7 +262,7 @@ body{
     color: black;
     font-weight: bold; 
 }
-.btnshade{
+.btnshare{
     font-size: 26px;
 }
 .navbar-fixed-top{
@@ -295,7 +295,7 @@ body{
     font-weight: bold;
     top: 0px;
 }
-.disabled-element {
+.ds-element {
     opacity: 0.60;
     pointer-events: none;
 }

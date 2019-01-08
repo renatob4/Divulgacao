@@ -19,15 +19,15 @@
     if($config[0]['st_promotion'] == 0){
         $mensagem = "As promoções estão desativadas nas configurações de conteúdo.";
         //$_SESSION['resultado'] = $mensagem;
-        $erro = false;
+        $erro = true;
     }elseif($code[0]['lnk_script'] == ''){
         $mensagem = "O código do plugin do facebook não esta definido. Verifique as configurações de conteúdo.";
         //$_SESSION['resultado'] = $mensagem;
-        $erro = false;
+        $erro = true;
     }elseif($code[0]['id_app'] == ''){
         $mensagem = "O id de aplicativo para integração com o facebook não está definido nas configurações de conteúdo.";
         //$_SESSION['resultado'] = $mensagem;
-        $erro = false;
+        $erro = true;
     }
 
     //Verifica se foi definida clear
@@ -93,7 +93,7 @@
                 <div class="pt-0 table-padding m-0 mb-2">
                     <div class="text-center"><label id="grey" class="Obs3 mb-2">Ao encontrar um cupom válido e <b>dar o desconto ao cliente</b>, clique no botão <b>conceder</b> da ultima coluna da tabela para que o registro seja <b>removido do sistema.</b></label></div>
                     <nav class="navbar navbar-light line shadow borda-b">
-                        <h6 id="black" class="mt-2 mb-2 m-0">PESQUISE:</h6>
+                        <h6 id="black" class="mt-2 mb-2 m-0">PESQUISE POR UM CUPOM:</h6>
                         <form class="p-0 m-0" action="?a=promocoes_config&src=true" method="post">
                             <div class="form-inline">
                             <input type="search" class="form-control borda-text shadow" name="text_pesquisa" placeholder="Pesquisar" value="<?php echo (isset($_SESSION['texto_pesquisa'])) ? $_SESSION['texto_pesquisa'] : ''; ?>">
@@ -121,7 +121,7 @@
                                     <?php foreach ($cupons as $cupom) : ?>
                                     <tr>
                                         <td><b><?php echo $cupom['cd_cupom']?></b></a></td>
-                                        <td class="text-center"><b><?php echo (strtotime($cupom['dt_valid']) < strtotime($data->format('Y/m/d')) ) ? '<label id="red">Inválido</label>' : '<label id="green">Válido</label>';?></b></td>
+                                        <td class="text-center"><b><?php echo (strtotime($cupom['dt_valid']) < strtotime($data->format('Y/m/d')) ) ? '<label id="red">Vencido</label>' : '<label id="green">Válido</label>';?></b></td>
                                         <td><?php echo $cupom['ds_type'] == 'pc' ? $cupom['ds_discount'].'%' : 'R$'.$cupom['ds_discount'];?></td>
                                         <td><?php echo $cupom['nm_customer']?></td>
                                         <td><?php echo $cupom['dt_register']?></td>
