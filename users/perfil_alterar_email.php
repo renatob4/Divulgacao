@@ -1,4 +1,4 @@
-<?php 
+<?php
     // ========================================
     // PERFIL - ALTERAR EMAIL
     // ========================================
@@ -80,21 +80,21 @@
 <?php endif; ?>
 
 <div class="container p-0">
-    <div class="row mr-1 ml-1 mt-2 borda-painel">
+    <div class="row mr-1 ml-1 mt-2 borda-painel shadow">
         <div class="col card">
-            <h4 class="text-center mt-3">ALTERAR E-MAIL DA CONTA</h4>
-            <hr><div><strong>Email atual:</strong> <?php echo $_SESSION['ds_email'] ?></div><hr>
+            <h5 class="text-center mt-3">ALTERAR E-MAIL DA CONTA</h5>
+            <hr class="mt-2"><div id="green"><strong>EMAIL ATUAL:</strong> </div><label id="black"><?php echo $_SESSION['ds_email'] ?></label><hr class="mt-2">
             <!-- formulário -->
             <form action="?a=perfil_alterar_email" method="post">
                 <div class="col-sm-4 offset-sm-4 justify-content-center">
                     <div class="form-group">
-                        <label>Novo e-mail:</label>
-                        <input type="email" class="form-control" name="text_novo_email" title="No mínimo 5 e no máximo 50 caracteres." pattern=".{5,50}" required>
+                        <label><i id="grey" class="fas fa-at mr-2"></i><b>Novo e-mail:</b></label>
+                        <input type="email" class="form-control shadow" name="text_novo_email" title="No mínimo 5 e no máximo 50 caracteres." pattern=".{5,50}" required>
                     </div>
                 </div>
-                <div class="text-center">
-                    <a href="?a=home" class="btn btn-primary btn-size-150">Voltar</a>
-                    <button role="submit" class="btn btn-primary btn-size-150">Alterar</button>                    
+                <div class="text-center mb-3">
+                    <a href="?a=home" class="btn btn-primary shadow">Voltar</a>
+                    <button role="submit" class="btn btn-primary shadow">Alterar</button>                    
                 </div>
             </form>
         </div>        

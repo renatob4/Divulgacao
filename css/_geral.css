@@ -81,7 +81,7 @@ body{
     -webkit-transform-origin:0 0;
  }
 .bordahr{
-    border-top: 2px solid green;
+    border-top: 2px solid black;
 }
 .Obs{
     color: red;
@@ -298,6 +298,9 @@ body{
 .ds-element {
     opacity: 0.60;
     pointer-events: none;
+}
+.txt-shadow{
+    text-shadow: 2px 1px 3px grey;
 }
 #tag{
     color: green;

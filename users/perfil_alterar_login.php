@@ -78,21 +78,21 @@
 <?php endif; ?>
 
 <div class="container p-0">
-    <div class="row ml-1 mr-1 mt-2 borda-painel">
+    <div class="row ml-1 mr-1 mt-2 borda-painel shadow-strong">
         <div class="col card">
-            <h4 class="text-center mt-3">ALTERAR LOGIN DA CONTA</h4>
-            <hr><div><strong>Login atual:</strong> <?php echo $_SESSION['cd_login'] ?></div><hr>
+            <h5 class="text-center mt-3">ALTERAR LOGIN DA CONTA</h5>
+            <hr class="mt-2"><div id="green"><strong>LOGIN ATUAL:</strong><label id="black" class="ml-2"><?php echo $_SESSION['cd_login'] ?></label></div><hr class="mt-2">
             <!-- formulário -->
             <form action="?a=perfil_alterar_login" method="post">
                 <div class="col-sm-4 offset-sm-4 justify-content-center">
                     <div class="form-group">
-                        <label>Novo Login:</label>
-                        <input type="text" class="form-control" name="text_novo_login" title="No mínimo 5 e no máximo 30 caracteres." pattern=".{5,30}" required>
+                        <label><b><i id="grey" class="fas fa-id-badge mr-2"></i>Novo Login:</b></label>
+                        <input type="text" class="form-control shadow" name="text_novo_login" title="No mínimo 5 e no máximo 30 caracteres." pattern=".{5,30}" required>
                     </div>
                 </div>
-                <div class="text-center">
-                    <a href="?a=home" class="btn btn-primary btn-size-150">Voltar</a>
-                    <button role="submit" class="btn btn-primary btn-size-150">Alterar</button>                    
+                <div class="text-center mb-3">
+                    <a href="?a=home" class="btn btn-primary btn-size-150 shadow">Voltar</a>
+                    <button role="submit" class="btn btn-primary btn-size-150 shadow">Alterar</button>                    
                 </div>
             </form>
         </div>        

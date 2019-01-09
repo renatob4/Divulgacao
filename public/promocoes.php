@@ -100,7 +100,7 @@
                 <div class="col text-left">
                     <div class="row">
                         <div class="col text-center">
-                            <button id="shareBtn" class="btn btn-primary btnshare shadow mb-3 mt-4" onclick="share('<?php echo 'https://zenit.games/priston/'?>')">
+                            <button id="shareBtn" class="btn btn-primary btnshare shadow-strong mb-3 mt-4" onclick="share('<?php echo 'https://zenit.games/priston/'?>')">
                                 <i id="white" class="fab fa-facebook-square mr-2"></i><b>Compartilhar</b>
                             </button>
                             <label id="black" class="Obs3">Após a sua ação o botão de gerar cupons será liberado!</label>

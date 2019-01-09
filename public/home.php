@@ -42,7 +42,7 @@
     <div class="col p-0">
     <?php endif;?>
         <div class="text-center pt-3 pr-3 pl-3 pb-0">
-            <h4 class="mb-2">APRESENTAÇÃO</h4>
+            <h4 class="mb-2 txt-shadow">APRESENTAÇÃO</h4>
             <!-- Dados contidos no campo 'ds_presentation' do banco de dados -->
             <p class="mb-2"><?php echo $conteudo[0]['ds_presentation']?></p>
             <!-- Mostra a imagem no corpo da apresentação se ela existir -->
@@ -185,7 +185,7 @@
                             <?php if (funcoes::VerificarLogin()):?>
                             <a class="ml-3" href="?a=post_editar&post=<?php echo $post[$x]['cd_post']?>">Editar</a> | <a href="?a=post_deletar&post=<?php echo $post[$x]['cd_post']?>">Apagar</a>
                             <?php endif;?></h6></div>                    
-                            <div id="grey" class="col text-right mr-2"><h6><i class="far fa-clock mr-2"></i><?php echo $post[$x]['dt_register']?></h6></div>                               
+                            <div id="grey" class="col text-right mr-1"><h6><i class="far fa-clock mr-2"></i><?php echo $post[$x]['dt_register']?></h6></div>                               
                         </div><hr class="mb-1 mt-0">
                         <p><?php echo $post[$x]['ds_content']?></p>
                     </div>

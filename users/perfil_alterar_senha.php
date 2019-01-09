@@ -84,36 +84,35 @@
 <?php endif; ?>
 
 <div class="container p-0">
-    <div class="row mr-1 ml-1 mt-2 borda-painel">
+    <div class="row mr-1 ml-1 mt-2 borda-painel shadow-strong">
         <div class="col card">
-            <h4 class="text-center mt-3">ALTERAR SENHA</h4><hr>
+            <h5 class="text-center mt-3">ALTERAR SENHA</h5><hr>
             <!-- formulário -->
             <form action="?a=perfil_alterar_senha" method="post">
                 <div class="col-sm-4 offset-sm-4 justify-content-center">
                     <div class="form-group">
-                        <label>Senha atual:</label>
-                        <input type="text" class="form-control" name="text_password_atual" title="No mínimo 3 e no máximo 20 caracteres." pattern=".{3,20}" required>
+                        <label><b><i id="grey" class="fas fa-key mr-2"></i>Senha atual:</b></label>
+                        <input type="text" class="form-control shadow" name="text_password_atual" title="No mínimo 3 e no máximo 20 caracteres." pattern=".{3,20}" required>
                     </div>
                 </div>
                 <div class="col-sm-4 offset-sm-4 justify-content-center">
                     <div class="form-group">
-                        <label>Nova senha:</label>
-                        <input type="text" class="form-control" name="text_password_nova_1" title="No mínimo 3 e no máximo 20 caracteres." pattern=".{3,20}" required>
+                        <label><b><i id="grey" class="fas fa-key mr-2"></i>Nova senha:</b></label>
+                        <input type="text" class="form-control shadow" name="text_password_nova_1" title="No mínimo 3 e no máximo 20 caracteres." pattern=".{3,20}" required>
                     </div>
                 </div>
                 <div class="col-sm-4 offset-sm-4 justify-content-center">
                     <div class="form-group">
-                        <label>Repetir a nova senha:</label>
-                        <input type="text" class="form-control" name="text_password_nova_2" title="No mínimo 3 e no máximo 20 caracteres." pattern=".{3,20}" required>
+                        <label><b><i id="grey" class="fas fa-key mr-2"></i>Repetir a nova senha:</b></label>
+                        <input type="text" class="form-control shadow" name="text_password_nova_2" title="No mínimo 3 e no máximo 20 caracteres." pattern=".{3,20}" required>
                     </div>
                 </div>
-                <div class="text-center">
-                    <a href="?a=home" class="btn btn-primary btn-size-150">Voltar</a>
-                    <button role="submit" class="btn btn-primary btn-size-150">Alterar</button>                    
+                <div class="text-center mb-4">
+                    <a href="?a=home" class="btn btn-primary btn-size-150 shadow">Voltar</a>
+                    <button role="submit" class="btn btn-primary btn-size-150 shadow">Alterar</button>                    
                 </div>
             </form>
         </div>        
     </div>
 </div>
-
 
