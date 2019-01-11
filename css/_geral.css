@@ -4,6 +4,7 @@ body{
 }
 .contentor-global{
     margin-bottom: 0px;
+    margin-top: 85px;
     padding: 25px;
     padding-top: 30px;
     background-color: rgb(180, 175, 175);
@@ -210,6 +211,9 @@ body{
 .prbdiv{
     border-bottom: 1px solid rgba(128,128,128,.3);
 }
+.prtdiv{
+    border-top: 2px solid rgba(128,128,128,.3);
+}
 .prbdiv-g{
     border-bottom: 2px solid rgba(128,128,128);
 }
@@ -264,13 +268,6 @@ body{
 }
 .btnshare{
     font-size: 26px;
-}
-.navbar-fixed-top{
-    position: fixed;
-    right: 0;
-    left: 0;
-    top: 0;
-    z-index: 1030;
 }
 .prpl{
     border-left: 1px solid rgba(128,128,128,.5);

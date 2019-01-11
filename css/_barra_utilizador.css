@@ -1,16 +1,14 @@
 /*Barra dos utilizadores*/
 .barra_utilizador {
     margin: 0px;
-    padding: 20px;
-    text-align: right;
+    padding: 0px;
     background-color: #293d50;
     color: #4fbaeb;
     border-bottom: 2px solid rgb(62, 194, 247);
    }
-  
   .barra_utilizador a {
     text-decoration: none;
-    color: rgb(62, 194, 247);
+    color: white;
   }
   .barra_utilizador a:hover {
     color: white;
@@ -31,4 +29,16 @@
   .barra_utilizador_ativo {
     color: white; 
   }
-  
+  .textm{
+    font-size: 1.4em;
+  }
+  .textm a:hover{
+    color: rgb(62, 194, 247);
+  }
+  .navbar-fixed-top{
+    position: fixed;
+    right: 0;
+    left: 0;
+    top: 0;
+    z-index: 1030;
+}

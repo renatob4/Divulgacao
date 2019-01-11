@@ -51,7 +51,7 @@
 <!-- Inclui a barra de utilizador -->
 <?php include_once('includes/_barra_utilizador.php'); ?>
 <!-- Contentor Global -->
-<div class="container contentor-global mt-3 pt-1">
+<div class="container contentor-global pt-1">
 <!-- Incluir Cabeçalho -->
 <?php include_once('_cabecalho.php');?>
 <!-- Incluir Menu -->
