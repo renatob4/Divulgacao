@@ -302,7 +302,7 @@
                                 </optgroup>
                             </select>
                         </div>
-                        <div class="col-md-5 mb-2">
+                        <div class="col-md-4 mb-2">
                             <label id="black"><b><i id="black" class="fas fa-boxes mr-2"></i>Unidade de medida:</b></label>
                             <select class="form-control shadow" name="ds_unidade" required>
                                 <optgroup label="Medida">
@@ -315,7 +315,7 @@
                                 </optgroup>
                             </select>
                         </div>
-                        <div class="col-md-2 mb-2 p-0">
+                        <div class="col-md-3 mb-2 p-0">
                             <label id="black"><i id="black" class="fas fa-money-bill-alt ml-1 mr-2"></i><b>Preço/Valor:</b></label>
                             <div class="input-group">
                             <div class="input-group-prepend ml-1">

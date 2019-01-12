@@ -17,7 +17,7 @@
     if(isset($_GET['card']))
         $cd_card = $_GET['card'];
     else
-        echo('<meta http-equiv="refresh" content="0;URL=?a=home">');   
+        echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
 
     //pesquisa se existe card com esse codigo na base
     $parametros = [
@@ -52,21 +52,43 @@
             // tenta mover o arquivo para o destino
             if(@move_uploaded_file($arquivo_tmp, $destino)){
 
-                if($card[0]['img_card'] != ''){
-                    //Apaga a imagem antiga do diretorio do site.
-                    unlink("./".$card[0]['img_card']);
-                }
-                //Atualiza o banco com o nome da nova imagem.
-                $parametros = [
-                    ':cd_card'      =>  $cd_card,
-                    ':img_card'     =>  "images/".$novoNome,
-                    ':dt_updated'   =>  $data->format('Y-m-d H:i:s')
-                ];
-                $acesso->EXE_NON_QUERY('UPDATE tab_card SET img_card = :img_card, dt_updated = :dt_updated WHERE cd_card = :cd_card', $parametros);     
-                $mensagem = 'Arquivo salvo com sucesso!.';
+                if(isset($_GET['flag'])){
 
-                echo('<meta http-equiv="refresh" content="0;URL=?a=conteudo&card='.$cd_card.'">');
-                
+                    if($card[0]['img_front_card'] != ''){
+                        //Apaga a imagem antiga do diretorio do site.
+                        unlink("./".$card[0]['img_front_card']);
+                    }
+                    //Atualiza o banco com o nome da nova imagem.
+                    $parametros = [
+                        ':cd_card'            =>  $cd_card,
+                        ':img_front_card'     =>  "images/".$novoNome,
+                        ':dt_updated'         =>  $data->format('Y-m-d H:i:s')
+                    ];
+                    $acesso->EXE_NON_QUERY('UPDATE tab_card SET img_front_card = :img_front_card, dt_updated = :dt_updated WHERE cd_card = :cd_card', $parametros);     
+                    $mensagem = 'Arquivo salvo com sucesso!.';
+
+                    echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
+                    exit();
+                }
+                else {
+                    
+                    if($card[0]['img_card'] != ''){
+                        //Apaga a imagem antiga do diretorio do site.
+                        unlink("./".$card[0]['img_card']);
+                    }
+                    //Atualiza o banco com o nome da nova imagem.
+                    $parametros = [
+                        ':cd_card'      =>  $cd_card,
+                        ':img_card'     =>  "images/".$novoNome,
+                        ':dt_updated'   =>  $data->format('Y-m-d H:i:s')
+                    ];
+                    $acesso->EXE_NON_QUERY('UPDATE tab_card SET img_card = :img_card, dt_updated = :dt_updated WHERE cd_card = :cd_card', $parametros);     
+                    $mensagem = 'Arquivo salvo com sucesso!.';
+
+                    echo('<meta http-equiv="refresh" content="0;URL=?a=conteudo&card='.$cd_card.'">');
+                    exit();
+                }
+        
             }else{
                 $mensagem = 'Erro ao salvar o arquivo. Aparentemente você não tem permissão de escrita.<br />';
             }

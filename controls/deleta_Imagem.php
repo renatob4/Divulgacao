@@ -46,29 +46,51 @@
 
     } elseif($sender == 'card'){
 
-        $parametros = [
-            ':img_card' => $img
-        ];
-        $path = $acesso->EXE_QUERY('SELECT * FROM tab_card WHERE img_card = :img_card', $parametros);
-        //Verifica no banco se retornou resultado.
-        if(count($path) == 0){
-            $erro = true;
-        }
-        if(!$erro){
-            //Atualiza o banco com o nome vazio da imagem.
+        if(isset($_GET['flag'])){
             $parametros = [
-                ':cd_card'          => $path[0]['cd_card'],
-                ':img_card'         =>  '',
-                ':dt_updated'       => $data->format('Y-m-d H:i:s')
+                ':img_front_card' => $img
             ];
-            $acesso->EXE_NON_QUERY('UPDATE tab_card SET img_card = :img_card, dt_updated = :dt_updated WHERE cd_card = :cd_card', $parametros);
-            //Apaga a imagem do diretório.
-            unlink("./".$img);
-
-            echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
-            exit();
+            $path = $acesso->EXE_QUERY('SELECT * FROM tab_card WHERE img_front_card = :img_front_card', $parametros);
+            //Verifica no banco se retornou resultado.
+            if(count($path) == 0){
+                $erro = true;
+            }
+            if (!$erro) {
+                //Atualiza o banco com o nome vazio da imagem.
+                $parametros = [
+                    ':cd_card'          => $path[0]['cd_card'],
+                    ':img_front_card'   =>  '',
+                    ':dt_updated'       => $data->format('Y-m-d H:i:s')
+                ];
+                $acesso->EXE_NON_QUERY('UPDATE tab_card SET img_front_card = :img_front_card, dt_updated = :dt_updated WHERE cd_card = :cd_card', $parametros);
+                //Apaga a imagem do diretório.
+                unlink("./".$img);
+            }
+        } else {
+            $parametros = [
+                ':img_card' => $img
+            ];
+            $path = $acesso->EXE_QUERY('SELECT * FROM tab_card WHERE img_card = :img_card', $parametros);
+            //Verifica no banco se retornou resultado.
+            if(count($path) == 0){
+                $erro = true;
+            }
+            if (!$erro) {
+                //Atualiza o banco com o nome vazio da imagem.
+                $parametros = [
+                    ':cd_card'          => $path[0]['cd_card'],
+                    ':img_card'         =>  '',
+                    ':dt_updated'       => $data->format('Y-m-d H:i:s')
+                ];
+                $acesso->EXE_NON_QUERY('UPDATE tab_card SET img_card = :img_card, dt_updated = :dt_updated WHERE cd_card = :cd_card', $parametros);
+                //Apaga a imagem do diretório.
+                unlink("./".$img);
+            }
         }
 
+        echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
+        exit();
+    
     } elseif($sender == 'product'){
 
         $parametros = [

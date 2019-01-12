@@ -86,19 +86,19 @@
                 <?php endif; ?>
                 <!--Apresentação do formulario de recuperação-->
                 <div class="container-fluid p-0">
-                    <div class="row mr-1 ml-1 mt-2 borda-painel">
+                    <div class="row mr-1 ml-1 mt-2 borda-painel shadow-strong">
                         <div class="col-md-4 card m-0 p-3">
                             <form action="?a=recuperar_senha" method="post">
                                 <div class="text-center">
-                                    <h3>Recuperar Password</h3>
+                                    <h5 id="green">RECUPERAR SENHA</h5>
                                         <p>Indique abaixo o e-mail vinculado a sua conta, para onde enviaremos a sua nova senha.</p>
                                     </div>
                                 <div class="form-group">
-                                    <input type="email" name="text_email" class="form-control" placeholder="E-mail" required>
+                                    <input type="email" name="text_email" class="form-control shadow" placeholder="E-mail" required>
                                 </div>
                                 <div class="form-group text-center">
-                                    <a href="?a=home" class="btn btn-primary btn-size-150">Cancelar</a>
-                                    <button role="submit" class="btn btn-primary btn-size-150">Recuperar</button>
+                                    <a href="?a=home" class="btn btn-primary shadow">Cancelar</a>
+                                    <button role="submit" class="btn btn-primary shadow">Recuperar</button>
                                 </div>
                             </form>
                         </div>

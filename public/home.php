@@ -41,7 +41,7 @@
     <?php else:?>
     <div class="col p-0">
     <?php endif;?>
-        <div class="text-center pt-3 pr-3 pl-3 pb-0">
+        <div class="text-center pt-2 pr-3 pl-3 pb-0">
             <h4 class="mb-2 txt-shadow">APRESENTAÇÃO</h4>
             <!-- Dados contidos no campo 'ds_presentation' do banco de dados -->
             <p class="mb-2"><?php echo $conteudo[0]['ds_presentation']?></p>
@@ -123,6 +123,7 @@
         <!-- Titulo carregado direto da base de dados -->
         <p class="titulo-painel"><i id="gold" class="fas fa-star mr-2"></i><?php echo $card[$i]['ds_title']?></p>
         <!-- Conteúdo carregado direto da base de dados -->
+        <img class="img-fluid alturamax mt-2 mb-2 " src="<?php echo $card[$i]['img_front_card']?>">
         <div class="conteudo-baixo mb-3"><div><?php echo substr($card[$i]['ds_content'], 0, 192)?></div></div>
         <div class="text-center p-0 ml-0">
             <?php if (funcoes::VerificarLogin()):?>
@@ -140,8 +141,28 @@
                             <label><b>Conteúdo:</b></label>
                             <textarea type="text" name="card_text_content" class="form-control" rows="3" required><?php echo $card[$i]['ds_content']?></textarea>
                         </div>
-                        <div class="text-right p-0 mr-0 mt-2"><button type="submit" class="btn btn-success">Aplicar</button></div>
+                        <div class="text-center p-0 mr-0 mt-2"><button type="submit" class="btn btn-success">Aplicar</button></div>
                     </form>
+                    <div class="row mt-2 mb-0 pr-3 pl-3 pt-1">
+                        <div class="col p-0 text-left mt-1 mb-0 pl-0">
+                            <form class="p-0 m-0" action="?a=conteudo&card=<?php echo $card[$i]['cd_card'];?>&flag=true" method="post" enctype="multipart/form-data">
+                                <label class="p-0 m-0">
+                                    <strong><i id="grey" class="fas fa-image mr-1 ml-1"></i>
+                                        <a data-toggle="collapse" href="#<?php echo $card[$i]['cd_card'];?>" id="green" role="button" aria-expanded="false" aria-controls="collapseInputG">Inserir</a>
+                                    </strong>
+                                </label>
+                                <div class="collapse" id="<?php echo $card[$i]['cd_card'];?>">
+                                    <input class="btn btn-warning file2 p-1" name="arquivo" type="file" accept="image/*">
+                                    <input class="btn btn-success file2 m-0 p-2" type="submit" value="Enviar">
+                                </div>
+                            </form>
+                        </div>
+                        <?php if($card[$i]['img_front_card'] != ''):?>
+                        <div class="col p-0 text-right mt-1 mb-0">
+                            <strong><i id="grey" class="fas fa-trash-alt mr-2"></i><a href="?a=deleta_imagem&sender=card&img=<?php echo $card[$i]['img_front_card']?>&flag=true">Remover</a></strong>
+                        </div>
+                        <?php endif;?>
+                    </div>
                 </div>
             </div>
         <?php else :?>

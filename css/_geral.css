@@ -4,7 +4,7 @@ body{
 }
 .contentor-global{
     margin-bottom: 0px;
-    margin-top: 85px;
+    margin-top: 80px;
     padding: 25px;
     padding-top: 30px;
     background-color: rgb(180, 175, 175);
@@ -84,6 +84,9 @@ body{
 .bordahr{
     border-top: 2px solid black;
 }
+.alturamax{
+    max-height: 150px
+}
 .Obs{
     color: red;
     font-size: 0.7em;
@@ -110,6 +113,9 @@ body{
 }
 .file{
     font-size: 0.8em;
+}
+.file2{
+    font-size: 0.6em;
 }
 .und{
     text-decoration: underline;

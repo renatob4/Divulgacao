@@ -243,7 +243,7 @@
                             </div>
                             <div class="col-md-5 mt-0">
                                 <div class="text-center">
-                                    <input class="btn btn-success borda-painel mb-4 p-4" type="submit" value="Enviar mensagem"/>
+                                    <input class="btn btn-success borda-painel mb-4 p-4 shadow" type="submit" value="Enviar mensagem"/>
                                 </div>
                             </div>
                         </div>

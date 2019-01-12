@@ -8,7 +8,6 @@
     if(!isset($_SESSION['a'])){
         exit();
     }
-
     $erro = true;
     $mensagem = '';
 
@@ -17,13 +16,11 @@
 
         //verificar se os dados do login estão corretos
         $gestor = new cl_gestorBD();
-
         //preparação dos parametros
         $parametros = [
             ':cd_login'       =>  $_POST['text_utilizador'], 
             ':cd_password'    =>  md5($_POST['text_password'])
         ];
-
         //procurar o utilizador na base de dados
         $dados = $gestor->EXE_QUERY(
             'SELECT * FROM tab_user
@@ -40,7 +37,6 @@
             $erro = false;
             funcoes::IniciarSessao($dados);
             $mensagem = 'Login efetuado com sucesso!.';
-
             //Log
             funcoes::CriarLOG('utilizador '.$_SESSION['cd_login'].': '.$mensagem, $_SESSION['nm_user']);
         }     
@@ -53,7 +49,7 @@
     }
 ?>
 <div class="container-fluid">
-    <div class="row justify-content-center mt-4">
+    <div class="row justify-content-center mt-2">
         <div class="col-md-4 card bg-secondary m-3 p-3 pt-4 pb-4 borda-painel shadow-strong">
             <!-- <form action="?a=login" method="post">
                 <div class="form-group row">
@@ -92,7 +88,7 @@
 </div>
 <?php else : //====================================================?>
     <div class="container-fluid">
-        <div class="row justify-content-center mt-3">
+        <div class="row justify-content-center mt-2">
             <div class="col-md-4 card m-3 p-3 text-center borda-painel shadow-strong">
                 <p>Bem-vindo, <strong><?php echo $dados[0]['nm_user'] ?></strong> </p>
                 <a href="?a=home" class="btn btn-primary">Avançar</a>

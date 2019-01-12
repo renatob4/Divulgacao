@@ -68,6 +68,7 @@
         'cd_card                        INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT, '.
         'ds_title                       VARCHAR(50), '.
         'ds_content                     TEXT, '.
+        'img_front_card                 VARCHAR(50), '.
         'img_card                       VARCHAR(50), '.
         'dt_register                    DATETIME, '.
         'dt_updated                     DATETIME)'
