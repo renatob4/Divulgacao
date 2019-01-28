@@ -245,24 +245,24 @@
                         <div class="col-md-6 mt-1">
                             <label><b><i id="grey" class="fas fa-passport mr-2"></i>DOC/CNPJ:</b></label>
                             <input type="text" name="form_ds_document" class="form-control shadow" value="<?php echo $conteudo[0]['ds_document']?>">
-                            <label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe este campo em branco se não quiser que ele apareça no Site.</label>
+                            <div class="text-center"><label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe este campo em branco se não quiser que ele apareça no Site.</label></div>
                         </div>      
                     </div>
                     <div class="form-goup mt-4">
                         <label><b><i id="grey" class="fas fa-file-alt mr-2"></i>Apresentação:</b></label>
                         <textarea type="text" name="form_ds_presentation" class="form-control shadow" rows="6" required><?php echo $conteudo[0]['ds_presentation']?></textarea>
-                        <label class="Obs2 mt-1"><i class="fas fa-exclamation-triangle mr-2"></i>Obs. Este campo aceita um link de imagem em formato html aconselhavel: 650x250px.</label>
+                        <div class="text-center"><label class="Obs2 mt-1"><i class="fas fa-exclamation-triangle mr-2"></i>Obs. Este campo aceita um link de imagem em formato html aconselhavel: 650x250px.</label></div>
                     </div>
                     <div class="form-row mt-4">
                         <div class="col-md-6 mt-1">
                             <label><b><i id="grey" class="fas fa-phone-square mr-2"></i>Telefone 1:</b></label>
                             <input type="tel" name="form_cd_tel1" class="form-control shadow" value="<?php echo $conteudo[0]['cd_phone_1']?>" required>
-                            <label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Desmarque os contatos no fim da pagina se não quiser que ele apareça no Site.</label>
+                            <div class="text-center"><label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Desmarque os contatos no fim da pagina se não quiser que ele apareça no Site.</label></div>
                         </div>
                         <div class="col-md-6 mt-1">
                             <label><b><i id="grey" class="fab fa-whatsapp mr-2"></i>Telefone 2:</b></label>
                             <input type="tel" name="form_cd_tel2" class="form-control shadow" value="<?php echo $conteudo[0]['cd_phone_2']?>">
-                            <label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe este campo em branco ou desmarque se não quiser que ele apareça no Site.</label>
+                            <div class="text-center"><label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe este campo em branco ou desmarque se não quiser que ele apareça no Site.</label></div>
                         </div>
                     </div>
                     <div class="form-goup mt-4">
@@ -276,7 +276,7 @@
                     <div class="form-goup mt-4">
                         <label><b><i id="grey" class="fas fa-business-time mr-2"></i>Descreva o seu horario de funcionamento: <label class="file" id="grey">(Ex. Segunda a sexta das 8hrs ás 19hrs.)</label></b></label></b></label>
                         <input type="text" name="form_ds_activity" class="form-control shadow" value="<?php echo $atividade[0]['ds_activity']?>">
-                        <label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Se este campo estiver vazio os horarios nao aparecerão no site.</label>
+                        <div class="text-center"><label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Se este campo estiver vazio os horarios nao aparecerão no site.</label></div>
                     </div>
                     <div class="form-row mt-4">
                         <div class="col-md-6 mt-1">
@@ -324,12 +324,12 @@
                                 </optgroup>
                             </select>
                         </div>
-                        <label class="Obs ml-1 mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe estes campos em branco se não quiser que ele apareçam no Site.</label>
                     </div>
+                    <div class="text-center"><label class="Obs ml-1 mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe estes campos em branco se não quiser que ele apareçam no Site.</label></div>
                     <div class="form-goup mt-4">
                         <label><b><i id="grey" class="fas fa-map-marker-alt mr-2"></i>Mapa: <label class="file" id="grey">(Tag do tipo iframe.)</label></b></label>
                         <input type="text" name="form_lnk_map" class="form-control shadow" value="<?php echo $conteudo[0]['lnk_map']?>">
-                        <label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe este campo em branco ou desmarque no fim da pagina se não quiser que o mapa apareça no Site.</label>
+                        <div class="text-center"><label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe este campo em branco ou desmarque no fim da pagina se não quiser que o mapa apareça no Site.</label></div>
                     </div>
                     <hr class=""><h5 id="green" class="text-center mb-4">GERENCIAR LINKS</h5>
                     <div class="card m-3 p-2 pt-3 shadow">
@@ -375,76 +375,76 @@
                                 <input type="text" name="form_lnk_ytb" class="form-control p-0 ml-3 line" value="<?php echo $link[0]['ds_link_ytb']?>">
                             </div>
                         </div>
-                        <label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe em branco os links que não quiser que apareçam no Site.</label>          
+                        <div class="text-center"><label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe em branco os links que não quiser que apareçam no Site.</label></div>     
                     </div>
                     <hr class=""><h5 id="green" class="text-center mb-3">CONFIGURAÇÕES DE EXIBIÇÃO</h5>
                     <div class="card m-3 pr-2 shadow">
-                        <div class="form-check form-inline line ml-2 mb-2 mt-3">
+                        <div class="form-check form-inline linegrey ml-2 mb-2 mt-3">
                             <input class="form-check-input" name="check_contact" type="checkbox" id="Check1" <?php echo $config[0]['st_contact'] == 1 ? 'checked' : '';?>>
-                            <i id="grey" class="fas fa-phone ml-2 mr-3"></i>
+                            <i id="blue" class="fas fa-phone ml-2 mr-3"></i>
                             <label class="form-check-label" for="Check1">Exibir contatos na pagina inicial.</label>
                         </div>
-                        <div class="form-check form-inline line ml-2 mb-2">
+                        <div class="form-check form-inline linegrey ml-2 mb-2">
                             <input class="form-check-input" name="check_map" type="checkbox" id="Check2" <?php echo $config[0]['st_map'] == 1 ? 'checked' : '';?>>
-                            <i id="grey" class="fas fa-map-marked ml-2 mr-3"></i>
+                            <i id="blue" class="fas fa-map-marked ml-2 mr-3"></i>
                             <label class="form-check-label" for="Check2">Exibir mapa na pagina inicial.</label>
                         </div>
-                        <div class="form-check form-inline line ml-2 mb-2">
+                        <div class="form-check form-inline linegrey ml-2 mb-2">
                             <input class="form-check-input" name="check_adress" type="checkbox" id="Check3" <?php echo $config[0]['st_adress'] == 1 ? 'checked' : '';?>>
-                            <i id="grey" class="fas fa-map-marker ml-2 mr-3"></i>
+                            <i id="blue" class="fas fa-map-marker ml-2 mr-3"></i>
                             <label class="form-check-label" for="Check3">Exibir endereço na pagina de contatos.</label>
                         </div>
-                        <div class="form-check form-inline line ml-2 mb-2">
+                        <div class="form-check form-inline linegrey ml-2 mb-2">
                             <input class="form-check-input" name="check_activity" type="checkbox" id="Check4" <?php echo $config[0]['st_activity'] == 1 ? 'checked' : '';?>>
-                            <i id="grey" class="fas fa-business-time ml-2 mr-2"></i>
+                            <i id="blue" class="fas fa-business-time ml-2 mr-2"></i>
                             <label class="form-check-label" for="Check4">Exibir horario de funcionamento na pagina de contatos.</label>
                         </div>
-                        <div class="form-check form-inline line ml-2 mb-2">
+                        <div class="form-check form-inline linegrey ml-2 mb-2">
                             <input class="form-check-input" name="check_document" type="checkbox" id="Check5" <?php echo $config[0]['st_document'] == 1 ? 'checked' : '';?>>
-                            <i id="grey" class="fas fa-book ml-2 mr-3"></i>
+                            <i id="blue" class="fas fa-book ml-2 mr-3"></i>
                             <label class="form-check-label" for="Check5">Exibir documento/cnpj no rodapé.</label>
                         </div>
-                        <div class="form-check form-inline line ml-2 mb-2">
+                        <div class="form-check form-inline linegrey ml-2 mb-2">
                             <input class="form-check-input" name="check_card" type="checkbox" id="Check6" <?php echo $config[0]['st_card'] == 1 ? 'checked' : '';?>>
-                            <i id="grey" class="fas fa-star ml-2 mr-3"></i>
+                            <i id="blue" class="fas fa-star ml-2 mr-3"></i>
                             <label class="form-check-label" for="Check6">Exibir sessão de cards na pagina inicial.</label>
                         </div>
-                        <div class="form-check form-inline line ml-2 mb-2">
+                        <div class="form-check form-inline linegrey ml-2 mb-2">
                             <input class="form-check-input" name="check_post" type="checkbox" id="Check7" <?php echo $config[0]['st_post'] == 1 ? 'checked' : '';?>>
-                            <i id="grey" class="fas fa-flag ml-2 mr-3"></i>
+                            <i id="blue" class="fas fa-flag ml-2 mr-3"></i>
                             <label class="form-check-label" for="Check7">Exibir sessão de posts na pagina inicial.</label>
                         </div>
-                        <div class="form-check form-inline line ml-2 mb-2">
+                        <div class="form-check form-inline linegrey ml-2 mb-2">
                             <input class="form-check-input" name="check_product" type="checkbox" id="Check8" <?php echo $config[0]['st_product'] == 1 ? 'checked' : '';?>>
-                            <i id="grey" class="fas fa-shopping-cart ml-2 mr-3"></i>
+                            <i id="blue" class="fas fa-shopping-cart ml-2 mr-3"></i>
                             <label class="form-check-label" for="Check8">Exibir pagina de Produtos.</label>
                         </div>
-                        <div class="form-check form-inline line ml-2 mb-2">
+                        <div class="form-check form-inline linegrey ml-2 mb-2">
                             <input class="form-check-input" name="check_service" type="checkbox" id="Check9" <?php echo $config[0]['st_service'] == 1 ? 'checked' : '';?>>
-                            <i id="grey" class="fas fa-wrench ml-2 mr-3"></i>
+                            <i id="blue" class="fas fa-wrench ml-2 mr-3"></i>
                             <label class="form-check-label" for="Check9">Exibir pagina de Serviços.</label>
                         </div>
-                        <div class="form-check form-inline line ml-2 mb-2">
+                        <div class="form-check form-inline linegrey ml-2 mb-2">
                             <input class="form-check-input" name="check_promotion" type="checkbox" id="Check10" <?php echo $config[0]['st_promotion'] == 1 ? 'checked' : '';?>>
-                            <i id="grey" class="fas fa-percentage ml-2 mr-3"></i>
+                            <i id="blue" class="fas fa-percentage ml-2 mr-3"></i>
                             <label class="form-check-label" for="Check10">Exibir pagina e mecânismo de Promoções.</label>
                         </div>
-                        <div class="form-check form-inline line ml-2 mb-2">
+                        <div class="form-check form-inline linegrey ml-2 mb-2">
                             <input class="form-check-input" name="check_comment" type="checkbox" id="Check11" <?php echo $config[0]['st_comment'] == 1 ? 'checked' : '';?>>
-                            <i id="grey" class="fas fa-comment ml-2 mr-3"></i>
+                            <i id="blue" class="fas fa-comment ml-2 mr-3"></i>
                             <label class="form-check-label" for="Check11">Exibir plugin de comentarios do facebook.</label>
                         </div>
-                        <div class="form-check form-inline line ml-2 mb-3">
+                        <div class="form-check form-inline linegrey ml-2 mb-3">
                             <input class="form-check-input" name="check_page" type="checkbox" id="Check12" <?php echo $config[0]['st_fbpage'] == 1 ? 'checked' : '';?>>
-                            <i id="grey" class="fab fa-facebook-square ml-2 mr-3"></i>
-                            <label class="form-check-label" for="Check12">Exibir pagina do facebook no rodapé.</label><label class="Obs3 mt-1 ml-2 mb-1">Obs. Para o componente funcionar o link do facebook fornecido deve ser do tipo Página comercial.</label>
+                            <i id="blue" class="fab fa-facebook-square ml-2 mr-3"></i>
+                            <label class="form-check-label" for="Check12">Exibir pagina do facebook no rodapé.</label><label class="Obs3 mt-1 ml-2 mb-1">Obs. Para o componente funcionar o link do facebook fornecido deve ser do tipo Página Comercial.</label>
                         </div>
                     </div>
                     <div class="text-right mr-3">
                         <i id="grey" class="fas fa-wrench mr-2"></i><a data-toggle="collapse" href="#dev" id="green" role="button" aria-expanded="false" aria-controls="collapseExample">Configurações de desenvolvedor</a>
                         <div class="collapse text-left" id="dev">
                             <div class="form-row mt-2">
-                                <div class="col-md-8 pl-3 mt-1">
+                                <div class="col-md-8 mt-1">
                                     <label><b><i id="grey" class="fas fa-code mr-2"></i>Script de plugins facebook:</b></label>
                                     <input type="text" name="form_lnk_script" class="form-control shadow" value="<?php echo $code[0]['lnk_script']?>">
                                 </div>
