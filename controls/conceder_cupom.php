@@ -29,6 +29,9 @@
     //Atualizar a DB
     $acesso->EXE_NON_QUERY('DELETE FROM tab_cupom WHERE cd_cpm = :cd_cpm', $parametros);
 
+    //Log
+    funcoes::CriarLOG('Caupom verificado, concedido e removido do sistema.', $_SESSION['nm_user']);
+
     //header("Location:?a=home");
     echo('<meta http-equiv="refresh" content="0;URL=?a=promocoes_config">');
     exit();

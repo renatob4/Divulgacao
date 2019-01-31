@@ -74,6 +74,9 @@
                                 WHERE cd_product = :cd_product', $parametros);
 
         $mensagem = "Produto ".$produtos[0]['cd_alternative_product']." editado com sucesso!";
+
+        //Log
+        funcoes::CriarLOG(''.$mensagem , $_SESSION['nm_user']);
     
         //Redirecionar
         //header("Location:?a=home");

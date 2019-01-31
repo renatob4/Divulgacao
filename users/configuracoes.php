@@ -214,6 +214,9 @@
             $parametros
         );
 
+        //Log
+        funcoes::CriarLOG('Conteúdo do site atualizado com sucesso!', $_SESSION['nm_user']);
+
         //$conteudo = $gestor->EXE_QUERY('SELECT * FROM tab_content');
         //header('Location:?a=configuracoes');
         echo('<meta http-equiv="refresh" content="0;URL=?a=configuracoes">');

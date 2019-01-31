@@ -8,7 +8,7 @@
         //header("Location:?a=home");
         echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
         exit();
-    } 
+    }
 
     //Instancia do banco de dados.
     $acesso = new cl_gestorBD();
@@ -33,6 +33,9 @@
     ];  
     //Atualizar a DB
     $acesso->EXE_NON_QUERY('DELETE FROM tab_post WHERE cd_post = :cd_post', $parametros);
+
+    //Log
+    funcoes::CriarLOG('Postagem '.$cd_post.' removida.', $_SESSION['nm_user']);
 
     //header("Location:?a=home");
     echo('<meta http-equiv="refresh" content="0;URL=?a=home">');

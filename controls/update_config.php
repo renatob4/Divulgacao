@@ -29,6 +29,10 @@
                 ':dt_updated'    =>  $data->format('Y-m-d H:i:s')
             ];  
             $acesso->EXE_NON_QUERY('UPDATE tab_config SET sp_relevance = :sp_relevance, sp_amount = :sp_amount, dt_updated = :dt_updated WHERE cd_config = :cd_config', $parametros);
+            
+            //Log
+            funcoes::CriarLOG('Configuração de vizualização padrão de produtos alterada.' , $_SESSION['nm_user']);
+
             //header("Location:?a=home");
             echo('<meta http-equiv="refresh" content="0;URL=?a=produtos">');
             exit();
@@ -44,6 +48,10 @@
                 ':dt_updated'    =>  $data->format('Y-m-d H:i:s')
             ];  
             $acesso->EXE_NON_QUERY('UPDATE tab_config SET ss_relevance = :ss_relevance, ss_amount = :ss_amount, dt_updated = :dt_updated WHERE cd_config = :cd_config', $parametros);
+            
+            //Log
+            funcoes::CriarLOG('Configuração de vizualização padrão de serviços alterada.' , $_SESSION['nm_user']);
+            
             //header("Location:?a=home");
             echo('<meta http-equiv="refresh" content="0;URL=?a=servicos">');
             exit();

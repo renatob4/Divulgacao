@@ -43,8 +43,14 @@
             //preparação dos dados do email.
             $temp = [
                 $dados[0]['ds_email'],
-                'Site Pessoal - Recuperação de password',
-                '<h4><strong>Nova senha temporária:</strong></h4><h3>'.$nova_senha.'</h3>'
+                'Recuperação de password',
+                "<div style='background-color: aliceblue; padding: 20px;border: 1px solid black'>
+                <h4 style='color:green;'>Nova mensagem do Site! <label style='color:black;'>- Recuperação de password</label></h4>
+                <hr>
+                <h5 style='color:black;'>Nova senha temporária: <label style='font-weight:normal;color:grey;'>$nova_senha</label></h5>
+                <hr>
+                </div>
+                </div>"
             ];
             //enviar o email
             $mensagem_enviada = $email->EnviarEmail($temp);
@@ -107,7 +113,7 @@
     <?php else : ?>
                 <!--Apresentação da mensagem de sucesso ao recuperar-->
                 <div class="container-fluid p-0">
-                    <div class="row mr-1 ml-1 mt-2">
+                    <div class="row mr-1 ml-1 mt-2 borda-painel shadow-strong">
                         <div class="col-md-4 card m-3 p-3">                            
                             <div class="text-center">
                                 <h3>Senha recuperada com sucesso!</h3><hr><p>Verifique seu e-mail e utilize a senha provisória recebida para fazer login.</p>   

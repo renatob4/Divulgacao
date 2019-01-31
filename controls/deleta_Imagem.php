@@ -40,6 +40,9 @@
             if($img != 'images/welcome.jpg')
             unlink("./".$img);
 
+            //Log
+            funcoes::CriarLOG('Imagem de corpo de conteúdo removida.', $_SESSION['nm_user']);
+
             echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
             exit();
         }
@@ -65,6 +68,9 @@
                 $acesso->EXE_NON_QUERY('UPDATE tab_card SET img_front_card = :img_front_card, dt_updated = :dt_updated WHERE cd_card = :cd_card', $parametros);
                 //Apaga a imagem do diretório.
                 unlink("./".$img);
+
+                //Log
+                funcoes::CriarLOG('Imagem frontal de Card removida.', $_SESSION['nm_user']);
             }
         } else {
             $parametros = [
@@ -85,6 +91,9 @@
                 $acesso->EXE_NON_QUERY('UPDATE tab_card SET img_card = :img_card, dt_updated = :dt_updated WHERE cd_card = :cd_card', $parametros);
                 //Apaga a imagem do diretório.
                 unlink("./".$img);
+
+                //Log
+                funcoes::CriarLOG('Imagem de conteúdo de Card removida.', $_SESSION['nm_user']);
             }
         }
 
@@ -111,6 +120,9 @@
             $acesso->EXE_NON_QUERY('UPDATE tab_product SET img_product = :img_product, dt_updated = :dt_updated WHERE cd_product = :cd_product', $parametros);
             //Apaga a imagem do diretório.
             unlink("./".$img);
+
+            //Log
+            funcoes::CriarLOG('Imagem do produto '.$path[0]['cd_product'].' removida.', $_SESSION['nm_user']);
 
             echo('<meta http-equiv="refresh" content="0;URL=?a=produtos">');
             exit();

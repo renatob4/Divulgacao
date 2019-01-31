@@ -66,6 +66,9 @@
                                 WHERE cd_service = :cd_service', $parametros);
 
         $mensagem = "Serviço ".$servicos[0]['cd_alternative_service']." editado com sucesso!";
+
+        //Log
+        funcoes::CriarLOG(''.$mensagem , $_SESSION['nm_user']);
     
         //Redirecionar
         //header("Location:?a=home");

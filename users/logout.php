@@ -11,7 +11,7 @@
     //executa o logout (destruição) da sessão
     funcoes::DestroiSessao();
     //log
-    funcoes::CriarLOG('utilizador: '.$nome.'Fez logout.', $nome);
+    funcoes::CriarLOG('utilizador: '.$nome.' fez logout.', $nome);
 ?>
 <div class="container-fluid">
     <div class="row justify-content-center mt-2">

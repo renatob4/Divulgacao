@@ -22,13 +22,16 @@
             ':dt_register'          =>  $data->format('Y-m-d H:i:s'),
             ':dt_updated'           =>  $data->format('Y-m-d H:i:s')
         ];
-        //Inserçao do card na tabela tab_card
+        //Inserçao do post na tabela tab_card
         $gestor->EXE_NON_QUERY(
             'INSERT INTO tab_post(ds_title, ds_content, nm_autor, dt_register, dt_updated)
             VALUES(:ds_title, :ds_content, :nm_autor, :dt_register, :dt_updated)', $parametros);
 
+        //Log
+        funcoes::CriarLOG('Nova postagem Inserida com sucesso.', $_SESSION['nm_user']);
+
         //header("Location:?a=home");
         echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
         exit();
-    } 
+    }
 ?>

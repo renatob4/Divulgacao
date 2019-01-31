@@ -73,6 +73,9 @@
                     ];
                     $acesso->EXE_NON_QUERY('UPDATE tab_imagem SET img_header = :img_header, dt_updated = :dt_updated WHERE cd_img = :cd_img', $parametros);
 
+                    //Log
+                    funcoes::CriarLOG('Imagem de cabeçalho alterada.' , $_SESSION['nm_user']);
+
                 }elseif($sender == 'body'){
                     if($img[0]['img_body'] != 'images/welcome.jpg' && $img[0]['img_body'] != ''){
                         //Apaga a imagem antiga do diretorio do site.
@@ -85,6 +88,9 @@
                         ':dt_updated'       => $data->format('Y-m-d H:i:s')
                     ];
                     $acesso->EXE_NON_QUERY('UPDATE tab_imagem SET img_body = :img_body, dt_updated = :dt_updated WHERE cd_img = :cd_img', $parametros);
+
+                    //Log
+                    funcoes::CriarLOG('Nova imagem de corpo de conteúdo inserida.' , $_SESSION['nm_user']);
 
                 }elseif($sender == 'panel'){
                     if($img[0]['img_panel'] != 'images/panel.jpg'){
@@ -99,6 +105,9 @@
                     ];
                     $acesso->EXE_NON_QUERY('UPDATE tab_imagem SET img_panel = :img_panel, dt_updated = :dt_updated WHERE cd_img = :cd_img', $parametros);
                 
+                    //Log
+                    funcoes::CriarLOG('Imagem de painel alterada.' , $_SESSION['nm_user']);
+                
                 }elseif($sender == 'product'){
                     if($p[0]['img_product'] != ''){
                         // Apaga a imagem antiga do diretorio do site.
@@ -111,6 +120,9 @@
                         ':dt_updated'      => $data->format('Y-m-d H:i:s')
                     ];
                     $acesso->EXE_NON_QUERY('UPDATE tab_product SET img_product = :img_product, dt_updated = :dt_updated WHERE cd_product = :cd_product', $parametros);
+                    
+                    //Log
+                    funcoes::CriarLOG('Imagem de produto Inserida.' , $_SESSION['nm_user']);
                 }
 
                 $mensagem = 'Arquivo salvo com sucesso!.';

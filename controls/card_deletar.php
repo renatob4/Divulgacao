@@ -39,6 +39,9 @@
     //Atualizar a DB
     $acesso->EXE_NON_QUERY('DELETE FROM tab_card WHERE cd_card = :cd_card', $parametros);
 
+    //Log
+    funcoes::CriarLOG('Card de conteúdo removido.', $_SESSION['nm_user']);
+
     //header("Location:?a=home");
     echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
     exit();

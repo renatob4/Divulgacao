@@ -52,7 +52,7 @@
                     <a href="<?php echo $link[0]['ds_link_ytb']?>" target="_blank"><i class="fab fa-youtube-square shadow-strong"></i></a>
                 <?php endif;?>
                 <?php if ($link[0]['ds_link_face'] != '' && $config[0]['st_fbpage'] == 1 && $code[0]['lnk_script'] != ''):?>
-                <div class="text-center mt-5 p-0">
+                <div class="text-center mt-4 p-0">
                     <div class="fb-page shadow-strong"
                          data-href="<?php echo $link[0]['ds_link_face']?>"
                          data-small-header="false"

@@ -73,6 +73,10 @@
                  VALUES(:cd_cupom, :ds_discount, :ds_type, :nm_customer, :dt_valid, :dt_register)', $parametros);
             
             $mensagem = 'Cupom gerado com sucesso!.';
+
+            //Log
+            funcoes::CriarLOG('Novo cupom gerado com sucesso.', 'Cliente');
+
             echo('<meta http-equiv="refresh" content="0;URL=?a=promocoes">');
             exit();
         }

@@ -124,7 +124,11 @@
         <p class="titulo-painel"><i id="gold" class="fas fa-star mr-2"></i><?php echo $card[$i]['ds_title']?></p>
         <!-- Conteúdo carregado direto da base de dados -->
         <img class="img-fluid alturamax mt-2 mb-2 " src="<?php echo $card[$i]['img_front_card']?>">
+        <?php if($card[$i]['img_front_card'] == ''): ?>
         <div class="conteudo-baixo mb-3"><div><?php echo substr($card[$i]['ds_content'], 0, 192)?></div></div>
+        <?php else:?>
+        <div class="mb-3"><div><?php echo substr($card[$i]['ds_content'], 0, 192)?></div></div>
+        <?php endif;?>
         <div class="text-center p-0 ml-0">
             <?php if (funcoes::VerificarLogin()):?>
             <a href="#edit<?php echo $card[$i]['cd_card']?>" class="btn btn-outline-success p-2 mr-1" data-toggle="collapse" role="button" aria-expanded="false"><i class="fas fa-edit mr-1"></i>Edit</a>                    

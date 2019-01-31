@@ -77,7 +77,11 @@
              WHERE cd_promotion = :cd_promotion    
             ',$parametros);
 
-            $_SESSION['resultado'] = "Configurações atualizadas com sucesso!";
+            $_SESSION['resultado'] = "Configurações de promoção atualizadas com sucesso!";
+
+            //Log
+            funcoes::CriarLOG(''.$_SESSION['resultado'] , $_SESSION['nm_user']);
+
             echo('<meta http-equiv="refresh" content="0;URL=?a=promocoes_config">');
             exit();
         }

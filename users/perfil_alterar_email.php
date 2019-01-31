@@ -68,13 +68,13 @@
 <!--________________________________________________________________________ HTML ____________________________________________________________________________-->
 
 <?php if($erro) : ?>
-    <div class="alert alert-danger text-center">
+    <div class="alert alert-danger text-center shadow mr-1 ml-1 mt-2">
         <?php echo $mensagem ?>
     </div>
 <?php endif; ?>
 
 <?php if($sucesso) : ?>
-    <div class="alert alert-success text-center">
+    <div class="alert alert-success text-center shadow mr-1 ml-1 mt-2">
         <?php echo $mensagem ?>
     </div>
 <?php endif; ?>

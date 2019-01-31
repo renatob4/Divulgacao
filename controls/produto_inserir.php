@@ -69,6 +69,10 @@
             exit();
         }else{
             $_SESSION['resultado'] = $mensagem;
+
+            //Log
+            funcoes::CriarLOG(''.$mensagem , $_SESSION['nm_user']);
+            
             //header("Location:?a=home");
             echo('<meta http-equiv="refresh" content="0;URL=?a=produtos">');
             exit();

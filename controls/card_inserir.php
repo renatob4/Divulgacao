@@ -30,6 +30,9 @@
         'INSERT INTO tab_card(ds_title, ds_content, img_front_card, img_card, dt_register, dt_updated)
         VALUES(:ds_title, :ds_content, :img_front_card, :img_card, :dt_register, :dt_updated)', $parametros);
 
+    //Log
+    funcoes::CriarLOG('Novo Card de conteúdo inserido.', $_SESSION['nm_user']);
+
     //header("Location:?a=home");
     echo('<meta http-equiv="refresh" content="0;URL=?a=home">');
     exit();

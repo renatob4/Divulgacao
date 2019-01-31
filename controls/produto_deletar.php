@@ -35,6 +35,9 @@
         //Apaga a imagem do diretório.
         unlink("./".$img);
     }
+
+    //Log
+    funcoes::CriarLOG('Produto '.$result[0]['cd_alternative_product'].' removido com sucesso.', $_SESSION['nm_user']);
     
     //header("Location:?a=home");
     echo('<meta http-equiv="refresh" content="0;URL=?a=produtos">');

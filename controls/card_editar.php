@@ -57,6 +57,9 @@
         $acesso->EXE_NON_QUERY('UPDATE tab_card SET ds_title = :ds_title, ds_content = :ds_content, dt_updated = :dt_updated 
                                 WHERE cd_card = :cd_card', $parametros);
     
+        //Log
+        funcoes::CriarLOG('Card de conteúdo editado.', $_SESSION['nm_user']);
+
         //Redirecionar
         //header("Location:?a=home");
         echo('<meta http-equiv="refresh" content="0;URL=?a=home">');

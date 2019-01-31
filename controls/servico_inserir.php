@@ -53,6 +53,9 @@
                  VALUES(:cd_alternative_service, :nm_service, :vl_service, :ds_description, :st_promotion, :dt_register, :dt_updated)', $parametros);
              
             $mensagem = 'Novo serviço cadastrado com sucesso!'; 
+
+            //Log
+            funcoes::CriarLOG(''.$mensagem , $_SESSION['nm_user']);
         }
 
         //Resultado das operações.

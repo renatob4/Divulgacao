@@ -49,6 +49,9 @@
         $acesso->EXE_NON_QUERY('UPDATE tab_post SET ds_title = :ds_title, ds_content = :ds_content, nm_autor = :nm_autor, dt_updated = :dt_updated
                                 WHERE cd_post = :cd_post', $parametros);
 
+        //Log
+        funcoes::CriarLOG('Postagem '.$cd_post.' editada com sucesso.', $_SESSION['nm_user']);
+
         //redireciona após terminar a atualização.
         //header("Location:?a=home");
         echo('<meta http-equiv="refresh" content="0;URL=?a=home">');

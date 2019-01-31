@@ -89,18 +89,29 @@
                     //inserir cliente prospect na base.
                     $acesso->EXE_NON_QUERY('INSERT INTO tab_prospect(nm_prospect, ds_email, cd_phone, ds_channel, dt_register)
                                             VALUES(:nm_prospect, :ds_email, :cd_phone, :ds_channel, :dt_register)', $parametros);
-                }  
+                }
+
+                //Log
+                funcoes::CriarLOG('Novo cliente prospect capturado.', $_SESSION['nm_user']);
             }
 
             //Resultado das operações.
             if($resposta){
                 $_SESSION['resultado'] = "Mensagem enviada com sucesso!";
                 //header("Location:?a=home");
+
+                //Log
+                funcoes::CriarLOG('Nova mensagem enviada com sucesso pela página de contatos.', 'Cliente');
+
                 echo('<meta http-equiv="refresh" content="0;URL=?a=contatos">');
                 exit();
             }else{
                 $_SESSION['resultado'] = "Falha ao enviar sua mensagem.";
                 //header("Location:?a=home");
+
+                //Log
+                funcoes::CriarLOG('Tentativa de envio de mensagem pela página de contatos falhou.', 'Cliente');
+
                 echo('<meta http-equiv="refresh" content="0;URL=?a=contatos">');
                 exit();
             }
