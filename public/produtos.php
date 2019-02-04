@@ -284,11 +284,11 @@
                     <div class="form-row mt-2">
                         <div class="col">
                             <label id="black"><b><i id="black" class="fas fa-barcode mr-2"></i>Código:</b></label>
-                            <input type="text" name="cd_produto" class="form-control shadow" title="Defina um código para o produto" required>
+                            <input type="text" name="cd_produto" class="form-control shadow" maxlength="12" title="Defina um código para o produto" required>
                         </div>
                         <div class="col">
                             <label id="black"><b>Produto:</b></label>
-                            <input type="text" name="nm_produto" class="form-control shadow" required>
+                            <input type="text" name="nm_produto" maxlength="32" class="form-control shadow" required>
                         </div>
                     </div>
                     <div class="form-row p-0 mt-2">
@@ -321,7 +321,7 @@
                             <div class="input-group-prepend ml-1">
                                 <div class="input-group-text shadow"><strong>R$</strong></div>
                             </div>
-                            <input type="number"  pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="vl_produto" class="form-control shadow" required>
+                            <input type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="vl_produto" class="form-control shadow" required>
                             </div>
                         </div>
                     </div>

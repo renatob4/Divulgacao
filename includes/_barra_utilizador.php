@@ -52,11 +52,11 @@
         <div class="collapse navbar-collapse p-0 textm" id="navprimary">
             <hr class="mt-1 mb-1" style="border: 0.5px solid white;">
             <ul class="navbar-nav ml-auto mr-2">
-                <li class="nav-item mt-2 mb-2 p-0"><a class="texto-menu mr-2"><a href="?a=home"><label id="grey" class="mr-3">|</label><i class="fas fa-home mr-1"></i></a><label id="grey" class="ml-3 hider">Página Inicial</label></li>
-                <?php if($config[0]['st_product'] == 1):?><li class="nav-item mt-2 mb-2 p-0"><a class="texto-menu mr-2"><a href="?a=produtos"><label id="grey" class="mr-3">|</label><i class="fas fa-shopping-cart mr-1"></i></a><label id="grey" class="ml-3 hider">Produtos</label></li><?php endif;?>
-                <?php if($config[0]['st_service'] == 1):?><li class="nav-item mt-2 mb-2 p-0"><a class="texto-menu mr-2"><a href="?a=servicos"><label id="grey" class="mr-3">|</label><i class="fas fa-wrench mr-1"></i></a><label id="grey" class="ml-3 hider">Serviços</label></li><?php endif;?>
-                <li class="nav-item mt-2 mb-2 p-0"><a class="texto-menu mr-2"><a href="?a=contatos"><label id="grey" class="mr-3">|</label><i class="fas fa-phone mr-1"></i></a><label id="grey" class="ml-3 hider">Fale Conosco</label></li>
-                <?php if($config[0]['st_promotion'] == 1 && $code[0]['lnk_script'] != '' && $code[0]['id_app'] != ''):?><li class="nav-item mt-2 mb-2"><a class="texto-menu mr-2"><a href="?a=promocoes"><label id="grey" class="mr-3">|</label><i class="fas fa-percentage mr-1" style="font-size: 1.1em;"></i></a><label id="grey" class="ml-3 hider">Promoçoes</label></li><?php endif;?>
+                <li class="nav-item mt-2 mb-2 p-0"><a id="it1" href="?a=home" class="texto-menu mr-1"><label class="mr-3 grey">|</label><i class="fas fa-home mr-1"></i></a><label class="ml-2 hider" style="opacity: 0.5;"><a href="?a=home">Página Inicial</a></label></li>
+                <?php if($config[0]['st_product'] == 1):?><li class="nav-item mt-2 mb-2 p-0"><a id="it2" href="?a=produtos" class="texto-menu mr-2"><label class="mr-3 grey">|</label><i class="fas fa-shopping-cart mr-1"></i></a><label class="ml-2 hider" style="opacity: 0.5;"><a href="?a=produtos">Produtos</a></label></li><?php endif;?>
+                <?php if($config[0]['st_service'] == 1):?><li class="nav-item mt-2 mb-2 p-0"><a id="it3" href="?a=servicos" class="texto-menu mr-2"><label class="mr-3 grey">|</label><i class="fas fa-wrench mr-1"></i></a><label class="ml-2 hider" style="opacity: 0.5;"><a href="?a=servicos">Serviços</a></label></li><?php endif;?>
+                <li class="nav-item mt-2 mb-2 p-0"><a id="it4" href="?a=contatos" class="texto-menu mr-2"><label class="mr-3 grey">|</label><i class="fas fa-phone mr-1"></i></a><label class="ml-2 hider" style="opacity: 0.5;"><a href="?a=contatos">Fale Conosco</a></label></li>
+                <?php if($config[0]['st_promotion'] == 1 && $code[0]['lnk_script'] != '' && $code[0]['id_app'] != ''):?><li class="nav-item mt-2 mb-2"><a href="?a=promocoes" class="texto-menu mr-2"><label class="mr-3 grey">|</label><i class="fas fa-percentage mr-1" style="font-size: 1.1em;"></i></a><label class="ml-2 hider" style="opacity: 0.5;"><a href="?a=promocoes">Promoçoes</a></label></li><?php endif;?>
             </ul>
         </div>
     </nav>

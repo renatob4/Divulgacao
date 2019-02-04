@@ -194,20 +194,20 @@
                     <form class="mt-0 pt-0 p-3 line shadow-strong" method="post" action="?a=contatos">
                         <div class="form-goup">
                             <label><b><i id="grey" class="far fa-address-book mr-2"></i>Nome:</b></label>
-                            <input type="text" name="nm_client" class="form-control" required>
+                            <input type="text" name="nm_client" class="form-control" maxlength="50" required>
                         </div>
                         <div class="form-goup mt-4">
                             <label><b><i id="grey" class="fas fa-at mr-2"></i>E-mail:</b></label>
-                            <input type="email" name="ds_email" class="form-control" required>
+                            <input type="email" name="ds_email" class="form-control" maxlength="50" required>
                         </div>
                         <div class="form-row mt-4">
                             <div class="col-md-6 mt-1">
                                 <label><b><i id="grey" class="fab fa-whatsapp mr-2"></i>Telefone/WhatsApp:</b></label>
-                                <input type="tel" name="cd_tel" class="form-control" required>
+                                <input type="tel" name="cd_tel" class="form-control" maxlength="20" required>
                             </div>
                             <div class="col-md-6 mt-1">
                                 <label><b><i id="grey" class="fas fa-exclamation mr-2"></i>Assunto:</b></label>
-                                <select class="form-control" name="ds_subject" required>
+                                <select class="form-control" name="ds_subject" maxlength="20" required>
                                 <optgroup label="Categoria">
                                     <option value="Duvida">Duvida</option>
                                     <option value="Critica">Critica</option>
@@ -226,7 +226,7 @@
                         <div class="form-row mt-4">
                             <div class="col-md-7 mt-2">
                                 <label class=""><b><i id="grey" class="fas fa-question-circle mr-2"></i>Como nos conheceu?</b></label>
-                                <select class="form-control" name="ds_interview" placeholder="Assunto" required>
+                                <select class="form-control" name="ds_interview" placeholder="Assunto" maxlength="50" required>
                                     <optgroup label="Categoria">
                                         <option value="Indicação de um amigo.">Indicação de um amigo.</option>
                                         <option value="Através do facebook ou outra rede social.">Através do facebook ou de outra rede social.</option>

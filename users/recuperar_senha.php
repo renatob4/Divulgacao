@@ -100,7 +100,7 @@
                                         <p>Indique abaixo o e-mail vinculado a sua conta, para onde enviaremos a sua nova senha.</p>
                                     </div>
                                 <div class="form-group">
-                                    <input type="email" name="text_email" class="form-control shadow" placeholder="E-mail" required>
+                                    <input type="email" name="text_email" class="form-control shadow" maxlength="50" placeholder="E-mail" required>
                                 </div>
                                 <div class="form-group text-center">
                                     <a href="?a=home" class="btn btn-primary shadow">Cancelar</a>

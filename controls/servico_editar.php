@@ -133,11 +133,11 @@
                     <div class="form-row mt-2">
                         <div class="col">
                             <label id="black"><b><i id="black" class="fas fa-barcode mr-2"></i>Código:</b></label>
-                            <input type="text" name="edit_cd_s" class="form-control shadow" value="<?php echo $servicos[0]['cd_alternative_service'];?>" title="Defina um código para o serviço" required>
+                            <input type="text" name="edit_cd_s" class="form-control shadow" maxlength="12" value="<?php echo $servicos[0]['cd_alternative_service'];?>" title="Defina um código para o serviço" required>
                         </div>
                         <div class="col">
                             <label id="black"><b>Serviço:</b></label>
-                            <input type="text" name="edit_nm_s" class="form-control shadow" value="<?php echo $servicos[0]['nm_service'];?>" required>
+                            <input type="text" name="edit_nm_s" class="form-control shadow" maxlength="32" value="<?php echo $servicos[0]['nm_service'];?>" required>
                         </div>
                         <div class="col">
                             <label id="black"><i id="black" class="fas fa-money-bill-alt ml-1 mr-2"></i><b>Preço/Valor:</b></label>

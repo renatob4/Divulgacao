@@ -139,7 +139,7 @@
                     <form action="?a=card_editar&card=<?php echo $card[$i]['cd_card']?>" method="POST">
                         <div class="form-goup mt-2">
                             <label><b>Título:</b></label>
-                            <input type="text" name="card_text_titulo" class="form-control" value="<?php echo $card[$i]['ds_title']?>" required>
+                            <input type="text" name="card_text_titulo" class="form-control" maxlength="50" value="<?php echo $card[$i]['ds_title']?>" required>
                         </div>
                         <div class="form-goup mt-2">
                             <label><b>Conteúdo:</b></label>
@@ -226,16 +226,16 @@
         <div class="form-row">
             <div class="col-md-8 mt-1">
                 <label><b><i class="fas fa-star mr-2"></i>Título:</b></label>
-                <input type="text" name="post_text_titulo" class="form-control shadow" required>
+                <input type="text" name="post_text_titulo" maxlength="30" class="form-control shadow" required>
             </div>
             <div class="col-md-4 mt-1">
                 <label><b><i class="fas fa-user mr-2"></i>Autor:</b></label>
-                <input type="text" name="post_text_autor" class="form-control shadow" value="<?php echo $_SESSION['nm_user']?>" required>
+                <input type="text" name="post_text_autor" maxlength="22" class="form-control shadow" value="<?php echo $_SESSION['nm_user']?>" required>
             </div>
         </div>
         <div class="form-goup mt-2">
             <label><b><i class="fas fa-file-alt mr-2"></i>Conteúdo:</b></label>
-            <textarea type="text" name="post_text_content" class="form-control shadow" rows="3" required></textarea>
+            <textarea type="text" name="post_text_content" maxlength="254" class="form-control shadow" rows="3" required></textarea>
         </div>
         <div class="text-right p-0 mr-0 mt-3"><button type="submit" class="btn btn-success shadow">Postar<i class="fas fa-plus-square mr-2 ml-2"></i></button></div>
     </form>

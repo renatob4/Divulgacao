@@ -120,6 +120,9 @@ body{
 .und{
     text-decoration: underline;
 }
+.grey{
+    color:rgb(133, 131, 131);
+}
 #black {
     color: black;
 }

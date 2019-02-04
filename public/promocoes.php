@@ -114,7 +114,7 @@
                         <div class="col pt-2 pb-2 text-center">
                             <form action="?a=promocoes" method="POST">
                                 <label id="lbl" class="title2_pmt" style="color: rgb(110,39,43); opacity: 0.7;"><b>INSIRA SEU NOME:</b></label>
-                                <input id="nmc" class="form-control shadow mr-2" type="text" name="nm_customer" placeholder="Compartilhe para ativar" disabled="true" required>
+                                <input id="nmc" class="form-control shadow mr-2" type="text" name="nm_customer" maxlength="50" placeholder="Compartilhe para ativar" disabled="true" required>
                                 <div class="row mt-2 m-0 p-0">
                                     <div class="col-sm-7 p-0 m-0">
                                         <div id="captcha" class="g-recaptcha cap ds-element" data-sitekey="6LdQZYQUAAAAADpC60g28DqxTeKYX1npukOXTe9L"></div>

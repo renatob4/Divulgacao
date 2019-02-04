@@ -98,13 +98,13 @@
                 <div class="col-sm-4 offset-sm-4 justify-content-center">
                     <div class="form-group">
                         <label><b><i id="grey" class="fas fa-key mr-2"></i>Nova senha:</b></label>
-                        <input type="text" class="form-control shadow" name="text_password_nova_1" title="No mínimo 3 e no máximo 20 caracteres." pattern=".{3,20}" required>
+                        <input type="password" class="form-control shadow" name="text_password_nova_1" title="No mínimo 3 e no máximo 20 caracteres." pattern=".{3,20}" required>
                     </div>
                 </div>
                 <div class="col-sm-4 offset-sm-4 justify-content-center">
                     <div class="form-group">
                         <label><b><i id="grey" class="fas fa-key mr-2"></i>Repetir a nova senha:</b></label>
-                        <input type="text" class="form-control shadow" name="text_password_nova_2" title="No mínimo 3 e no máximo 20 caracteres." pattern=".{3,20}" required>
+                        <input type="password" class="form-control shadow" name="text_password_nova_2" title="No mínimo 3 e no máximo 20 caracteres." pattern=".{3,20}" required>
                     </div>
                 </div>
                 <div class="text-center mb-4">

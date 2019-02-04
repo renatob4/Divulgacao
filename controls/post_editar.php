@@ -77,11 +77,11 @@
                 <div class="form-row">
                         <div class="col-md-8">
                             <label><b><i class="far fa-star mr-2"></i>Título:</b></label>
-                            <input type="text" name="posttext_titulo" class="form-control" value="<?php echo $post[0]['ds_title']?>" required>
+                            <input type="text" name="posttext_titulo" class="form-control" maxlength="30" value="<?php echo $post[0]['ds_title']?>" required>
                         </div>
                         <div class="col-md-4">
                             <label><b><i class="far fa-user mr-2"></i>Autor:</b></label>
-                            <input type="text" name="posttext_autor" class="form-control" value="<?php echo $post[0]['nm_autor']?>" required>
+                            <input type="text" name="posttext_autor" class="form-control" maxlength="22" value="<?php echo $post[0]['nm_autor']?>" required>
                         </div>                      
                     </div>
                 <div class="form-goup mt-2">
@@ -89,7 +89,8 @@
                     <textarea type="text" 
                                 name="posttext_content" 
                                 class="form-control" 
-                                rows="5" 
+                                rows="5"
+                                maxlength="254"
                                 required><?php echo $post[0]['ds_content']?></textarea>
                 </div>
                 <div class="text-right p-0 mr-0 mt-2">

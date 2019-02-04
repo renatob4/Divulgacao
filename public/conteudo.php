@@ -144,7 +144,7 @@
                 <form action="?a=card_editar&card=<?php echo $card[0]['cd_card']?>" method="POST">
                     <div class="form-goup mt-2">
                         <label><b><i class="fas fa-star mr-2"></i>Título:</b></label>
-                        <input type="text" name="cardtext_titulo" class="form-control" value="<?php echo $card[0]['ds_title']?>" required>
+                        <input type="text" name="cardtext_titulo" class="form-control" maxlength="50" value="<?php echo $card[0]['ds_title']?>" required>
                     </div>
                     <div class="form-goup mt-2">
                         <label><b><i class="fas fa-file-alt mr-2"></i>Conteúdo:</b></label>

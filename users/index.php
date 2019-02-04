@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="../css/main.css"/>
 </head>
 <body>
-    <div class="container contentor-global pt-1">
+    <div class="container contentor-global pt-1 borda-g-1">
         <div class="row p-3">
             <div class="col-sm-6 text-center">
                 <img class="img-fluid ml-0 p-0" src="../images/logo.png">

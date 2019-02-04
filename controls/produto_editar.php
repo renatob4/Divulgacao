@@ -157,11 +157,11 @@
                     <div class="form-row mt-2">
                         <div class="col">
                             <label id="black"><b><i id="black" class="fas fa-barcode mr-2"></i>Código:</b></label>
-                            <input type="text" name="edit_cd" class="form-control shadow" value="<?php echo $produtos[0]['cd_alternative_product'];?>" title="Defina um código para o produto" required>
+                            <input type="text" name="edit_cd" class="form-control shadow" maxlength="12" value="<?php echo $produtos[0]['cd_alternative_product'];?>" title="Defina um código para o produto" required>
                         </div>
                         <div class="col">
                             <label id="black"><b>Produto:</b></label>
-                            <input type="text" name="edit_nm" class="form-control shadow" value="<?php echo $produtos[0]['nm_product'];?>" required>
+                            <input type="text" name="edit_nm" class="form-control shadow" maxlength="32" value="<?php echo $produtos[0]['nm_product'];?>" required>
                         </div>
                     </div>
                     <div class="form-row p-0 mt-2">
@@ -194,7 +194,7 @@
                             <div class="input-group-prepend ml-1">
                                 <div class="input-group-text shadow"><strong>R$</strong></div>
                             </div>
-                            <input type="number"  pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="edit_vl" class="form-control shadow" value="<?php echo $produtos[0]['vl_product']*1;?>" required>
+                            <input type="number" pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="edit_vl" class="form-control shadow" value="<?php echo $produtos[0]['vl_product']*1;?>" required>
                             </div>
                         </div>
                     </div>
