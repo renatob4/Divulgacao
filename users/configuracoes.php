@@ -27,31 +27,31 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         //Buscando os valores do form tab_content
-        $empresa = $_POST['form_nm_company'];
+        $empresa = funcoes::TratarCampo($_POST['form_nm_company']);
         //Busca e tratamento do form Apresentação do site
         $apresentacao = $_POST['form_ds_presentation'];
         $apresentacao = str_replace('"', "'", $apresentacao);
 
-        $email = $_POST['form_ds_email'];
-        $doc = $_POST['form_ds_document'];
-        $tel1 = $_POST['form_cd_tel1'];
-        $tel2 = $_POST['form_cd_tel2'];
-        $rodape = $_POST['form_ds_footer'];
-        $activity = $_POST['form_ds_activity'];
+        $email = funcoes::TratarCampo($_POST['form_ds_email']);
+        $doc = funcoes::TratarCampo($_POST['form_ds_document']);
+        $tel1 = funcoes::TratarCampo($_POST['form_cd_tel1']);
+        $tel2 = funcoes::TratarCampo($_POST['form_cd_tel2']);
+        $rodape = funcoes::TratarCampo($_POST['form_ds_footer']);
+        $activity = funcoes::TratarCampo($_POST['form_ds_activity']);
 
         //Buscando os valores do form tab_link
-        $face = $_POST['form_lnk_face'];
-        $twitter = $_POST['form_lnk_twit'];
-        $linkedin = $_POST['form_lnk_link'];
-        $instagram = $_POST['form_lnk_inst'];
-        $olx = $_POST['form_lnk_olx'];
-        $market = $_POST['form_lnk_mark'];
-        $youtube = $_POST['form_lnk_ytb'];
+        $face = funcoes::TratarCampo($_POST['form_lnk_face']);
+        $twitter = funcoes::TratarCampo($_POST['form_lnk_twit']);
+        $linkedin = funcoes::TratarCampo($_POST['form_lnk_link']);
+        $instagram = funcoes::TratarCampo($_POST['form_lnk_inst']);
+        $olx = funcoes::TratarCampo($_POST['form_lnk_olx']);
+        $market = funcoes::TratarCampo($_POST['form_lnk_mark']);
+        $youtube = funcoes::TratarCampo($_POST['form_lnk_ytb']);
 
         //Buscando os valores do form tab_adress
-        $adress = $_POST['form_ds_endereco'];
-        $cidade = $_POST['form_ds_cidade'];
-        $estado = $_POST['form_ds_estado'];
+        $adress = funcoes::TratarCampo($_POST['form_ds_endereco']);
+        $cidade = funcoes::TratarCampo($_POST['form_ds_cidade']);
+        $estado = funcoes::TratarCampo($_POST['form_ds_estado']);
 
         //Buscando dados dos checkboxes
         $check_contact = (isset($_POST['check_contact'])) ? 1 : 0;

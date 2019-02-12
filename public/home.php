@@ -41,7 +41,7 @@
     <?php else:?>
     <div class="col p-0">
     <?php endif;?>
-        <div class="text-center pt-2 pr-3 pl-3 pb-0">
+        <div class="text-center pt-3 pr-3 pl-3 pb-0">
             <h4 class="mb-2 txt-shadow">APRESENTAÇÃO</h4>
             <!-- Dados contidos no campo 'ds_presentation' do banco de dados -->
             <p class="mb-2"><?php echo $conteudo[0]['ds_presentation']?></p>
@@ -121,7 +121,7 @@
     <?php endif;?>
     <div class="panel panel-default text-center espaco-paineis shadow-strong">
         <!-- Titulo carregado direto da base de dados -->
-        <p class="titulo-painel"><i id="gold" class="fas fa-star mr-2"></i><?php echo $card[$i]['ds_title']?></p>
+        <p class="titulo-painel mb-0"><i id="gold" class="fas fa-star mr-2"></i><?php echo $card[$i]['ds_title']?></p>
         <!-- Conteúdo carregado direto da base de dados -->
         <img class="img-fluid alturamax mt-2 mb-2 " src="<?php echo $card[$i]['img_front_card']?>">
         <?php if($card[$i]['img_front_card'] == ''): ?>

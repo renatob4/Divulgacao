@@ -78,6 +78,15 @@
             }
         }
 
+        public static function TratarCampo($var){
+            
+            $var = str_replace('"', "'", $var);
+            $var = str_replace('<', "", $var);
+            $var = str_replace('>', "", $var);
+
+            return $var;
+        }
+
         public static function Paginacao($source, $pagina_atual, $itens_por_pagina, $total_itens){
             //Criar e controlar o mecanismo de paginação e navegação
             $max_paginas = floor($total_itens/$itens_por_pagina);
