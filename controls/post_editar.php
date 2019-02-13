@@ -32,9 +32,9 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
         //Pega os valores do form
         if(isset($_POST['posttext_titulo']) && isset($_POST['posttext_content']) && isset($_POST['posttext_autor'])){
-            $novo_titulo  =  $_POST['posttext_titulo'];
-            $novo_conteudo  =  $_POST['posttext_content'];
-            $novo_autor  =  $_POST['posttext_autor'];
+            $novo_titulo  =  funcoes::TratarCampo($_POST['posttext_titulo']);
+            $novo_conteudo  =  funcoes::TratarCampo($_POST['posttext_content']);
+            $novo_autor  =  funcoes::TratarCampo($_POST['posttext_autor']);
         }
 
         //Atualizar os dados no card no banco

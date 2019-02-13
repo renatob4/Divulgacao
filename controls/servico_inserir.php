@@ -20,10 +20,11 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         //captura dos dados do form
-        $cd_service = strtoupper($_POST['cd_service']);
-        $nm_service = strtoupper($_POST['nm_service']);
-        $vl_service = $_POST['vl_service'];
-        $ds_descricao = $_POST['ds_desc_service'];
+        $cd_service = funcoes::TratarCampo(strtoupper($_POST['cd_service']));
+        $nm_service = funcoes::TratarCampo(strtoupper($_POST['nm_service']));
+        $vl_service = funcoes::TratarCampo($_POST['vl_service']);
+        $ds_descricao = funcoes::TratarCampo($_POST['ds_desc_service']);
+        
         $radio = $_POST['pmtsradio'];
 
         //Verifica se ja existe produto com o mesmo código.

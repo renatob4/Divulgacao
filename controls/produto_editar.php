@@ -41,12 +41,12 @@
     //Veficica se ocorreu um POST
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-        $edit_cd  =  strtoupper($_POST['edit_cd']);
-        $edit_nm  =  strtoupper($_POST['edit_nm']);
-        $edit_cat  =  $_POST['edit_cat'];
-        $edit_un  =  $_POST['edit_un'];
-        $edit_vl  =  $_POST['edit_vl'];
-        $edit_desc  =  $_POST['edit_desc'];
+        $edit_cd  =  funcoes::TratarCampo(strtoupper($_POST['edit_cd']));
+        $edit_nm  =  funcoes::TratarCampo(strtoupper($_POST['edit_nm']));
+        $edit_cat  =  funcoes::TratarCampo($_POST['edit_cat']);
+        $edit_un  =  funcoes::TratarCampo($_POST['edit_un']);
+        $edit_vl  =  funcoes::TratarCampo($_POST['edit_vl']);
+        $edit_desc  =  funcoes::TratarCampo($_POST['edit_desc']);
         $edit_radio  =  $_POST['edit_radio'];
 
         //Atualizar os dados no produto no banco

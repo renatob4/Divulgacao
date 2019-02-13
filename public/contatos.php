@@ -36,12 +36,13 @@
         if ($jsom->success) {
 
             //captura dos dados do formulário.
-            $text_client = $_POST['nm_client'];
-            $text_email = $_POST['ds_email'];
-            $text_tel = $_POST['cd_tel'];
-            $text_subject = $_POST['ds_subject'];
-            $text_message = $_POST['ds_message'];
-            $text_interview = $_POST['ds_interview'];
+            $text_client = funcoes::TratarCampo($_POST['nm_client']);
+            $text_email = funcoes::TratarCampo($_POST['ds_email']);
+            $text_tel = funcoes::TratarCampo($_POST['cd_tel']);
+            $text_subject = funcoes::TratarCampo($_POST['ds_subject']);
+            $text_message = funcoes::TratarCampo($_POST['ds_message']);
+            $text_interview = funcoes::TratarCampo($_POST['ds_interview']);
+
             // Receber emails promocionais SELECT
             $select = $_POST['optradio'];
 

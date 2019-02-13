@@ -39,11 +39,11 @@
 
         //Pega os valores do form
         if(isset($_POST['card_text_titulo']) && isset($_POST['card_text_content'])){
-            $novo_titulo  =  $_POST['card_text_titulo'];
-            $novo_conteudo  =  $_POST['card_text_content'];
+            $novo_titulo  =  funcoes::TratarCampo($_POST['card_text_titulo']);
+            $novo_conteudo  =  funcoes::TratarCampo($_POST['card_text_content']);
         }else{
-            $novo_titulo  =  $_POST['cardtext_titulo'];
-            $novo_conteudo  =  $_POST['cardtext_content'];
+            $novo_titulo  =  funcoes::TratarCampo($_POST['cardtext_titulo']);
+            $novo_conteudo  =  funcoes::TratarCampo($_POST['cardtext_content']);
         } 
 
         //Atualizar os dados no card no banco

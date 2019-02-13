@@ -53,10 +53,11 @@
             }
         }
         if (isset($_GET['cfg']) && $_GET['cfg'] == true) {
+
             //Configuração das promoções.
-            $type_disc = $_POST['type-disc'];
-            $ds_disc = $_POST['ds_disc'];
-            $qt_val = $_POST['qt_val'];
+            $type_disc = funcoes::TratarCampo($_POST['type-disc']);
+            $ds_disc = funcoes::TratarCampo($_POST['ds_disc']);
+            $qt_val = funcoes::TratarCampo($_POST['qt_val']);
 
             $data_att = new DateTime();
 

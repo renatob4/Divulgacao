@@ -20,12 +20,13 @@
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         //captura dos dados do form
-        $cd_produto = strtoupper($_POST['cd_produto']);
-        $nm_produto = strtoupper($_POST['nm_produto']);
-        $ds_unidade = $_POST['ds_unidade'];
-        $cat_produto = $_POST['cat_produto'];
-        $vl_produto = $_POST['vl_produto'];
-        $ds_descricao = $_POST['ds_descricao'];
+        $cd_produto = funcoes::TratarCampo(strtoupper($_POST['cd_produto']));
+        $nm_produto = funcoes::TratarCampo(strtoupper($_POST['nm_produto']));
+        $ds_unidade = funcoes::TratarCampo($_POST['ds_unidade']);
+        $cat_produto = funcoes::TratarCampo($_POST['cat_produto']);
+        $vl_produto = funcoes::TratarCampo($_POST['vl_produto']);
+        $ds_descricao = funcoes::TratarCampo($_POST['ds_descricao']);
+
         //Captura valor do radio selectin de promoções
         $radio = $_POST['pmtradio'];
 

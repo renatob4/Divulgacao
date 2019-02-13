@@ -10,9 +10,9 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-        $titulo  =  $_POST['post_text_titulo'];
-        $autor  =  $_POST['post_text_autor'];
-        $conteudo  =  $_POST['post_text_content'];
+        $titulo  =  funcoes::TratarCampo($_POST['post_text_titulo']);
+        $autor  =  funcoes::TratarCampo($_POST['post_text_autor']);
+        $conteudo  =  funcoes::TratarCampo($_POST['post_text_content']);
 
         //definição de parametros/dados
         $parametros = [

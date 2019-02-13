@@ -330,7 +330,7 @@
                     </div>
                     <div class="text-center"><label class="Obs ml-1 mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe estes campos em branco se não quiser que ele apareçam no Site.</label></div>
                     <div class="form-goup mt-4">
-                        <label><b><i id="grey" class="fas fa-map-marker-alt mr-2"></i>Mapa: <label class="file" id="grey">(Tag do tipo iframe.)</label></b></label>
+                        <label><b><i id="grey" class="fas fa-map-marker-alt mr-2"></i>Mapa: <label class="file" id="grey">(Tag do tipo iframe)</label></b></label>
                         <input type="text" name="form_lnk_map" class="form-control shadow" value="<?php echo $conteudo[0]['lnk_map']?>">
                         <div class="text-center"><label class="Obs mt-1"><i class="fas fa-exclamation-circle mr-2"></i>Obs. Deixe este campo em branco ou desmarque no fim da pagina se não quiser que o mapa apareça no Site.</label></div>
                     </div>
