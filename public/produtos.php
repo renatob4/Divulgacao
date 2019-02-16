@@ -213,8 +213,8 @@
                     <div class="col-md-9 p-0">
                         <div class="row m-0 p-0">
                             <div class="col-sm-9 p-2 prrdiv prbdiv">
-                                <h5><label id="green" class="mr-2"><i class="fas fa-barcode mr-1"></i><?php echo $produto['cd_alternative_product'];?></label><?php echo $produto['nm_product'];?></h5>
-                                <p class="mb-4" id="grey"><?php echo substr($produto['ds_description'], 0, 200)?><a data-toggle="collapse" class="Obs4" href="#<?php echo $produto['cd_alternative_product'];?>" role="button" aria-expanded="false" aria-controls="collapseExample"><i id="grey "class="fas fa-arrow-alt-circle-down ml-2 mr-1"></i>Descrição Completa</a></p>
+                                <h5 class="wrap"><label id="green" class="mr-2"><i class="fas fa-barcode mr-1"></i><?php echo $produto['cd_alternative_product'];?></label><?php echo $produto['nm_product'];?></h5>
+                                <p class="mb-4 wrap" id="grey"><?php echo substr($produto['ds_description'], 0, 200)?><a data-toggle="collapse" class="Obs4" href="#<?php echo $produto['cd_alternative_product'];?>" role="button" aria-expanded="false" aria-controls="collapseExample"><i id="grey "class="fas fa-arrow-alt-circle-down ml-2 mr-1"></i>Descrição Completa</a></p>
                             </div>
                             <div class="col-sm-3 p-2 text-center">
                                 <label id="grey" class="Obs3 mb-0"><label id="black" class="price mr-1 mb-0"><strong>R$ <?php echo number_format($produto['vl_product'],2, ',', '.');?></strong></label>/<?php echo $produto['ds_unity'];?></label>
@@ -229,7 +229,7 @@
                 </div>
                 <div class="collapse" id="<?php echo $produto['cd_alternative_product'];?>">
                     <div class="card brad p-3">
-                        <p class="mb-1" id="green"><?php echo nl2br($produto['ds_description']);?></p>
+                        <p class="mb-1 wrap" id="green"><?php echo nl2br($produto['ds_description']);?></p>
                     </div>
                 </div>
                 <?php if(funcoes::VerificarLogin()):?>

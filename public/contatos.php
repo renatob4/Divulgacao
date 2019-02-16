@@ -133,7 +133,7 @@
                 <div class="col p-4">
                     <h5 id="green" class="text-center mb-3">COMO E ONDE NOS ENCONTRAR</h5><hr>
                     <?php if ($activity[0]['ds_activity'] != '' && $config[0]['st_activity'] == 1):?>
-                    <h5>Estamos prontos para te atender! <?php echo $activity[0]['ds_activity']?></h5>
+                    <h5 class="wrap">Estamos prontos para te atender! <?php echo $activity[0]['ds_activity']?></h5>
                     <?php else:?>
                     <h5>Estamos prontos para te atender!</h5>
                     <?php endif;?>

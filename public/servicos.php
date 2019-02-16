@@ -157,14 +157,14 @@
                                 <label class="service-img text-center m-0"><i id="grey" class="fas fa-wrench mr-1"></i></label>
                             </div>
                             <div class="col-md-10 prbdiv text-left">
-                                <h5><label id="blue" class="mr-2 mt-3"><i class="fas fa-barcode mr-1"></i><?php echo $servico['cd_alternative_service'];?></label><?php echo $servico['nm_service'];?></h5>
+                                <h5 class="wrap"><label id="blue" class="mr-2 mt-3"><i class="fas fa-barcode mr-1"></i><?php echo $servico['cd_alternative_service'];?></label><?php echo $servico['nm_service'];?></h5>
                                 <?php if($servico['st_promotion'] == 1):?>
                                 <i id="gold" class="fas fa-star mr-2 star-s"></i>
                                 <?php endif;?>
                             </div>
                         </div>
                         <div class="row p-3">
-                            <p class="mb-1" id="black"><?php echo nl2br($servico['ds_description']);?></p>
+                            <p class="mb-1 wrap" id="black"><?php echo nl2br($servico['ds_description']);?></p>
                         </div>
                     </div>
                     <div class="col-md-3 card p-2 min-hgt text-center">

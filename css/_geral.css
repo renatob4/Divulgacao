@@ -13,6 +13,9 @@ body{
     background-color: white;
     padding: 15px;
 }
+.wrap{
+    word-wrap: break-word;
+}
 .borda{
     border: 1px solid red;
 }

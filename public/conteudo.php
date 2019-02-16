@@ -102,8 +102,8 @@
 <div class="row mr-1 ml-1 mt-2 borda-painel shadow-strong">
     <div class="col p-0">
         <div class="card p-2">
-            <div><h6 class="text-right" id="grey"><i class="far fa-clock mr-2"></i><?php echo $card[0]['dt_updated']?></h6><h4 class="text-center"><i id="gold" class="fas fa-star mr-2"></i><?php echo $card[0]['ds_title']?></h4></div>
-            <div class="card text-center p-3 m-3 mb-5 shadow"><p><?php echo $card[0]['ds_content']?></p>
+            <div><h6 class="text-right" id="grey"><i class="far fa-clock mr-2"></i><?php echo $card[0]['dt_updated']?></h6><h4 class="text-center wrap"><i id="gold" class="fas fa-star mr-2"></i><?php echo $card[0]['ds_title']?></h4></div>
+            <div class="card text-center p-3 m-3 mb-5 shadow"><p class="wrap"><?php echo $card[0]['ds_content']?></p>
                 <!-- Mostra a imagem no corpo se ela existir ====================================================-->
                 <?php if ($card[0]['img_card'] != ''):?>
                 <div class="pb-0 pl-3 pr-3"><img class="img-fluid shadow-strong" src="<?php echo $card[0]['img_card']?>"></div>

@@ -15,7 +15,7 @@
             <div class="ml-1">
                 <p><strong><?php echo $conteudo[0]['nm_company']?></strong> &copy; |<i class="fas fa-envelope ml-2 mr-2"></i><a href="mailto:<?php echo $conteudo[0]['ds_email']?>"><?php echo $conteudo[0]['ds_email']?></a></p>
                 <h3 class="mb-3">Sobre nossa empresa</h3>
-                <p><?php echo $conteudo[0]['ds_text_footer']?></p>
+                <p class="wrap"><?php echo $conteudo[0]['ds_text_footer']?></p>
                 <!-- DOCUMENTO DA EMPRESA -->
                 <?php if ($conteudo[0]['ds_document'] != '' && $config[0]['st_document'] == 1):?>
                     <div class="text-left mt-4">

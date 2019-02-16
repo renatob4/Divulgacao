@@ -44,7 +44,7 @@
         <div class="text-center pt-3 pr-3 pl-3 pb-0">
             <h4 class="mb-2 txt-shadow">APRESENTAÇÃO</h4>
             <!-- Dados contidos no campo 'ds_presentation' do banco de dados -->
-            <p class="mb-2"><?php echo $conteudo[0]['ds_presentation']?></p>
+            <p class="wrap mb-2"><?php echo $conteudo[0]['ds_presentation']?></p>
             <!-- Mostra a imagem no corpo da apresentação se ela existir -->
             <?php if ($img[0]['img_body'] != ''):?>
             <img class="img-fluid shadow-strong mt-2" src="<?php echo $img[0]['img_body']?>">
@@ -121,11 +121,11 @@
     <?php endif;?>
     <div class="panel panel-default text-center espaco-paineis shadow-strong">
         <!-- Titulo carregado direto da base de dados -->
-        <p class="titulo-painel mb-0"><i id="gold" class="fas fa-star mr-2"></i><?php echo $card[$i]['ds_title']?></p>
+        <p class="titulo-painel wrap mb-0"><i id="gold" class="fas fa-star mr-2"></i><?php echo $card[$i]['ds_title']?></p>
         <!-- Conteúdo carregado direto da base de dados -->
         <img class="img-fluid alturamax mt-2 mb-2 " src="<?php echo $card[$i]['img_front_card']?>">
         <?php if($card[$i]['img_front_card'] == ''): ?>
-        <div class="conteudo-baixo mb-3"><div><?php echo substr($card[$i]['ds_content'], 0, 192)?></div></div>
+        <div class="conteudo-baixo wrap mb-3"><div><?php echo substr($card[$i]['ds_content'], 0, 192)?></div></div>
         <?php else:?>
         <div class="mb-3"><div><?php echo substr($card[$i]['ds_content'], 0, 192)?></div></div>
         <?php endif;?>
@@ -212,7 +212,7 @@
                             <?php endif;?></h6></div>                    
                             <div id="grey" class="col text-right mr-1"><h6><i class="far fa-clock mr-2"></i><?php echo $post[$x]['dt_register']?></h6></div>                               
                         </div><hr class="mb-1 mt-0">
-                        <p><?php echo $post[$x]['ds_content']?></p>
+                        <p class="wrap"><?php echo $post[$x]['ds_content']?></p>
                     </div>
                 </div>
                 <?php endfor;?>
