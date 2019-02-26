@@ -220,7 +220,7 @@
                             <input type="text" name="nm_service" class="form-control shadow" maxlength="32" required>
                         </div>
                         <div class="col">
-                            <label id="black"><i id="black" class="fas fa-money-bill-alt ml-1 mr-2"></i><b>Preço/Valor:</b></label>
+                            <label id="black"><i id="black" class="fas fa-money-bill-alt ml-1 mr-2"></i><b>Preço:</b></label>
                             <div class="input-group">
                             <div class="input-group-prepend ml-1"><div class="input-group-text shadow"><strong>R$</strong></div></div>
                             <input type="number"  pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="vl_service" class="form-control shadow" required>
