@@ -19,7 +19,7 @@
     $parametros = [
         ':cd_product'   =>  $cd_produto
     ];
-    $result = $acesso->EXE_QUERY('SELECT * FROM tab_product WHERE cd_product = :cd_product', $parametros);
+    $result = $acesso->EXE_QUERY('SELECT cd_alternative_product, img_product FROM tab_product WHERE cd_product = :cd_product', $parametros);
 
     //Se não existir card de mesmo codigo na base ele encerra.
     if(count($result) == 0){

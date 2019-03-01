@@ -19,7 +19,7 @@
     $parametros = [
         ':cd_service'   =>  $cd_service
     ];
-    $result = $acesso->EXE_QUERY('SELECT * FROM tab_service WHERE cd_service = :cd_service', $parametros);
+    $result = $acesso->EXE_QUERY('SELECT cd_alternative_service FROM tab_service WHERE cd_service = :cd_service', $parametros);
 
     //Se não existir card de mesmo codigo na base ele encerra.
     if(count($result) == 0){

@@ -23,8 +23,10 @@
                         <label id="green"><strong>CNPJ:</strong> <?php echo $conteudo[0]['ds_document']?></label>
                     </div>
                 <?php endif;?>
-                <label id="grey" class="mr-1 mt-4">Developed by. <a href="mailto:renato.rodrigues_costa@hotmail.com">Renato Rodrigues</a></label>
-                <a href="https://www.linkedin.com/in/renato-rodrigues-da-costa-82599198/" target="_blank"><i class="fab fa-linkedin ml-1" style="font-size: 1.2em;"></i></a>
+                <div class="opct">
+                    <label id="grey" class="mr-1 mt-4">Developed by. <a href="mailto:renato.rodrigues_costa@hotmail.com">Renato Rodrigues</a></label>
+                    <a href="https://www.linkedin.com/in/renato-rodrigues-da-costa-82599198/" target="_blank"><i class="fab fa-linkedin ml-1" style="font-size: 1.2em;"></i></a>
+                </div>
             </div>
         </div>
         <!-- LINKS SOCIAIS -->

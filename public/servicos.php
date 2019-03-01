@@ -122,7 +122,7 @@
                             </select>
                         </div>
                         <div class="col-md-4 p-1 pr-2 pl-2">
-                            <label id="black" class="Obs3 mb-1 ml-1">Por uma palavra chave:</b></label>
+                            <label id="black" class="Obs3 mb-0 ml-1">Por uma palavra chave:</b></label>
                             <div class="form-inline">
                                 <input type="search" class="form-control shadow mb-1" name="texto_pesquisa" placeholder="Pesquisar" value="<?php echo (isset($_SESSION['texto_pesquisa'])) ? $_SESSION['texto_pesquisa'] : ''; ?>">
                                 <button class="btn btn-primary pr-3 pl-3 p-2 mb-1 ml-3 mr-2 shadow"><i class="fa fa-search"></i></button>
@@ -219,8 +219,10 @@
                             <label id="black"><b>Serviço:</b></label>
                             <input type="text" name="nm_service" class="form-control shadow" maxlength="32" required>
                         </div>
+                    </div>
+                    <div class="form-row mt-2">
                         <div class="col">
-                            <label id="black"><i id="black" class="fas fa-money-bill-alt ml-1 mr-2"></i><b>Preço:</b></label>
+                            <label id="black"><i id="black" class="fas fa-money-bill-alt ml-1 mr-2"></i><b>Preço/Valor:</b></label>
                             <div class="input-group">
                             <div class="input-group-prepend ml-1"><div class="input-group-text shadow"><strong>R$</strong></div></div>
                             <input type="number"  pattern="[0-9]+([,\.][0-9]+)?" min="0" step="any" name="vl_service" class="form-control shadow" required>

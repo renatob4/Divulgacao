@@ -129,12 +129,18 @@
                 
             }else{
                 $mensagem = 'Erro ao salvar o arquivo. Aparentemente você não tem permissão de escrita.<br />';
+                //Log
+                funcoes::CriarLOG(''.$mensagem , $_SESSION['nm_user']);
             }
         }else{
             $mensagem = 'Você poderá enviar apenas arquivos "*.jpg;*.jpeg;*.gif;*.png"<br/>';
+            //Log
+            funcoes::CriarLOG(''.$mensagem , $_SESSION['nm_user']);
         }
     }else{
         $mensagem = 'Você não enviou nenhum arquivo!';
+        //Log
+        funcoes::CriarLOG(''.$mensagem , $_SESSION['nm_user']);
     }
 
     if($sender == 'product'){

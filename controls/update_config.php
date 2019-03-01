@@ -15,7 +15,7 @@
     //Instancia do banco de dados.
     $acesso = new cl_gestorBD();  
     $data = new DateTime();
-    $config = $acesso->EXE_QUERY('SELECT * FROM tab_config');
+    $config = $acesso->EXE_QUERY('SELECT cd_config FROM tab_config');
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 

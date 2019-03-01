@@ -7,7 +7,7 @@
     //Instancia do banco de dados.
     $acesso = new cl_gestorBD();
     $data = new DateTime();
-    $config = $acesso->EXE_QUERY('SELECT * FROM tab_config');
+    $config = $acesso->EXE_QUERY('SELECT st_product FROM tab_config');
 
     if($config[0]['st_product'] == 0){
         //header("Location:?a=home");

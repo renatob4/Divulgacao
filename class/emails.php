@@ -1,11 +1,10 @@
 <?php 
 // =================================== CLASSE DE ENVIO DE EMAILS ====================================
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
+    use PHPMailer\PHPMailer\PHPMailer;
+    use PHPMailer\PHPMailer\Exception;
 
     class emails{
         
-        // =========================================================
         public function EnviarEmail($dados){
 
             // dados[0] = endereço de email do destinatário
@@ -55,7 +54,6 @@ use PHPMailer\PHPMailer\Exception;
             // dados[1] = assunto
             // dados[2] = mensagem
             // dados[3] = nome do cliente
-
             require 'phpmailer/src/Exception.php';
             require 'phpmailer/src/PHPMailer.php';
             require 'phpmailer/src/SMTP.php';

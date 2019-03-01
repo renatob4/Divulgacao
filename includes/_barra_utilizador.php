@@ -32,7 +32,7 @@
             <div class="navbar-brand dropdown m-0 mt-1">
                 <span class="mr-2"><i id="green" class="fa fa-user mr-2"></i><?php echo $nome_utilizador?></span>
                 <button class="btn btn-secondary dropdown-toggle mr-1 shadow" type="button" id="d1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-cog"></i></button>
-                <div class="dropdown-menu" aria-labelledby="d1">
+                <div class="dropdown-menu shadow-strong" aria-labelledby="d1">
                     <div class="text-center"><a class="dropdown-item" href="?a=configuracoes"><strong>Configurações</strong></a></div>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="?a=promocoes_config"><i id="green" class="fas fa-percentage mr-2"></i>Cfg Promoções</a>

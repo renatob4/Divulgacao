@@ -170,9 +170,9 @@
                             </select>
                         </div>
                         <div class="col-md-4 p-1 pr-2 pl-2">
-                            <label id="black" class="Obs3 mb-1 ml-1">Por uma palavra chave:</b></label>
+                            <label id="black" class="Obs3 mb-0 ml-1">Por uma palavra chave:</b></label>
                             <div class="form-inline">
-                                <input type="search" class="form-control shadow  mb-1" name="text_pesquisa" placeholder="Pesquisar" value="<?php echo (isset($_SESSION['texto_pesquisa'])) ? $_SESSION['texto_pesquisa'] : ''; ?>">
+                                <input type="search" class="form-control shadow mb-1" name="text_pesquisa" placeholder="Pesquisar" value="<?php echo (isset($_SESSION['texto_pesquisa'])) ? $_SESSION['texto_pesquisa'] : ''; ?>">
                                 <button class="btn btn-primary pr-3 pl-3 p-2 mb-1 ml-3 mr-2 shadow"><i class="fa fa-search"></i></button>
                                 <a href="?a=produtos&clear=true" class="btn btn-secondary pr-3 pl-3 p-2 mb-1 shadow"><i class="fa fa-times"></i></a>
                             </div>

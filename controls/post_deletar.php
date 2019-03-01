@@ -19,7 +19,7 @@
     $parametros = [
         ':cd_post'   =>  $cd_post
     ];
-    $result = $acesso->EXE_QUERY('SELECT * FROM tab_post WHERE cd_post = :cd_post', $parametros);
+    $result = $acesso->EXE_QUERY('SELECT ds_title FROM tab_post WHERE cd_post = :cd_post', $parametros);
     
     //Se não existir card de mesmo codigo na base ele encerra.
     if(count($result) == 0){

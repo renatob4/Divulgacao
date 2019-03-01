@@ -307,6 +307,9 @@ body{
     font-weight: bold;
     top: 0px;
 }
+.opct{
+    opacity: 0.60;
+}
 .ds-element {
     opacity: 0.60;
     pointer-events: none;

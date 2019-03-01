@@ -3,7 +3,6 @@
     if(!isset($_SESSION['a'])){
         exit();
     }
-
     //Instancia do Banco
     $gestor = new cl_gestorBD();
     $data = new DateTime();

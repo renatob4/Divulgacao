@@ -22,7 +22,7 @@
         $parametros = [
             ':img_body' => $img
         ];
-        $path = $acesso->EXE_QUERY('SELECT * FROM tab_imagem WHERE img_body = :img_body', $parametros);
+        $path = $acesso->EXE_QUERY('SELECT cd_img, img_body FROM tab_imagem WHERE img_body = :img_body', $parametros);
         //Verifica no banco se retornou resultado.
         if(count($path) == 0){
             $erro = true;
@@ -53,7 +53,7 @@
             $parametros = [
                 ':img_front_card' => $img
             ];
-            $path = $acesso->EXE_QUERY('SELECT * FROM tab_card WHERE img_front_card = :img_front_card', $parametros);
+            $path = $acesso->EXE_QUERY('SELECT cd_card, img_front_card FROM tab_card WHERE img_front_card = :img_front_card', $parametros);
             //Verifica no banco se retornou resultado.
             if(count($path) == 0){
                 $erro = true;
@@ -66,6 +66,7 @@
                     ':dt_updated'       => $data->format('Y-m-d H:i:s')
                 ];
                 $acesso->EXE_NON_QUERY('UPDATE tab_card SET img_front_card = :img_front_card, dt_updated = :dt_updated WHERE cd_card = :cd_card', $parametros);
+                
                 //Apaga a imagem do diretório.
                 unlink("./".$img);
 
@@ -76,7 +77,7 @@
             $parametros = [
                 ':img_card' => $img
             ];
-            $path = $acesso->EXE_QUERY('SELECT * FROM tab_card WHERE img_card = :img_card', $parametros);
+            $path = $acesso->EXE_QUERY('SELECT cd_card, img_card FROM tab_card WHERE img_card = :img_card', $parametros);
             //Verifica no banco se retornou resultado.
             if(count($path) == 0){
                 $erro = true;
@@ -89,6 +90,7 @@
                     ':dt_updated'       => $data->format('Y-m-d H:i:s')
                 ];
                 $acesso->EXE_NON_QUERY('UPDATE tab_card SET img_card = :img_card, dt_updated = :dt_updated WHERE cd_card = :cd_card', $parametros);
+               
                 //Apaga a imagem do diretório.
                 unlink("./".$img);
 
@@ -105,7 +107,8 @@
         $parametros = [
             ':img_product' => $img
         ];
-        $path = $acesso->EXE_QUERY('SELECT * FROM tab_product WHERE img_product = :img_product', $parametros);
+        $path = $acesso->EXE_QUERY('SELECT cd_product, img_product FROM tab_product WHERE img_product = :img_product', $parametros);
+        
         //Verifica no banco se retornou resultado.
         if(count($path) == 0){
             $erro = true;
@@ -114,10 +117,11 @@
             //Atualiza o banco com o nome vazio da imagem.
             $parametros = [
                 ':cd_product'       => $path[0]['cd_product'],
-                ':img_product'         =>  '',
+                ':img_product'      =>  '',
                 ':dt_updated'       => $data->format('Y-m-d H:i:s')
             ];
             $acesso->EXE_NON_QUERY('UPDATE tab_product SET img_product = :img_product, dt_updated = :dt_updated WHERE cd_product = :cd_product', $parametros);
+            
             //Apaga a imagem do diretório.
             unlink("./".$img);
 

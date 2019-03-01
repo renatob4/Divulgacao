@@ -27,16 +27,17 @@
     if(count($post) == 0){
         //header("Location:?a=home");
         echo('<meta http-equiv="refresh" content="0;URL=?a=configuracoes">');
+        exit();
     }
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
+
         //Pega os valores do form
         if(isset($_POST['posttext_titulo']) && isset($_POST['posttext_content']) && isset($_POST['posttext_autor'])){
             $novo_titulo  =  funcoes::TratarCampo($_POST['posttext_titulo']);
             $novo_conteudo  =  funcoes::TratarCampo($_POST['posttext_content']);
             $novo_autor  =  funcoes::TratarCampo($_POST['posttext_autor']);
         }
-
         //Atualizar os dados no card no banco
         $parametros = [
             ':cd_post'      =>  $cd_post,
