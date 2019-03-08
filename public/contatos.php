@@ -81,7 +81,7 @@
 
                 if(count($dados) == 0){
                     $parametros = [
-                        ':nm_prospect'         => $text_client,
+                        ':nm_prospect'         => strtoupper($text_client),
                         ':ds_email'            => $text_email,
                         ':cd_phone'            => $text_tel,
                         ':ds_channel'          => $text_interview,

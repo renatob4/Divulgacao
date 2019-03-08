@@ -3,3 +3,5 @@ Disallow: /setup/
 Disallow: /users/
 Disallow: /controls/
 Disallow: /includes/
+Disallow: /phpmailer/
+Disallow: /class/

@@ -6,6 +6,7 @@
     if(!isset($_SESSION['a'])){
         exit();
     }
+    
     $classe = 'barra_utilizador_inativo';
     //vefifica se existe login ativo
     if(funcoes::VerificarLogin()){
@@ -17,10 +18,10 @@
     $acesso = new cl_gestorBD();
     
     //busca o conteúdo da pagina no banco de dados.
-    $prospects = $acesso->EXE_QUERY('SELECT * FROM tab_prospect');
-    $conteudo = $acesso->EXE_QUERY('SELECT * FROM tab_content');
-    $config = $acesso->EXE_QUERY('SELECT * FROM tab_config');
-    $code = $acesso->EXE_QUERY('SELECT * FROM tab_code');
+    //$prospects = $acesso->EXE_QUERY('SELECT * FROM tab_prospect');
+    //$conteudo = $acesso->EXE_QUERY('SELECT * FROM tab_content');
+    $config = $acesso->EXE_QUERY('SELECT st_product, st_service, st_promotion FROM tab_config');
+    $code = $acesso->EXE_QUERY('SELECT lnk_script, id_app FROM tab_code');
 ?>
 <div class="barra_utilizador navbar-fixed-top">
     <nav class="navbar navbar-expand-sm p-0 mr-2 ml-1">
