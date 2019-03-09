@@ -11,7 +11,7 @@ if(divresult != null){
         $("#resultado").hide();
     }, 10000);
     //Da foco no resultado.
-    window.location.hash = '#resultado';
+    //window.location.hash = '#resultado';
 }
 
 //Script de acesso á API do facebook para receber resposta de compartilhamentos.

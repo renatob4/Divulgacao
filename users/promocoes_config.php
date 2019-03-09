@@ -144,7 +144,7 @@
                             <label><b><i id="grey" class=""></i>Tipo do desconto:</b></label>
                             <select id="type" class="form-control" name="type-disc" required>
                                 <optgroup label="Tipo">
-                                    <option value="pc" <?php echo $promotion[0]['ds_type'] == 'pc' ? 'selected' : '';?>>Porcentagem (Recomendado)</option>
+                                    <option value="pc" <?php echo $promotion[0]['ds_type'] == 'pc' ? 'selected' : '';?>>Porcentagem</option>
                                     <option value="vl" <?php echo $promotion[0]['ds_type'] == 'vl' ? 'selected' : '';?>>Valor Fixo</option>
                                 </optgroup>
                             </select>

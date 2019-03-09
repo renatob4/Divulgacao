@@ -6,7 +6,7 @@
 
     //Instancia do banco de dados.
     $acesso = new cl_gestorBD();
-    $config = $acesso->EXE_QUERY('SELECT * FROM tab_config');
+    $config = $acesso->EXE_QUERY('SELECT st_service, ss_amount, ss_relevance FROM tab_config');
 
     if($config[0]['st_service'] == 0){
         //header("Location:?a=home");

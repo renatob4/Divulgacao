@@ -11,10 +11,10 @@
     $erro = false;
     $mensagem = "";
 
-    $config = $acesso->EXE_QUERY('SELECT * FROM tab_config');
-    $code = $acesso->EXE_QUERY('SELECT * FROM tab_code');
-    $promotion = $acesso->EXE_QUERY('SELECT * FROM tab_promotion');
-    $cupom = $acesso->EXE_QUERY('SELECT * FROM tab_cupom');
+    $config = $acesso->EXE_QUERY('SELECT st_promotion FROM tab_config');
+    $code = $acesso->EXE_QUERY('SELECT lnk_script, id_app FROM tab_code');
+    $promotion = $acesso->EXE_QUERY('SELECT qt_days, ds_type, ds_discount FROM tab_promotion');
+    //$cupom = $acesso->EXE_QUERY('SELECT * FROM tab_cupom');
 
     if($config[0]['st_promotion'] == 0){
         //header("Location:?a=home");

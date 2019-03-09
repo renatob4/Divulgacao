@@ -3,13 +3,16 @@
     if (!isset($_SESSION['a'])) {
         exit();
     }
+
     //Instancia do banco de dados.
     $acesso = new cl_gestorBD();
+
     //busca o conteúdo da pagina no banco de dados.
-    $conteudo = $acesso->EXE_QUERY('SELECT * FROM tab_content');
+    $conteudo = $acesso->EXE_QUERY('SELECT ds_email, cd_phone_1, cd_phone_2 FROM tab_content');
     $link = $acesso->EXE_QUERY('SELECT * FROM tab_link');
-    $endereco = $acesso->EXE_QUERY('SELECT * FROM tab_adress');
-    $activity = $acesso->EXE_QUERY('SELECT * FROM tab_activity');
+    $endereco = $acesso->EXE_QUERY('SELECT ds_adress, ds_city, cd_uf FROM tab_adress');
+    $activity = $acesso->EXE_QUERY('SELECT ds_activity FROM tab_activity');
+    $config = $acesso->EXE_QUERY('SELECT st_adress, st_activity FROM tab_config');
 
     $resposta = false;
 
@@ -47,6 +50,7 @@
             $select = $_POST['optradio'];
 
             //======================================================================================
+
             $email = new emails();
             //preparação dos dados e do corpo do email.
             $temp = [
@@ -68,6 +72,7 @@
             ];
             //enviar o email
             $resposta = $email->EnviarMensagem($temp);
+
             //======================================================================================
             
             // Procedimento interno para armazenar clientes prospects no banco.
@@ -77,7 +82,7 @@
                 $parametros = [
                     ':ds_email'    => $text_email
                 ];
-                $dados = $acesso->EXE_QUERY('SELECT * FROM tab_prospect WHERE ds_email = :ds_email', $parametros);
+                $dados = $acesso->EXE_QUERY('SELECT nm_prospect FROM tab_prospect WHERE ds_email = :ds_email', $parametros);
 
                 if(count($dados) == 0){
                     $parametros = [
@@ -118,6 +123,8 @@
             }
 
         } else {
+            //Log
+            funcoes::CriarLOG('Submeteu sem o recaptcha.', 'Cliente');
             $_SESSION['resultado'] = "Por gentileza, resolva o reCaptcha para sabermos que você não é um robô.";
             //header("Location:?a=home");
             echo('<meta http-equiv="refresh" content="0;URL=?a=contatos">');

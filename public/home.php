@@ -6,12 +6,12 @@
     //Instancia do banco de dados.
     $acesso = new cl_gestorBD();
     //busca o conteúdo da pagina no banco de dados.
-    $conteudo = $acesso->EXE_QUERY('SELECT * FROM tab_content');
+    $conteudo = $acesso->EXE_QUERY('SELECT ds_presentation, cd_phone_1, cd_phone_2, lnk_map FROM tab_content');
     $card = $acesso->EXE_QUERY('SELECT * FROM tab_card');
     $post = $acesso->EXE_QUERY('SELECT * FROM tab_post');
-    $img = $acesso->EXE_QUERY('SELECT * FROM tab_imagem');
+    $img = $acesso->EXE_QUERY('SELECT img_panel, img_body FROM tab_imagem');
     $code = $acesso->EXE_QUERY('SELECT * FROM tab_code');
-    $config = $acesso->EXE_QUERY('SELECT * FROM tab_config');
+    $config = $acesso->EXE_QUERY('SELECT st_map, st_contact, st_map, st_card, st_post, st_comment FROM tab_config');
 ?>
 <!-- Imagem de apresentação do site -->
 <div class="row mt-0 mr-1 ml-1 mt-2">
