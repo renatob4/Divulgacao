@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <meta name="author" content="Renato Rodrigues da Costa">
-        <meta name="description" content="Site de divulgação de pequena empresa/negócio.">
+        <meta name="description" content="Site de divulgação de pequena empresa/negócio. 156 caracteres">
         <meta name="keywords" content="divulgação, conheça, palavras, chave">
         <meta name="robots" content="index">
         <!-- Tags do facebook -->

@@ -15,11 +15,11 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item mt-2 mb-2"><a class="texto-menu mr-2" href="?a=home"><i class="fas fa-home mr-1"></i>INICIO</a></li>
-                    <?php if($config[0]['st_product'] == 1):?><li class="nav-item mt-2 mb-2"><a class="texto-menu mr-2" href="?a=produtos"><i class="fas fa-shopping-cart mr-1"></i>PRODUTOS</a></li><?php endif;?>
-                    <?php if($config[0]['st_service'] == 1):?><li class="nav-item mt-2 mb-2"><a class="texto-menu mr-2" href="?a=servicos"><i class="fas fa-wrench mr-1"></i>SERVIÇOS</a></li><?php endif;?>
-                    <li class="nav-item mt-2 mb-2"><a class="texto-menu mr-2" href="?a=contatos"><i class="fas fa-phone mr-1"></i>CONTATOS</a></li>
-                    <?php if($config[0]['st_promotion'] == 1 && $code[0]['lnk_script'] != '' && $code[0]['id_app'] != ''):?><li class="nav-item mt-2 mb-2"><a class="texto-menu mr-2" href="?a=promocoes"><i class="fas fa-percentage mr-1"></i>PROMOÇÕES</a></li><?php endif;?>
+                    <li class="nav-item mt-2 mb-2"><a class="texto-menu mr-2" href="?a=home" title="Página Inicial."><i class="fas fa-home mr-1"></i>INICIO</a></li>
+                    <?php if($config[0]['st_product'] == 1):?><li class="nav-item mt-2 mb-2"><a class="texto-menu mr-2" href="?a=produtos" title="Nossos produtos."><i class="fas fa-shopping-cart mr-1"></i>PRODUTOS</a></li><?php endif;?>
+                    <?php if($config[0]['st_service'] == 1):?><li class="nav-item mt-2 mb-2"><a class="texto-menu mr-2" href="?a=servicos" title="Nossos serviços."><i class="fas fa-wrench mr-1"></i>SERVIÇOS</a></li><?php endif;?>
+                    <li class="nav-item mt-2 mb-2"><a class="texto-menu mr-2" href="?a=contatos" title="Nossos contatos."><i class="fas fa-phone mr-1"></i>CONTATOS</a></li>
+                    <?php if($config[0]['st_promotion'] == 1 && $code[0]['lnk_script'] != '' && $code[0]['id_app'] != ''):?><li class="nav-item mt-2 mb-2"><a class="texto-menu mr-2" href="?a=promocoes" title="Nossas promoções."><i class="fas fa-percentage mr-1"></i>PROMOÇÕES</a></li><?php endif;?>
                 </ul>
             </div>
         </nav>
