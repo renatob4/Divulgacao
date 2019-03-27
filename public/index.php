@@ -14,7 +14,7 @@
     <div class="container contentor-global pt-1 borda-g-1">
         <div class="row p-3">
             <div class="col-sm-6 text-center">
-                <figure><img class="img-fluid ml-0 p-0" src="../images/logo.png"></figure>
+                <img class="img-fluid ml-0 p-0" src="../images/logo.png">
             </div>
             <div class="col-sm-6  text-center mt-2">
             <h3>Olá, está perdido visitante? <label id="grey" style="font-weight: normal"><?php echo "$_SERVER[REMOTE_ADDR]" ?></label></h3>

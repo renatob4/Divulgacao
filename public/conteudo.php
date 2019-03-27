@@ -106,7 +106,7 @@
             <div class="card text-center p-3 m-3 mb-5 shadow"><p class="wrap"><?php echo $card[0]['ds_content']?></p>
                 <!-- Mostra a imagem no corpo se ela existir ====================================================-->
                 <?php if ($card[0]['img_card'] != ''):?>
-                <div class="pb-0 pl-3 pr-3"><figure><img class="img-fluid shadow-strong" src="<?php echo $card[0]['img_card']?>"></figure></div>
+                <div class="pb-0 pl-3 pr-3"><img class="img-fluid shadow-strong" src="<?php echo $card[0]['img_card']?>"></div>
                 <?php endif;?>
                 <?php if (funcoes::VerificarLogin()):?>
                 <div class="row mt-2 mb-0">

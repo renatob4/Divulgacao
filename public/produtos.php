@@ -207,7 +207,7 @@
                         <?php if($produto['img_product'] == ''):?>
                         <label class="product-img text-center m-0"><i id="grey" class="fas fa-shopping-cart"></i></label>
                         <?php else:?>
-                        <div class="p-2 text-center"><figure><img class="img-fluid pdimg-size" src="<?php echo $produto['img_product']?>"></figure></div>
+                        <div class="p-2 text-center"><img class="img-fluid pdimg-size" src="<?php echo $produto['img_product']?>"></div>
                         <?php endif;?>
                     </div>
                     <div class="col-md-9 p-0">

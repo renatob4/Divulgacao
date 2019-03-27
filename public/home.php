@@ -15,9 +15,9 @@
 ?>
 <!-- Imagem de apresentação do site -->
 <div class="row mt-0 mr-1 ml-1 mt-2">
-    <figure>
+    
         <img class="img-fluid imagem-painel shadow-strong" src="<?php echo $img[0]['img_panel']?>">
-    </figure>
+    
     <?php if (funcoes::VerificarLogin()):?>
     <div>
         <form class="p-0 m-0 mt-2" action="?a=recebe_imagem&sender=panel" method="post" enctype="multipart/form-data">
@@ -50,9 +50,9 @@
                 <p class="wrap mb-2"><?php echo $conteudo[0]['ds_presentation']?></p>
                 <!-- Mostra a imagem no corpo da apresentação se ela existir -->
                 <?php if ($img[0]['img_body'] != ''):?>
-                <figure>
+                
                     <img class="img-fluid shadow-strong mt-2" src="<?php echo $img[0]['img_body']?>">
-                </figure>
+                
                 <?php endif;?>
                 <?php if (funcoes::VerificarLogin()):?>
                 <div class="row mt-2 mb-0">
@@ -128,9 +128,9 @@
             <!-- Titulo carregado direto da base de dados -->
             <p class="titulo-painel wrap mb-0"><i id="gold" class="fas fa-star mr-2"></i><?php echo $card[$i]['ds_title']?></p>
             <!-- Conteúdo carregado direto da base de dados -->
-            <figure>
+            
                 <img class="img-fluid alturamax mt-2 mb-2 " src="<?php echo $card[$i]['img_front_card']?>">
-            </figure>
+            
             <?php if($card[$i]['img_front_card'] == ''): ?>
             <div class="conteudo-baixo wrap mb-3"><div><?php echo substr($card[$i]['ds_content'], 0, 192)?></div></div>
             <?php else:?>

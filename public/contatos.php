@@ -269,7 +269,7 @@
                     </form>
                 </div>
                 <div class="col-md-4 p-3">
-                    <div class="text-center"><figure><img class="img-fluid" src="images/mensagem.png"></figure></div>
+                    <div class="text-center"><img class="img-fluid" src="images/mensagem.png"></div>
                     <label id="grey" class="mt-5 text-center"><i class="fas fa-exclamation-circle mr-2">
                     </i>Obs. Preencha todos os campos corretamente para que possamos entrar em contato o mais breve possivel. Obrigado pelo interesse!.
                     </label>

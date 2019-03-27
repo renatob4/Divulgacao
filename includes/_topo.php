@@ -44,9 +44,9 @@
         <!-- Css -->
         <link rel="stylesheet" href="css/main.css"/>
         <!-- Arquivo manifest para web app -->
-        <link rel="manifest" href="/manifest.json">
+        <link rel="manifest" href="./manifest.json">
         <!--Favicon-->
-        <link rel="shortcut icon" href="/favicon.ico" type="image/x-ico"/>
+        <link rel="shortcut icon" href="./favicon.ico" type="image/x-ico"/>
     </head>
 <body>
 <!-- Inclui a barra de utilizador -->
