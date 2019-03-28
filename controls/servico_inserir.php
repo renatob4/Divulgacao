@@ -11,7 +11,7 @@
     $erro = false;
     $mensagem = '';
 
-    if($config[0]['st_product'] == 0){
+    if($config[0]['st_service'] == 0){
         //header("Location:?a=home");
         echo('<meta http-equiv="refresh" content="0;URL=?a=servicos">');
         exit();
